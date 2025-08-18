@@ -1,0 +1,132 @@
+---
+import Layout from '../layouts/Layout.astro';
+import SEO from '../components/SEO.astro';
+---
+
+<Layout title="About MW Design Studio">
+  <SEO 
+    title="About MW Design Studio"
+    description="Learn about MW Design Studio - your partner in brand development, marketing strategy, and social media success. Meet our team and discover our values."
+    keywords="MW Design Studio, about us, brand design agency, marketing team, social media experts"
+  />
+  
+  <main>
+    <section class="hero-section">
+      <div class="container">
+        <h1>About MW Design Studio</h1>
+        <p class="lead">Transforming businesses through strategic design and marketing excellence</p>
+      </div>
+    </section>
+
+    <section class="story-section">
+      <div class="container">
+        <h2>Our Story</h2>
+        <p>MW Design Studio was founded with a simple mission: to help businesses build powerful brands and meaningful connections with their audiences. We combine creative excellence with strategic thinking to deliver results that matter.</p>
+        <p>Since our inception, we've partnered with businesses of all sizes, from startups to established enterprises, helping them navigate the complex world of branding, marketing, and social media.</p>
+      </div>
+    </section>
+
+    <section class="values-section">
+      <div class="container">
+        <h2>Our Values & Approach</h2>
+        <div class="values-grid">
+          <div class="value-card">
+            <h3>Strategic Thinking</h3>
+            <p>Every design decision is backed by strategy and purpose.</p>
+          </div>
+          <div class="value-card">
+            <h3>Creative Excellence</h3>
+            <p>We push boundaries to create unique, memorable brand experiences.</p>
+          </div>
+          <div class="value-card">
+            <h3>Client Partnership</h3>
+            <p>Your success is our success. We work as an extension of your team.</p>
+          </div>
+          <div class="value-card">
+            <h3>Results-Driven</h3>
+            <p>We measure our success by the tangible results we deliver.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="team-section">
+      <div class="container">
+        <h2>Meet Our Team</h2>
+        <div class="team-grid">
+          <div class="team-member">
+            <h3>Founder & Creative Director</h3>
+            <p>Leading our creative vision with over a decade of experience in brand development and digital marketing.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-section">
+      <div class="container">
+        <h2>Ready to Transform Your Brand?</h2>
+        <p>Let's discuss how we can help elevate your business.</p>
+        <a href="/contact" class="btn btn-primary">Start a Conversation</a>
+      </div>
+    </section>
+  </main>
+</Layout>
+
+<style>
+  .hero-section {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 4rem 0;
+    text-align: center;
+  }
+
+  .lead {
+    font-size: 1.25rem;
+    margin-top: 1rem;
+  }
+
+  .story-section,
+  .values-section,
+  .team-section,
+  .cta-section {
+    padding: 4rem 0;
+  }
+
+  .values-grid,
+  .team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+  }
+
+  .value-card,
+  .team-member {
+    padding: 2rem;
+    background: #f7f7f7;
+    border-radius: 8px;
+  }
+
+  .cta-section {
+    background: #f7f7f7;
+    text-align: center;
+  }
+
+  .btn {
+    display: inline-block;
+    padding: 0.75rem 2rem;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: all 0.3s;
+    margin-top: 1rem;
+  }
+
+  .btn-primary {
+    background: #667eea;
+    color: white;
+  }
+
+  .btn-primary:hover {
+    background: #5a67d8;
+  }
+</style>

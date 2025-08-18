@@ -1,0 +1,313 @@
+---
+import Layout from '../layouts/Layout.astro';
+import SEO from '../components/SEO.astro';
+---
+
+<Layout title="Portfolio - MW Design Studio">
+  <SEO 
+    title="Portfolio - MW Design Studio"
+    description="Explore our portfolio of successful brand transformations, marketing campaigns, and social media successes. See how we've helped businesses grow."
+    keywords="portfolio, case studies, brand design examples, marketing campaigns, social media success"
+  />
+  
+  <main>
+    <section class="hero-section">
+      <div class="container">
+        <h1>Our Portfolio</h1>
+        <p class="lead">Transformations that speak louder than words</p>
+        <div class="filter-buttons">
+          <button class="filter-btn active" data-filter="all">All Projects</button>
+          <button class="filter-btn" data-filter="brand">Brand Design</button>
+          <button class="filter-btn" data-filter="marketing">Marketing Campaigns</button>
+          <button class="filter-btn" data-filter="social">Social Media</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="portfolio-grid-section">
+      <div class="container">
+        <div class="portfolio-grid">
+          <!-- Brand Projects -->
+          <article class="portfolio-item" data-category="brand">
+            <div class="portfolio-image">
+              <img src="/placeholder-brand-1.jpg" alt="Brand Identity Project" />
+            </div>
+            <div class="portfolio-content">
+              <h3>Complete Brand Identity Redesign</h3>
+              <p class="category">Brand Design</p>
+              <p>Transformed a local business into a recognizable brand with cohesive visual identity.</p>
+              <a href="#" class="view-project">View Case Study →</a>
+            </div>
+          </article>
+
+          <article class="portfolio-item" data-category="marketing">
+            <div class="portfolio-image">
+              <img src="/placeholder-marketing-1.jpg" alt="Marketing Campaign" />
+            </div>
+            <div class="portfolio-content">
+              <h3>Multi-Channel Marketing Campaign</h3>
+              <p class="category">Marketing</p>
+              <p>Increased lead generation by 150% through strategic multi-channel campaign.</p>
+              <a href="#" class="view-project">View Case Study →</a>
+            </div>
+          </article>
+
+          <article class="portfolio-item" data-category="social">
+            <div class="portfolio-image">
+              <img src="/placeholder-social-1.jpg" alt="Social Media Success" />
+            </div>
+            <div class="portfolio-content">
+              <h3>Social Media Growth Strategy</h3>
+              <p class="category">Social Media</p>
+              <p>Grew client's social following by 300% in 6 months with engaging content strategy.</p>
+              <a href="#" class="view-project">View Case Study →</a>
+            </div>
+          </article>
+
+          <article class="portfolio-item" data-category="brand">
+            <div class="portfolio-image">
+              <img src="/placeholder-brand-2.jpg" alt="Logo Design Project" />
+            </div>
+            <div class="portfolio-content">
+              <h3>Logo & Visual System Design</h3>
+              <p class="category">Brand Design</p>
+              <p>Created distinctive logo and comprehensive visual system for tech startup.</p>
+              <a href="#" class="view-project">View Case Study →</a>
+            </div>
+          </article>
+
+          <article class="portfolio-item" data-category="marketing">
+            <div class="portfolio-image">
+              <img src="/placeholder-marketing-2.jpg" alt="Email Campaign" />
+            </div>
+            <div class="portfolio-content">
+              <h3>Email Marketing Automation</h3>
+              <p class="category">Marketing</p>
+              <p>Implemented automated email sequences that increased conversions by 85%.</p>
+              <a href="#" class="view-project">View Case Study →</a>
+            </div>
+          </article>
+
+          <article class="portfolio-item" data-category="social">
+            <div class="portfolio-image">
+              <img src="/placeholder-social-2.jpg" alt="Content Strategy" />
+            </div>
+            <div class="portfolio-content">
+              <h3>Content Creation & Management</h3>
+              <p class="category">Social Media</p>
+              <p>Developed and executed content strategy across multiple platforms.</p>
+              <a href="#" class="view-project">View Case Study →</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="success-metrics">
+      <div class="container">
+        <h2>Success by the Numbers</h2>
+        <div class="metrics-grid">
+          <div class="metric">
+            <span class="metric-number">150+</span>
+            <span class="metric-label">Projects Completed</span>
+          </div>
+          <div class="metric">
+            <span class="metric-number">98%</span>
+            <span class="metric-label">Client Satisfaction</span>
+          </div>
+          <div class="metric">
+            <span class="metric-number">3.5x</span>
+            <span class="metric-label">Average ROI</span>
+          </div>
+          <div class="metric">
+            <span class="metric-number">50+</span>
+            <span class="metric-label">Happy Clients</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-section">
+      <div class="container">
+        <h2>Ready to Be Our Next Success Story?</h2>
+        <p>Let's create something amazing together.</p>
+        <a href="/contact" class="btn btn-primary">Start Your Project</a>
+      </div>
+    </section>
+  </main>
+</Layout>
+
+<style>
+  .hero-section {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 4rem 0;
+    text-align: center;
+  }
+
+  .lead {
+    font-size: 1.25rem;
+    margin: 1rem 0 2rem;
+  }
+
+  .filter-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .filter-btn {
+    padding: 0.5rem 1.5rem;
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s;
+  }
+
+  .filter-btn:hover,
+  .filter-btn.active {
+    background: white;
+    color: #667eea;
+  }
+
+  .portfolio-grid-section {
+    padding: 4rem 0;
+  }
+
+  .portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+  }
+
+  .portfolio-item {
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+  }
+
+  .portfolio-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
+  }
+
+  .portfolio-image {
+    height: 250px;
+    background: #f0f0f0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .portfolio-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .portfolio-content {
+    padding: 1.5rem;
+  }
+
+  .category {
+    color: #667eea;
+    font-size: 0.875rem;
+    font-weight: 600;
+    margin: 0.5rem 0;
+  }
+
+  .view-project {
+    color: #667eea;
+    text-decoration: none;
+    font-weight: 600;
+    display: inline-block;
+    margin-top: 1rem;
+  }
+
+  .view-project:hover {
+    text-decoration: underline;
+  }
+
+  .success-metrics {
+    padding: 4rem 0;
+    background: #f7f7f7;
+  }
+
+  .metrics-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+    text-align: center;
+  }
+
+  .metric {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .metric-number {
+    font-size: 3rem;
+    font-weight: bold;
+    color: #667eea;
+  }
+
+  .metric-label {
+    font-size: 1.125rem;
+    color: #666;
+    margin-top: 0.5rem;
+  }
+
+  .cta-section {
+    padding: 4rem 0;
+    text-align: center;
+  }
+
+  .btn {
+    display: inline-block;
+    padding: 0.75rem 2rem;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: all 0.3s;
+    margin-top: 1rem;
+  }
+
+  .btn-primary {
+    background: #667eea;
+    color: white;
+  }
+
+  .btn-primary:hover {
+    background: #5a67d8;
+  }
+</style>
+
+<script>
+  // Portfolio filtering
+  const filterButtons = document.querySelectorAll('.filter-btn');
+  const portfolioItems = document.querySelectorAll('.portfolio-item');
+
+  filterButtons.forEach(button => {
+    button.addEventListener('click', () => {
+      const filter = button.dataset.filter;
+      
+      // Update active button
+      filterButtons.forEach(btn => btn.classList.remove('active'));
+      button.classList.add('active');
+      
+      // Filter items
+      portfolioItems.forEach(item => {
+        if (filter === 'all' || item.dataset.category === filter) {
+          item.style.display = 'block';
+        } else {
+          item.style.display = 'none';
+        }
+      });
+    });
+  });
+</script>

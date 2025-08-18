@@ -1,0 +1,271 @@
+<footer class="main-footer">
+  <div class="footer-container">
+    <div class="footer-content">
+      <!-- Company Info -->
+      <div class="footer-section">
+        <div class="footer-logo">
+          <img src="/logo/MWD_Main_Logo_WhiteBG.png" alt="MW Design Studio" class="footer-logo-img">
+        </div>
+        <p class="footer-description">Helping ambitious small businesses stand out, connect with customers, and grow through strategic design and marketing.</p>
+        <div class="footer-contact">
+          <p><strong>Ready to get started?</strong></p>
+          <a href="/contact" class="footer-cta">Complete Your Intake Form</a>
+        </div>
+      </div>
+
+      <!-- Services -->
+      <div class="footer-section">
+        <h3 class="footer-heading">Services</h3>
+        <ul class="footer-links">
+          <li><a href="/services/brand-services">Brand Services</a></li>
+          <li><a href="/services/marketing-services">Marketing Services</a></li>
+          <li><a href="/services/social-media-services">Social Media Services</a></li>
+          <li><a href="/services">All Services</a></li>
+        </ul>
+      </div>
+
+      <!-- Company -->
+      <div class="footer-section">
+        <h3 class="footer-heading">Company</h3>
+        <ul class="footer-links">
+          <li><a href="/about">About Us</a></li>
+          <li><a href="/portfolio">Portfolio</a></li>
+          <li><a href="/testimonials">Testimonials</a></li>
+          <li><a href="/process">Our Process</a></li>
+          <li><a href="/faq">FAQ</a></li>
+        </ul>
+      </div>
+
+      <!-- Resources -->
+      <div class="footer-section">
+        <h3 class="footer-heading">Resources</h3>
+        <ul class="footer-links">
+          <li><a href="/resources">Free Resources</a></li>
+          <li><a href="/blog">Blog</a></li>
+          <li><a href="/contact">Contact</a></li>
+        </ul>
+        <div class="footer-social">
+          <h4 class="social-heading">Follow Us</h4>
+          <div class="social-links">
+            <a href="#" class="social-link" aria-label="Facebook">FB</a>
+            <a href="#" class="social-link" aria-label="Instagram">IG</a>
+            <a href="#" class="social-link" aria-label="LinkedIn">LI</a>
+            <a href="#" class="social-link" aria-label="Twitter">TW</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer Bottom -->
+    <div class="footer-bottom">
+      <div class="footer-bottom-content">
+        <p class="footer-copyright">&copy; {new Date().getFullYear()} MW Design Studio. All rights reserved.</p>
+        <div class="footer-legal">
+          <a href="/legal/privacy-policy">Privacy Policy</a>
+          <a href="/legal/terms-of-service">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .main-footer {
+    background: white;
+    color: #333333;
+    padding: 4rem 0 0;
+    border-top: 1px solid #E2E8F0;
+  }
+
+  .footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+
+  .footer-content {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 3rem;
+    margin-bottom: 3rem;
+  }
+
+  .footer-section {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .footer-logo-img {
+    height: 60px;
+    width: auto;
+    margin-bottom: 1.5rem;
+  }
+
+  .footer-description {
+    color: #666666;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+    font-size: 0.95rem;
+  }
+
+  .footer-contact p {
+    margin-bottom: 1rem;
+    font-weight: 600;
+    color: #333333;
+  }
+
+  .footer-cta {
+    background: linear-gradient(135deg, #1E3A8A 0%, #4FD1C7 100%);
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: 600;
+    display: inline-block;
+    transition: all 0.3s ease;
+    font-size: 0.9rem;
+  }
+
+  .footer-cta:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(30, 58, 138, 0.3);
+  }
+
+  .footer-heading {
+    color: #1E3A8A;
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    letter-spacing: 0.05em;
+  }
+
+  .footer-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .footer-links li {
+    margin-bottom: 0.75rem;
+  }
+
+  .footer-links a {
+    color: #666666;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.3s ease;
+  }
+
+  .footer-links a:hover {
+    color: #1E3A8A;
+  }
+
+  .footer-social {
+    margin-top: 2rem;
+  }
+
+  .social-heading {
+    color: #1E3A8A;
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+  }
+
+  .social-links {
+    display: flex;
+    gap: 0.75rem;
+  }
+
+  .social-link {
+    width: 36px;
+    height: 36px;
+    background: #F8F9FA;
+    border: 1px solid #E2E8F0;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #666666;
+    text-decoration: none;
+    font-size: 0.75rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+  }
+
+  .social-link:hover {
+    background: #1E3A8A;
+    color: white;
+    border-color: #1E3A8A;
+    transform: translateY(-2px);
+  }
+
+  .footer-bottom {
+    border-top: 1px solid #E2E8F0;
+    padding: 2rem 0;
+  }
+
+  .footer-bottom-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .footer-copyright {
+    color: #666666;
+    font-size: 0.875rem;
+    margin: 0;
+  }
+
+  .footer-legal {
+    display: flex;
+    gap: 2rem;
+  }
+
+  .footer-legal a {
+    color: #666666;
+    text-decoration: none;
+    font-size: 0.875rem;
+    transition: color 0.3s ease;
+  }
+
+  .footer-legal a:hover {
+    color: #1E3A8A;
+  }
+
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .footer-content {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+
+    .footer-bottom-content {
+      flex-direction: column;
+      text-align: center;
+    }
+
+    .footer-legal {
+      justify-content: center;
+    }
+
+    .social-links {
+      justify-content: center;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .main-footer {
+      padding: 3rem 0 0;
+    }
+
+    .footer-container {
+      padding: 0 1rem;
+    }
+
+    .footer-content {
+      gap: 1.5rem;
+    }
+  }
+</style>
