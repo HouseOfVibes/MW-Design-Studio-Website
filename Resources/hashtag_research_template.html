@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hashtag Research Template</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333333;
+            background-color: #F8F9FA;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #1E3A8A 0%, #4FD1C7 100%);
+            color: white;
+            padding: 40px 30px;
+            border-radius: 12px;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .header p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        .info-section {
+            background: white;
+            border-radius: 12px;
+            padding: 25px;
+            margin-bottom: 25px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            border: 1px solid #E2E8F0;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        .info-field {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .info-field label {
+            color: #1E3A8A;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .info-field input {
+            padding: 10px;
+            border: 2px solid #E2E8F0;
+            border-radius: 6px;
+            font-size: 1rem;
+            transition: border-color 0.2s ease;
+        }
+
+        .info-field input:focus {
+            outline: none;
+            border-color: #4FD1C7;
+        }
+
+        .platform-section {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            margin-bottom: 25px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            border: 1px solid #E2E8F0;
+        }
+
+        .platform-header {
+            color: #1E3A8A;
+            font-size: 1.8rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #4FD1C7;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .platform-info {
+            background-color: #FAFBFC;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            border-left: 4px solid #4FD1C7;
+        }
+
+        .platform-info p {
+            color: #666666;
+            font-size: 0.95rem;
+            margin-bottom: 5px;
+        }
+
+        .hashtag-category {
+            margin-bottom: 25px;
+        }
+
+        .category-title {
+            color: #1E3A8A;
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .category-description {
+            color: #666666;
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+            font-style: italic;
+        }
+
+        .hashtag-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+
+        .hashtag-input {
+            padding: 8px 12px;
+            border: 1px solid #E2E8F0;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            background-color: #FAFBFC;
+        }
+
+        .hashtag-input::placeholder {
+            color: #999;
+        }
+
+        .notes-section {
+            margin-top: 20px;
+        }
+
+        .notes-title {
+            color: #1E3A8A;
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .notes-textarea {
+            width: 100%;
+            min-height: 80px;
+            padding: 12px;
+            border: 1px solid #E2E8F0;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            font-family: inherit;
+            resize: vertical;
+            background-color: #FAFBFC;
+        }
+
+        .tips-section {
+            background: linear-gradient(135deg, #1E3A8A 0%, #4FD1C7 100%);
+            color: white;
+            padding: 25px;
+            border-radius: 12px;
+            margin-bottom: 25px;
+        }
+
+        .tips-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        .tips-list {
+            list-style: none;
+        }
+
+        .tips-list li {
+            margin-bottom: 8px;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .tips-list li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #4FD1C7;
+            font-weight: bold;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 15px;
+            }
+            
+            .info-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .hashtag-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .header h1 {
+                font-size: 2rem;
+            }
+            
+            .platform-section {
+                padding: 20px;
+            }
+        }
+
+        @media print {
+            body {
+                background-color: white;
+                font-size: 12px;
+            }
+            
+            .platform-section, .info-section, .tips-section {
+                box-shadow: none;
+                border: 1px solid #333;
+                break-inside: avoid;
+                margin-bottom: 20px;
+            }
+            
+            .header {
+                background: #1E3A8A !important;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Hashtag Research Template</h1>
+            <p>Find and organize the best hashtags for your industry across all major social platforms</p>
+        </div>
+
+        <!-- Project Information -->
+        <div class="info-section">
+            <div class="info-grid">
+                <div class="info-field">
+                    <label for="brand-name">Brand/Business Name:</label>
+                    <input type="text" id="brand-name" placeholder="Enter your brand name">
+                </div>
+                <div class="info-field">
+                    <label for="industry">Industry/Niche:</label>
+                    <input type="text" id="industry" placeholder="e.g., Fitness, Food, Fashion">
+                </div>
+                <div class="info-field">
+                    <label for="target-audience">Target Audience:</label>
+                    <input type="text" id="target-audience" placeholder="e.g., Millennials, Small business owners">
+                </div>
+                <div class="info-field">
+                    <label for="research-date">Research Date:</label>
+                    <input type="date" id="research-date">
+                </div>
+            </div>
+        </div>
+
+        <!-- Research Tips -->
+        <div class="tips-section">
+            <h3 class="tips-title">Hashtag Research Best Practices</h3>
+            <ul class="tips-list">
+                <li>Mix high-volume, medium-volume, and niche-specific hashtags</li>
+                <li>Research competitor hashtags and engagement rates</li>
+                <li>Use platform-specific hashtag tools and analytics</li>
+                <li>Test different hashtag combinations and track performance</li>
+                <li>Update your hashtag strategy regularly based on trends</li>
+                <li>Keep branded hashtags short, memorable, and unique</li>
+            </ul>
+        </div>
+
+        <!-- Instagram Section -->
+        <div class="platform-section">
+            <h2 class="platform-header">Instagram</h2>
+            <div class="platform-info">
+                <p><strong>Optimal Count:</strong> 20-30 hashtags per post</p>
+                <p><strong>Character Limit:</strong> 2,200 characters total</p>
+                <p><strong>Best Practice:</strong> Mix of trending, niche, and branded hashtags</p>
+            </div>
+
+            <div class="hashtag-category">
+                <h3 class="category-title">Industry-Specific Hashtags</h3>
+                <p class="category-description">Core hashtags that define your industry or niche</p>
+                <div class="hashtag-grid">
+                    <input type="text" class="hashtag-input" placeholder="#yourindustry">
+                    <input type="text" class="hashtag-input" placeholder="#nichekeyword">
+                    <input type="text" class="hashtag-input" placeholder="#industryterm">
+                    <input type="text" class="hashtag-input" placeholder="#businesstype">
+                    <input type="text" class="hashtag-input" placeholder="#serviceoffered">
+                    <input type="text" class="hashtag-input" placeholder="#productcategory">
+                </div>
+            </div>
+
+            <div class="hashtag-category">
+                <h3 class="category-title">Trending/Seasonal Hashtags</h3>
+                <p class="category-description">Current trends and seasonal content hashtags</p>
+                <div class="hashtag-grid">
+                    <input type="text" class="hashtag-input" placeholder="#trending2025">
+                    <input type="text" class="hashtag-input" placeholder="#seasonaltrend">
+                    <input type="text" class="hashtag-input" placeholder="#currentevent">
+                    <input type="text" class="hashtag-input" placeholder="#monthlytrend">
+                    <input type="text" class="hashtag-input" placeholder="#viralhashtag">
+                    <input type="text" class="hashtag-input" placeholder="#popularnow">
+                </div>
+            </div>
+
+            <div class="hashtag-category">
+                <h3 class="category-title">Community/Audience Hashtags</h3>
+                <p class="category-description">Hashtags your target audience uses and follows</p>
+                <div class="hashtag-grid">
+                    <input type="text" class="hashtag-input" placeholder="#targetaudience">
+                    <input type="text" class="hashtag-input" placeholder="#community">
+                    <input type="text" class="hashtag-input" placeholder="#lifestyle">
+                    <input type="text" class="hashtag-input" placeholder="#interests">
+                    <input type="text" class="hashtag-input" placeholder="#demographics">
+                    <input type="text" class="hashtag-input" placeholder="#audienceniche">
+                </div>
+            </div>
+
+            <div class="hashtag-category">
+                <h3 class="category-title">Branded Hashtags</h3>
+                <p class="category-description">Your unique brand hashtags and campaign tags</p>
+                <div class="hashtag-grid">
+                    <input type="text" class="hashtag-input" placeholder="#yourbrandname">
+                    <input type="text" class="hashtag-input" placeholder="#brandslogan">
+                    <input type="text" class="hashtag-input" placeholder="#campaignhashtag">
+                    <input type="text" class="hashtag-input" placeholder="#brandedcontent">
+                </div>
+            </div>
+
+            <div class="hashtag-category">
+                <h3 class="category-title">Location-Based Hashtags</h3>
+                <p class="category-description">Geographic and local hashtags</p>
+                <div class="hashtag-grid">
+                    <input type="text" class="hashtag-input" placeholder="#yourcity">
+                    <input type="text" class="hashtag-input" placeholder="#yourstate">
+                    <input type="text" class="hashtag-input" placeholder="#localarea">
+                    <input type="text" class="hashtag-input" placeholder="#neighborhood">
+                </div>
+            </div>
+
+            <div class="notes-section">
+                <h4 class="notes-title">Instagram Notes & Performance Tracking</h4>
+                <textarea class="notes-textarea" placeholder="Track which hashtag combinations perform best, note engagement rates, and record any insights about Instagram hashtag performance..."></textarea>
+            </div>
+        </div>
+
+        <!-- TikTok Section -->
+        <div class="platform-section">
+            <h2 class="platform-header">TikTok</h2>
+            <div class="platform-info">
+                <p><strong>Optimal Count:</strong> 3-5 hashtags per post</p>
+                <p><strong>Character Limit:</strong> 2,200 characters total</p>
+                <p><strong>Best Practice:</strong> Focus on trending and challenge hashtags</p>
+            </div>
+
+            <div class="hashtag-category">
+                <h3 class="category-title">Trending Challenge Hashtags</h3>
+                <p class="category-description">Current TikTok challenges and viral trends</p>
+                <div class="hashtag-grid">
+                    <input type="text" class="hashtag-input" placeholder="#fyp">
+                    <input type="text" class="hashtag-input" placeholder="#viral">
+                    <input type="text" class="hashtag-input" placeholder="#trending">
+                    <input type="text" class="hashtag-input" placeholder="#challenge">
+                    <input type="text" class="hashtag-input" placeholder="#tiktoktrend">
+                    <input type="text" class="hashtag-input" placeholder="#foryoupage">
+                </div>
+            </div>
+
+            <div class="hashtag-category">
+                <h3 class="category-title">Content-Type Hashtags</h3>
+                <p class="category-description">Hashtags describing your content format</p>
+                <div class="hashtag-grid">
+                    <input type="text" class="hashtag-input" placeholder="#tutorial">
+                    <input type="text" class="hashtag-input" placeholder="#tips">
+                    <input type="text" class="hashtag-input" placeholder="#comedy">
+                    <input type="text" class="hashtag-input" placeholder="#educational">
+                    <input type="text" class="hashtag-input" placeholder="#behindthescenes">
+                    <input type="text" class="hashtag-input" placeholder="#storytime">
+                </div>
+            </div>
+
+            <div class="hashtag-category">
+                <h3 class="category-title">Niche-Specific Hashtags</h3>
+                <p class="category-description">Your industry/niche hashtags for TikTok</p>
+                <div class="hashtag-grid">
+                    <input type="text" class="hashtag-input" placeholder="#yourindustry">
+                    <input type="text" class="hashtag-input" placeholder="#niche">
+                    <input type="text" class="hashtag-input" placeholder="#industry">
+                    <input type="text" class="hashtag-input" placeholder="#specialty">
+                </div>
+            </div>
+
+            <div class="notes-section">
+                <h4 class="notes-title">TikTok Notes & Performance Tracking</h4>
+                <textarea class="notes-textarea" placeholder="Note which hashtags boost your content to the FYP, track trending hashtags in your niche, and record timing insights..."></textarea>
+            </div>
+        </div>
+
+        <!-- LinkedIn Section -->
+        <div class="platform-section">
+            <h2 class="platform-header">LinkedIn</h2>
+            <div class="platform-info">
+                <p><strong>Optimal Count:</strong> 3-5 hashtags per post</p>
+                <p><strong>Character Limit:</strong> 3,000 characters total</p>
+                <p><strong>Best Practice:</strong> Professional, industry-focused hashtags</p>
+            </div>
+
+            <div class="hashtag-category">
+                <h3 class="category-title">Professional Industry Hashtags</h3>
+                <p class="category-description">Business and industry-specific professional hashtags</p>
+                <div class="hashtag-grid">
+                    <input type="text" class="hashtag-input" placeholder="#leadership">
+                    <input type="text" class="hashtag-input" placeholder="#business">
+                    <input type="text" class="hashtag-input" placeholder="#professional">
+                    <input type="text" class="hashtag-input" placeholder="#industry">
+                    <input type="text" class="hashtag-input" placeholder="#career">
+                    <input type="text" class="hashtag-input" placeholder="#expertise">
+                </div>
+            </div>
+
+            <div class="hashtag-category">
+                <h3 class="category-title">Thought Leadership Hashtags</h3>
+                <p class="category-description">Hashtags for establishing expertise and authority</p>
+                <div class="hashtag-grid">
+                    <input type="text" class="hashtag-input" placeholder="#thoughtleadership">
+                    <input type="text" class="hashtag-input" placeholder="#insights">
+                    <input type="text" class="hashtag-input" placeholder="#innovation">
+                    <input type="text" class="hashtag-input" placeholder="#strategy">
+                    <input type="text" class="hashtag-input" placeholder="#bestpractices">
+                    <input type="text" class="hashtag-input" placeholder="#expertise">
+                </div>
+            </div>
+
+            <div class="hashtag-category">
+                <h3 class="category-title">Business Function Hashtags</h3>
+                <p class="category-description">Specific business areas and functions</p>
+                <div class="hashtag-grid">
+                    <input type="text" class="hashtag-input" placeholder="#marketing">
+                    <input type="text" class="hashtag-input" placeholder="#sales">
+                    <input type="text" class="hashtag-input" placeholder="#hr">
+                    <input type="text" class="hashtag-input" placeholder="#technology">
+                    <input type="text" class="hashtag-input" placeholder="#finance">
+                    <input type="text" class="hashtag-input" placeholder="#operations">
+                </div>
+            </div>
+
+            <div class="notes-section">
+                <h4 class="notes-title">LinkedIn Notes & Performance Tracking</h4>
+                <textarea class="notes-textarea" placeholder="Track professional engagement, note which hashtags drive quality connections, and record insights about B2B performance..."></textarea>
+            </div>
+        </div>
+
+        <!-- Twitter Section -->
+        <div class="platform-section">
+            <h2 class="platform-header">Twitter (X)</h2>
+            <div class="platform-info">
+                <p><strong>Optimal Count:</strong> 1-2 hashtags per post</p>
+                <p><strong>Character Limit:</strong> 280 characters total</p>
+                <p><strong>Best Practice:</strong> Trending topics and conversation hashtags</p>
+            </div>
+
+            <div class="hashtag-category">
+                <h3 class="category-title">Trending Topics</h3>
+                <p class="category-description">Current trending hashtags and conversations</p>
+                <div class="hashtag-grid">
+                    <input type="text" class="hashtag-input" placeholder="#trending">
+                    <input type="text" class="hashtag-input" placeholder="#breakingnews">
+                    <input type="text" class="hashtag-input" placeholder="#currentevents">
+                    <input type="text" class="hashtag-input" placeholder="#viral">
+                    <input type="text" class="hashtag-input" placeholder="#popular">
+                    <input type="text" class="hashtag-input" placeholder="#twitterchat">
+                </div>
+            </div>
+
+            <div class="hashtag-category">
+                <h3 class="category-title">Industry Conversations</h3>
+                <p class="category-description">Industry-specific discussion hashtags</p>
+                <div class="hashtag-grid">
+                    <input type="text" class="hashtag-input" placeholder="#yourindustry">
+                    <input type="text" class="hashtag-input" placeholder="#industrynews">
+                    <input type="text" class="hashtag-input" placeholder="#businesstalk">
+                    <input type="text" class="hashtag-input" placeholder="#industrychat">
+                    <input type="text" class="hashtag-input" placeholder="#professionaltalk">
+                    <input type="text" class="hashtag-input" placeholder="#expertchat">
+                </div>
+            </div>
+
+            <div class="hashtag-category">
+                <h3 class="category-title">Daily/Weekly Hashtags</h3>
+                <p class="category-description">Recurring hashtags for specific days or themes</p>
+                <div class="hashtag-grid">
+                    <input type="text" class="hashtag-input" placeholder="#mondaymotivation">
+                    <input type="text" class="hashtag-input" placeholder="#tuesdaytips">
+                    <input type="text" class="hashtag-input" placeholder="#wisdomwednesday">
+                    <input type="text" class="hashtag-input" placeholder="#throwbackthursday">
+                    <input type="text" class="hashtag-input" placeholder="#fridayfeeling">
+                    <input type="text" class="hashtag-input" placeholder="#weekendvibes">
+                </div>
+            </div>
+
+            <div class="notes-section">
+                <h4 class="notes-title">Twitter Notes & Performance Tracking</h4>
+                <textarea class="notes-textarea" placeholder="Track retweets and engagement, note which hashtags drive conversations, and record optimal posting times..."></textarea>
+            </div>
+        </div>
+
+        <!-- Overall Strategy Section -->
+        <div class="platform-section">
+            <h2 class="platform-header">Cross-Platform Strategy</h2>
+            
+            <div class="hashtag-category">
+                <h3 class="category-title">Core Brand Hashtags (Use Across All Platforms)</h3>
+                <p class="category-description">Consistent hashtags that represent your brand everywhere</p>
+                <div class="hashtag-grid">
+                    <input type="text" class="hashtag-input" placeholder="#yourbrand">
+                    <input type="text" class="hashtag-input" placeholder="#brandmission">
+                    <input type="text" class="hashtag-input" placeholder="#brandvalue">
+                    <input type="text" class="hashtag-input" placeholder="#universalhashtag">
+                </div>
+            </div>
+
+            <div class="notes-section">
+                <h4 class="notes-title">Overall Strategy Notes</h4>
+                <textarea class="notes-textarea" placeholder="Document your overall hashtag strategy, cross-platform performance insights, and long-term hashtag goals..."></textarea>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

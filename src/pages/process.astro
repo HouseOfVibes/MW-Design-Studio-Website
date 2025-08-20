@@ -6,544 +6,1429 @@ import SEO from '../components/SEO.astro';
 <Layout title="Our Process - MW Design Studio">
   <SEO 
     title="Our Process - MW Design Studio"
-    description="Learn about our proven 5-phase process for brand development, marketing strategy, and social media success. From discovery to optimization."
-    keywords="design process, brand development process, marketing strategy process, project workflow"
+    description="Learn about our proven strategic approach for brand development, marketing strategy, and social media management. Clear timelines, defined deliverables."
+    keywords="design process, brand development process, marketing strategy process, social media process, project workflow"
   />
   
   <main>
-    <section class="hero-section">
-      <div class="container">
-        <h1>Our Proven Process</h1>
-        <p class="lead">A strategic approach that delivers consistent results</p>
+    <!-- Hero Section -->
+    <section class="process-hero">
+      <div class="hero-container">
+        <nav class="breadcrumb">
+          <a href="/">Home</a> > Process
+        </nav>
+        <h1 class="hero-title">Our Proven Process</h1>
+        <p class="hero-subtitle">Structured approaches that transform your business through strategic design and marketing</p>
       </div>
     </section>
 
-    <section class="process-overview">
+    <!-- Service Selection -->
+    <section class="service-selection">
       <div class="container">
-        <div class="process-intro">
-          <h2>How We Work</h2>
-          <p>Our structured 5-phase process ensures every project is delivered on time, within budget, and exceeds expectations. We've refined this approach through hundreds of successful projects.</p>
-        </div>
-
-        <div class="process-timeline">
-          <div class="phase-card">
-            <div class="phase-number">01</div>
-            <div class="phase-content">
-              <h3>Discovery Phase</h3>
-              <p class="phase-duration">Week 1</p>
-              <ul class="phase-activities">
-                <li>Comprehensive client questionnaire</li>
-                <li>Brand audit and market research</li>
-                <li>Competitor analysis</li>
-                <li>Goal setting and success metrics</li>
-                <li>Target audience identification</li>
-              </ul>
-              <div class="phase-deliverable">
-                <strong>Deliverable:</strong> Strategic Foundation Report
-              </div>
-            </div>
-          </div>
-
-          <div class="phase-card">
-            <div class="phase-number">02</div>
-            <div class="phase-content">
-              <h3>Strategy Phase</h3>
-              <p class="phase-duration">Week 2</p>
-              <ul class="phase-activities">
-                <li>Strategic planning session</li>
-                <li>Creative brief development</li>
-                <li>Project timeline creation</li>
-                <li>Content strategy outline</li>
-                <li>Technical requirements planning</li>
-              </ul>
-              <div class="phase-deliverable">
-                <strong>Deliverable:</strong> Strategic Blueprint & Timeline
-              </div>
-            </div>
-          </div>
-
-          <div class="phase-card">
-            <div class="phase-number">03</div>
-            <div class="phase-content">
-              <h3>Creation Phase</h3>
-              <p class="phase-duration">Weeks 3-6</p>
-              <ul class="phase-activities">
-                <li>Design and development work</li>
-                <li>Content creation and copywriting</li>
-                <li>Regular progress check-ins</li>
-                <li>Client review and revision cycles</li>
-                <li>Quality assurance testing</li>
-              </ul>
-              <div class="phase-deliverable">
-                <strong>Deliverable:</strong> Completed Creative Assets
-              </div>
-            </div>
-          </div>
-
-          <div class="phase-card">
-            <div class="phase-number">04</div>
-            <div class="phase-content">
-              <h3>Launch Phase</h3>
-              <p class="phase-duration">Week 7</p>
-              <ul class="phase-activities">
-                <li>Final implementation</li>
-                <li>Client training sessions</li>
-                <li>Asset handoff and documentation</li>
-                <li>Launch coordination</li>
-                <li>Initial performance monitoring</li>
-              </ul>
-              <div class="phase-deliverable">
-                <strong>Deliverable:</strong> Live Project & Training Materials
-              </div>
-            </div>
-          </div>
-
-          <div class="phase-card">
-            <div class="phase-number">05</div>
-            <div class="phase-content">
-              <h3>Optimization Phase</h3>
-              <p class="phase-duration">Weeks 8-12</p>
-              <ul class="phase-activities">
-                <li>Performance analysis and reporting</li>
-                <li>Continuous improvement recommendations</li>
-                <li>A/B testing implementation</li>
-                <li>Ongoing support and consultation</li>
-                <li>Success metrics evaluation</li>
-              </ul>
-              <div class="phase-deliverable">
-                <strong>Deliverable:</strong> Performance Report & Optimization Plan
-              </div>
-            </div>
-          </div>
+        <h2 class="section-title">Choose Your Service Journey</h2>
+        <p class="section-subtitle">Each service follows a proven process tailored to deliver specific results</p>
+        <div class="service-tabs">
+          <button class="service-tab active" data-service="brand">Brand Development</button>
+          <button class="service-tab" data-service="marketing">Marketing Strategy</button>
+          <button class="service-tab" data-service="social">Social Media Management</button>
         </div>
       </div>
     </section>
 
-    <section class="communication-section">
+    <!-- Brand Development Process -->
+    <section class="process-content active" data-service="brand">
       <div class="container">
-        <h2>Communication & Collaboration</h2>
-        <div class="communication-grid">
-          <div class="comm-card">
-            <div class="comm-icon">📞</div>
-            <h3>Regular Check-ins</h3>
-            <p>Weekly progress calls to keep you informed and gather feedback throughout the project.</p>
+        <div class="process-header">
+          <h2>Brand Development Process</h2>
+          <p class="process-tagline">A proven 4-phase approach that transforms your business into a memorable brand</p>
+        </div>
+
+        <!-- Process Timeline Visual -->
+        <div class="process-visual">
+          <div class="timeline-step active">
+            <span class="step-label">Discovery</span>
+            <span class="step-time">Weeks 1-2</span>
           </div>
-          <div class="comm-card">
-            <div class="comm-icon">💬</div>
-            <h3>Dedicated Project Manager</h3>
-            <p>Your single point of contact who manages timelines, communications, and deliverables.</p>
+          <div class="timeline-connector"></div>
+          <div class="timeline-step">
+            <span class="step-label">Strategy</span>
+            <span class="step-time">Weeks 3-4</span>
           </div>
-          <div class="comm-card">
-            <div class="comm-icon">📊</div>
-            <h3>Progress Dashboard</h3>
-            <p>Real-time project tracking with milestones, timelines, and deliverable status.</p>
+          <div class="timeline-connector"></div>
+          <div class="timeline-step">
+            <span class="step-label">Design</span>
+            <span class="step-time">Weeks 5-8</span>
           </div>
-          <div class="comm-card">
-            <div class="comm-icon">🔄</div>
-            <h3>Structured Revisions</h3>
-            <p>Clear revision process with defined feedback rounds to ensure efficiency and quality.</p>
+          <div class="timeline-connector"></div>
+          <div class="timeline-step">
+            <span class="step-label">Launch</span>
+            <span class="step-time">Weeks 9-10</span>
           </div>
         </div>
-      </div>
-    </section>
 
-    <section class="quality-assurance">
-      <div class="container">
-        <h2>Quality Assurance</h2>
-        <div class="qa-content">
-          <div class="qa-text">
-            <h3>Our Quality Promise</h3>
-            <p>Every project goes through rigorous quality checks at each phase. We don't just deliver what was requested - we deliver what will drive results for your business.</p>
+        <!-- Phase Details -->
+        <div class="phase-details">
+          <!-- Phase 1: Discovery -->
+          <div class="phase-card">
+            <div class="phase-header">
+              <span class="phase-number">Phase 1</span>
+              <h3>Brand Discovery</h3>
+              <span class="phase-duration">Weeks 1-2</span>
+            </div>
             
-            <div class="qa-checklist">
-              <h4>Our QA Process Includes:</h4>
-              <ul>
-                <li>✓ Strategic alignment verification</li>
-                <li>✓ Brand consistency checks</li>
-                <li>✓ Technical performance testing</li>
-                <li>✓ Cross-platform compatibility</li>
-                <li>✓ Accessibility compliance</li>
-                <li>✓ SEO optimization review</li>
-              </ul>
+            <div class="phase-content">
+              <div class="phase-section">
+                <h4>What We Do:</h4>
+                <div class="activity-group">
+                  <h5>Comprehensive Business Analysis</h5>
+                  <ul>
+                    <li>Current brand audit and assessment</li>
+                    <li>Competitive landscape review</li>
+                    <li>Market position evaluation</li>
+                    <li>Internal stakeholder interviews</li>
+                  </ul>
+                </div>
+                <div class="activity-group">
+                  <h5>Target Audience Deep Dive</h5>
+                  <ul>
+                    <li>Customer research and persona development</li>
+                    <li>Pain point identification</li>
+                    <li>Buying behavior analysis</li>
+                    <li>Market segmentation</li>
+                  </ul>
+                </div>
+                <div class="activity-group">
+                  <h5>Brand Foundation Exploration</h5>
+                  <ul>
+                    <li>Core values identification</li>
+                    <li>Mission and vision clarification</li>
+                    <li>Unique value proposition development</li>
+                    <li>Brand personality definition</li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="phase-section">
+                <h4>Your Role:</h4>
+                <ul>
+                  <li>Participate in discovery sessions</li>
+                  <li>Provide access to existing brand materials</li>
+                  <li>Share business goals and challenges</li>
+                  <li>Connect us with key team members</li>
+                </ul>
+              </div>
+
+              <div class="phase-deliverables">
+                <h4>Deliverables:</h4>
+                <ul>
+                  <li>Brand discovery report</li>
+                  <li>Competitive analysis</li>
+                  <li>Target audience personas</li>
+                  <li>Current state assessment</li>
+                </ul>
+              </div>
             </div>
           </div>
-          <div class="qa-stats">
-            <div class="stat">
-              <span class="stat-number">98%</span>
-              <span class="stat-label">Projects Delivered On Time</span>
+
+          <!-- Phase 2: Strategy -->
+          <div class="phase-card">
+            <div class="phase-header">
+              <span class="phase-number">Phase 2</span>
+              <h3>Brand Strategy Development</h3>
+              <span class="phase-duration">Weeks 3-4</span>
             </div>
-            <div class="stat">
-              <span class="stat-number">99.5%</span>
-              <span class="stat-label">Quality Score</span>
+            
+            <div class="phase-content">
+              <div class="phase-section">
+                <h4>What We Do:</h4>
+                <div class="activity-group">
+                  <h5>Strategic Foundation Creation</h5>
+                  <ul>
+                    <li>Brand positioning framework</li>
+                    <li>Messaging architecture development</li>
+                    <li>Brand promise articulation</li>
+                    <li>Voice and tone guidelines</li>
+                  </ul>
+                </div>
+                <div class="activity-group">
+                  <h5>Differentiation Strategy</h5>
+                  <ul>
+                    <li>Unique selling proposition refinement</li>
+                    <li>Competitive advantage identification</li>
+                    <li>Market positioning optimization</li>
+                    <li>Brand pillars establishment</li>
+                  </ul>
+                </div>
+                <div class="activity-group">
+                  <h5>Implementation Roadmap</h5>
+                  <ul>
+                    <li>Phased rollout planning</li>
+                    <li>Touchpoint prioritization</li>
+                    <li>Resource allocation guidance</li>
+                    <li>Success metrics definition</li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="phase-section">
+                <h4>Your Role:</h4>
+                <ul>
+                  <li>Review and provide feedback on strategic direction</li>
+                  <li>Approve brand positioning concepts</li>
+                  <li>Validate messaging resonance</li>
+                  <li>Participate in strategy refinement sessions</li>
+                </ul>
+              </div>
+
+              <div class="phase-deliverables">
+                <h4>Deliverables:</h4>
+                <ul>
+                  <li>Brand strategy document</li>
+                  <li>Messaging framework</li>
+                  <li>Brand positioning statement</li>
+                  <li>Implementation roadmap</li>
+                </ul>
+              </div>
             </div>
-            <div class="stat">
-              <span class="stat-number">95%</span>
-              <span class="stat-label">Client Retention Rate</span>
+          </div>
+
+          <!-- Phase 3: Design -->
+          <div class="phase-card">
+            <div class="phase-header">
+              <span class="phase-number">Phase 3</span>
+              <h3>Visual Identity Design</h3>
+              <span class="phase-duration">Weeks 5-8</span>
+            </div>
+            
+            <div class="phase-content">
+              <div class="phase-section">
+                <h4>What We Do:</h4>
+                <div class="activity-group">
+                  <h5>Logo Development</h5>
+                  <ul>
+                    <li>Concept exploration and ideation</li>
+                    <li>Multiple design directions</li>
+                    <li>Refinement and optimization</li>
+                    <li>Final logo creation</li>
+                  </ul>
+                </div>
+                <div class="activity-group">
+                  <h5>Visual System Creation</h5>
+                  <ul>
+                    <li>Color palette development</li>
+                    <li>Typography selection</li>
+                    <li>Graphic elements design</li>
+                    <li>Photography style guide</li>
+                  </ul>
+                </div>
+                <div class="activity-group">
+                  <h5>Brand Guidelines Development</h5>
+                  <ul>
+                    <li>Logo usage standards</li>
+                    <li>Brand application examples</li>
+                    <li>Do's and don'ts documentation</li>
+                    <li>Scalability guidelines</li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="phase-section">
+                <h4>Your Role:</h4>
+                <ul>
+                  <li>Provide feedback on design concepts</li>
+                  <li>Participate in review sessions</li>
+                  <li>Approve design directions</li>
+                  <li>Test applications in real contexts</li>
+                </ul>
+              </div>
+
+              <div class="phase-deliverables">
+                <h4>Deliverables:</h4>
+                <ul>
+                  <li>Final logo package (all formats)</li>
+                  <li>Complete visual identity system</li>
+                  <li>Comprehensive brand guidelines</li>
+                  <li>Application mockups</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Phase 4: Launch -->
+          <div class="phase-card">
+            <div class="phase-header">
+              <span class="phase-number">Phase 4</span>
+              <h3>Brand Launch & Implementation</h3>
+              <span class="phase-duration">Weeks 9-10</span>
+            </div>
+            
+            <div class="phase-content">
+              <div class="phase-section">
+                <h4>What We Do:</h4>
+                <div class="activity-group">
+                  <h5>Launch Strategy Development</h5>
+                  <ul>
+                    <li>Rollout timeline creation</li>
+                    <li>Internal team training</li>
+                    <li>External announcement planning</li>
+                    <li>Implementation support</li>
+                  </ul>
+                </div>
+                <div class="activity-group">
+                  <h5>Asset Creation</h5>
+                  <ul>
+                    <li>Essential marketing materials</li>
+                    <li>Digital asset preparation</li>
+                    <li>Template development</li>
+                    <li>Launch collateral design</li>
+                  </ul>
+                </div>
+                <div class="activity-group">
+                  <h5>Ongoing Support</h5>
+                  <ul>
+                    <li>Implementation guidance</li>
+                    <li>Team training sessions</li>
+                    <li>30-day optimization period</li>
+                    <li>Performance monitoring setup</li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="phase-section">
+                <h4>Your Role:</h4>
+                <ul>
+                  <li>Execute internal brand rollout</li>
+                  <li>Train team members on brand usage</li>
+                  <li>Implement across all touchpoints</li>
+                  <li>Provide feedback on initial results</li>
+                </ul>
+              </div>
+
+              <div class="phase-deliverables">
+                <h4>Deliverables:</h4>
+                <ul>
+                  <li>Launch-ready brand assets</li>
+                  <li>Team training materials</li>
+                  <li>Implementation checklist</li>
+                  <li>30-day support plan</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Success Metrics -->
+        <div class="success-metrics">
+          <h3>Success Metrics</h3>
+          <div class="metrics-grid">
+            <div class="metric-item">
+              <span class="metric-label">Brand Recognition Improvement</span>
+            </div>
+            <div class="metric-item">
+              <span class="metric-label">Message Clarity Scores</span>
+            </div>
+            <div class="metric-item">
+              <span class="metric-label">Customer Perception Metrics</span>
+            </div>
+            <div class="metric-item">
+              <span class="metric-label">Internal Team Alignment</span>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="project-types">
+    <!-- Marketing Strategy Process -->
+    <section class="process-content" data-service="marketing">
       <div class="container">
-        <h2>Customized for Every Project Type</h2>
-        <div class="project-tabs">
-          <button class="project-tab active" data-project="brand">Brand Projects</button>
-          <button class="project-tab" data-project="marketing">Marketing Campaigns</button>
-          <button class="project-tab" data-project="social">Social Media</button>
+        <div class="process-header">
+          <h2>Marketing Strategy Process</h2>
+          <p class="process-tagline">Data-driven strategies that connect your brand with the right audience</p>
         </div>
 
-        <div class="project-content active" data-project="brand">
-          <h3>Brand Development Process</h3>
-          <div class="project-specifics">
-            <div class="specific-phase">
-              <h4>Discovery Specialization</h4>
-              <p>Brand archaeology, competitor positioning analysis, and brand personality development.</p>
+        <!-- Process Timeline Visual -->
+        <div class="process-visual">
+          <div class="timeline-step active">
+            <span class="step-label">Audit</span>
+            <span class="step-time">Week 1</span>
+          </div>
+          <div class="timeline-connector"></div>
+          <div class="timeline-step">
+            <span class="step-label">Strategy</span>
+            <span class="step-time">Weeks 2-3</span>
+          </div>
+          <div class="timeline-connector"></div>
+          <div class="timeline-step">
+            <span class="step-label">Creation</span>
+            <span class="step-time">Weeks 4-6</span>
+          </div>
+          <div class="timeline-connector"></div>
+          <div class="timeline-step">
+            <span class="step-label">Optimization</span>
+            <span class="step-time">Ongoing</span>
+          </div>
+        </div>
+
+        <!-- Phase Details -->
+        <div class="phase-details">
+          <!-- Phase 1: Audit -->
+          <div class="phase-card">
+            <div class="phase-header">
+              <span class="phase-number">Phase 1</span>
+              <h3>Marketing Audit & Analysis</h3>
+              <span class="phase-duration">Week 1</span>
             </div>
-            <div class="specific-phase">
-              <h4>Creation Focus</h4>
-              <p>Logo concepts, visual identity systems, brand guidelines, and application designs.</p>
+            
+            <div class="phase-content">
+              <div class="phase-section">
+                <h4>What We Do:</h4>
+                <div class="activity-group">
+                  <h5>Current State Assessment</h5>
+                  <ul>
+                    <li>Marketing channel performance review</li>
+                    <li>Content audit and gap analysis</li>
+                    <li>Competitive marketing analysis</li>
+                    <li>Customer journey mapping</li>
+                  </ul>
+                </div>
+                <div class="activity-group">
+                  <h5>Data Analysis</h5>
+                  <ul>
+                    <li>Website analytics review</li>
+                    <li>Social media performance audit</li>
+                    <li>Email marketing metrics analysis</li>
+                    <li>ROI assessment of current efforts</li>
+                  </ul>
+                </div>
+                <div class="activity-group">
+                  <h5>Opportunity Identification</h5>
+                  <ul>
+                    <li>Untapped market segments</li>
+                    <li>Content opportunities</li>
+                    <li>Channel optimization potential</li>
+                    <li>Conversion improvement areas</li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="phase-section">
+                <h4>Your Role:</h4>
+                <ul>
+                  <li>Provide access to analytics accounts</li>
+                  <li>Share past marketing materials</li>
+                  <li>Discuss current challenges and goals</li>
+                  <li>Connect us with team members</li>
+                </ul>
+              </div>
+
+              <div class="phase-deliverables">
+                <h4>Deliverables:</h4>
+                <ul>
+                  <li>Marketing audit report</li>
+                  <li>Performance benchmarks</li>
+                  <li>Opportunity assessment</li>
+                  <li>Recommendation priorities</li>
+                </ul>
+              </div>
             </div>
-            <div class="specific-phase">
-              <h4>Launch Strategy</h4>
-              <p>Brand rollout planning, employee training, and market introduction strategy.</p>
+          </div>
+
+          <!-- Phase 2: Strategy -->
+          <div class="phase-card">
+            <div class="phase-header">
+              <span class="phase-number">Phase 2</span>
+              <h3>Strategy Development</h3>
+              <span class="phase-duration">Weeks 2-3</span>
+            </div>
+            
+            <div class="phase-content">
+              <div class="phase-section">
+                <h4>What We Do:</h4>
+                <div class="activity-group">
+                  <h5>Target Audience Refinement</h5>
+                  <ul>
+                    <li>Buyer persona development</li>
+                    <li>Customer journey optimization</li>
+                    <li>Touchpoint identification</li>
+                    <li>Message-to-market fit analysis</li>
+                  </ul>
+                </div>
+                <div class="activity-group">
+                  <h5>Channel Strategy Creation</h5>
+                  <ul>
+                    <li>Platform selection and prioritization</li>
+                    <li>Content strategy development</li>
+                    <li>Campaign framework design</li>
+                    <li>Budget allocation recommendations</li>
+                  </ul>
+                </div>
+                <div class="activity-group">
+                  <h5>Measurement Framework</h5>
+                  <ul>
+                    <li>KPI definition and tracking</li>
+                    <li>Attribution model setup</li>
+                    <li>ROI measurement planning</li>
+                    <li>Success milestone establishment</li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="phase-section">
+                <h4>Your Role:</h4>
+                <ul>
+                  <li>Validate target audience insights</li>
+                  <li>Approve strategic direction</li>
+                  <li>Review budget allocations</li>
+                  <li>Participate in strategy sessions</li>
+                </ul>
+              </div>
+
+              <div class="phase-deliverables">
+                <h4>Deliverables:</h4>
+                <ul>
+                  <li>Comprehensive marketing strategy</li>
+                  <li>Channel-specific plans</li>
+                  <li>Content calendar framework</li>
+                  <li>Measurement dashboard setup</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Phase 3: Creation -->
+          <div class="phase-card">
+            <div class="phase-header">
+              <span class="phase-number">Phase 3</span>
+              <h3>Content Creation & Campaign Development</h3>
+              <span class="phase-duration">Weeks 4-6</span>
+            </div>
+            
+            <div class="phase-content">
+              <div class="phase-section">
+                <h4>What We Do:</h4>
+                <div class="activity-group">
+                  <h5>Content Development</h5>
+                  <ul>
+                    <li>Strategic content creation</li>
+                    <li>Campaign asset development</li>
+                    <li>Copy and creative production</li>
+                    <li>Multi-channel content adaptation</li>
+                  </ul>
+                </div>
+                <div class="activity-group">
+                  <h5>Campaign Setup</h5>
+                  <ul>
+                    <li>Platform configuration</li>
+                    <li>Audience targeting setup</li>
+                    <li>Automation implementation</li>
+                    <li>Tracking system integration</li>
+                  </ul>
+                </div>
+                <div class="activity-group">
+                  <h5>Testing Framework</h5>
+                  <ul>
+                    <li>A/B test design</li>
+                    <li>Performance baseline establishment</li>
+                    <li>Optimization protocols</li>
+                    <li>Reporting systems activation</li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="phase-section">
+                <h4>Your Role:</h4>
+                <ul>
+                  <li>Review and approve content</li>
+                  <li>Provide feedback on campaigns</li>
+                  <li>Approve final implementations</li>
+                  <li>Participate in launch preparation</li>
+                </ul>
+              </div>
+
+              <div class="phase-deliverables">
+                <h4>Deliverables:</h4>
+                <ul>
+                  <li>Campaign-ready content assets</li>
+                  <li>Fully configured marketing systems</li>
+                  <li>Testing and optimization plan</li>
+                  <li>Launch timeline and checklist</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Phase 4: Optimization -->
+          <div class="phase-card">
+            <div class="phase-header">
+              <span class="phase-number">Phase 4</span>
+              <h3>Launch & Continuous Optimization</h3>
+              <span class="phase-duration">Ongoing</span>
+            </div>
+            
+            <div class="phase-content">
+              <div class="phase-section">
+                <h4>What We Do:</h4>
+                <div class="activity-group">
+                  <h5>Campaign Management</h5>
+                  <ul>
+                    <li>Performance monitoring</li>
+                    <li>Real-time optimization</li>
+                    <li>A/B testing execution</li>
+                    <li>Budget management</li>
+                  </ul>
+                </div>
+                <div class="activity-group">
+                  <h5>Analysis & Reporting</h5>
+                  <ul>
+                    <li>Regular performance reports</li>
+                    <li>Insight generation</li>
+                    <li>Recommendation development</li>
+                    <li>Strategy refinement</li>
+                  </ul>
+                </div>
+                <div class="activity-group">
+                  <h5>Continuous Improvement</h5>
+                  <ul>
+                    <li>Monthly strategy reviews</li>
+                    <li>Quarterly planning sessions</li>
+                    <li>Annual strategy updates</li>
+                    <li>Emerging opportunity identification</li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="phase-section">
+                <h4>Your Role:</h4>
+                <ul>
+                  <li>Review performance reports</li>
+                  <li>Provide market feedback</li>
+                  <li>Approve optimization changes</li>
+                  <li>Participate in review sessions</li>
+                </ul>
+              </div>
+
+              <div class="phase-deliverables">
+                <h4>Deliverables:</h4>
+                <ul>
+                  <li>Monthly performance reports</li>
+                  <li>Optimization recommendations</li>
+                  <li>Quarterly strategy updates</li>
+                  <li>Annual planning roadmap</li>
+                </ul>
+              </div>
             </div>
           </div>
         </div>
 
-        <div class="project-content" data-project="marketing">
-          <h3>Marketing Campaign Process</h3>
-          <div class="project-specifics">
-            <div class="specific-phase">
-              <h4>Discovery Specialization</h4>
-              <p>Market analysis, customer journey mapping, and conversion funnel optimization.</p>
+        <!-- Success Metrics -->
+        <div class="success-metrics">
+          <h3>Success Metrics</h3>
+          <div class="metrics-grid">
+            <div class="metric-item">
+              <span class="metric-label">Lead Generation Improvement</span>
             </div>
-            <div class="specific-phase">
-              <h4>Creation Focus</h4>
-              <p>Campaign assets, landing pages, email sequences, and automation setup.</p>
+            <div class="metric-item">
+              <span class="metric-label">Cost Per Acquisition Reduction</span>
             </div>
-            <div class="specific-phase">
-              <h4>Launch Strategy</h4>
-              <p>Multi-channel coordination, A/B testing setup, and performance tracking implementation.</p>
+            <div class="metric-item">
+              <span class="metric-label">Engagement Rate Increases</span>
             </div>
-          </div>
-        </div>
-
-        <div class="project-content" data-project="social">
-          <h3>Social Media Process</h3>
-          <div class="project-specifics">
-            <div class="specific-phase">
-              <h4>Discovery Specialization</h4>
-              <p>Platform analysis, audience research, and content audit across social channels.</p>
-            </div>
-            <div class="specific-phase">
-              <h4>Creation Focus</h4>
-              <p>Content calendars, visual assets, community guidelines, and engagement strategies.</p>
-            </div>
-            <div class="specific-phase">
-              <h4>Launch Strategy</h4>
-              <p>Publishing schedules, community management protocols, and growth tracking systems.</p>
+            <div class="metric-item">
+              <span class="metric-label">Revenue Attribution Growth</span>
             </div>
           </div>
         </div>
       </div>
     </section>
 
+    <!-- Social Media Process -->
+    <section class="process-content" data-service="social">
+      <div class="container">
+        <div class="process-header">
+          <h2>Social Media Management Process</h2>
+          <p class="process-tagline">Strategic social presence that builds community and drives results</p>
+        </div>
+
+        <!-- Process Timeline Visual -->
+        <div class="process-visual">
+          <div class="timeline-step active">
+            <span class="step-label">Setup</span>
+            <span class="step-time">Week 1</span>
+          </div>
+          <div class="timeline-connector"></div>
+          <div class="timeline-step">
+            <span class="step-label">Strategy</span>
+            <span class="step-time">Week 2</span>
+          </div>
+          <div class="timeline-connector"></div>
+          <div class="timeline-step">
+            <span class="step-label">Content</span>
+            <span class="step-time">Weeks 3-4</span>
+          </div>
+          <div class="timeline-connector"></div>
+          <div class="timeline-step">
+            <span class="step-label">Community</span>
+            <span class="step-time">Ongoing</span>
+          </div>
+        </div>
+
+        <!-- Phase Details -->
+        <div class="phase-details">
+          <!-- Phase 1: Setup -->
+          <div class="phase-card">
+            <div class="phase-header">
+              <span class="phase-number">Phase 1</span>
+              <h3>Platform Setup & Optimization</h3>
+              <span class="phase-duration">Week 1</span>
+            </div>
+            
+            <div class="phase-content">
+              <div class="phase-section">
+                <h4>What We Do:</h4>
+                <div class="activity-group">
+                  <h5>Platform Audit & Setup</h5>
+                  <ul>
+                    <li>Current profile optimization</li>
+                    <li>Platform selection and prioritization</li>
+                    <li>Business account configuration</li>
+                    <li>Integration with marketing tools</li>
+                  </ul>
+                </div>
+                <div class="activity-group">
+                  <h5>Competitive Analysis</h5>
+                  <ul>
+                    <li>Competitor content analysis</li>
+                    <li>Engagement pattern research</li>
+                    <li>Best practice identification</li>
+                    <li>Opportunity gap analysis</li>
+                  </ul>
+                </div>
+                <div class="activity-group">
+                  <h5>Baseline Establishment</h5>
+                  <ul>
+                    <li>Current metrics documentation</li>
+                    <li>Audience analysis</li>
+                    <li>Content performance review</li>
+                    <li>Growth goal setting</li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="phase-section">
+                <h4>Your Role:</h4>
+                <ul>
+                  <li>Provide account access and permissions</li>
+                  <li>Share brand guidelines and assets</li>
+                  <li>Communicate business objectives</li>
+                  <li>Identify key team members</li>
+                </ul>
+              </div>
+
+              <div class="phase-deliverables">
+                <h4>Deliverables:</h4>
+                <ul>
+                  <li>Optimized social media profiles</li>
+                  <li>Platform recommendation report</li>
+                  <li>Competitive analysis summary</li>
+                  <li>Baseline metrics dashboard</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Phase 2: Strategy -->
+          <div class="phase-card">
+            <div class="phase-header">
+              <span class="phase-number">Phase 2</span>
+              <h3>Social Media Strategy Development</h3>
+              <span class="phase-duration">Week 2</span>
+            </div>
+            
+            <div class="phase-content">
+              <div class="phase-section">
+                <h4>What We Do:</h4>
+                <div class="activity-group">
+                  <h5>Content Strategy Creation</h5>
+                  <ul>
+                    <li>Content pillar development</li>
+                    <li>Posting frequency optimization</li>
+                    <li>Platform-specific adaptations</li>
+                    <li>Engagement strategy design</li>
+                  </ul>
+                </div>
+                <div class="activity-group">
+                  <h5>Community Building Plan</h5>
+                  <ul>
+                    <li>Audience growth strategy</li>
+                    <li>Engagement tactics development</li>
+                    <li>Community management protocols</li>
+                    <li>Influencer collaboration planning</li>
+                  </ul>
+                </div>
+                <div class="activity-group">
+                  <h5>Brand Voice Application</h5>
+                  <ul>
+                    <li>Social media voice guidelines</li>
+                    <li>Response templates creation</li>
+                    <li>Crisis communication protocols</li>
+                    <li>Brand consistency standards</li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="phase-section">
+                <h4>Your Role:</h4>
+                <ul>
+                  <li>Approve content strategy direction</li>
+                  <li>Validate brand voice application</li>
+                  <li>Review community guidelines</li>
+                  <li>Participate in strategy finalization</li>
+                </ul>
+              </div>
+
+              <div class="phase-deliverables">
+                <h4>Deliverables:</h4>
+                <ul>
+                  <li>Comprehensive social media strategy</li>
+                  <li>Content pillar framework</li>
+                  <li>Community management guidelines</li>
+                  <li>Crisis communication plan</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Phase 3: Content -->
+          <div class="phase-card">
+            <div class="phase-header">
+              <span class="phase-number">Phase 3</span>
+              <h3>Content Creation & Scheduling</h3>
+              <span class="phase-duration">Weeks 3-4</span>
+            </div>
+            
+            <div class="phase-content">
+              <div class="phase-section">
+                <h4>What We Do:</h4>
+                <div class="activity-group">
+                  <h5>Content Development</h5>
+                  <ul>
+                    <li>Strategic content creation</li>
+                    <li>Visual asset development</li>
+                    <li>Copy and caption writing</li>
+                    <li>Video and multimedia production</li>
+                  </ul>
+                </div>
+                <div class="activity-group">
+                  <h5>Content Calendar Management</h5>
+                  <ul>
+                    <li>Monthly content planning</li>
+                    <li>Strategic posting schedule</li>
+                    <li>Seasonal content integration</li>
+                    <li>Trend incorporation</li>
+                  </ul>
+                </div>
+                <div class="activity-group">
+                  <h5>Automation Setup</h5>
+                  <ul>
+                    <li>Scheduling tool configuration</li>
+                    <li>Analytics tracking setup</li>
+                    <li>Workflow automation</li>
+                    <li>Approval process establishment</li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="phase-section">
+                <h4>Your Role:</h4>
+                <ul>
+                  <li>Review and approve content</li>
+                  <li>Provide feedback on creative direction</li>
+                  <li>Approve posting schedules</li>
+                  <li>Participate in content planning</li>
+                </ul>
+              </div>
+
+              <div class="phase-deliverables">
+                <h4>Deliverables:</h4>
+                <ul>
+                  <li>Month 1 content calendar</li>
+                  <li>Content creation templates</li>
+                  <li>Automated posting system</li>
+                  <li>Approval workflow setup</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Phase 4: Community -->
+          <div class="phase-card">
+            <div class="phase-header">
+              <span class="phase-number">Phase 4</span>
+              <h3>Community Management & Growth</h3>
+              <span class="phase-duration">Ongoing</span>
+            </div>
+            
+            <div class="phase-content">
+              <div class="phase-section">
+                <h4>What We Do:</h4>
+                <div class="activity-group">
+                  <h5>Daily Management</h5>
+                  <ul>
+                    <li>Content posting and monitoring</li>
+                    <li>Comment and message responses</li>
+                    <li>Community engagement</li>
+                    <li>Trend monitoring and participation</li>
+                  </ul>
+                </div>
+                <div class="activity-group">
+                  <h5>Performance Optimization</h5>
+                  <ul>
+                    <li>Analytics review and reporting</li>
+                    <li>Content performance analysis</li>
+                    <li>Strategy adjustments</li>
+                    <li>Growth tactic implementation</li>
+                  </ul>
+                </div>
+                <div class="activity-group">
+                  <h5>Relationship Building</h5>
+                  <ul>
+                    <li>Influencer engagement</li>
+                    <li>Partner collaboration</li>
+                    <li>Community event planning</li>
+                    <li>User-generated content campaigns</li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="phase-section">
+                <h4>Your Role:</h4>
+                <ul>
+                  <li>Review performance reports</li>
+                  <li>Provide industry insights</li>
+                  <li>Approve collaboration opportunities</li>
+                  <li>Participate in strategic reviews</li>
+                </ul>
+              </div>
+
+              <div class="phase-deliverables">
+                <h4>Deliverables:</h4>
+                <ul>
+                  <li>Daily community management</li>
+                  <li>Weekly performance reports</li>
+                  <li>Monthly strategy reviews</li>
+                  <li>Quarterly growth assessments</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Success Metrics -->
+        <div class="success-metrics">
+          <h3>Success Metrics</h3>
+          <div class="metrics-grid">
+            <div class="metric-item">
+              <span class="metric-label">Follower Growth Rate</span>
+            </div>
+            <div class="metric-item">
+              <span class="metric-label">Engagement Rate Improvements</span>
+            </div>
+            <div class="metric-item">
+              <span class="metric-label">Reach and Impression Increases</span>
+            </div>
+            <div class="metric-item">
+              <span class="metric-label">Community Sentiment Scores</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Process Benefits Section -->
+    <section class="process-benefits">
+      <div class="container">
+        <h2>Why Our Process Works</h2>
+        <div class="benefits-grid">
+          <div class="benefit-card">
+            <h3>Transparency</h3>
+            <p>You know exactly what to expect at each phase with clear deliverables and timelines.</p>
+          </div>
+          <div class="benefit-card">
+            <h3>Collaboration</h3>
+            <p>Your input is valued at every stage, ensuring the final result aligns with your vision.</p>
+          </div>
+          <div class="benefit-card">
+            <h3>Accountability</h3>
+            <p>Measurable outcomes and regular check-ins keep projects on track and successful.</p>
+          </div>
+          <div class="benefit-card">
+            <h3>Efficiency</h3>
+            <p>Standardized workflows mean faster delivery without sacrificing quality.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
     <section class="cta-section">
       <div class="container">
-        <h2>Ready to Start Your Project?</h2>
-        <p>Let's discuss how our proven process can deliver results for your business.</p>
-        <a href="/contact" class="btn btn-primary">Start Discovery Call</a>
-        <a href="/portfolio" class="btn btn-secondary">See Our Work</a>
+        <h2 class="cta-title">Ready to Start Your Transformation?</h2>
+        <p class="cta-subtitle">Let's discuss how our proven process can deliver results for your business.</p>
+        <div class="cta-buttons">
+          <a href="/contact" class="btn btn-primary">Complete Your Intake Form</a>
+          <a href="/services" class="btn btn-secondary">Explore Our Services</a>
+        </div>
       </div>
     </section>
   </main>
 </Layout>
 
 <style>
-  .hero-section {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  :root {
+    --mw-navy: #1E3A8A;
+    --mw-teal: #4FD1C7;
+    --mw-gradient: linear-gradient(135deg, #1E3A8A 0%, #4FD1C7 100%);
+    --light-gray: #F8F9FA;
+    --neutral-bg: #FAFBFC;
+    --dark-text: #333333;
+    --medium-gray: #666666;
+    --light-border: #E2E8F0;
+  }
+
+  /* Hero Section */
+  .process-hero {
+    background: var(--mw-gradient);
+    padding: 6rem 0 4rem;
     color: white;
-    padding: 4rem 0;
     text-align: center;
   }
 
-  .lead {
-    font-size: 1.25rem;
-    margin-top: 1rem;
+  .hero-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 2rem;
   }
 
-  .process-overview {
-    padding: 4rem 0;
+  .breadcrumb {
+    margin-bottom: 2rem;
+    opacity: 0.9;
   }
 
-  .process-intro {
-    text-align: center;
-    margin-bottom: 4rem;
-    max-width: 600px;
-    margin-left: auto;
-    margin-right: auto;
+  .breadcrumb a {
+    color: white;
+    text-decoration: none;
   }
 
-  .process-timeline {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
+  .breadcrumb a:hover {
+    text-decoration: underline;
   }
 
-  .phase-card {
-    display: flex;
-    gap: 2rem;
-    background: white;
-    border-radius: 12px;
-    padding: 2rem;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    border-left: 4px solid #667eea;
-  }
-
-  .phase-number {
-    font-size: 2.5rem;
-    font-weight: bold;
-    color: #667eea;
-    min-width: 60px;
-  }
-
-  .phase-content h3 {
-    color: #333;
-    margin-bottom: 0.5rem;
-  }
-
-  .phase-duration {
-    color: #666;
+  .hero-title {
+    font-size: 3rem;
     font-weight: 600;
-    margin-bottom: 1rem;
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+    letter-spacing: -0.02em;
   }
 
-  .phase-activities {
-    list-style: none;
-    padding: 0;
-    margin: 1rem 0;
+  .hero-subtitle {
+    font-size: 1.25rem;
+    font-weight: 300;
+    opacity: 0.95;
+    line-height: 1.6;
   }
 
-  .phase-activities li {
-    padding: 0.3rem 0;
-    position: relative;
-    padding-left: 1.5rem;
-  }
-
-  .phase-activities li:before {
-    content: "•";
-    color: #667eea;
-    position: absolute;
-    left: 0;
-  }
-
-  .phase-deliverable {
-    background: #f0f4ff;
-    padding: 1rem;
-    border-radius: 6px;
-    margin-top: 1rem;
-  }
-
-  .communication-section {
-    padding: 4rem 0;
-    background: #f9f9f9;
-  }
-
-  .communication-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 2rem;
-    margin-top: 2rem;
-  }
-
-  .comm-card {
+  /* Service Selection */
+  .service-selection {
+    padding: 3rem 0;
     background: white;
-    padding: 2rem;
-    border-radius: 8px;
     text-align: center;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   }
 
-  .comm-icon {
-    font-size: 2.5rem;
+  .section-title {
+    font-size: 2rem;
+    font-weight: 600;
+    color: var(--mw-navy);
     margin-bottom: 1rem;
   }
 
-  .quality-assurance {
-    padding: 4rem 0;
+  .section-subtitle {
+    color: var(--medium-gray);
+    margin-bottom: 2rem;
   }
 
-  .qa-content {
-    display: grid;
-    grid-template-columns: 2fr 1fr;
-    gap: 3rem;
-    align-items: start;
-  }
-
-  .qa-checklist {
-    margin-top: 2rem;
-  }
-
-  .qa-checklist ul {
-    list-style: none;
-    padding: 0;
-  }
-
-  .qa-checklist li {
-    padding: 0.3rem 0;
-    color: #333;
-  }
-
-  .qa-stats {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-  }
-
-  .stat {
-    text-align: center;
-    padding: 1.5rem;
-    background: #f0f4ff;
-    border-radius: 8px;
-  }
-
-  .stat-number {
-    display: block;
-    font-size: 2.5rem;
-    font-weight: bold;
-    color: #667eea;
-  }
-
-  .stat-label {
-    font-size: 0.875rem;
-    color: #666;
-  }
-
-  .project-types {
-    padding: 4rem 0;
-    background: #f9f9f9;
-  }
-
-  .project-tabs {
+  .service-tabs {
     display: flex;
     justify-content: center;
     gap: 1rem;
-    margin-bottom: 3rem;
     flex-wrap: wrap;
   }
 
-  .project-tab {
+  .service-tab {
     padding: 0.75rem 1.5rem;
     background: white;
-    border: 2px solid #e0e0e0;
+    border: 2px solid var(--light-border);
     border-radius: 25px;
     cursor: pointer;
-    transition: all 0.3s;
+    transition: all 0.3s ease;
     font-weight: 600;
+    color: var(--medium-gray);
   }
 
-  .project-tab:hover,
-  .project-tab.active {
-    background: #667eea;
+  .service-tab:hover,
+  .service-tab.active {
+    background: var(--mw-navy);
     color: white;
-    border-color: #667eea;
+    border-color: var(--mw-navy);
   }
 
-  .project-content {
+  /* Process Content Sections */
+  .process-content {
     display: none;
-    max-width: 800px;
-    margin: 0 auto;
+    padding: 4rem 0;
+    background: var(--neutral-bg);
   }
 
-  .project-content.active {
+  .process-content.active {
     display: block;
   }
 
-  .project-specifics {
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+
+  .process-header {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+
+  .process-header h2 {
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: var(--mw-navy);
+    margin-bottom: 1rem;
+  }
+
+  .process-tagline {
+    font-size: 1.2rem;
+    color: var(--medium-gray);
+  }
+
+  /* Process Visual Timeline */
+  .process-visual {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 3rem 0;
+    flex-wrap: wrap;
+  }
+
+  .timeline-step {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    text-align: center;
+    min-width: 140px;
+  }
+
+  .timeline-step.active {
+    background: var(--mw-navy);
+    color: white;
+  }
+
+  .step-label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+  }
+
+  .step-time {
+    display: block;
+    font-size: 0.875rem;
+    opacity: 0.8;
+  }
+
+  .timeline-connector {
+    width: 40px;
+    height: 2px;
+    background: var(--light-border);
+    margin: 0 0.5rem;
+  }
+
+  /* Phase Cards */
+  .phase-details {
+    margin-top: 3rem;
+  }
+
+  .phase-card {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    margin-bottom: 2rem;
+  }
+
+  .phase-header {
+    background: linear-gradient(135deg, var(--mw-navy) 0%, var(--mw-teal) 100%);
+    color: white;
+    padding: 1.5rem 2rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .phase-number {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.875rem;
+    font-weight: 600;
+  }
+
+  .phase-header h3 {
+    flex: 1;
+    margin: 0;
+  }
+
+  .phase-duration {
+    font-size: 0.9rem;
+    opacity: 0.9;
+  }
+
+  .phase-content {
+    padding: 2rem;
+  }
+
+  .phase-section {
+    margin-bottom: 2rem;
+  }
+
+  .phase-section:last-child {
+    margin-bottom: 0;
+  }
+
+  .phase-section h4 {
+    color: var(--mw-navy);
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+  }
+
+  .activity-group {
+    margin-bottom: 1.5rem;
+  }
+
+  .activity-group h5 {
+    color: var(--dark-text);
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+  }
+
+  .phase-section ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  .phase-section li {
+    padding: 0.5rem 0;
+    padding-left: 1.5rem;
+    position: relative;
+    color: var(--medium-gray);
+  }
+
+  .phase-section li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: var(--mw-teal);
+    font-weight: bold;
+  }
+
+  .phase-deliverables {
+    background: var(--light-gray);
+    padding: 1.5rem;
+    border-radius: 10px;
+  }
+
+  /* Success Metrics */
+  .success-metrics {
+    margin-top: 3rem;
+    text-align: center;
+  }
+
+  .success-metrics h3 {
+    color: var(--mw-navy);
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
+  }
+
+  .metrics-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .metric-item {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  }
+
+  .metric-label {
+    color: var(--dark-text);
+    font-weight: 600;
+  }
+
+  /* Process Benefits */
+  .process-benefits {
+    padding: 4rem 0;
+    background: white;
+  }
+
+  .process-benefits h2 {
+    text-align: center;
+    color: var(--mw-navy);
+    font-size: 2rem;
+    margin-bottom: 3rem;
+  }
+
+  .benefits-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 2rem;
-    margin-top: 2rem;
   }
 
-  .specific-phase {
-    background: white;
-    padding: 1.5rem;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  }
-
-  .cta-section {
-    padding: 4rem 0;
+  .benefit-card {
     text-align: center;
+    padding: 2rem;
+  }
+
+  .benefit-card h3 {
+    color: var(--mw-navy);
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+  }
+
+  .benefit-card p {
+    color: var(--medium-gray);
+    line-height: 1.6;
+  }
+
+  /* CTA Section */
+  .cta-section {
+    padding: 5rem 0;
+    background: var(--light-gray);
+    text-align: center;
+  }
+
+  .cta-title {
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: var(--mw-navy);
+    margin-bottom: 1rem;
+  }
+
+  .cta-subtitle {
+    font-size: 1.1rem;
+    color: var(--medium-gray);
+    margin-bottom: 2.5rem;
+  }
+
+  .cta-buttons {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    flex-wrap: wrap;
   }
 
   .btn {
     display: inline-block;
-    padding: 0.75rem 2rem;
+    padding: 1rem 2.5rem;
     text-decoration: none;
-    border-radius: 4px;
-    transition: all 0.3s;
-    margin: 0.5rem;
+    border-radius: 50px;
+    transition: all 0.3s ease;
     font-weight: 600;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
   }
 
   .btn-primary {
-    background: #667eea;
+    background: var(--mw-gradient);
     color: white;
+    box-shadow: 0 4px 20px rgba(30, 58, 138, 0.2);
   }
 
   .btn-primary:hover {
-    background: #5a67d8;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 30px rgba(30, 58, 138, 0.3);
   }
 
   .btn-secondary {
     background: transparent;
-    color: #667eea;
-    border: 2px solid #667eea;
+    color: var(--mw-navy);
+    border: 2px solid var(--mw-navy);
   }
 
   .btn-secondary:hover {
-    background: #667eea;
+    background: var(--mw-navy);
     color: white;
   }
 
+  /* Responsive Design */
   @media (max-width: 768px) {
-    .phase-card {
+    .hero-title {
+      font-size: 2rem;
+    }
+
+    .hero-subtitle {
+      font-size: 1.1rem;
+    }
+
+    .process-visual {
+      flex-direction: column;
+    }
+
+    .timeline-connector {
+      width: 2px;
+      height: 20px;
+      margin: 0.5rem 0;
+    }
+
+    .phase-header {
       flex-direction: column;
       text-align: center;
     }
 
-    .qa-content {
-      grid-template-columns: 1fr;
-    }
-
-    .qa-stats {
-      flex-direction: row;
-      justify-content: space-around;
+    .cta-buttons {
+      flex-direction: column;
+      align-items: center;
     }
   }
 </style>
 
 <script>
-  // Project type tabs
-  const projectTabs = document.querySelectorAll('.project-tab');
-  const projectContents = document.querySelectorAll('.project-content');
+  // Service tab switching
+  const serviceTabs = document.querySelectorAll('.service-tab');
+  const processContents = document.querySelectorAll('.process-content');
 
-  projectTabs.forEach(tab => {
+  serviceTabs.forEach(tab => {
     tab.addEventListener('click', () => {
-      const project = tab.dataset.project;
+      const service = tab.dataset.service;
       
       // Update active tab
-      projectTabs.forEach(t => t.classList.remove('active'));
+      serviceTabs.forEach(t => t.classList.remove('active'));
       tab.classList.add('active');
       
       // Show corresponding content
-      projectContents.forEach(content => {
+      processContents.forEach(content => {
         content.classList.remove('active');
-        if (content.dataset.project === project) {
+        if (content.dataset.service === service) {
           content.classList.add('active');
         }
       });

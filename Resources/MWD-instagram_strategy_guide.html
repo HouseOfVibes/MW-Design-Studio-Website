@@ -1,0 +1,1027 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Complete Instagram Strategy Guide</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333333;
+            background-color: #F8F9FA;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #1E3A8A 0%, #4FD1C7 100%);
+            color: white;
+            padding: 50px 30px;
+            border-radius: 12px;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 3rem;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        .table-of-contents {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            border: 1px solid #E2E8F0;
+        }
+
+        .toc-title {
+            color: #1E3A8A;
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .toc-list {
+            list-style: none;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 10px;
+        }
+
+        .toc-item {
+            padding: 10px 15px;
+            background-color: #FAFBFC;
+            border-radius: 6px;
+            border-left: 3px solid #4FD1C7;
+            transition: background-color 0.2s ease;
+        }
+
+        .toc-item:hover {
+            background-color: #F0FDFC;
+        }
+
+        .toc-item a {
+            color: #1E3A8A;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .section {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            margin-bottom: 25px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            border: 1px solid #E2E8F0;
+        }
+
+        .section-header {
+            color: #1E3A8A;
+            font-size: 1.8rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #4FD1C7;
+        }
+
+        .subsection {
+            margin-bottom: 25px;
+        }
+
+        .subsection-title {
+            color: #1E3A8A;
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, #1E3A8A 0%, #4FD1C7 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+
+        .highlight-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .info-box {
+            background-color: #F0FDFC;
+            border: 1px solid #4FD1C7;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+
+        .info-title {
+            color: #1E3A8A;
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        .stat-card {
+            background-color: #FAFBFC;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            border: 1px solid #E2E8F0;
+        }
+
+        .stat-number {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #1E3A8A;
+            display: block;
+        }
+
+        .stat-label {
+            color: #666666;
+            font-size: 0.9rem;
+            margin-top: 5px;
+        }
+
+        .content-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+
+        .content-table th,
+        .content-table td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #E2E8F0;
+        }
+
+        .content-table th {
+            background-color: #1E3A8A;
+            color: white;
+            font-weight: 600;
+        }
+
+        .content-table tr:hover {
+            background-color: #FAFBFC;
+        }
+
+        .checklist {
+            list-style: none;
+            margin: 15px 0;
+        }
+
+        .checklist li {
+            padding: 8px 0;
+            padding-left: 25px;
+            position: relative;
+        }
+
+        .checklist li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #4FD1C7;
+            font-weight: bold;
+        }
+
+        .tip-list {
+            list-style: none;
+            margin: 15px 0;
+        }
+
+        .tip-list li {
+            padding: 10px 0;
+            padding-left: 30px;
+            position: relative;
+            border-bottom: 1px solid #F0F0F0;
+        }
+
+        .tip-list li::before {
+            content: "💡";
+            position: absolute;
+            left: 0;
+            font-size: 1.2rem;
+        }
+
+        .warning-box {
+            background-color: #FEF3CD;
+            border: 1px solid #F59E0B;
+            border-radius: 8px;
+            padding: 15px;
+            margin: 20px 0;
+        }
+
+        .warning-title {
+            color: #D97706;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 15px;
+            }
+            
+            .header h1 {
+                font-size: 2.2rem;
+            }
+            
+            .section {
+                padding: 20px;
+            }
+            
+            .stats-grid {
+                grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            }
+            
+            .toc-list {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media print {
+            body {
+                background-color: white;
+                font-size: 12px;
+            }
+            
+            .section {
+                box-shadow: none;
+                border: 1px solid #333;
+                break-inside: avoid;
+                margin-bottom: 20px;
+            }
+            
+            .header {
+                background: #1E3A8A !important;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Instagram Strategy Guide</h1>
+            <p>Complete roadmap to Instagram success for businesses and creators</p>
+        </div>
+
+        <!-- Table of Contents -->
+        <div class="table-of-contents">
+            <h2 class="toc-title">What You'll Learn</h2>
+            <ul class="toc-list">
+                <li class="toc-item"><a href="#overview">Platform Overview</a></li>
+                <li class="toc-item"><a href="#audience">Audience & Demographics</a></li>
+                <li class="toc-item"><a href="#setup">Account Setup & Optimization</a></li>
+                <li class="toc-item"><a href="#content">Content Strategy</a></li>
+                <li class="toc-item"><a href="#posting">Posting Strategy & Timing</a></li>
+                <li class="toc-item"><a href="#growth">Growth & Engagement</a></li>
+                <li class="toc-item"><a href="#algorithm">Algorithm Insights</a></li>
+                <li class="toc-item"><a href="#business">Business Features</a></li>
+                <li class="toc-item"><a href="#monetization">Monetization</a></li>
+                <li class="toc-item"><a href="#analytics">Analytics & Measurement</a></li>
+                <li class="toc-item"><a href="#advanced">Advanced Strategies</a></li>
+                <li class="toc-item"><a href="#mistakes">Common Mistakes</a></li>
+            </ul>
+        </div>
+
+        <!-- Platform Overview -->
+        <div class="section" id="overview">
+            <h2 class="section-header">Platform Overview</h2>
+            
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <span class="stat-number">2B</span>
+                    <div class="stat-label">Monthly Active Users</div>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">500M</span>
+                    <div class="stat-label">Daily Active Users</div>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">2M</span>
+                    <div class="stat-label">Business Advertisers</div>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">84%</span>
+                    <div class="stat-label">of social users have Instagram profile</div>
+                </div>
+            </div>
+
+            <p>Instagram is the world's leading visual social media platform, owned by Meta. Originally focused on photo sharing, it has evolved into a comprehensive content platform featuring photos, videos, Stories, Reels, IGTV, and Shopping features. For businesses, Instagram offers unparalleled opportunities for brand building, customer engagement, and direct sales.</p>
+
+            <div class="highlight-box">
+                <div class="highlight-title">Why Instagram Matters for Business</div>
+                <p>Instagram users are highly engaged and ready to discover new brands. With visual-first content and robust business features including Shopping, Creator Studio, and detailed analytics, it's an essential platform for building brand awareness and driving sales.</p>
+            </div>
+        </div>
+
+        <!-- Audience & Demographics -->
+        <div class="section" id="audience">
+            <h2 class="section-header">Audience & Demographics</h2>
+            
+            <div class="subsection">
+                <h3 class="subsection-title">Core Demographics</h3>
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <span class="stat-number">50.6%</span>
+                        <div class="stat-label">Male Users</div>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-number">49.4%</span>
+                        <div class="stat-label">Female Users</div>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-number">31.7%</span>
+                        <div class="stat-label">Ages 18-24</div>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-number">30.6%</span>
+                        <div class="stat-label">Ages 25-34</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="subsection">
+                <h3 class="subsection-title">User Behavior</h3>
+                <ul class="tip-list">
+                    <li>Average user spends 33 minutes per day on Instagram</li>
+                    <li>Users aged 18-24 spend 43 minutes daily (highest usage)</li>
+                    <li>83% of users discover new products through the app</li>
+                    <li>29% of users make purchases directly on Instagram</li>
+                    <li>50% of users interact with brands at least once daily</li>
+                    <li>Reels receive 22% higher engagement than regular videos</li>
+                    <li>India leads globally with 413.8 million users</li>
+                    <li>62.3% of all users are between ages 18-34</li>
+                </ul>
+            </div>
+
+            <div class="info-box">
+                <div class="info-title">Target Audience Identification</div>
+                <p>Before creating content, clearly define your ideal Instagram audience. Consider demographics, interests, pain points, and behavior patterns. Use Instagram Insights to understand your current followers and adjust your strategy accordingly.</p>
+            </div>
+        </div>
+
+        <!-- Account Setup & Optimization -->
+        <div class="section" id="setup">
+            <h2 class="section-header">Account Setup & Optimization</h2>
+            
+            <div class="subsection">
+                <h3 class="subsection-title">Business Account Setup</h3>
+                <ul class="checklist">
+                    <li>Convert to Business or Creator account for analytics and features</li>
+                    <li>Choose appropriate business category</li>
+                    <li>Add contact information (email, phone, address)</li>
+                    <li>Connect to Facebook Business Page</li>
+                    <li>Enable Instagram Shopping (if applicable)</li>
+                </ul>
+            </div>
+
+            <div class="subsection">
+                <h3 class="subsection-title">Profile Optimization</h3>
+                
+                <table class="content-table">
+                    <thead>
+                        <tr>
+                            <th>Element</th>
+                            <th>Best Practice</th>
+                            <th>Example</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Username</td>
+                            <td>Brand name, easy to remember</td>
+                            <td>@yourbrandname</td>
+                        </tr>
+                        <tr>
+                            <td>Display Name</td>
+                            <td>Include keywords for searchability</td>
+                            <td>Your Brand | Marketing Tips</td>
+                        </tr>
+                        <tr>
+                            <td>Bio</td>
+                            <td>Clear value proposition in 150 characters</td>
+                            <td>Helping small businesses grow 📈<br>Marketing tips & strategies<br>👇 Free guide below</td>
+                        </tr>
+                        <tr>
+                            <td>Profile Photo</td>
+                            <td>High-quality logo or professional headshot</td>
+                            <td>Square format, recognizable at small size</td>
+                        </tr>
+                        <tr>
+                            <td>Link in Bio</td>
+                            <td>Link tree or most important landing page</td>
+                            <td>Lead magnet, website, or current campaign</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="warning-box">
+                <div class="warning-title">Common Setup Mistakes</div>
+                <p>Avoid using personal accounts for business, neglecting contact information, or changing usernames frequently. Consistency builds recognition and trust.</p>
+            </div>
+        </div>
+
+        <!-- Content Strategy -->
+        <div class="section" id="content">
+            <h2 class="section-header">Content Strategy</h2>
+            
+            <div class="subsection">
+                <h3 class="subsection-title">Content Pillars Framework</h3>
+                <p>Develop 3-5 content pillars that align with your brand and audience interests:</p>
+                
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <span class="stat-number">40%</span>
+                        <div class="stat-label">Educational Content</div>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-number">30%</span>
+                        <div class="stat-label">Behind-the-Scenes</div>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-number">20%</span>
+                        <div class="stat-label">User-Generated Content</div>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-number">10%</span>
+                        <div class="stat-label">Promotional Content</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="subsection">
+                <h3 class="subsection-title">Content Types & Performance</h3>
+                
+                <table class="content-table">
+                    <thead>
+                        <tr>
+                            <th>Content Type</th>
+                            <th>Best For</th>
+                            <th>Avg. Engagement</th>
+                            <th>Recommended Frequency</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Feed Posts</td>
+                            <td>Brand awareness, storytelling</td>
+                            <td>0.45%</td>
+                            <td>3-7 per week</td>
+                        </tr>
+                        <tr>
+                            <td>Reels</td>
+                            <td>Viral reach, entertainment</td>
+                            <td>0.50%</td>
+                            <td>3-5 per week</td>
+                        </tr>
+                        <tr>
+                            <td>Stories</td>
+                            <td>Daily engagement, behind-scenes</td>
+                            <td>High completion rate</td>
+                            <td>Daily</td>
+                        </tr>
+                        <tr>
+                            <td>IGTV</td>
+                            <td>Long-form education, tutorials</td>
+                            <td>0.40%</td>
+                            <td>1-2 per week</td>
+                        </tr>
+                        <tr>
+                            <td>Carousel Posts</td>
+                            <td>Detailed explanations, galleries</td>
+                            <td>0.55%</td>
+                            <td>2-3 per week</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="subsection">
+                <h3 class="subsection-title">Visual Brand Guidelines</h3>
+                <ul class="checklist">
+                    <li>Consistent color palette across all content</li>
+                    <li>Cohesive visual style (filters, editing approach)</li>
+                    <li>Branded templates for quotes and announcements</li>
+                    <li>High-quality imagery (minimum 1080x1080px)</li>
+                    <li>Consistent logo placement and brand elements</li>
+                    <li>Typography consistency for text overlays</li>
+                </ul>
+            </div>
+
+            <div class="info-box">
+                <div class="info-title">Content Planning Tools</div>
+                <p><strong>Free:</strong> Creator Studio, Later (free plan), Canva<br>
+                <strong>Paid:</strong> Hootsuite, Buffer, Sprout Social, Planoly<br>
+                <strong>Design:</strong> Adobe Creative Suite, Canva Pro, Figma</p>
+            </div>
+        </div>
+
+        <!-- Posting Strategy & Timing -->
+        <div class="section" id="posting">
+            <h2 class="section-header">Posting Strategy & Timing</h2>
+            
+            <div class="subsection">
+                <h3 class="subsection-title">Optimal Posting Times</h3>
+                
+                <table class="content-table">
+                    <thead>
+                        <tr>
+                            <th>Day</th>
+                            <th>Best Times (EST)</th>
+                            <th>Audience Activity</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Monday</td>
+                            <td>11 AM, 2 PM, 5 PM</td>
+                            <td>Moderate engagement</td>
+                        </tr>
+                        <tr>
+                            <td>Tuesday</td>
+                            <td>10 AM, 2 PM, 4 PM</td>
+                            <td>High engagement</td>
+                        </tr>
+                        <tr>
+                            <td>Wednesday</td>
+                            <td>11 AM, 1 PM, 3 PM</td>
+                            <td>Peak engagement</td>
+                        </tr>
+                        <tr>
+                            <td>Thursday</td>
+                            <td>12 PM, 3 PM, 7 PM</td>
+                            <td>High engagement</td>
+                        </tr>
+                        <tr>
+                            <td>Friday</td>
+                            <td>9 AM, 1 PM, 3 PM</td>
+                            <td>Moderate engagement</td>
+                        </tr>
+                        <tr>
+                            <td>Saturday</td>
+                            <td>12 PM, 2 PM, 4 PM</td>
+                            <td>Lower engagement</td>
+                        </tr>
+                        <tr>
+                            <td>Sunday</td>
+                            <td>11 AM, 1 PM, 4 PM</td>
+                            <td>Moderate engagement</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="subsection">
+                <h3 class="subsection-title">Posting Frequency Guidelines</h3>
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <span class="stat-number">1-2</span>
+                        <div class="stat-label">Feed Posts/Day</div>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-number">3-5</span>
+                        <div class="stat-label">Stories/Day</div>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-number">3-4</span>
+                        <div class="stat-label">Reels/Week</div>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-number">1-2</span>
+                        <div class="stat-label">IGTV/Week</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="warning-box">
+                <div class="warning-title">Quality Over Quantity</div>
+                <p>Focus on creating high-quality, engaging content rather than posting frequently. One great post per day is better than multiple mediocre posts.</p>
+            </div>
+        </div>
+
+        <!-- Growth & Engagement -->
+        <div class="section" id="growth">
+            <h2 class="section-header">Growth & Engagement Strategies</h2>
+            
+            <div class="subsection">
+                <h3 class="subsection-title">Organic Growth Tactics</h3>
+                <ul class="tip-list">
+                    <li>Use relevant hashtags (mix of popular and niche-specific)</li>
+                    <li>Engage with your audience within the first hour of posting</li>
+                    <li>Collaborate with other accounts in your niche</li>
+                    <li>Share user-generated content and tag creators</li>
+                    <li>Create shareable, value-driven content</li>
+                    <li>Use Instagram Stories interactive features (polls, questions)</li>
+                    <li>Cross-promote on other social platforms</li>
+                </ul>
+            </div>
+
+            <div class="subsection">
+                <h3 class="subsection-title">Hashtag Strategy</h3>
+                <div class="info-box">
+                    <div class="info-title">Hashtag Mix Formula</div>
+                    <p><strong>5-10 Popular Hashtags</strong> (1M+ posts) - for reach<br>
+                    <strong>10-15 Medium Hashtags</strong> (100K-1M posts) - for engagement<br>
+                    <strong>5-10 Niche Hashtags</strong> (10K-100K posts) - for targeted audience<br>
+                    <strong>2-3 Branded Hashtags</strong> - for brand recognition</p>
+                </div>
+            </div>
+
+            <div class="subsection">
+                <h3 class="subsection-title">Community Building</h3>
+                <ul class="checklist">
+                    <li>Respond to comments within 2-4 hours</li>
+                    <li>Like and reply to comments on your posts</li>
+                    <li>Engage with followers' content regularly</li>
+                    <li>Share behind-the-scenes content to build connection</li>
+                    <li>Host Q&A sessions in Stories</li>
+                    <li>Create branded hashtags for community use</li>
+                    <li>Feature customer stories and testimonials</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Algorithm Insights -->
+        <div class="section" id="algorithm">
+            <h2 class="section-header">Instagram Algorithm Insights</h2>
+            
+            <div class="subsection">
+                <h3 class="subsection-title">How the Algorithm Works</h3>
+                <p>Instagram's algorithm prioritizes content based on several key factors. Understanding these can help you optimize your content for better reach and engagement.</p>
+                
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <span class="stat-number">Interest</span>
+                        <div class="stat-label">User's past behavior</div>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-number">Relationship</span>
+                        <div class="stat-label">Connection with creator</div>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-number">Timeliness</span>
+                        <div class="stat-label">When post was shared</div>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-number">Usage</span>
+                        <div class="stat-label">How user uses Instagram</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="subsection">
+                <h3 class="subsection-title">Algorithm Optimization Tips</h3>
+                <ul class="tip-list">
+                    <li>Post when your audience is most active</li>
+                    <li>Encourage meaningful engagement (comments > likes)</li>
+                    <li>Use all platform features (Reels, Stories, IGTV)</li>
+                    <li>Create content that sparks conversations</li>
+                    <li>Maintain consistent posting schedule</li>
+                    <li>Use relevant keywords in captions and hashtags</li>
+                    <li>Collaborate with accounts your audience follows</li>
+                </ul>
+            </div>
+
+            <div class="highlight-box">
+                <div class="highlight-title">2025 Instagram Reality Check</div>
+                <p>Engagement rates have declined significantly from previous years due to algorithm changes and increased competition. Focus on creating highly engaging, authentic content and building genuine community connections rather than chasing vanity metrics.</p>
+            </div>
+        </div>
+
+        <!-- Business Features -->
+        <div class="section" id="business">
+            <h2 class="section-header">Instagram Business Features</h2>
+            
+            <div class="subsection">
+                <h3 class="subsection-title">Shopping on Instagram</h3>
+                <ul class="checklist">
+                    <li>Set up Instagram Shop with product catalog</li>
+                    <li>Tag products in posts and Stories</li>
+                    <li>Use Shopping stickers in Stories</li>
+                    <li>Create shoppable Reels</li>
+                    <li>Enable product details and checkout</li>
+                </ul>
+            </div>
+
+            <div class="subsection">
+                <h3 class="subsection-title">Instagram Ads</h3>
+                <table class="content-table">
+                    <thead>
+                        <tr>
+                            <th>Ad Type</th>
+                            <th>Best For</th>
+                            <th>Placement</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Photo Ads</td>
+                            <td>Brand awareness, product showcase</td>
+                            <td>Feed, Stories, Explore</td>
+                        </tr>
+                        <tr>
+                            <td>Video Ads</td>
+                            <td>Engagement, storytelling</td>
+                            <td>Feed, Stories, Reels</td>
+                        </tr>
+                        <tr>
+                            <td>Carousel Ads</td>
+                            <td>Multiple products, features</td>
+                            <td>Feed, Stories</td>
+                        </tr>
+                        <tr>
+                            <td>Collection Ads</td>
+                            <td>Product discovery, catalog</td>
+                            <td>Feed, Stories</td>
+                        </tr>
+                        <tr>
+                            <td>Reels Ads</td>
+                            <td>Viral reach, entertainment</td>
+                            <td>Reels feed</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="subsection">
+                <h3 class="subsection-title">Creator Studio Features</h3>
+                <ul class="tip-list">
+                    <li>Schedule posts and Stories in advance</li>
+                    <li>Access detailed analytics and insights</li>
+                    <li>Manage comments and messages</li>
+                    <li>Cross-post to Facebook simultaneously</li>
+                    <li>Monitor hashtag performance</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Monetization -->
+        <div class="section" id="monetization">
+            <h2 class="section-header">Monetization Strategies</h2>
+            
+            <div class="subsection">
+                <h3 class="subsection-title">Direct Monetization</h3>
+                <ul class="tip-list">
+                    <li>Instagram Shopping for product sales</li>
+                    <li>Creator Fund and bonus programs</li>
+                    <li>Live badge purchases during broadcasts</li>
+                    <li>Subscription features for exclusive content</li>
+                    <li>Instagram Reels Play Bonus</li>
+                </ul>
+            </div>
+
+            <div class="subsection">
+                <h3 class="subsection-title">Indirect Monetization</h3>
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <span class="stat-number">Sponsored Posts</span>
+                        <div class="stat-label">$100-$10,000+ per post</div>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-number">Affiliate Marketing</span>
+                        <div class="stat-label">5-30% commission</div>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-number">Digital Products</span>
+                        <div class="stat-label">Courses, ebooks, templates</div>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-number">Services</span>
+                        <div class="stat-label">Consulting, coaching</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="info-box">
+                <div class="info-title">Monetization Requirements</div>
+                <p>Most monetization features require a business or creator account, compliance with community guidelines, and minimum follower/engagement thresholds. Focus on building an engaged audience before pursuing monetization.</p>
+            </div>
+        </div>
+
+        <!-- Analytics & Measurement -->
+        <div class="section" id="analytics">
+            <h2 class="section-header">Analytics & Measurement</h2>
+            
+            <div class="subsection">
+                <h3 class="subsection-title">Key Metrics to Track</h3>
+                <table class="content-table">
+                    <thead>
+                        <tr>
+                            <th>Metric</th>
+                            <th>What It Measures</th>
+                            <th>Why It Matters</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Engagement Rate</td>
+                            <td>(Likes + Comments + Shares) ÷ Followers</td>
+                            <td>Content quality and audience connection</td>
+                        </tr>
+                        <tr>
+                            <td>Reach</td>
+                            <td>Unique accounts that saw your content</td>
+                            <td>Content distribution and visibility</td>
+                        </tr>
+                        <tr>
+                            <td>Impressions</td>
+                            <td>Total times content was displayed</td>
+                            <td>Content frequency and algorithm favor</td>
+                        </tr>
+                        <tr>
+                            <td>Saves</td>
+                            <td>Users who saved your content</td>
+                            <td>Content value and future engagement</td>
+                        </tr>
+                        <tr>
+                            <td>Website Clicks</td>
+                            <td>Link clicks from bio or Stories</td>
+                            <td>Traffic generation and conversion</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="subsection">
+                <h3 class="subsection-title">Instagram Insights Breakdown</h3>
+                <ul class="checklist">
+                    <li>Account insights: followers, reach, impressions</li>
+                    <li>Content insights: individual post performance</li>
+                    <li>Audience insights: demographics, activity times</li>
+                    <li>Stories insights: completion rates, interactions</li>
+                    <li>Shopping insights: product views, clicks</li>
+                </ul>
+            </div>
+
+            <div class="highlight-box">
+                <div class="highlight-title">Benchmark Engagement Rates</div>
+                <p><strong>Excellent:</strong> 3%+ | <strong>Good:</strong> 1.5-3% | <strong>Average:</strong> 1-1.5% | <strong>Poor:</strong> <1%<br>
+                Note: Engagement rates vary by industry and follower count. Smaller accounts typically have higher engagement rates.</p>
+            </div>
+        </div>
+
+        <!-- Advanced Strategies -->
+        <div class="section" id="advanced">
+            <h2 class="section-header">Advanced Strategies</h2>
+            
+            <div class="subsection">
+                <h3 class="subsection-title">Instagram Reels Mastery</h3>
+                <ul class="tip-list">
+                    <li>Use trending audio and music for better reach</li>
+                    <li>Hook viewers in the first 3 seconds</li>
+                    <li>Include captions for accessibility</li>
+                    <li>Post vertically (9:16 aspect ratio)</li>
+                    <li>Keep content native to Instagram (don't repost TikToks)</li>
+                    <li>Use relevant hashtags in caption, not on video</li>
+                    <li>Create educational or entertaining content</li>
+                </ul>
+            </div>
+
+            <div class="subsection">
+                <h3 class="subsection-title">Stories Strategy</h3>
+                <ul class="checklist">
+                    <li>Use interactive stickers (polls, questions, quizzes)</li>
+                    <li>Create Story Highlights for important content</li>
+                    <li>Share behind-the-scenes content regularly</li>
+                    <li>Use Stories to drive traffic to posts or website</li>
+                    <li>Create exclusive Stories content for followers</li>
+                    <li>Use location tags and branded hashtags</li>
+                </ul>
+            </div>
+
+            <div class="subsection">
+                <h3 class="subsection-title">Influencer Collaboration</h3>
+                <div class="info-box">
+                    <div class="info-title">Collaboration Types</div>
+                    <p><strong>Micro-influencers (1K-100K):</strong> Higher engagement, lower cost<br>
+                    <strong>Macro-influencers (100K-1M):</strong> Broader reach, moderate engagement<br>
+                    <strong>Mega-influencers (1M+):</strong> Maximum reach, premium pricing<br>
+                    <strong>Nano-influencers (<1K):</strong> Authentic, community-focused</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Common Mistakes -->
+        <div class="section" id="mistakes">
+            <h2 class="section-header">Common Mistakes to Avoid</h2>
+            
+            <div class="subsection">
+                <h3 class="subsection-title">Content Mistakes</h3>
+                <ul class="tip-list">
+                    <li>Posting low-quality or blurry images</li>
+                    <li>Over-promoting products without providing value</li>
+                    <li>Inconsistent visual branding and style</li>
+                    <li>Ignoring video content (Reels, IGTV)</li>
+                    <li>Not optimizing content for mobile viewing</li>
+                    <li>Using irrelevant or banned hashtags</li>
+                </ul>
+            </div>
+
+            <div class="subsection">
+                <h3 class="subsection-title">Engagement Mistakes</h3>
+                <ul class="tip-list">
+                    <li>Not responding to comments and messages</li>
+                    <li>Buying fake followers or engagement</li>
+                    <li>Only engaging when promoting something</li>
+                    <li>Not using Stories interactive features</li>
+                    <li>Posting and disappearing without engagement</li>
+                    <li>Not building genuine relationships with followers</li>
+                </ul>
+            </div>
+
+            <div class="warning-box">
+                <div class="warning-title">Algorithm Penalties</div>
+                <p>Avoid shadowbanning by not using banned hashtags, buying fake engagement, or posting inappropriate content. Focus on authentic growth and genuine community building.</p>
+            </div>
+        </div>
+
+        <!-- Action Plan -->
+        <div class="section">
+            <h2 class="section-header">Your 30-Day Instagram Action Plan</h2>
+            
+            <div class="subsection">
+                <h3 class="subsection-title">Week 1: Foundation</h3>
+                <ul class="checklist">
+                    <li>Optimize profile and bio</li>
+                    <li>Set up business account features</li>
+                    <li>Define content pillars and brand style</li>
+                    <li>Research and compile hashtag lists</li>
+                    <li>Create content calendar for next month</li>
+                </ul>
+            </div>
+
+            <div class="subsection">
+                <h3 class="subsection-title">Week 2: Content Creation</h3>
+                <ul class="checklist">
+                    <li>Create and batch content for week 3-4</li>
+                    <li>Set up Instagram Shopping (if applicable)</li>
+                    <li>Design Story Highlight covers</li>
+                    <li>Plan first Reels content</li>
+                    <li>Write captions in advance</li>
+                </ul>
+            </div>
+
+            <div class="subsection">
+                <h3 class="subsection-title">Week 3: Engagement & Growth</h3>
+                <ul class="checklist">
+                    <li>Post consistently using planned content</li>
+                    <li>Engage actively with target audience</li>
+                    <li>Start using Stories daily</li>
+                    <li>Join relevant conversations in your niche</li>
+                    <li>Analyze performance and adjust strategy</li>
+                </ul>
+            </div>
+
+            <div class="subsection">
+                <h3 class="subsection-title">Week 4: Optimization</h3>
+                <ul class="checklist">
+                    <li>Review analytics and identify top content</li>
+                    <li>Optimize posting times based on insights</li>
+                    <li>Plan collaborations or partnerships</li>
+                    <li>Refine hashtag strategy based on performance</li>
+                    <li>Set goals and strategy for month 2</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="highlight-box">
+            <div class="highlight-title">Ready to Dominate Instagram?</div>
+            <p>Instagram success requires consistency, quality content, and genuine engagement with your audience. Start with the basics, track your progress, and continuously refine your strategy based on what works for your specific audience and industry.</p>
+        </div>
+    </div>
+</body>
+</html>

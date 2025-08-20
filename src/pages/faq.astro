@@ -6,290 +6,188 @@ import SEO from '../components/SEO.astro';
 <Layout title="FAQ - MW Design Studio">
   <SEO 
     title="Frequently Asked Questions - MW Design Studio"
-    description="Get answers to common questions about our brand design, marketing, and social media services. Pricing, timelines, process, and more."
-    keywords="FAQ, frequently asked questions, brand design questions, marketing services, pricing, timelines"
+    description="Get answers to common questions about our brand design, marketing, and social media services. Custom solutions, timelines, process, and more."
+    keywords="FAQ, frequently asked questions, brand design questions, marketing services, custom solutions, business design"
   />
   
   <main>
-    <section class="hero-section">
-      <div class="container">
-        <h1>Frequently Asked Questions</h1>
-        <p class="lead">Everything you need to know about working with MW Design Studio</p>
-      </div>
-    </section>
-
-    <section class="faq-navigation">
-      <div class="container">
-        <div class="faq-nav">
-          <button class="nav-btn active" data-category="general">General Questions</button>
-          <button class="nav-btn" data-category="brand">Brand Services</button>
-          <button class="nav-btn" data-category="marketing">Marketing Services</button>
-          <button class="nav-btn" data-category="social">Social Media</button>
-          <button class="nav-btn" data-category="pricing">Pricing & Process</button>
+    <!-- Hero Section -->
+    <section class="faq-hero">
+      <div class="hero-container">
+        <nav class="breadcrumb">
+          <a href="/">Home</a> > FAQ
+        </nav>
+        <h1 class="hero-title">Frequently Asked Questions</h1>
+        <p class="hero-subtitle">Everything you need to know about working with MW Design Studio</p>
+        
+        <!-- Search Bar -->
+        <div class="search-container">
+          <input type="text" id="faq-search" placeholder="Search for answers..." />
+          <button class="search-button">
+            <span class="search-icon">🔍</span>
+          </button>
         </div>
       </div>
     </section>
 
+    <!-- Top Questions Section -->
+    <section class="top-questions">
+      <div class="container">
+        <h2 class="section-title">Most Popular Questions</h2>
+        <div class="quick-answers">
+          <div class="quick-answer-card">
+            <h3>How do we get started?</h3>
+            <p>Schedule a complimentary consultation to discuss your goals and how we can help.</p>
+            <a href="/contact" class="quick-link">Get Started →</a>
+          </div>
+          <div class="quick-answer-card">
+            <h3>What's your approach?</h3>
+            <p>We take a strategic, research-driven approach that focuses on your business goals first.</p>
+            <a href="/services" class="quick-link">View Services →</a>
+          </div>
+          <div class="quick-answer-card">
+            <h3>Do you offer custom solutions?</h3>
+            <p>Yes! We customize every package for each customer based on your specific needs.</p>
+            <a href="/contact" class="quick-link">Learn More →</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Content -->
     <section class="faq-content">
       <div class="container">
+        <div class="faq-intro">
+          <h2>Quick Answers to Common Questions</h2>
+          <p>For detailed process information, visit our <a href="/process">Process page</a>. Need something specific? <a href="/contact">Get in touch</a>.</p>
+        </div>
         
-        <!-- General Questions -->
-        <div class="faq-category active" data-category="general">
-          <h2>General Questions</h2>
-          
+        <!-- Essential FAQ Items -->
+        <div class="faq-list">
+          <!-- Getting Started -->
           <div class="faq-item">
             <button class="faq-question">
-              How do you work with clients?
+              How do we get started?
               <span class="faq-icon">+</span>
             </button>
             <div class="faq-answer">
-              <p>We work as an extension of your team through our proven 5-phase process: Discovery, Strategy, Creation, Launch, and Optimization. Each project includes a dedicated project manager, regular check-ins, and structured feedback cycles to ensure we deliver exactly what you need.</p>
+              <p>Complete our <a href="/contact">intake form</a> to share your goals and challenges. We'll review your submission within 24 hours and schedule a complimentary consultation to discuss how we can help.</p>
             </div>
           </div>
 
+          <!-- Custom Solutions -->
           <div class="faq-item">
             <button class="faq-question">
-              What's included in each service?
+              Do you offer packages or custom solutions?
               <span class="faq-icon">+</span>
             </button>
             <div class="faq-answer">
-              <p>Each service includes strategic planning, creative development, project management, revisions, final deliverables, and post-launch support. Specific inclusions vary by service type - brand projects include logo files and guidelines, marketing projects include campaign assets and analytics setup, and social media projects include content calendars and templates.</p>
+              <p>We customize every solution for each client. No fixed packages - we design a strategy and scope that fits your specific business goals and budget.</p>
             </div>
           </div>
 
+          <!-- Timeline -->
           <div class="faq-item">
             <button class="faq-question">
               How long do projects typically take?
               <span class="faq-icon">+</span>
             </button>
             <div class="faq-answer">
-              <p>Project timelines vary by scope: Brand identity projects typically take 6-8 weeks, marketing campaigns take 4-6 weeks, and social media setups take 2-4 weeks. We provide detailed timelines during the strategy phase and keep you updated throughout the project.</p>
+              <p>Brand development: 8-10 weeks. Marketing strategy: 4-6 weeks. Social media setup: 2-4 weeks. We provide detailed timelines in your custom proposal.</p>
             </div>
           </div>
 
+          <!-- Remote Work -->
           <div class="faq-item">
             <button class="faq-question">
-              Do you work with businesses of all sizes?
+              Do you work with remote clients?
               <span class="faq-icon">+</span>
             </button>
             <div class="faq-answer">
-              <p>Yes! We work with startups, small businesses, and established enterprises. Our approach scales to fit your needs and budget, whether you're launching your first brand or refreshing an existing one.</p>
+              <p>Yes! We work with clients across the country using video calls, project management tools, and regular communication to ensure seamless collaboration.</p>
             </div>
           </div>
 
+          <!-- Investment -->
           <div class="faq-item">
             <button class="faq-question">
-              What if I'm not happy with the results?
+              What's the investment range for your services?
               <span class="faq-icon">+</span>
             </button>
             <div class="faq-answer">
-              <p>Your satisfaction is our priority. We include structured revision rounds in every project and work closely with you throughout the process. If you're not completely satisfied, we'll work together to make it right or provide a full refund within 30 days of project completion.</p>
-            </div>
-          </div>
-        </div>
-
-        <!-- Brand Services -->
-        <div class="faq-category" data-category="brand">
-          <h2>Brand Services FAQ</h2>
-          
-          <div class="faq-item">
-            <button class="faq-question">
-              What's your logo design process?
-              <span class="faq-icon">+</span>
-            </button>
-            <div class="faq-answer">
-              <p>Our logo design process starts with brand strategy and research, followed by concept development where we present 3-5 initial concepts. After feedback, we refine your chosen direction through 2-3 revision rounds, then deliver final files in all necessary formats (vector, PNG, JPG) and variations (horizontal, stacked, icon).</p>
+              <p>Investment varies based on scope and goals. During our consultation, we'll discuss your budget and recommend the best approach to achieve your objectives within that range.</p>
             </div>
           </div>
 
+          <!-- Industries -->
           <div class="faq-item">
             <button class="faq-question">
-              What's included in brand guidelines?
+              Do you work with businesses in our industry?
               <span class="faq-icon">+</span>
             </button>
             <div class="faq-answer">
-              <p>Our brand guidelines include logo usage rules, color palettes with codes, typography specifications, voice and tone guidelines, dos and don'ts, and application examples. This ensures consistent brand application across all touchpoints.</p>
+              <p>We work across many industries. What matters most is understanding your target audience and business goals - which we excel at regardless of industry.</p>
             </div>
           </div>
 
+          <!-- Results -->
           <div class="faq-item">
             <button class="faq-question">
-              Do you help with trademark considerations?
+              How quickly will we see results?
               <span class="faq-icon">+</span>
             </button>
             <div class="faq-answer">
-              <p>While we're not lawyers, we conduct preliminary trademark searches and design with originality in mind. We recommend consulting with a trademark attorney for official registration, and we can refer you to trusted legal partners.</p>
+              <p>Brand projects show immediate visual impact with long-term business benefits. Marketing results vary - paid ads show results in weeks, while SEO and content marketing typically take 3-6 months.</p>
             </div>
           </div>
 
+          <!-- Process -->
           <div class="faq-item">
             <button class="faq-question">
-              Can you redesign an existing brand?
+              What's your process like?
               <span class="faq-icon">+</span>
             </button>
             <div class="faq-answer">
-              <p>Absolutely! Brand refreshes and redesigns are a specialty. We'll analyze your current brand, identify what's working, and strategically update elements to better serve your business goals while maintaining brand equity where beneficial.</p>
-            </div>
-          </div>
-        </div>
-
-        <!-- Marketing Services -->
-        <div class="faq-category" data-category="marketing">
-          <h2>Marketing Services FAQ</h2>
-          
-          <div class="faq-item">
-            <button class="faq-question">
-              How do you develop marketing strategies?
-              <span class="faq-icon">+</span>
-            </button>
-            <div class="faq-answer">
-              <p>We start with market research, competitor analysis, and customer journey mapping. Then we develop a comprehensive strategy including positioning, messaging, channel selection, and campaign planning, all aligned with your business goals and budget.</p>
+              <p>Each service follows a proven, phase-based approach with clear deliverables and timelines. View our detailed <a href="/process">process page</a> to see exactly what's involved.</p>
             </div>
           </div>
 
+          <!-- Communication -->
           <div class="faq-item">
             <button class="faq-question">
-              What's included in campaign management?
+              How often will we communicate during the project?
               <span class="faq-icon">+</span>
             </button>
             <div class="faq-answer">
-              <p>Campaign management includes strategy development, creative asset creation, channel setup and optimization, launch coordination, ongoing monitoring and optimization, and detailed performance reporting. We handle the technical setup and day-to-day management.</p>
+              <p>You'll have a dedicated project manager and regular check-ins throughout the project. We communicate at each phase milestone and are available for questions anytime.</p>
             </div>
           </div>
 
+          <!-- Guarantees -->
           <div class="faq-item">
             <button class="faq-question">
-              How do you measure campaign success?
+              What if we're not satisfied with the results?
               <span class="faq-icon">+</span>
             </button>
             <div class="faq-answer">
-              <p>We establish clear KPIs during the strategy phase, including metrics like lead generation, conversion rates, ROI, brand awareness, and engagement rates. We provide regular reports and use data to continuously optimize performance.</p>
+              <p>Client satisfaction is our priority. We include revision rounds in every project and work closely with you to ensure the final results exceed expectations. We're not satisfied until you are.</p>
             </div>
           </div>
 
-          <div class="faq-item">
-            <button class="faq-question">
-              Do you handle email marketing?
-              <span class="faq-icon">+</span>
-            </button>
-            <div class="faq-answer">
-              <p>Yes! We create email marketing strategies, design templates, write copy, set up automation sequences, and provide performance tracking. This includes welcome series, promotional campaigns, and nurture sequences.</p>
-            </div>
-          </div>
-        </div>
-
-        <!-- Social Media -->
-        <div class="faq-category" data-category="social">
-          <h2>Social Media FAQ</h2>
-          
-          <div class="faq-item">
-            <button class="faq-question">
-              Which social media platforms do you recommend?
-              <span class="faq-icon">+</span>
-            </button>
-            <div class="faq-answer">
-              <p>Platform selection depends on your audience and business goals. We analyze your target demographic and business objectives to recommend the most effective platforms, whether that's Instagram and Facebook for visual brands, LinkedIn for B2B, or TikTok for younger audiences.</p>
-            </div>
-          </div>
-
-          <div class="faq-item">
-            <button class="faq-question">
-              What's your content creation process?
-              <span class="faq-icon">+</span>
-            </button>
-            <div class="faq-answer">
-              <p>We develop content strategies based on your brand voice and audience preferences, create monthly content calendars, design visual assets, write captions, and schedule posts. Content includes educational, entertaining, and promotional posts balanced for optimal engagement.</p>
-            </div>
-          </div>
-
-          <div class="faq-item">
-            <button class="faq-question">
-              Do you offer management vs. consulting?
-              <span class="faq-icon">+</span>
-            </button>
-            <div class="faq-answer">
-              <p>We offer both! Management includes hands-on posting, community engagement, and daily oversight. Consulting provides strategy, training, and templates for your team to execute. We'll recommend the best approach based on your resources and goals.</p>
-            </div>
-          </div>
-
-          <div class="faq-item">
-            <button class="faq-question">
-              How quickly can we expect to see results?
-              <span class="faq-icon">+</span>
-            </button>
-            <div class="faq-answer">
-              <p>Social media growth is typically gradual but consistent. You may see engagement improvements within 2-4 weeks, follower growth within 1-2 months, and significant brand awareness and lead generation within 3-6 months. We set realistic expectations and track progress monthly.</p>
-            </div>
-          </div>
-        </div>
-
-        <!-- Pricing & Process -->
-        <div class="faq-category" data-category="pricing">
-          <h2>Pricing & Process</h2>
-          
-          <div class="faq-item">
-            <button class="faq-question">
-              What are your payment terms?
-              <span class="faq-icon">+</span>
-            </button>
-            <div class="faq-answer">
-              <p>We require 50% upfront to begin work and 50% upon project completion. For longer projects, we can arrange milestone-based payments. We accept bank transfers, checks, and major credit cards. Payment terms are outlined in your project agreement.</p>
-            </div>
-          </div>
-
-          <div class="faq-item">
-            <button class="faq-question">
-              How many revisions are included?
-              <span class="faq-icon">+</span>
-            </button>
-            <div class="faq-answer">
-              <p>Brand projects include 3 rounds of revisions, marketing campaigns include 2 rounds, and social media setups include 2 rounds. Additional revisions can be requested at our hourly rate. We structure feedback rounds to be efficient and productive.</p>
-            </div>
-          </div>
-
-          <div class="faq-item">
-            <button class="faq-question">
-              What happens if a project timeline changes?
-              <span class="faq-icon">+</span>
-            </button>
-            <div class="faq-answer">
-              <p>We understand business needs can shift. If timelines need adjustment, we'll work with you to find solutions, whether that's adjusting scope, extending deadlines, or adding resources. Any changes to timeline or scope are documented and agreed upon before implementation.</p>
-            </div>
-          </div>
-
-          <div class="faq-item">
-            <button class="faq-question">
-              Do you offer ongoing support after project completion?
-              <span class="faq-icon">+</span>
-            </button>
-            <div class="faq-answer">
-              <p>Yes! We provide 30 days of complimentary support after project completion for questions and minor adjustments. We also offer ongoing retainer relationships for continued marketing support, content creation, or brand management.</p>
-            </div>
-          </div>
-
-          <div class="faq-item">
-            <button class="faq-question">
-              How do you handle rush projects?
-              <span class="faq-icon">+</span>
-            </button>
-            <div class="faq-answer">
-              <p>We can accommodate rush timelines when possible. Rush projects (requiring completion in under 3 weeks) include a 25% urgency fee and require immediate availability confirmation. We'll assess feasibility and provide options during our initial consultation.</p>
-            </div>
-          </div>
-        </div>
       </div>
     </section>
 
-    <section class="contact-section">
+    <!-- CTA Section -->
+    <section class="cta-section">
       <div class="container">
-        <div class="contact-card">
-          <h2>Still Have Questions?</h2>
-          <p>Can't find the answer you're looking for? We're here to help!</p>
-          <div class="contact-options">
-            <a href="/contact" class="btn btn-primary">Send us a Message</a>
-            <a href="tel:+1234567890" class="btn btn-secondary">Call: (123) 456-7890</a>
+        <div class="cta-content">
+          <h2 class="cta-title">Still Have Questions?</h2>
+          <p class="cta-subtitle">Can't find the answer you're looking for? Let's schedule a complimentary consultation to discuss your specific needs.</p>
+          <div class="cta-buttons">
+            <a href="/contact" class="btn btn-primary">Complete Your Intake Form</a>
+            <a href="mailto:hello@mwdesignstudio.com" class="btn btn-secondary">Email Us Directly</a>
           </div>
-          <p class="response-time">We typically respond within 2 business hours</p>
+          <p class="response-time">We typically respond within 24 business hours</p>
         </div>
       </div>
     </section>
@@ -297,22 +195,168 @@ import SEO from '../components/SEO.astro';
 </Layout>
 
 <style>
-  .hero-section {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  :root {
+    --mw-navy: #1E3A8A;
+    --mw-teal: #4FD1C7;
+    --mw-gradient: linear-gradient(135deg, #1E3A8A 0%, #4FD1C7 100%);
+    --light-gray: #F8F9FA;
+    --neutral-bg: #FAFBFC;
+    --dark-text: #333333;
+    --medium-gray: #666666;
+    --light-border: #E2E8F0;
+  }
+
+  /* FAQ Hero Section */
+  .faq-hero {
+    background: var(--mw-gradient);
+    padding: 6rem 0 4rem;
     color: white;
-    padding: 4rem 0;
     text-align: center;
   }
 
-  .lead {
-    font-size: 1.25rem;
-    margin-top: 1rem;
+  .hero-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 2rem;
   }
 
+  .breadcrumb {
+    margin-bottom: 2rem;
+    opacity: 0.9;
+  }
+
+  .breadcrumb a {
+    color: white;
+    text-decoration: none;
+  }
+
+  .breadcrumb a:hover {
+    text-decoration: underline;
+  }
+
+  .hero-title {
+    font-size: 3rem;
+    font-weight: 600;
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+    letter-spacing: -0.02em;
+  }
+
+  .hero-subtitle {
+    font-size: 1.25rem;
+    font-weight: 300;
+    opacity: 0.95;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+  }
+
+  /* Search Container */
+  .search-container {
+    position: relative;
+    max-width: 500px;
+    margin: 0 auto;
+  }
+
+  #faq-search {
+    width: 100%;
+    padding: 1rem 3rem 1rem 1.5rem;
+    border: none;
+    border-radius: 50px;
+    font-size: 1rem;
+    background: white;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  }
+
+  .search-button {
+    position: absolute;
+    right: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: var(--mw-teal);
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+
+  .search-button:hover {
+    background: var(--mw-navy);
+  }
+
+  .search-icon {
+    font-size: 1.2rem;
+  }
+
+  /* Top Questions Section */
+  .top-questions {
+    padding: 4rem 0;
+    background: var(--neutral-bg);
+  }
+
+  .section-title {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 600;
+    color: var(--mw-navy);
+    margin-bottom: 3rem;
+  }
+
+  .quick-answers {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+
+  .quick-answer-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+  }
+
+  .quick-answer-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+  }
+
+  .quick-answer-card h3 {
+    color: var(--mw-navy);
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+  }
+
+  .quick-answer-card p {
+    color: var(--medium-gray);
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+  }
+
+  .quick-link {
+    color: var(--mw-teal);
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+  }
+
+  .quick-link:hover {
+    color: var(--mw-navy);
+  }
+
+  /* FAQ Navigation */
   .faq-navigation {
     padding: 2rem 0;
-    background: #f9f9f9;
-    border-bottom: 1px solid #e0e0e0;
+    background: white;
+    border-bottom: 1px solid var(--light-border);
   }
 
   .faq-nav {
@@ -325,27 +369,66 @@ import SEO from '../components/SEO.astro';
   .nav-btn {
     padding: 0.75rem 1.5rem;
     background: white;
-    border: 2px solid #e0e0e0;
+    border: 2px solid var(--light-border);
     border-radius: 25px;
     cursor: pointer;
-    transition: all 0.3s;
+    transition: all 0.3s ease;
     font-weight: 600;
+    color: var(--medium-gray);
   }
 
   .nav-btn:hover,
   .nav-btn.active {
-    background: #667eea;
+    background: var(--mw-navy);
     color: white;
-    border-color: #667eea;
+    border-color: var(--mw-navy);
   }
 
+  /* FAQ Content */
   .faq-content {
     padding: 4rem 0;
+    background: var(--neutral-bg);
+  }
+
+  .faq-intro {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 3rem auto;
+  }
+
+  .faq-intro h2 {
+    font-size: 2rem;
+    font-weight: 600;
+    color: var(--mw-navy);
+    margin-bottom: 1rem;
+  }
+
+  .faq-intro p {
+    font-size: 1.1rem;
+    color: var(--medium-gray);
+    line-height: 1.6;
+  }
+
+  .faq-intro a {
+    color: var(--mw-teal);
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+  }
+
+  .faq-intro a:hover {
+    color: var(--mw-navy);
+    text-decoration: underline;
+  }
+
+  .faq-list {
+    max-width: 900px;
+    margin: 0 auto;
   }
 
   .faq-category {
     display: none;
-    max-width: 800px;
+    max-width: 900px;
     margin: 0 auto;
   }
 
@@ -356,43 +439,54 @@ import SEO from '../components/SEO.astro';
   .faq-category h2 {
     text-align: center;
     margin-bottom: 3rem;
-    color: #333;
+    color: var(--mw-navy);
+    font-size: 2rem;
+    font-weight: 600;
   }
 
   .faq-item {
-    margin-bottom: 1rem;
-    border: 1px solid #e0e0e0;
-    border-radius: 8px;
+    margin-bottom: 1.5rem;
+    background: white;
+    border-radius: 12px;
     overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+  }
+
+  .faq-item:hover {
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
   }
 
   .faq-question {
     width: 100%;
-    padding: 1.5rem;
+    padding: 1.5rem 2rem;
     background: white;
     border: none;
     text-align: left;
-    font-size: 1.125rem;
+    font-size: 1.1rem;
     font-weight: 600;
     cursor: pointer;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    transition: background-color 0.3s;
+    transition: all 0.3s ease;
+    color: var(--dark-text);
   }
 
   .faq-question:hover {
-    background: #f9f9f9;
+    background: var(--light-gray);
   }
 
   .faq-question.active {
-    background: #f0f4ff;
-    color: #667eea;
+    background: #F0F7FF;
+    color: var(--mw-navy);
   }
 
   .faq-icon {
     font-size: 1.5rem;
-    transition: transform 0.3s;
+    transition: transform 0.3s ease;
+    color: var(--mw-teal);
+    font-weight: 600;
   }
 
   .faq-question.active .faq-icon {
@@ -410,77 +504,134 @@ import SEO from '../components/SEO.astro';
   }
 
   .faq-answer p {
-    padding: 1.5rem;
+    padding: 0 2rem 2rem;
     margin: 0;
-    background: #f9f9f9;
-    line-height: 1.6;
-    color: #555;
-  }
-
-  .contact-section {
-    padding: 4rem 0;
-    background: #f9f9f9;
-  }
-
-  .contact-card {
     background: white;
-    padding: 3rem;
-    border-radius: 12px;
-    text-align: center;
-    max-width: 600px;
-    margin: 0 auto;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    line-height: 1.7;
+    color: var(--medium-gray);
+    font-size: 1rem;
   }
 
-  .contact-options {
+  /* CTA Section */
+  .cta-section {
+    padding: 5rem 0;
+    background: white;
+    text-align: center;
+  }
+
+  .cta-content {
+    max-width: 700px;
+    margin: 0 auto;
+  }
+
+  .cta-title {
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: var(--mw-navy);
+    margin-bottom: 1rem;
+  }
+
+  .cta-subtitle {
+    font-size: 1.1rem;
+    color: var(--medium-gray);
+    margin-bottom: 2.5rem;
+    line-height: 1.6;
+  }
+
+  .cta-buttons {
     display: flex;
-    gap: 1rem;
+    gap: 1.5rem;
     justify-content: center;
-    margin: 2rem 0;
+    margin-bottom: 1.5rem;
     flex-wrap: wrap;
   }
 
   .response-time {
-    color: #666;
-    font-size: 0.875rem;
-    margin-top: 1rem;
+    color: var(--medium-gray);
+    font-size: 0.9rem;
+    font-style: italic;
   }
 
+  /* Buttons */
   .btn {
     display: inline-block;
-    padding: 0.75rem 2rem;
+    padding: 1rem 2.5rem;
     text-decoration: none;
-    border-radius: 4px;
-    transition: all 0.3s;
+    border-radius: 50px;
+    transition: all 0.3s ease;
     font-weight: 600;
     border: none;
     cursor: pointer;
+    font-size: 1rem;
   }
 
   .btn-primary {
-    background: #667eea;
+    background: var(--mw-gradient);
     color: white;
+    box-shadow: 0 4px 20px rgba(30, 58, 138, 0.2);
   }
 
   .btn-primary:hover {
-    background: #5a67d8;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 30px rgba(30, 58, 138, 0.3);
   }
 
   .btn-secondary {
     background: transparent;
-    color: #667eea;
-    border: 2px solid #667eea;
+    color: var(--mw-navy);
+    border: 2px solid var(--mw-navy);
   }
 
   .btn-secondary:hover {
-    background: #667eea;
+    background: var(--mw-navy);
     color: white;
   }
 
+  /* Responsive Design */
   @media (max-width: 768px) {
-    .contact-options {
+    .hero-title {
+      font-size: 2rem;
+    }
+
+    .hero-subtitle {
+      font-size: 1.1rem;
+    }
+
+    .quick-answers {
+      grid-template-columns: 1fr;
+    }
+
+    .faq-nav {
       flex-direction: column;
       align-items: center;
+    }
+
+    .cta-buttons {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .cta-title {
+      font-size: 2rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .hero-container {
+      padding: 0 1rem;
+    }
+
+    .container {
+      padding: 0 1rem;
+    }
+
+    .faq-question {
+      padding: 1rem 1.5rem;
+      font-size: 1rem;
+    }
+
+    .faq-answer p {
+      padding: 0 1.5rem 1.5rem;
     }
   }
 </style>
@@ -516,9 +667,8 @@ import SEO from '../components/SEO.astro';
       const answer = question.nextElementSibling;
       const isActive = question.classList.contains('active');
       
-      // Close all other FAQ items in the same category
-      const category = question.closest('.faq-category');
-      category.querySelectorAll('.faq-question').forEach(q => {
+      // Close all other FAQ items
+      document.querySelectorAll('.faq-question').forEach(q => {
         q.classList.remove('active');
         q.nextElementSibling.classList.remove('active');
       });
@@ -529,5 +679,41 @@ import SEO from '../components/SEO.astro';
         answer.classList.add('active');
       }
     });
+  });
+
+  // Search functionality
+  const searchInput = document.getElementById('faq-search');
+  const searchButton = document.querySelector('.search-button');
+
+  function performSearch() {
+    const searchTerm = searchInput.value.toLowerCase().trim();
+    
+    if (searchTerm === '') {
+      // Show all FAQ items if search is empty
+      document.querySelectorAll('.faq-item').forEach(item => {
+        item.style.display = 'block';
+      });
+      return;
+    }
+
+    // Search through all FAQ items
+    document.querySelectorAll('.faq-item').forEach(item => {
+      const question = item.querySelector('.faq-question').textContent.toLowerCase();
+      const answer = item.querySelector('.faq-answer p').textContent.toLowerCase();
+      
+      if (question.includes(searchTerm) || answer.includes(searchTerm)) {
+        item.style.display = 'block';
+      } else {
+        item.style.display = 'none';
+      }
+    });
+  }
+
+  searchInput.addEventListener('input', performSearch);
+  searchButton.addEventListener('click', performSearch);
+  searchInput.addEventListener('keypress', (e) => {
+    if (e.key === 'Enter') {
+      performSearch();
+    }
   });
 </script>

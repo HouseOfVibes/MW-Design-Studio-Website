@@ -1,9 +1,1255 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import SEO from '../components/SEO.astro';
 ---
 
-<Layout title="Services">
+<Layout title="Services - MW Design Studio">
+  <SEO 
+    title="Services - MW Design Studio"
+    description="Professional brand design, marketing strategy, and social media services that help ambitious small businesses stand out, connect with customers, and grow."
+    keywords="brand design services, marketing strategy, social media management, business branding, logo design, digital marketing"
+  />
+  
   <main>
-    <h1>Services</h1>
+    <!-- Hero Section -->
+    <section class="hero-section">
+      <div class="hero-container">
+        <div class="hero-content">
+          <nav class="breadcrumb">
+            <a href="/">Home</a> > Services
+          </nav>
+          <h1 class="hero-title">Services That Drive Results</h1>
+          <p class="hero-subtitle">Comprehensive design and marketing solutions to help your business stand out, connect with customers, and grow sustainably.</p>
+          <a href="/contact" class="hero-cta">Complete Your Intake Form →</a>
+        </div>
+        <div class="hero-visual">
+          <div class="hero-graphic"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services Overview -->
+    <section class="services-overview">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Your Brand Journey with MW Design Studio</h2>
+          <p class="section-subtitle">Transform your business with our comprehensive digital solutions. We guide you through every stage of your brand journey - from foundation to growth to optimization.</p>
+        </div>
+        
+        <div class="journey-steps">
+          <div class="journey-card available">
+            <div class="journey-status">Available Now</div>
+            <div class="journey-icon">B</div>
+            <h3 class="journey-title">BRAND - Build Your Foundation</h3>
+            <p class="journey-description">Start with a strong brand identity that builds trust, recognition, and sets you apart from competitors.</p>
+            <div class="journey-services">
+              <span class="service-item">Logo Design (2-3 weeks)</span>
+              <span class="service-item">Brand Identity System (4-5 weeks)</span>
+              <span class="service-item">Brand Guidelines (3-4 weeks)</span>
+            </div>
+            <a href="#brand-services" class="journey-cta">Explore Brand Services</a>
+          </div>
+
+          <div class="journey-card available featured">
+            <div class="journey-status">Available Now</div>
+            <div class="popular-badge">Most Popular</div>
+            <div class="journey-icon">M</div>
+            <h3 class="journey-title">MARKETING - Drive Growth</h3>
+            <p class="journey-description">Strategic content and optimization that attracts your ideal customers and grows your business.</p>
+            <div class="journey-services">
+              <span class="service-item">Blog & Content Services</span>
+              <span class="service-item">SEO Services</span>
+              <span class="service-item">Newsletter Services</span>
+            </div>
+            <a href="#marketing-services" class="journey-cta">View Marketing Solutions</a>
+          </div>
+
+          <div class="journey-card available">
+            <div class="journey-status">Available Now</div>
+            <div class="journey-icon">S</div>
+            <h3 class="journey-title">SOCIAL MEDIA - Build Community</h3>
+            <p class="journey-description">Professional social media presence that engages your audience and drives real business results.</p>
+            <div class="journey-services">
+              <span class="service-item">Platform Setup & Optimization</span>
+              <span class="service-item">Content Creation & Management</span>
+              <span class="service-item">Social Media Management</span>
+            </div>
+            <a href="#social-services" class="journey-cta">See Social Success</a>
+          </div>
+
+          <div class="journey-card coming-soon">
+            <div class="journey-status">Coming Soon</div>
+            <div class="journey-icon">W</div>
+            <h3 class="journey-title">WEBSITE - Establish Presence</h3>
+            <p class="journey-description">Professional templates and digital assets that convert visitors into customers.</p>
+            <div class="journey-services">
+              <span class="service-item">Squarespace Templates</span>
+              <span class="service-item">Shopify Templates</span>
+              <span class="service-item">Email Templates</span>
+            </div>
+            <div class="journey-cta disabled">Coming Soon</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Brand Services Detail -->
+    <section id="brand-services" class="service-detail-section">
+      <div class="container">
+        <div class="section-header">
+          <div class="service-category-icon">B</div>
+          <h2 class="section-title">BRAND - Build Your Foundation</h2>
+          <p class="section-subtitle">Start with a strong brand identity that builds trust, recognition, and sets you apart from competitors.</p>
+        </div>
+        
+        <div class="service-detail-grid">
+          <div class="service-detail-card">
+            <h3 class="service-detail-title">Logo Design</h3>
+            <div class="service-timeline">Timeline: 2-3 weeks</div>
+            <div class="service-detail-content">
+              <h4>What You Get:</h4>
+              <p>A complete logo package including your primary logo plus horizontal, stacked, and icon versions in all necessary file formats (perfect for everything from business cards to billboards).</p>
+              <h4>Why You Need It:</h4>
+              <ul>
+                <li>Build instant credibility and professionalism</li>
+                <li>Create memorable first impressions</li>
+                <li>Establish visual consistency across all platforms</li>
+                <li>Stand out from competitors with unique design</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="service-detail-card">
+            <h3 class="service-detail-title">Brand Identity System</h3>
+            <div class="service-timeline">Timeline: 4-5 weeks (after logo completion)</div>
+            <div class="service-detail-content">
+              <h4>What You Get:</h4>
+              <p>Your complete visual brand foundation including custom color palette, typography selection, visual elements, photography direction, and brand voice guidelines.</p>
+              <h4>Why You Need It:</h4>
+              <ul>
+                <li>Ensure consistent brand experience everywhere</li>
+                <li>Save time on future design decisions</li>
+                <li>Create professional, cohesive marketing materials</li>
+                <li>Build strong brand recognition over time</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="service-detail-card">
+            <h3 class="service-detail-title">Brand Guidelines</h3>
+            <div class="service-timeline">Timeline: 3-4 weeks (after brand system completion)</div>
+            <div class="service-detail-content">
+              <h4>What You Get:</h4>
+              <p>A comprehensive brand book (PDF or web guide) with clear rules for logo usage, color codes, typography, and application examples for digital and print materials.</p>
+              <h4>Why You Need It:</h4>
+              <ul>
+                <li>Maintain brand consistency across all materials</li>
+                <li>Easily brief team members or external vendors</li>
+                <li>Protect your brand's professional appearance</li>
+                <li>Reference guide for all future marketing</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Marketing Services Detail -->
+    <section id="marketing-services" class="service-detail-section alternate">
+      <div class="container">
+        <div class="section-header">
+          <div class="service-category-icon">M</div>
+          <h2 class="section-title">MARKETING - Drive Growth</h2>
+          <p class="section-subtitle">Strategic content and optimization that attracts your ideal customers and grows your business.</p>
+        </div>
+        
+        <div class="service-detail-grid">
+          <div class="service-detail-card">
+            <h3 class="service-detail-title">Blog & Content Services</h3>
+            <div class="service-detail-content">
+              <h4>Blog Setup & Management:</h4>
+              <p>Complete blog strategy, technical WordPress setup with SEO foundation, and ongoing management including editorial calendar and analytics.</p>
+              <ul>
+                <li>Establish thought leadership in your industry</li>
+                <li>Improve search engine rankings organically</li>
+                <li>Generate qualified leads through valuable content</li>
+                <li>Build trust with potential customers</li>
+              </ul>
+              
+              <h4>Content Creation:</h4>
+              <p>SEO-optimized blog articles (500-2000+ words), long-form guides and case studies, plus website copy for key pages.</p>
+              
+              <h4>Content Calendars:</h4>
+              <p>3-6 month content plans with management tools, competitive analysis, and strategic topic mapping.</p>
+            </div>
+          </div>
+
+          <div class="service-detail-card">
+            <h3 class="service-detail-title">SEO Services</h3>
+            <div class="service-detail-content">
+              <h4>Technical SEO:</h4>
+              <p>Complete site audit, speed optimization, mobile-friendliness improvements, and schema markup implementation.</p>
+              
+              <h4>On-Page SEO:</h4>
+              <p>Keyword mapping, optimized meta titles and descriptions, improved heading structure, and local SEO setup.</p>
+              <ul>
+                <li>Get found by customers searching for your services</li>
+                <li>Improve website performance and user experience</li>
+                <li>Stay competitive in search rankings</li>
+                <li>Maximize your marketing ROI</li>
+              </ul>
+              
+              <h4>SEO Strategy & Reporting:</h4>
+              <p>Competitive analysis, content roadmap, link building management, and custom performance dashboards.</p>
+            </div>
+          </div>
+
+          <div class="service-detail-card">
+            <h3 class="service-detail-title">Newsletter Services</h3>
+            <div class="service-detail-content">
+              <h4>What You Get:</h4>
+              <p>Newsletter strategy with segmentation, mobile-responsive design, and high-converting content including subject lines and CTAs.</p>
+              <h4>Why You Need It:</h4>
+              <ul>
+                <li>Nurture leads into paying customers</li>
+                <li>Keep your business top-of-mind</li>
+                <li>Drive repeat business and referrals</li>
+                <li>Build a valuable owned marketing channel</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Social Media Services Detail -->
+    <section id="social-services" class="service-detail-section">
+      <div class="container">
+        <div class="section-header">
+          <div class="service-category-icon">S</div>
+          <h2 class="section-title">SOCIAL MEDIA - Build Community</h2>
+          <p class="section-subtitle">Professional social media presence that engages your audience and drives real business results.</p>
+        </div>
+        
+        <div class="service-detail-grid">
+          <div class="service-detail-card">
+            <h3 class="service-detail-title">Platform Setup & Optimization</h3>
+            <div class="service-detail-content">
+              <h4>What You Get:</h4>
+              <p>Professional profile development with optimized bios, branded imagery, strategic linking, and advanced features setup.</p>
+              <h4>Why You Need It:</h4>
+              <ul>
+                <li>Make strong first impressions on social media</li>
+                <li>Optimize profiles for maximum discoverability</li>
+                <li>Streamline customer interactions</li>
+                <li>Professional appearance across all platforms</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="service-detail-card">
+            <h3 class="service-detail-title">Content Creation</h3>
+            <div class="service-detail-content">
+              <h4>What You Get:</h4>
+              <p>Educational posts, promotional content, behind-the-scenes materials, custom graphics, and strategic captions with hashtag research.</p>
+              <h4>Why You Need It:</h4>
+              <ul>
+                <li>Engage your audience consistently</li>
+                <li>Build trust through valuable content</li>
+                <li>Generate leads and sales through social media</li>
+                <li>Save hours on content creation</li>
+              </ul>
+              
+              <h4>Content Templates:</h4>
+              <p>Platform-specific templates for posts, stories, and covers, plus category templates for quotes, tips, showcases, and testimonials.</p>
+            </div>
+          </div>
+
+          <div class="service-detail-card">
+            <h3 class="service-detail-title">Social Media Management</h3>
+            <div class="service-detail-content">
+              <h4>What You Get:</h4>
+              <p>Content calendar management, post scheduling, stories and reels creation, community engagement, and analytics reporting.</p>
+              <h4>Why You Need It:</h4>
+              <ul>
+                <li>Stay active without spending hours daily</li>
+                <li>Build genuine relationships with followers</li>
+                <li>Track what content drives real results</li>
+                <li>Focus on running your business</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Getting Started Process -->
+    <section class="process-section">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Ready to Get Started?</h2>
+          <p class="section-subtitle">Our proven process ensures every project delivers exceptional results on time and on budget.</p>
+        </div>
+        
+        <div class="process-steps">
+          <div class="process-step">
+            <div class="step-number">1</div>
+            <h3 class="step-title">Discovery Call</h3>
+            <p class="step-description">Let's discuss your specific needs and goals</p>
+          </div>
+          <div class="process-step">
+            <div class="step-number">2</div>
+            <h3 class="step-title">Custom Proposal</h3>
+            <p class="step-description">Receive a tailored service recommendation</p>
+          </div>
+          <div class="process-step">
+            <div class="step-number">3</div>
+            <h3 class="step-title">Project Kickoff</h3>
+            <p class="step-description">Begin transforming your brand and business</p>
+          </div>
+        </div>
+        
+        <div class="process-cta">
+          <a href="/process" class="btn btn-outline">View Detailed Process</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Results Section -->
+    <section class="results-section">
+      <div class="container">
+        <h2 class="section-title">Results That Speak for Themselves</h2>
+        <div class="results-grid">
+          <div class="result-card">
+            <div class="result-number">150%</div>
+            <div class="result-label">Average Traffic Increase</div>
+            <p>Within 6 months of brand and marketing implementation</p>
+          </div>
+          <div class="result-card">
+            <div class="result-number">$50K+</div>
+            <div class="result-label">Additional Revenue Generated</div>
+            <p>Average increase for our marketing campaign clients</p>
+          </div>
+          <div class="result-card">
+            <div class="result-number">300%</div>
+            <div class="result-label">Social Media Growth</div>
+            <p>Average follower increase across all platforms</p>
+          </div>
+          <div class="result-card">
+            <div class="result-number">98%</div>
+            <div class="result-label">Client Satisfaction Rate</div>
+            <p>Clients who would recommend our services</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Custom Solutions -->
+    <section class="custom-solutions-section">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Custom Solutions for Every Business</h2>
+          <p class="section-subtitle">We create tailored service packages that fit your specific goals, timeline, and budget. Every business is unique, and your solution should be too.</p>
+        </div>
+        
+        <div class="custom-approach">
+          <div class="approach-content">
+            <h3 class="approach-title">Why Custom Packages Work Better</h3>
+            <div class="approach-benefits">
+              <div class="benefit-point">
+                <h4>Focused Investment</h4>
+                <p>Pay only for services that directly impact your business goals</p>
+              </div>
+              <div class="benefit-point">
+                <h4>Strategic Combination</h4>
+                <p>We combine services strategically to maximize results and efficiency</p>
+              </div>
+              <div class="benefit-point">
+                <h4>Flexible Timeline</h4>
+                <p>Projects move at the pace that works for your business and budget</p>
+              </div>
+              <div class="benefit-point">
+                <h4>Scalable Solutions</h4>
+                <p>Start with essentials and expand as your business grows</p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="consultation-card">
+            <h3 class="consultation-title">Your Custom Package Starts Here</h3>
+            <p class="consultation-description">During our discovery call, we'll assess your needs and create a custom proposal that combines the right services for maximum impact.</p>
+            <div class="consultation-features">
+              <div class="feature-item">Comprehensive needs assessment</div>
+              <div class="feature-item">Strategic service recommendations</div>
+              <div class="feature-item">Custom timeline and pricing</div>
+              <div class="feature-item">Detailed project roadmap</div>
+            </div>
+            <a href="/contact" class="consultation-cta">Schedule Your Free Consultation</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+      <div class="container">
+        <h2 class="section-title">Frequently Asked Questions</h2>
+        <div class="faq-grid">
+          <div class="faq-item">
+            <h3 class="faq-question">How do I know which services I need?</h3>
+            <p class="faq-answer">We start with a comprehensive consultation to understand your business goals and challenges. Based on this discovery, we'll recommend the services that will have the biggest impact on your growth.</p>
+          </div>
+          <div class="faq-item">
+            <h3 class="faq-question">What's your typical project timeline?</h3>
+            <p class="faq-answer">Timelines vary by service: Brand projects typically take 4-8 weeks, marketing campaigns 2-4 weeks to launch, and social media management is ongoing. We always provide detailed timelines upfront.</p>
+          </div>
+          <div class="faq-item">
+            <h3 class="faq-question">Do you work with businesses in all industries?</h3>
+            <p class="faq-answer">Yes! We've successfully worked with restaurants, fitness studios, consultants, e-commerce businesses, service providers, and more. Our strategic approach adapts to any industry.</p>
+          </div>
+          <div class="faq-item">
+            <h3 class="faq-question">What makes MW Design Studio different?</h3>
+            <p class="faq-answer">We focus on results, not just pretty designs. Every decision is driven by your business goals, and we provide ongoing support to ensure your investment delivers real returns.</p>
+          </div>
+          <div class="faq-item">
+            <h3 class="faq-question">Can I start with one service and add others later?</h3>
+            <p class="faq-answer">Absolutely! Many clients start with branding and then add marketing or social media services. We design everything to work together seamlessly.</p>
+          </div>
+          <div class="faq-item">
+            <h3 class="faq-question">Do you provide ongoing support?</h3>
+            <p class="faq-answer">Yes, we believe in long-term partnerships. We offer various support options, from monthly check-ins to full-service ongoing management, depending on your needs.</p>
+          </div>
+        </div>
+        <div class="faq-cta">
+          <a href="/faq" class="btn btn-outline">View All FAQs</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+      <div class="container">
+        <h2 class="cta-title">Ready to Transform Your Business?</h2>
+        <p class="cta-subtitle">Let's discuss which services will have the biggest impact on your growth. Our consultation is always free and focused on your success.</p>
+        <div class="cta-buttons">
+          <a href="/contact" class="cta-button primary">Complete Your Intake Form</a>
+          <a href="/portfolio" class="cta-button secondary">See Our Work</a>
+        </div>
+      </div>
+    </section>
   </main>
 </Layout>
+
+<style>
+  :root {
+    --mw-navy: #1E3A8A;
+    --mw-teal: #4FD1C7;
+    --mw-light-teal: #4FD1C7;
+    --mw-accent: #4A90E2;
+    --mw-gradient: linear-gradient(135deg, #1E3A8A 0%, #4FD1C7 100%);
+    --light-gray: #F8F9FA;
+    --neutral-bg: #FAFBFC;
+    --dark-text: #333333;
+    --medium-gray: #666666;
+    --light-border: #E2E8F0;
+  }
+
+  /* Hero Section */
+  .hero-section {
+    background: var(--mw-gradient);
+    padding: 6rem 0 4rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+  }
+
+  .hero-content {
+    color: white;
+  }
+
+  .breadcrumb {
+    margin-bottom: 2rem;
+    opacity: 0.9;
+  }
+
+  .breadcrumb a {
+    color: white;
+    text-decoration: none;
+  }
+
+  .breadcrumb a:hover {
+    text-decoration: underline;
+  }
+
+  .hero-title {
+    font-size: 3.5rem;
+    font-weight: 600;
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+    letter-spacing: -0.02em;
+  }
+
+  .hero-subtitle {
+    font-size: 1.25rem;
+    font-weight: 300;
+    margin-bottom: 2rem;
+    opacity: 0.95;
+    line-height: 1.6;
+  }
+
+  .hero-cta {
+    background: white;
+    color: var(--mw-navy);
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.1rem;
+    display: inline-block;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  }
+
+  .hero-cta:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+  }
+
+  .hero-visual {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .hero-graphic {
+    width: 100%;
+    max-width: 500px;
+    height: 400px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero-graphic::before {
+    content: '';
+    width: 200px;
+    height: 200px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    animation: float 3s ease-in-out infinite;
+  }
+
+  /* Services Overview */
+  .services-overview {
+    padding: 6rem 0;
+    background: white;
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+
+  .section-header {
+    text-align: center;
+    margin-bottom: 4rem;
+  }
+
+  .section-title {
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: var(--mw-navy);
+    margin-bottom: 1rem;
+    letter-spacing: -0.01em;
+  }
+
+  .section-subtitle {
+    font-size: 1.1rem;
+    color: var(--medium-gray);
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.6;
+  }
+
+  .journey-steps {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+  }
+
+  .journey-card {
+    background: white;
+    padding: 2.5rem;
+    border-radius: 20px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    border: 2px solid transparent;
+  }
+
+  .journey-card.featured {
+    border-color: var(--mw-teal);
+  }
+
+  .journey-card.coming-soon {
+    opacity: 0.7;
+    background: var(--light-gray);
+  }
+
+  .journey-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: var(--mw-navy);
+  }
+
+  .journey-card.featured::before {
+    background: var(--mw-teal);
+  }
+
+  .journey-card.coming-soon::before {
+    background: var(--medium-gray);
+  }
+
+  .journey-card:hover:not(.coming-soon) {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+  }
+
+  .journey-status {
+    background: rgba(30, 58, 138, 0.1);
+    color: var(--mw-navy);
+    padding: 0.25rem 1rem;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    display: inline-block;
+    margin-bottom: 1rem;
+  }
+
+  .journey-card.coming-soon .journey-status {
+    background: rgba(102, 102, 102, 0.1);
+    color: var(--medium-gray);
+  }
+
+  .popular-badge {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: var(--mw-teal);
+    color: white;
+    padding: 0.25rem 0.75rem;
+    border-radius: 15px;
+    font-size: 0.75rem;
+    font-weight: 600;
+  }
+
+  .journey-icon {
+    width: 80px;
+    height: 80px;
+    background: var(--mw-navy);
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: white;
+    box-shadow: 0 4px 12px rgba(30, 58, 138, 0.15);
+  }
+
+  .journey-card.featured .journey-icon {
+    background: var(--mw-teal);
+  }
+
+  .journey-card.coming-soon .journey-icon {
+    background: var(--medium-gray);
+  }
+
+  .journey-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--mw-navy);
+    margin-bottom: 1rem;
+  }
+
+  .journey-card.coming-soon .journey-title {
+    color: var(--medium-gray);
+  }
+
+  .journey-description {
+    color: var(--medium-gray);
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+  }
+
+  .journey-services {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .service-item {
+    background: var(--light-gray);
+    color: var(--mw-navy);
+    padding: 0.5rem 1rem;
+    border-radius: 15px;
+    font-size: 0.85rem;
+    font-weight: 500;
+  }
+
+  .journey-cta {
+    color: var(--mw-teal);
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+    padding: 0.75rem 1.5rem;
+    border: 2px solid var(--mw-teal);
+    border-radius: 25px;
+    display: inline-block;
+  }
+
+  .journey-cta:hover {
+    background: var(--mw-teal);
+    color: white;
+  }
+
+  .journey-cta.disabled {
+    color: var(--medium-gray);
+    border-color: var(--medium-gray);
+    cursor: not-allowed;
+  }
+
+  .journey-cta.disabled:hover {
+    background: none;
+    color: var(--medium-gray);
+  }
+
+  /* Process Section */
+  .process-section {
+    padding: 6rem 0;
+    background: var(--neutral-bg);
+  }
+
+  .process-steps {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 3rem;
+    margin-bottom: 3rem;
+  }
+
+  .process-step {
+    text-align: center;
+  }
+
+  .step-number {
+    width: 80px;
+    height: 80px;
+    background: var(--mw-navy);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    font-weight: 600;
+    margin: 0 auto 1.5rem;
+    box-shadow: 0 4px 12px rgba(30, 58, 138, 0.15);
+  }
+
+  .step-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--mw-navy);
+    margin-bottom: 1rem;
+  }
+
+  .step-description {
+    color: var(--medium-gray);
+    line-height: 1.6;
+  }
+
+  .process-cta {
+    text-align: center;
+  }
+
+  /* Results Section */
+  .results-section {
+    padding: 6rem 0;
+    background: var(--mw-navy);
+    color: white;
+  }
+
+  .results-section .section-title {
+    color: white;
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+
+  .results-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+  }
+
+  .result-card {
+    text-align: center;
+    padding: 2rem 1rem;
+  }
+
+  .result-number {
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--mw-teal);
+    margin-bottom: 0.5rem;
+  }
+
+  .result-label {
+    font-size: 1.125rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+  }
+
+  .result-card p {
+    opacity: 0.9;
+    font-size: 0.9rem;
+  }
+
+  /* Service Detail Sections */
+  .service-detail-section {
+    padding: 6rem 0;
+    background: white;
+  }
+
+  .service-detail-section.alternate {
+    background: var(--neutral-bg);
+  }
+
+  .service-category-icon {
+    width: 60px;
+    height: 60px;
+    background: var(--mw-navy);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin: 0 auto 1.5rem;
+    box-shadow: 0 4px 12px rgba(30, 58, 138, 0.15);
+  }
+
+  .service-detail-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+  }
+
+  .service-detail-card {
+    background: white;
+    padding: 2.5rem;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    border-left: 4px solid var(--mw-teal);
+  }
+
+  .service-detail-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--mw-navy);
+    margin-bottom: 1rem;
+  }
+
+  .service-timeline {
+    background: var(--light-gray);
+    color: var(--mw-navy);
+    padding: 0.5rem 1rem;
+    border-radius: 15px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    display: inline-block;
+    margin-bottom: 1.5rem;
+  }
+
+  .service-detail-content h4 {
+    color: var(--mw-navy);
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin: 1.5rem 0 0.75rem 0;
+  }
+
+  .service-detail-content h4:first-child {
+    margin-top: 0;
+  }
+
+  .service-detail-content p {
+    color: var(--medium-gray);
+    line-height: 1.6;
+    margin-bottom: 1rem;
+  }
+
+  .service-detail-content ul {
+    list-style: none;
+    padding: 0;
+    margin: 1rem 0;
+  }
+
+  .service-detail-content li {
+    padding: 0.5rem 0;
+    position: relative;
+    padding-left: 1.5rem;
+    color: var(--dark-text);
+  }
+
+  .service-detail-content li:before {
+    content: "•";
+    color: var(--mw-teal);
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+  }
+
+  /* Custom Solutions Section */
+  .custom-solutions-section {
+    padding: 6rem 0;
+    background: white;
+  }
+
+  .custom-approach {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    margin-top: 3rem;
+    align-items: start;
+  }
+
+  .approach-title {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: var(--mw-navy);
+    margin-bottom: 2rem;
+  }
+
+  .approach-benefits {
+    display: grid;
+    gap: 2rem;
+  }
+
+  .benefit-point h4 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--mw-navy);
+    margin-bottom: 0.5rem;
+  }
+
+  .benefit-point p {
+    color: var(--medium-gray);
+    line-height: 1.6;
+  }
+
+  .consultation-card {
+    background: var(--mw-navy);
+    color: white;
+    padding: 3rem;
+    border-radius: 20px;
+    text-align: center;
+  }
+
+  .consultation-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+  }
+
+  .consultation-description {
+    opacity: 0.9;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+  }
+
+  .consultation-features {
+    display: grid;
+    gap: 0.75rem;
+    margin-bottom: 2rem;
+  }
+
+  .feature-item {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 0.75rem 1rem;
+    border-radius: 10px;
+    font-size: 0.9rem;
+    backdrop-filter: blur(10px);
+  }
+
+  .consultation-cta {
+    background: white;
+    color: var(--mw-navy);
+    padding: 1rem 2rem;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: 600;
+    display: inline-block;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  }
+
+  .consultation-cta:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+  }
+
+  /* FAQ Section */
+  .faq-section {
+    padding: 6rem 0;
+    background: var(--neutral-bg);
+  }
+
+  .faq-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+  }
+
+  .faq-item {
+    background: white;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  }
+
+  .faq-question {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: var(--mw-navy);
+    margin-bottom: 1rem;
+  }
+
+  .faq-answer {
+    color: var(--medium-gray);
+    line-height: 1.6;
+  }
+
+  .faq-cta {
+    text-align: center;
+  }
+
+  /* CTA Section */
+  .cta-section {
+    padding: 6rem 0;
+    background: var(--mw-navy);
+    color: white;
+    text-align: center;
+  }
+
+  .cta-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+  }
+
+  .cta-subtitle {
+    font-size: 1.2rem;
+    opacity: 0.9;
+    margin-bottom: 2rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.6;
+  }
+
+  .cta-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .cta-button {
+    padding: 1rem 2.5rem;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.1rem;
+    display: inline-block;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  }
+
+  .cta-button.primary {
+    background: white;
+    color: var(--mw-navy);
+  }
+
+  .cta-button.primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+  }
+
+  .cta-button.secondary {
+    background: transparent;
+    color: white;
+    border: 2px solid white;
+  }
+
+  .cta-button.secondary:hover {
+    background: white;
+    color: var(--mw-navy);
+  }
+
+  /* Button Styles */
+  .btn {
+    display: inline-block;
+    padding: 0.75rem 2rem;
+    text-decoration: none;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+    font-weight: 600;
+    font-size: 1rem;
+  }
+
+  .btn-primary {
+    background: var(--mw-teal);
+    color: white;
+  }
+
+  .btn-primary:hover {
+    background: var(--mw-navy);
+    transform: translateY(-2px);
+  }
+
+  .btn-secondary {
+    background: transparent;
+    color: var(--mw-navy);
+    border: 2px solid var(--mw-navy);
+  }
+
+  .btn-secondary:hover {
+    background: var(--mw-navy);
+    color: white;
+  }
+
+  .btn-outline {
+    background: transparent;
+    color: var(--mw-navy);
+    border: 2px solid var(--mw-navy);
+  }
+
+  .btn-outline:hover {
+    background: var(--mw-navy);
+    color: white;
+  }
+
+  /* Animations */
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .hero-container {
+      grid-template-columns: 1fr;
+      text-align: center;
+      gap: 2rem;
+    }
+
+    .hero-title {
+      font-size: 2.5rem;
+    }
+
+    .section-title {
+      font-size: 2rem;
+    }
+
+    .journey-steps,
+    .service-detail-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .custom-approach {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+
+    .process-steps {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+
+    .results-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .faq-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .cta-title {
+      font-size: 2rem;
+    }
+
+    .cta-buttons {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .journey-card.featured {
+      transform: none;
+    }
+
+    .journey-card.featured:hover {
+      transform: translateY(-8px);
+    }
+  }
+
+  @media (max-width: 480px) {
+    .container {
+      padding: 0 1rem;
+    }
+
+    .hero-container {
+      padding: 0 1rem;
+    }
+
+    .hero-title {
+      font-size: 2rem;
+    }
+
+    .hero-subtitle {
+      font-size: 1.1rem;
+    }
+
+    .results-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

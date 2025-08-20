@@ -1,9 +1,498 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import SEO from '../components/SEO.astro';
 ---
 
-<Layout title="Contact">
+<Layout title="Contact - MW Design Studio">
+  <SEO 
+    title="Contact - MW Design Studio"
+    description="Ready to transform your business? Complete our intake form to start your journey with MW Design Studio. Free consultation for qualified businesses."
+    keywords="contact MW Design Studio, brand design consultation, marketing consultation, free consultation"
+  />
+  
   <main>
-    <h1>Contact</h1>
+    <!-- Hero Section -->
+    <section class="contact-hero">
+      <div class="hero-container">
+        <nav class="breadcrumb">
+          <a href="/">Home</a> > Contact
+        </nav>
+        <h1 class="hero-title">Let's Create Something Amazing Together</h1>
+        <p class="hero-subtitle">Complete our intake form to start your transformation journey. We'll review your submission and schedule a free consultation to discuss your project.</p>
+      </div>
+    </section>
+
+    <!-- Contact Content -->
+    <section class="contact-content">
+      <div class="container">
+        <div class="contact-grid">
+          <!-- Form Section -->
+          <div class="form-section">
+            <div class="form-header">
+              <h2>Complete Your Intake Form</h2>
+              <p>Tell us about your business and goals. This helps us prepare for our consultation and create a custom proposal tailored to your needs.</p>
+            </div>
+            
+            <!-- MW Design Studio Intake Form Embed -->
+            <div class="intake-form-wrapper">
+              <iframe 
+                src="https://mw-design-client-intake-v2.onrender.com/" 
+                width="100%" 
+                height="800" 
+                frameborder="0" 
+                allowfullscreen
+                class="intake-form"
+              ></iframe>
+            </div>
+          </div>
+
+          <!-- Info Section -->
+          <div class="info-section">
+            <div class="info-card">
+              <h3>What Happens Next?</h3>
+              <div class="process-timeline">
+                <div class="timeline-item">
+                  <div class="timeline-number">1</div>
+                  <div class="timeline-content">
+                    <h4>Form Review</h4>
+                    <p>We'll review your intake form within 24 business hours</p>
+                  </div>
+                </div>
+                <div class="timeline-item">
+                  <div class="timeline-number">2</div>
+                  <div class="timeline-content">
+                    <h4>Discovery Call</h4>
+                    <p>Schedule a 30-minute call to discuss your needs and goals</p>
+                  </div>
+                </div>
+                <div class="timeline-item">
+                  <div class="timeline-number">3</div>
+                  <div class="timeline-content">
+                    <h4>Custom Proposal</h4>
+                    <p>Receive a tailored proposal with timeline and investment details</p>
+                  </div>
+                </div>
+                <div class="timeline-item">
+                  <div class="timeline-number">4</div>
+                  <div class="timeline-content">
+                    <h4>Project Kickoff</h4>
+                    <p>Begin transforming your brand and business</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="info-card">
+              <h3>Other Ways to Connect</h3>
+              <div class="contact-methods">
+                <div class="contact-method">
+                  <h4>Email Us</h4>
+                  <p>For general inquiries</p>
+                  <a href="mailto:hello@mwdesignstudio.com">hello@mwdesignstudio.com</a>
+                </div>
+                <div class="contact-method">
+                  <h4>Follow Us</h4>
+                  <p>Stay updated on our latest work</p>
+                  <div class="social-links">
+                    <a href="#" aria-label="Instagram">Instagram</a>
+                    <a href="#" aria-label="LinkedIn">LinkedIn</a>
+                    <a href="#" aria-label="Facebook">Facebook</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="info-card">
+              <h3>FAQs</h3>
+              <div class="mini-faq">
+                <details>
+                  <summary>What's your typical response time?</summary>
+                  <p>We respond to all inquiries within 24 business hours.</p>
+                </details>
+                <details>
+                  <summary>Do you work with businesses outside the US?</summary>
+                  <p>Yes, we work with businesses globally via video calls and digital collaboration.</p>
+                </details>
+                <details>
+                  <summary>What if I'm not sure what services I need?</summary>
+                  <p>That's perfectly fine! Our discovery call helps identify the best solutions for your goals.</p>
+                </details>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+      <div class="container">
+        <h2 class="cta-title">Not Ready for a Full Consultation?</h2>
+        <p class="cta-subtitle">Download our free resources to start improving your brand and marketing today.</p>
+        <a href="/resources" class="cta-button">Browse Free Resources</a>
+      </div>
+    </section>
   </main>
 </Layout>
+
+<style>
+  :root {
+    --mw-navy: #1E3A8A;
+    --mw-teal: #4FD1C7;
+    --mw-light-teal: #4FD1C7;
+    --mw-gradient: linear-gradient(135deg, #1E3A8A 0%, #4FD1C7 100%);
+    --light-gray: #F8F9FA;
+    --neutral-bg: #FAFBFC;
+    --dark-text: #333333;
+    --medium-gray: #666666;
+    --light-border: #E2E8F0;
+  }
+
+  /* Hero Section */
+  .contact-hero {
+    background: var(--mw-gradient);
+    padding: 6rem 0 4rem;
+    color: white;
+    text-align: center;
+  }
+
+  .hero-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+
+  .breadcrumb {
+    margin-bottom: 2rem;
+    opacity: 0.9;
+  }
+
+  .breadcrumb a {
+    color: white;
+    text-decoration: none;
+  }
+
+  .breadcrumb a:hover {
+    text-decoration: underline;
+  }
+
+  .hero-title {
+    font-size: 3rem;
+    font-weight: 600;
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+    letter-spacing: -0.02em;
+  }
+
+  .hero-subtitle {
+    font-size: 1.25rem;
+    font-weight: 300;
+    opacity: 0.95;
+    line-height: 1.6;
+  }
+
+  /* Contact Content */
+  .contact-content {
+    padding: 4rem 0;
+    background: var(--neutral-bg);
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 3rem;
+    align-items: start;
+  }
+
+  /* Form Section */
+  .form-section {
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.08);
+  }
+
+  .form-header {
+    padding: 2.5rem;
+    border-bottom: 1px solid var(--light-border);
+  }
+
+  .form-header h2 {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: var(--mw-navy);
+    margin-bottom: 1rem;
+  }
+
+  .form-header p {
+    color: var(--medium-gray);
+    line-height: 1.6;
+  }
+
+  /* Intake Form Wrapper */
+  .intake-form-wrapper {
+    padding: 2rem;
+    background: white;
+  }
+
+  .intake-form {
+    border: none;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  }
+
+  /* Info Section */
+  .info-section {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .info-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  }
+
+  .info-card h3 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--mw-navy);
+    margin-bottom: 1.5rem;
+  }
+
+  /* Process Timeline */
+  .process-timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .timeline-item {
+    display: flex;
+    gap: 1rem;
+    align-items: start;
+  }
+
+  .timeline-number {
+    width: 32px;
+    height: 32px;
+    background: var(--mw-teal);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    font-size: 0.9rem;
+    flex-shrink: 0;
+  }
+
+  .timeline-content h4 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--dark-text);
+    margin-bottom: 0.25rem;
+  }
+
+  .timeline-content p {
+    font-size: 0.9rem;
+    color: var(--medium-gray);
+    line-height: 1.5;
+  }
+
+  /* Contact Methods */
+  .contact-methods {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .contact-method h4 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--dark-text);
+    margin-bottom: 0.25rem;
+  }
+
+  .contact-method p {
+    font-size: 0.9rem;
+    color: var(--medium-gray);
+    margin-bottom: 0.5rem;
+  }
+
+  .contact-method a {
+    color: var(--mw-teal);
+    text-decoration: none;
+    font-weight: 500;
+  }
+
+  .contact-method a:hover {
+    text-decoration: underline;
+  }
+
+  .social-links {
+    display: flex;
+    gap: 1rem;
+  }
+
+  .social-links a {
+    color: var(--mw-navy);
+    text-decoration: none;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    background: var(--light-gray);
+    border-radius: 20px;
+    transition: all 0.3s ease;
+  }
+
+  .social-links a:hover {
+    background: var(--mw-navy);
+    color: white;
+  }
+
+  /* Mini FAQ */
+  .mini-faq {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .mini-faq details {
+    background: var(--light-gray);
+    padding: 1rem;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+
+  .mini-faq summary {
+    font-weight: 600;
+    color: var(--dark-text);
+    list-style: none;
+    position: relative;
+    padding-right: 1.5rem;
+  }
+
+  .mini-faq summary::after {
+    content: '+';
+    position: absolute;
+    right: 0;
+    top: 0;
+    color: var(--mw-teal);
+    font-size: 1.2rem;
+    font-weight: 600;
+  }
+
+  .mini-faq details[open] summary::after {
+    content: '−';
+  }
+
+  .mini-faq details p {
+    margin-top: 0.75rem;
+    color: var(--medium-gray);
+    line-height: 1.5;
+  }
+
+  /* CTA Section */
+  .cta-section {
+    padding: 5rem 0;
+    background: white;
+    text-align: center;
+  }
+
+  .cta-title {
+    font-size: 2rem;
+    font-weight: 600;
+    color: var(--mw-navy);
+    margin-bottom: 1rem;
+  }
+
+  .cta-subtitle {
+    font-size: 1.1rem;
+    color: var(--medium-gray);
+    margin-bottom: 2rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.6;
+  }
+
+  .cta-button {
+    background: var(--mw-gradient);
+    color: white;
+    padding: 1rem 2.5rem;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.1rem;
+    display: inline-block;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  }
+
+  .cta-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+  }
+
+  /* Responsive Design */
+  @media (max-width: 1024px) {
+    .contact-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .info-section {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .hero-title {
+      font-size: 2rem;
+    }
+
+    .hero-subtitle {
+      font-size: 1.1rem;
+    }
+
+    .intake-form-wrapper {
+      padding: 1rem;
+    }
+
+    .form-header {
+      padding: 1.5rem;
+    }
+
+    .info-section {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .container {
+      padding: 0 1rem;
+    }
+
+    .hero-container {
+      padding: 0 1rem;
+    }
+
+    .contact-hero {
+      padding: 4rem 0 3rem;
+    }
+
+    .intake-form {
+      height: 600px;
+    }
+  }
+</style>

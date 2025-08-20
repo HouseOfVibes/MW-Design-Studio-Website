@@ -1,0 +1,882 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>30-Day Social Media Content Calendar - MD Design Studio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            background: #F8F9FA;
+            color: #333333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .page {
+            background: white;
+            margin-bottom: 40px;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            page-break-after: always;
+            position: relative;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding: 30px;
+            background: linear-gradient(135deg, #1E3A8A 0%, #4FD1C7 100%);
+            border-radius: 8px;
+            color: white;
+        }
+        
+        .main-title {
+            font-size: 2.5em;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        
+        .subtitle {
+            font-size: 1.2em;
+            opacity: 0.9;
+            margin-bottom: 20px;
+        }
+        
+        .brand {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            color: #1E3A8A;
+            font-weight: bold;
+            font-size: 1.1em;
+        }
+        
+        .instructions {
+            background: #FAFBFC;
+            border: 2px solid #E2E8F0;
+            border-radius: 8px;
+            padding: 25px;
+            margin-bottom: 30px;
+        }
+        
+        .instructions h3 {
+            color: #1E3A8A;
+            margin-bottom: 15px;
+            font-size: 1.3em;
+        }
+        
+        .instructions-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 15px;
+        }
+        
+        .instruction-item {
+            background: white;
+            padding: 15px;
+            border-radius: 6px;
+            border-left: 4px solid #4FD1C7;
+        }
+        
+        .instruction-item h4 {
+            color: #1E3A8A;
+            margin-bottom: 8px;
+        }
+        
+        .instruction-item p {
+            color: #666666;
+            font-size: 0.95em;
+        }
+        
+        .calendar-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .day-box {
+            border: 2px solid #E2E8F0;
+            border-radius: 8px;
+            padding: 20px;
+            min-height: 280px;
+            background: #FAFBFC;
+            position: relative;
+            transition: border-color 0.3s ease;
+        }
+        
+        .day-box:hover {
+            border-color: #4FD1C7;
+        }
+        
+        .day-number {
+            font-weight: bold;
+            color: white;
+            font-size: 1.4em;
+            margin-bottom: 15px;
+            background: linear-gradient(135deg, #1E3A8A 0%, #4FD1C7 100%);
+            padding: 8px 12px;
+            border-radius: 6px;
+            display: inline-block;
+            min-width: 40px;
+            text-align: center;
+        }
+        
+        .content-section {
+            margin-bottom: 15px;
+        }
+        
+        .content-label {
+            font-weight: bold;
+            color: #1E3A8A;
+            font-size: 0.9em;
+            display: block;
+            margin-bottom: 5px;
+        }
+        
+        .content-input {
+            border: 1px solid #E2E8F0;
+            border-radius: 4px;
+            min-height: 25px;
+            padding: 5px;
+            background: white;
+            width: 100%;
+        }
+        
+        .content-input.large {
+            min-height: 40px;
+        }
+        
+        .platform-section {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 8px;
+            margin-bottom: 15px;
+        }
+        
+        .platform-checkbox {
+            display: flex;
+            align-items: center;
+            font-size: 0.85em;
+            color: #666666;
+        }
+        
+        .checkbox {
+            width: 14px;
+            height: 14px;
+            border: 2px solid #4FD1C7;
+            margin-right: 6px;
+            border-radius: 2px;
+            background: white;
+        }
+        
+        .completed-checkbox {
+            width: 16px;
+            height: 16px;
+            border: 2px solid #1E3A8A;
+            margin-right: 8px;
+            border-radius: 2px;
+            background: white;
+            position: absolute;
+            bottom: 15px;
+            left: 20px;
+        }
+        
+        .completed-label {
+            position: absolute;
+            bottom: 18px;
+            left: 45px;
+            font-size: 0.9em;
+            color: #666666;
+            font-weight: 500;
+        }
+        
+        .section-title {
+            color: #1E3A8A;
+            font-size: 2em;
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 30px;
+            padding-bottom: 15px;
+            border-bottom: 3px solid #4FD1C7;
+        }
+        
+        .category-section {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+        
+        .category-card {
+            border: 2px solid #E2E8F0;
+            border-radius: 8px;
+            padding: 25px;
+            background: #FAFBFC;
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+        
+        .category-card:hover {
+            transform: translateY(-2px);
+            border-color: #4FD1C7;
+        }
+        
+        .category-header {
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #E2E8F0;
+        }
+        
+        .category-title {
+            font-size: 1.3em;
+            font-weight: bold;
+            color: #1E3A8A;
+            margin-bottom: 5px;
+        }
+        
+        .category-description {
+            color: #666666;
+            margin-bottom: 15px;
+            font-size: 0.95em;
+            line-height: 1.5;
+        }
+        
+        .example-posts {
+            font-size: 0.9em;
+            color: #666666;
+            background: white;
+            padding: 12px;
+            border-radius: 4px;
+            border-left: 4px solid #4FD1C7;
+        }
+        
+        .frequency {
+            background: linear-gradient(135deg, #1E3A8A 0%, #4FD1C7 100%);
+            color: white;
+            padding: 6px 12px;
+            border-radius: 4px;
+            font-size: 0.85em;
+            margin-top: 15px;
+            display: inline-block;
+            font-weight: 500;
+        }
+        
+        .tracking-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            font-size: 0.9em;
+            background: white;
+        }
+        
+        .tracking-table th,
+        .tracking-table td {
+            border: 1px solid #E2E8F0;
+            padding: 12px 8px;
+            text-align: left;
+        }
+        
+        .tracking-table th {
+            background: linear-gradient(135deg, #1E3A8A 0%, #4FD1C7 100%);
+            color: white;
+            font-weight: bold;
+            font-size: 0.85em;
+        }
+        
+        .tracking-table tr:nth-child(even) {
+            background: #FAFBFC;
+        }
+        
+        .tracking-table td {
+            height: 35px;
+            vertical-align: top;
+        }
+        
+        .tips-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+        
+        .tips-section {
+            background: #FAFBFC;
+            border: 2px solid #E2E8F0;
+            border-radius: 8px;
+            padding: 25px;
+            transition: transform 0.3s ease;
+        }
+        
+        .tips-section:hover {
+            transform: translateY(-2px);
+            border-color: #4FD1C7;
+        }
+        
+        .tips-title {
+            color: #1E3A8A;
+            font-size: 1.3em;
+            font-weight: bold;
+            margin-bottom: 15px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid #4FD1C7;
+        }
+        
+        .tips-list {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .tips-list li {
+            margin-bottom: 12px;
+            padding-left: 20px;
+            position: relative;
+            color: #666666;
+            line-height: 1.5;
+        }
+        
+        .tips-list li:before {
+            content: "▶";
+            position: absolute;
+            left: 0;
+            color: #4FD1C7;
+            font-weight: bold;
+            font-size: 0.8em;
+        }
+        
+        .posting-times {
+            background: linear-gradient(135deg, #1E3A8A 0%, #4FD1C7 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 15px 0;
+        }
+        
+        .posting-times h4 {
+            color: white;
+            margin-bottom: 12px;
+            font-size: 1.1em;
+        }
+        
+        .posting-times p {
+            margin-bottom: 6px;
+            opacity: 0.9;
+        }
+        
+        .hashtag-section {
+            background: #FAFBFC;
+            border: 2px solid #E2E8F0;
+            border-radius: 8px;
+            padding: 25px;
+            margin-top: 25px;
+        }
+        
+        .hashtag-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .hashtag-category {
+            background: white;
+            padding: 18px;
+            border-radius: 6px;
+            border-left: 4px solid #4FD1C7;
+        }
+        
+        .hashtag-category h4 {
+            color: #1E3A8A;
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+        
+        .hashtags {
+            font-size: 0.85em;
+            color: #666666;
+            line-height: 1.8;
+        }
+        
+        .summary-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+        
+        .summary-card {
+            background: #FAFBFC;
+            border: 2px solid #E2E8F0;
+            border-radius: 8px;
+            padding: 25px;
+        }
+        
+        .summary-card h3 {
+            color: #1E3A8A;
+            margin-bottom: 15px;
+            font-size: 1.2em;
+        }
+        
+        .summary-card p {
+            margin-bottom: 10px;
+            color: #666666;
+        }
+        
+        .summary-card strong {
+            color: #333333;
+        }
+        
+        .framework-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .framework-item {
+            text-align: center;
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+            border: 2px solid #E2E8F0;
+            transition: border-color 0.3s ease;
+        }
+        
+        .framework-item:hover {
+            border-color: #4FD1C7;
+        }
+        
+        .framework-item strong {
+            color: #1E3A8A;
+            display: block;
+            margin-bottom: 8px;
+            font-size: 1.1em;
+        }
+        
+        @media print {
+            .page {
+                margin: 0;
+                padding: 20px;
+                box-shadow: none;
+                border-radius: 0;
+            }
+            
+            .brand {
+                position: static;
+                text-align: center;
+                margin-top: 20px;
+            }
+            
+            .calendar-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+            
+            .day-box {
+                min-height: 200px;
+                break-inside: avoid;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .calendar-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .category-section,
+            .tips-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Instructions Page -->
+        <div class="page">
+            <div class="header">
+                <h1 class="main-title">30-Day Social Media Content Calendar</h1>
+                <p class="subtitle">Professional Template for Small Businesses</p>
+            </div>
+            
+            <div class="instructions">
+                <h3>How to Use This Template</h3>
+                <p style="color: #666666; margin-bottom: 20px;">This comprehensive social media planning template will help you organize, plan, and track your content for 30 days. Follow these steps to maximize your social media success.</p>
+                
+                <div class="instructions-grid">
+                    <div class="instruction-item">
+                        <h4>Step 1: Plan Your Content</h4>
+                        <p>Review the Content Category Guide and plan your posts using the 5 content types. Aim for a balanced mix throughout the month.</p>
+                    </div>
+                    
+                    <div class="instruction-item">
+                        <h4>Step 2: Fill Daily Boxes</h4>
+                        <p>For each day, fill in the theme, select platforms, write your post idea, add relevant hashtags, and note the best posting time.</p>
+                    </div>
+                    
+                    <div class="instruction-item">
+                        <h4>Step 3: Use Hashtag Guide</h4>
+                        <p>Reference the hashtag research section to find relevant tags for your industry. Mix popular and niche hashtags for best reach.</p>
+                    </div>
+                    
+                    <div class="instruction-item">
+                        <h4>Step 4: Track Performance</h4>
+                        <p>Use the engagement tracking sheet to monitor your post performance and identify what content works best for your audience.</p>
+                    </div>
+                    
+                    <div class="instruction-item">
+                        <h4>Step 5: Check Off Completed</h4>
+                        <p>Mark the checkbox when you've posted content for each day. This helps you stay consistent with your posting schedule.</p>
+                    </div>
+                    
+                    <div class="instruction-item">
+                        <h4>Step 6: Review & Improve</h4>
+                        <p>At the end of 30 days, review your tracking data and tips section to improve your strategy for the next month.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div style="background: white; border: 2px solid #4FD1C7; border-radius: 8px; padding: 20px; margin-top: 20px;">
+                <h3 style="color: #1E3A8A; margin-bottom: 15px;">Quick Reference</h3>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px;">
+                    <div>
+                        <strong style="color: #1E3A8A;">Content Types:</strong><br>
+                        <span style="color: #666666; font-size: 0.9em;">Educational, Behind-the-Scenes, Promotional, Community, Entertainment</span>
+                    </div>
+                    <div>
+                        <strong style="color: #1E3A8A;">Hashtag Count:</strong><br>
+                        <span style="color: #666666; font-size: 0.9em;">Use 5-10 relevant hashtags per post</span>
+                    </div>
+                    <div>
+                        <strong style="color: #1E3A8A;">Posting Frequency:</strong><br>
+                        <span style="color: #666666; font-size: 0.9em;">1-2 posts per day across platforms</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="brand">MD Design Studio</div>
+        </div>
+        
+        <!-- Main Calendar Page -->
+        <div class="page">
+            <h2 class="section-title">30-Day Content Calendar</h2>
+            
+            <div class="calendar-grid">
+                <!-- Days 1-30 with larger boxes -->
+                <div class="day-box">
+                    <div class="day-number">1</div>
+                    <div class="content-section">
+                        <span class="content-label">Content Theme:</span>
+                        <div class="content-input"></div>
+                    </div>
+                    <div class="content-section">
+                        <span class="content-label">Platforms:</span>
+                        <div class="platform-section">
+                            <div class="platform-checkbox">
+                                <div class="checkbox"></div> Instagram
+                            </div>
+                            <div class="platform-checkbox">
+                                <div class="checkbox"></div> Facebook
+                            </div>
+                            <div class="platform-checkbox">
+                                <div class="checkbox"></div> LinkedIn
+                            </div>
+                            <div class="platform-checkbox">
+                                <div class="checkbox"></div> TikTok
+                            </div>
+                        </div>
+                    </div>
+                    <div class="content-section">
+                        <span class="content-label">Post Idea:</span>
+                        <div class="content-input large"></div>
+                    </div>
+                    <div class="content-section">
+                        <span class="content-label">Hashtags:</span>
+                        <div class="content-input"></div>
+                    </div>
+                    <div class="content-section">
+                        <span class="content-label">Best Time:</span>
+                        <div class="content-input"></div>
+                    </div>
+                    <div class="completed-checkbox"></div>
+                    <span class="completed-label">Posted</span>
+                </div>
+                
+                <div class="day-box">
+                    <div class="day-number">2</div>
+                    <div class="content-section">
+                        <span class="content-label">Content Theme:</span>
+                        <div class="content-input"></div>
+                    </div>
+                    <div class="content-section">
+                        <span class="content-label">Platforms:</span>
+                        <div class="platform-section">
+                            <div class="platform-checkbox"><div class="checkbox"></div> Instagram</div>
+                            <div class="platform-checkbox"><div class="checkbox"></div> Facebook</div>
+                            <div class="platform-checkbox"><div class="checkbox"></div> LinkedIn</div>
+                            <div class="platform-checkbox"><div class="checkbox"></div> TikTok</div>
+                        </div>
+                    </div>
+                    <div class="content-section">
+                        <span class="content-label">Post Idea:</span>
+                        <div class="content-input large"></div>
+                    </div>
+                    <div class="content-section">
+                        <span class="content-label">Hashtags:</span>
+                        <div class="content-input"></div>
+                    </div>
+                    <div class="content-section">
+                        <span class="content-label">Best Time:</span>
+                        <div class="content-input"></div>
+                    </div>
+                    <div class="completed-checkbox"></div>
+                    <span class="completed-label">Posted</span>
+                </div>
+                
+                <div class="day-box">
+                    <div class="day-number">3</div>
+                    <div class="content-section">
+                        <span class="content-label">Content Theme:</span>
+                        <div class="content-input"></div>
+                    </div>
+                    <div class="content-section">
+                        <span class="content-label">Platforms:</span>
+                        <div class="platform-section">
+                            <div class="platform-checkbox"><div class="checkbox"></div> Instagram</div>
+                            <div class="platform-checkbox"><div class="checkbox"></div> Facebook</div>
+                            <div class="platform-checkbox"><div class="checkbox"></div> LinkedIn</div>
+                            <div class="platform-checkbox"><div class="checkbox"></div> TikTok</div>
+                        </div>
+                    </div>
+                    <div class="content-section">
+                        <span class="content-label">Post Idea:</span>
+                        <div class="content-input large"></div>
+                    </div>
+                    <div class="content-section">
+                        <span class="content-label">Hashtags:</span>
+                        <div class="content-input"></div>
+                    </div>
+                    <div class="content-section">
+                        <span class="content-label">Best Time:</span>
+                        <div class="content-input"></div>
+                    </div>
+                    <div class="completed-checkbox"></div>
+                    <span class="completed-label">Posted</span>
+                </div>
+                
+                <!-- Days 4-30 (showing pattern for first few, then continuing) -->
+                <div class="day-box"><div class="day-number">4</div><div class="content-section"><span class="content-label">Content Theme:</span><div class="content-input"></div></div><div class="content-section"><span class="content-label">Platforms:</span><div class="platform-section"><div class="platform-checkbox"><div class="checkbox"></div> Instagram</div><div class="platform-checkbox"><div class="checkbox"></div> Facebook</div><div class="platform-checkbox"><div class="checkbox"></div> LinkedIn</div><div class="platform-checkbox"><div class="checkbox"></div> TikTok</div></div></div><div class="content-section"><span class="content-label">Post Idea:</span><div class="content-input large"></div></div><div class="content-section"><span class="content-label">Hashtags:</span><div class="content-input"></div></div><div class="content-section"><span class="content-label">Best Time:</span><div class="content-input"></div></div><div class="completed-checkbox"></div><span class="completed-label">Posted</span></div>
+                
+                <div class="day-box"><div class="day-number">5</div><div class="content-section"><span class="content-label">Content Theme:</span><div class="content-input"></div></div><div class="content-section"><span class="content-label">Platforms:</span><div class="platform-section"><div class="platform-checkbox"><div class="checkbox"></div> Instagram</div><div class="platform-checkbox"><div class="checkbox"></div> Facebook</div><div class="platform-checkbox"><div class="checkbox"></div> LinkedIn</div><div class="platform-checkbox"><div class="checkbox"></div> TikTok</div></div></div><div class="content-section"><span class="content-label">Post Idea:</span><div class="content-input large"></div></div><div class="content-section"><span class="content-label">Hashtags:</span><div class="content-input"></div></div><div class="content-section"><span class="content-label">Best Time:</span><div class="content-input"></div></div><div class="completed-checkbox"></div><span class="completed-label">Posted</span></div>
+                
+                <div class="day-box"><div class="day-number">6</div><div class="content-section"><span class="content-label">Content Theme:</span><div class="content-input"></div></div><div class="content-section"><span class="content-label">Platforms:</span><div class="platform-section"><div class="platform-checkbox"><div class="checkbox"></div> Instagram</div><div class="platform-checkbox"><div class="checkbox"></div> Facebook</div><div class="platform-checkbox"><div class="checkbox"></div> LinkedIn</div><div class="platform-checkbox"><div class="checkbox"></div> TikTok</div></div></div><div class="content-section"><span class="content-label">Post Idea:</span><div class="content-input large"></div></div><div class="content-section"><span class="content-label">Hashtags:</span><div class="content-input"></div></div><div class="content-section"><span class="content-label">Best Time:</span><div class="content-input"></div></div><div class="completed-checkbox"></div><span class="completed-label">Posted</span></div>
+                
+                <div class="day-box"><div class="day-number">7</div><div class="content-section"><span class="content-label">Content Theme:</span><div class="content-input"></div></div><div class="content-section"><span class="content-label">Platforms:</span><div class="platform-section"><div class="platform-checkbox"><div class="checkbox"></div> Instagram</div><div class="platform-checkbox"><div class="checkbox"></div> Facebook</div><div class="platform-checkbox"><div class="checkbox"></div> LinkedIn</div><div class="platform-checkbox"><div class="checkbox"></div> TikTok</div></div></div><div class="content-section"><span class="content-label">Post Idea:</span><div class="content-input large"></div></div><div class="content-section"><span class="content-label">Hashtags:</span><div class="content-input"></div></div><div class="content-section"><span class="content-label">Best Time:</span><div class="content-input"></div></div><div class="completed-checkbox"></div><span class="completed-label">Posted</span></div>
+                
+                <div class="day-box"><div class="day-number">8</div><div class="content-section"><span class="content-label">Content Theme:</span><div class="content-input"></div></div><div class="content-section"><span class="content-label">Platforms:</span><div class="platform-section"><div class="platform-checkbox"><div class="checkbox"></div> Instagram</div><div class="platform-checkbox"><div class="checkbox"></div> Facebook</div><div class="platform-checkbox"><div class="checkbox"></div> LinkedIn</div><div class="platform-checkbox"><div class="checkbox"></div> TikTok</div></div></div><div class="content-section"><span class="content-label">Post Idea:</span><div class="content-input large"></div></div><div class="content-section"><span class="content-label">Hashtags:</span><div class="content-input"></div></div><div class="content-section"><span class="content-label">Best Time:</span><div class="content-input"></div></div><div class="completed-checkbox"></div><span class="completed-label">Posted</span></div>
+                
+                <div class="day-box"><div class="day-number">9</div><div class="content-section"><span class="content-label">Content Theme:</span><div class="content-input"></div></div><div class="content-section"><span class="content-label">Platforms:</span><div class="platform-section"><div class="platform-checkbox"><div class="checkbox"></div> Instagram</div><div class="platform-checkbox"><div class="checkbox"></div> Facebook</div><div class="platform-checkbox"><div class="checkbox"></div> LinkedIn</div><div class="platform-checkbox"><div class="checkbox"></div> TikTok</div></div></div><div class="content-section"><span class="content-label">Post Idea:</span><div class="content-input large"></div></div><div class="content-section"><span class="content-label">Hashtags:</span><div class="content-input"></div></div><div class="content-section"><span class="content-label">Best Time:</span><div class="content-input"></div></div><div class="completed-checkbox"></div><span class="completed-label">Posted</span></div>
+                
+                <div class="day-box"><div class="day-number">10</div><div class="content-section"><span class="content-label">Content Theme:</span><div class="content-input"></div></div><div class="content-section"><span class="content-label">Platforms:</span><div class="platform-section"><div class="platform-checkbox"><div class="checkbox"></div> Instagram</div><div class="platform-checkbox"><div class="checkbox"></div> Facebook</div><div class="platform-checkbox"><div class="checkbox"></div> LinkedIn</div><div class="platform-checkbox"><div class="checkbox"></div> TikTok</div></div></div><div class="content-section"><span class="content-label">Post Idea:</span><div class="content-input large"></div></div><div class="content-section"><span class="content-label">Hashtags:</span><div class="content-input"></div></div><div class="content-section"><span class="content-label">Best Time:</span><div class="content-input"></div></div><div class="completed-checkbox"></div><span class="completed-label">Posted</span></div>
+                
+                <div class="day-box"><div class="day-number">11</div><div class="content-section"><span class="content-label">Content Theme:</span><div class="content-input"></div></div><div class="content-section"><span class="content-label">Platforms:</span><div class="platform-section"><div class="platform-checkbox"><div class="checkbox"></div> Instagram</div><div class="platform-checkbox"><div class="checkbox"></div> Facebook</div><div class="platform-checkbox"><div class="checkbox"></div> LinkedIn</div><div class="platform-checkbox"><div class="checkbox"></div> TikTok</div></div></div><div class="content-section"><span class="content-label">Post Idea:</span><div class="content-input large"></div></div><div class="content-section"><span class="content-label">Hashtags:</span><div class="content-input"></div></div><div class="content-section"><span class="content-label">Best Time:</span><div class="content-input"></div></div><div class="completed-checkbox"></div><span class="completed-label">Posted</span></div>
+                
+                <div class="day-box"><div class="day-number">12</div><div class="content-section"><span class="content-label">Content Theme:</span><div class="content-input"></div></div><div class="content-section"><span class="content-label">Platforms:</span><div class="platform-section"><div class="platform-checkbox"><div class="checkbox"></div> Instagram</div><div class="platform-checkbox"><div class="checkbox"></div> Facebook</div><div class="platform-checkbox"><div class="checkbox"></div> LinkedIn</div><div class="platform-checkbox"><div class="checkbox"></div> TikTok</div></div></div><div class="content-section"><span class="content-label">Post Idea:</span><div class="content-input large"></div></div><div class="content-section"><span class="content-label">Hashtags:</span><div class="content-input"></div></div><div class="content-section"><span class="content-label">Best Time:</span><div class="content-input"></div></div><div class="completed-checkbox"></div><span class="completed-label">Posted</span></div>
+                
+                <div class="day-box"><div class="day-number">13</div><div class="content-section"><span class="content-label">Content Theme:</span><div class="content-input"></div></div><div class="content-section"><span class="content-label">Platforms:</span><div class="platform-section"><div class="platform-checkbox"><div class="checkbox"></div> Instagram</div><div class="platform-checkbox"><div class="checkbox"></div> Facebook</div><div class="platform-checkbox"><div class="checkbox"></div> LinkedIn</div><div class="platform-checkbox"><div class="checkbox"></div> TikTok</div></div></div><div class="content-section"><span class="content-label">Post Idea:</span><div class="content-input large"></div></div><div class="content-section"><span class="content-label">Hashtags:</span><div class="content-input"></div></div><div class="content-section"><span class="content-label">Best Time:</span><div class="content-input"></div></div><div class="completed-checkbox"></div><span class="completed-label">Posted</span></div>
+                
+                <div class="day-box"><div class="day-number">14</div><div class="content-section"><span class="content-label">Content Theme:</span><div class="content-input"></div></div><div class="content-section"><span class="content-label">Platforms:</span><div class="platform-section"><div class="platform-checkbox"><div class="checkbox"></div> Instagram</div><div class="platform-checkbox"><div class="checkbox"></div> Facebook</div><div class="platform-checkbox"><div class="checkbox"></div> LinkedIn</div><div class="platform-checkbox"><div class="checkbox"></div> TikTok</div></div></div><div class="content-section"><span class="content-label">Post Idea:</span><div class="content-input large"></div></div><div class="content-section"><span class="content-label">Hashtags:</span><div class="content-input"></div></div><div class="content-section"><span class="content-label">Best Time:</span><div class="content-input"></div></div><div class="completed-checkbox"></div><span class="completed-label">Posted</span></div>
+                
+                <div class="day-box"><div class="day-number">15</div><div class="content-section"><span class="content-label">Content Theme:</span><div class="content-input"></div></div><div class="content-section"><span class="content-label">Platforms:</span><div class="platform-section"><div class="platform-checkbox"><div class="checkbox"></div> Instagram</div><div class="platform-checkbox"><div class="checkbox"></div> Facebook</div><div class="platform-checkbox"><div class="checkbox"></div> LinkedIn</div><div class="platform-checkbox"><div class="checkbox"></div> TikTok</div></div></div><div class="content-section"><span class="content-label">Post Idea:</span><div class="content-input large"></div></div><div class="content-section"><span class="content-label">Hashtags:</span><div class="content-input"></div></div><div class="content-section"><span class="content-label">Best Time:</span><div class="content-input"></div></div><div class="completed-checkbox"></div><span class="completed-label">Posted</span></div>
+                
+                <div class="day-box"><div class="day-number">16</div><div class="content-section"><span class="content-label">Content Theme:</span><div class="content-input"></div></div><div class="content-section"><span class="content-label">Platforms:</span><div class="platform-section"><div class="platform-checkbox"><div class="checkbox"></div> Instagram</div><div class="platform-checkbox"><div class="checkbox"></div> Facebook</div><div class="platform-checkbox"><div class="checkbox"></div> LinkedIn</div><div class="platform-checkbox"><div class="checkbox"></div> TikTok</div></div></div><div class="content-section"><span class="content-label">Post Idea:</span><div class="content-input large"></div></div><div class="content-section"><span class="content-label">Hashtags:</span><div class="content-input"></div></div><div class="content-section"><span class="content-label">Best Time:</span><div class="content-input"></div></div><div class="completed-checkbox"></div><span class="completed-label">Posted</span></div>
+                
+                <div class="day-box"><div class="day-number">17</div><div class="content-section"><span class="content-label">Content Theme:</span><div class="content-input"></div></div><div class="content-section"><span class="content-label">Platforms:</span><div class="platform-section"><div class="platform-checkbox"><div class="checkbox"></div> Instagram</div><div class="platform-checkbox"><div class="checkbox"></div> Facebook</div><div class="platform-checkbox"><div class="checkbox"></div> LinkedIn</div><div class="platform-checkbox"><div class="checkbox"></div> TikTok</div></div></div><div class="content-section"><span class="content-label">Post Idea:</span><div class="content-input large"></div></div><div class="content-section"><span class="content-label">Hashtags:</span><div class="content-input"></div></div><div class="content-section"><span class="content-label">Best Time:</span><div class="content-input"></div></div><div class="completed-checkbox"></div><span class="completed-label">Posted</span></div>
+                
+                <div class="day-box"><div class="day-number">18</div><div class="content-section"><span class="content-label">Content Theme:</span><div class="content-input"></div></div><div class="content-section"><span class="content-label">Platforms:</span><div class="platform-section"><div class="platform-checkbox"><div class="checkbox"></div> Instagram</div><div class="platform-checkbox"><div class="checkbox"></div> Facebook</div><div class="platform-checkbox"><div class="checkbox"></div> LinkedIn</div><div class="platform-checkbox"><div class="checkbox"></div> TikTok</div></div></div><div class="content-section"><span class="content-label">Post Idea:</span><div class="content-input large"></div></div><div class="content-section"><span class="content-label">Hashtags:</span><div class="content-input"></div></div><div class="content-section"><span class="content-label">Best Time:</span><div class="content-input"></div></div><div class="completed-checkbox"></div><span class="completed-label">Posted</span></div>
+                
+                <div class="day-box"><div class="day-number">19</div><div class="content-section"><span class="content-label">Content Theme:</span><div class="content-input"></div></div><div class="content-section"><span class="content-label">Platforms:</span><div class="platform-section"><div class="platform-checkbox"><div class="checkbox"></div> Instagram</div><div class="platform-checkbox"><div class="checkbox"></div> Facebook</div><div class="platform-checkbox"><div class="checkbox"></div> LinkedIn</div><div class="platform-checkbox"><div class="checkbox"></div> TikTok</div></div></div><div class="content-section"><span class="content-label">Post Idea:</span><div class="content-input large"></div></div><div class="content-section"><span class="content-label">Hashtags:</span><div class="content-input"></div></div><div class="content-section"><span class="content-label">Best Time:</span><div class="content-input"></div></div><div class="completed-checkbox"></div><span class="completed-label">Posted</span></div>
+                
+                <div class="day-box"><div class="day-number">20</div><div class="content-section"><span class="content-label">Content Theme:</span><div class="content-input"></div></div><div class="content-section"><span class="content-label">Platforms:</span><div class="platform-section"><div class="platform-checkbox"><div class="checkbox"></div> Instagram</div><div class="platform-checkbox"><div class="checkbox"></div> Facebook</div><div class="platform-checkbox"><div class="checkbox"></div> LinkedIn</div><div class="platform-checkbox"><div class="checkbox"></div> TikTok</div></div></div><div class="content-section"><span class="content-label">Post Idea:</span><div class="content-input large"></div></div><div class="content-section"><span class="content-label">Hashtags:</span><div class="content-input"></div></div><div class="content-section"><span class="content-label">Best Time:</span><div class="content-input"></div></div><div class="completed-checkbox"></div><span class="completed-label">Posted</span></div>
+                
+                <div class="day-box"><div class="day-number">21</div><div class="content-section"><span class="content-label">Content Theme:</span><div class="content-input"></div></div><div class="content-section"><span class="content-label">Platforms:</span><div class="platform-section"><div class="platform-checkbox"><div class="checkbox"></div> Instagram</div><div class="platform-checkbox"><div class="checkbox"></div> Facebook</div><div class="platform-checkbox"><div class="checkbox"></div> LinkedIn</div><div class="platform-checkbox"><div class="checkbox"></div> TikTok</div></div></div><div class="content-section"><span class="content-label">Post Idea:</span><div class="content-input large"></div></div><div class="content-section"><span class="content-label">Hashtags:</span><div class="content-input"></div></div><div class="content-section"><span class="content-label">Best Time:</span><div class="content-input"></div></div><div class="completed-checkbox"></div><span class="completed-label">Posted</span></div>
+                
+                <div class="day-box"><div class="day-number">22</div><div class="content-section"><span class="content-label">Content Theme:</span><div class="content-input"></div></div><div class="content-section"><span class="content-label">Platforms:</span><div class="platform-section"><div class="platform-checkbox"><div class="checkbox"></div> Instagram</div><div class="platform-checkbox"><div class="checkbox"></div> Facebook</div><div class="platform-checkbox"><div class="checkbox"></div> LinkedIn</div><div class="platform-checkbox"><div class="checkbox"></div> TikTok</div></div></div><div class="content-section"><span class="content-label">Post Idea:</span><div class="content-input large"></div></div><div class="content-section"><span class="content-label">Hashtags:</span><div class="content-input"></div></div><div class="content-section"><span class="content-label">Best Time:</span><div class="content-input"></div></div><div class="completed-checkbox"></div><span class="completed-label">Posted</span></div>
+                
+                <div class="day-box"><div class="day-number">23</div><div class="content-section"><span class="content-label">Content Theme:</span><div class="content-input"></div></div><div class="content-section"><span class="content-label">Platforms:</span><div class="platform-section"><div class="platform-checkbox"><div class="checkbox"></div> Instagram</div><div class="platform-checkbox"><div class="checkbox"></div> Facebook</div><div class="platform-checkbox"><div class="checkbox"></div> LinkedIn</div><div class="platform-checkbox"><div class="checkbox"></div> TikTok</div></div></div><div class="content-section"><span class="content-label">Post Idea:</span><div class="content-input large"></div></div><div class="content-section"><span class="content-label">Hashtags:</span><div class="content-input"></div></div><div class="content-section"><span class="content-label">Best Time:</span><div class="content-input"></div></div><div class="completed-checkbox"></div><span class="completed-label">Posted</span></div>
+                
+                <div class="day-box"><div class="day-number">24</div><div class="content-section"><span class="content-label">Content Theme:</span><div class="content-input"></div></div><div class="content-section"><span class="content-label">Platforms:</span><div class="platform-section"><div class="platform-checkbox"><div class="checkbox"></div> Instagram</div><div class="platform-checkbox"><div class="checkbox"></div> Facebook</div><div class="platform-checkbox"><div class="checkbox"></div> LinkedIn</div><div class="platform-checkbox"><div class="checkbox"></div> TikTok</div></div></div><div class="content-section"><span class="content-label">Post Idea:</span><div class="content-input large"></div></div><div class="content-section"><span class="content-label">Hashtags:</span><div class="content-input"></div></div><div class="content-section"><span class="content-label">Best Time:</span><div class="content-input"></div></div><div class="completed-checkbox"></div><span class="completed-label">Posted</span></div>
+                
+                <div class="day-box"><div class="day-number">25</div><div class="content-section"><span class="content-label">Content Theme:</span><div class="content-input"></div></div><div class="content-section"><span class="content-label">Platforms:</span><div class="platform-section"><div class="platform-checkbox"><div class="checkbox"></div> Instagram</div><div class="platform-checkbox"><div class="checkbox"></div> Facebook</div><div class="platform-checkbox"><div class="checkbox"></div> LinkedIn</div><div class="platform-checkbox"><div class="checkbox"></div> TikTok</div></div></div><div class="content-section"><span class="content-label">Post Idea:</span><div class="content-input large"></div></div><div class="content-section"><span class="content-label">Hashtags:</span><div class="content-input"></div></div><div class="content-section"><span class="content-label">Best Time:</span><div class="content-input"></div></div><div class="completed-checkbox"></div><span class="completed-label">Posted</span></div>
+                
+                <div class="day-box"><div class="day-number">26</div><div class="content-section"><span class="content-label">Content Theme:</span><div class="content-input"></div></div><div class="content-section"><span class="content-label">Platforms:</span><div class="platform-section"><div class="platform-checkbox"><div class="checkbox"></div> Instagram</div><div class="platform-checkbox"><div class="checkbox"></div> Facebook</div><div class="platform-checkbox"><div class="checkbox"></div> LinkedIn</div><div class="platform-checkbox"><div class="checkbox"></div> TikTok</div></div></div><div class="content-section"><span class="content-label">Post Idea:</span><div class="content-input large"></div></div><div class="content-section"><span class="content-label">Hashtags:</span><div class="content-input"></div></div><div class="content-section"><span class="content-label">Best Time:</span><div class="content-input"></div></div><div class="completed-checkbox"></div><span class="completed-label">Posted</span></div>
+                
+                <div class="day-box"><div class="day-number">27</div><div class="content-section"><span class="content-label">Content Theme:</span><div class="content-input"></div></div><div class="content-section"><span class="content-label">Platforms:</span><div class="platform-section"><div class="platform-checkbox"><div class="checkbox"></div> Instagram</div><div class="platform-checkbox"><div class="checkbox"></div> Facebook</div><div class="platform-checkbox"><div class="checkbox"></div> LinkedIn</div><div class="platform-checkbox"><div class="checkbox"></div> TikTok</div></div></div><div class="content-section"><span class="content-label">Post Idea:</span><div class="content-input large"></div></div><div class="content-section"><span class="content-label">Hashtags:</span><div class="content-input"></div></div><div class="content-section"><span class="content-label">Best Time:</span><div class="content-input"></div></div><div class="completed-checkbox"></div><span class="completed-label">Posted</span></div>
+                
+                <div class="day-box"><div class="day-number">28</div><div class="content-section"><span class="content-label">Content Theme:</span><div class="content-input"></div></div><div class="content-section"><span class="content-label">Platforms:</span><div class="platform-section"><div class="platform-checkbox"><div class="checkbox"></div> Instagram</div><div class="platform-checkbox"><div class="checkbox"></div> Facebook</div><div class="platform-checkbox"><div class="checkbox"></div> LinkedIn</div><div class="platform-checkbox"><div class="checkbox"></div> TikTok</div></div></div><div class="content-section"><span class="content-label">Post Idea:</span><div class="content-input large"></div></div><div class="content-section"><span class="content-label">Hashtags:</span><div class="content-input"></div></div><div class="content-section"><span class="content-label">Best Time:</span><div class="content-input"></div></div><div class="completed-checkbox"></div><span class="completed-label">Posted</span></div>
+                
+                <div class="day-box"><div class="day-number">29</div><div class="content-section"><span class="content-label">Content Theme:</span><div class="content-input"></div></div><div class="content-section"><span class="content-label">Platforms:</span><div class="platform-section"><div class="platform-checkbox"><div class="checkbox"></div> Instagram</div><div class="platform-checkbox"><div class="checkbox"></div> Facebook</div><div class="platform-checkbox"><div class="checkbox"></div> LinkedIn</div><div class="platform-checkbox"><div class="checkbox"></div> TikTok</div></div></div><div class="content-section"><span class="content-label">Post Idea:</span><div class="content-input large"></div></div><div class="content-section"><span class="content-label">Hashtags:</span><div class="content-input"></div></div><div class="content-section"><span class="content-label">Best Time:</span><div class="content-input"></div></div><div class="completed-checkbox"></div><span class="completed-label">Posted</span></div>
+                
+                <div class="day-box"><div class="day-number">30</div><div class="content-section"><span class="content-label">Content Theme:</span><div class="content-input"></div></div><div class="content-section"><span class="content-label">Platforms:</span><div class="platform-section"><div class="platform-checkbox"><div class="checkbox"></div> Instagram</div><div class="platform-checkbox"><div class="checkbox"></div> Facebook</div><div class="platform-checkbox"><div class="checkbox"></div> LinkedIn</div><div class="platform-checkbox"><div class="checkbox"></div> TikTok</div></div></div><div class="content-section"><span class="content-label">Post Idea:</span><div class="content-input large"></div></div><div class="content-section"><span class="content-label">Hashtags:</span><div class="content-input"></div></div><div class="content-section"><span class="content-label">Best Time:</span><div class="content-input"></div></div><div class="completed-checkbox"></div><span class="completed-label">Posted</span></div>
+            </div>
+            
+            <div class="brand">MD Design Studio</div>
+        </div>
+        
+        <!-- Content Category Guide Page -->
+        <div class="page">
+            <h2 class="section-title">Content Category Guide</h2>
+            
+            <div class="category-section">
+                <div class="category-card">
+                    <div class="category-header">
+                        <div class="category-title">Educational Content</div>
+                    </div>
+                    <div class="category-description">
+                        Share valuable tips, tutorials, how-to content, and industry insights that help your audience learn and grow. Position your brand as a trusted authority in your field.
+                    </div>
+                    <div class="example-posts">
+                        <strong>Examples:</strong> Industry tips, step-by-step tutorials, myth-busting facts, expert interviews, infographics with data, "Did you know?" posts
+                    </div>
+                    <div class="frequency">2-3 times per week</div>
+                </div>
+                
+                <div class="category-card">
+                    <div class="category-header">
+                        <div class="category-title">Behind-the-Scenes</div>
+                    </div>
+                    <div class="category-description">
+                        Give your audience a peek into your company culture, team spotlights, and process reveals. Build authentic connections by showing the human side of your business.
+                    </div>
+                    <div class="example-posts">
+                        <strong>Examples:</strong> Team introductions, office tours, work-in-progress shots, day-in-the-life content, company events, workspace setups
+                    </div>
+                    <div class="frequency">1-2 times per week</div>
+                </div>
+                
+                <div class="category-card">
+                    <div class="category-header">
+                        <div class="category-title">Promotional Content</div>
+                    </div>
+                    <div class="category-description">
+                        Highlight your products, services, special offers, and important business announcements. Keep this balanced with value-driven content to avoid appearing too sales-focused.
+                    </div>
+                    <div class="example-posts">
+                        <strong>Examples:</strong> Product features, sales announcements, new launches, special offers, client success stories, testimonials
+                    </div>
+                    <div class="frequency">1-2 times per week</div>
+                </div>
+                
+                <div class="category-card">
+                    <div class="category-header">
+                        <div class="category-title">Community Engagement</div>
+                    </div>
+                    <div class="category-description">
+                        Engage with your audience through user-generated content, testimonials, Q&A sessions, and community highlights. Foster a sense of belonging and connection.
+                    </div>
+                    <div class="example-posts">
+                        <strong>Examples:</strong> Customer spotlights, user-generated content, Q&A sessions, polls, community challenges, reviews and responses
+                    </div>
+                    <div class="frequency">2-3 times per week</div>
+                </div>
+                
+                <div class="category-card">
+                    <div class="category-header">
+                        <div class="category-title">Entertainment Content</div>
+                    </div>
+                    <div class="category-description">
+                        Share fun facts, trending topics, holiday content, and lighter content that entertains your audience. Keep your brand relatable and engaging.
+                    </div>
+                    <div class="example-posts">
+                        <strong>Examples:</strong> Fun facts, relevant memes, holiday posts, trending challenges, industry humor, motivational quotes
+                    </div>
+                    <div class="frequency">1-2 times per week</div>
+                </div>
+            </div>
+            
+            <div class="hashtag-section">
+                <h3 style="color: #1E3A8A; margin-bottom: 15px;">Hashtag Research Guide</h3>
+                <p style="margin-bottom: 15px; color: #666666;">Mix high-reach, medium-reach, and niche hashtags for optimal discovery. Research hashtag volume and engagement before using. Use 5-10 relevant hashtags per post for best results.</p>
+                
+                <div class="hashtag-grid">
+                    <div class="hashtag-category">
+                        <h4>General Business</h4>
+                        <div class="hashtags">#SmallBusiness #Entrepreneur #BusinessOwner #LocalBusiness #SmallBiz #BusinessTips #StartupLife #BusinessSuccess #Leadership</div>
+                    </div>
+                    
+                    <div class="hashtag-category">
+                        <h4>Industry-Specific</h4>
+                        <div class="hashtags">Research hashtags specific to your industry, location, and niche. Include your city, services, and professional expertise areas.</div>
+                    </div>
+                    
+                    <div class="hashtag-category">
+                        <h4>Engagement Hashtags</h4>
+                        <div class="hashtags">#MondayMotivation #ThrowbackThursday #FeatureFriday #TipTuesday #WisdomWednesday #ThankfulThursday #FridayFeeling</div>
+                    </div>
+                    
+                    <div class="hashtag-category">
+                        <h4>Content-Specific</h4>
+                        <div class="hashtags">#BehindTheScenes #CustomerStory #TeamSpotlight #DidYouKnow #HowTo #Tutorial #AskTheExpert #ClientSuccess</div>
+                    </div>
+                    
+                    <div class="hashtag-category">
+                        <h4>Research Tips</h4>
+                        <div class="hashtags">Use tools like Hashtagify, RiteTag, or native platform search to find trending and relevant hashtags in your industry.</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="brand">MD Design Studio</div>
+        </div>
+        
+        <!-- Engagement Tracking Sheet -->
+        <div class="page">
+            <h2 class="section-title">Social Media Engagement Tracker</h2>
+            
+            <table class="tracking-table">
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Platform</th>
+                        <th>Content Type</th>
+                        <th>Post Description</th>
+                        <th>Likes</th>
+                        <th>Comments</th>
+                        <th>Shares</th>
+                        <th>Reach</th>
+                        <th>Engagement %</th>
+                        <th>Notes</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>Day 1</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+                    <tr><td>Day 2</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+                    <tr><td>Day 3</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+                    <tr><td>Day 4</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+                    <tr><td>Day 5</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+                    <tr><td>Day 6</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+                    <tr><td>Day 7</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+                    <tr><td>Day 8</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+                    <tr><td>Day 9</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+                    <tr><td>Day 10</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+                    <tr><td>Day 11</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+                    <tr><td>Day 12</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+                    <tr><td>Day 13</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+                    <tr><td>Day 14</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+                    <tr><td>Day 15</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+                    <tr><td>Day 16</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+                    <tr><td>Day 17</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+                    <tr><td>Day 18</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+                    <tr><td>Day 19</td><td></td><td></td><td></td><td></td><td></td><td></td><td></t

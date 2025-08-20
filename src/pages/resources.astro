@@ -13,65 +13,71 @@ import SEO from '../components/SEO.astro';
   <main>
     <section class="hero-section">
       <div class="container">
+        <nav class="breadcrumb">
+          <a href="/">Home</a> > Resources
+        </nav>
         <h1>Free Resources & Tools</h1>
-        <p class="lead">Download our collection of templates, guides, and tools to grow your business</p>
+        <p class="lead">Professional templates, guides, and strategies to accelerate your business growth</p>
       </div>
     </section>
 
     <section class="featured-resources">
       <div class="container">
-        <h2>Priority Lead Magnets</h2>
+        <h2>Featured Free Resources</h2>
+        <p class="section-intro">Download our most popular templates and guides to transform your marketing and branding efforts.</p>
+        
         <div class="featured-grid">
           <div class="resource-card featured">
-            <div class="resource-icon">📋</div>
-            <h3>Brand Strategy Blueprint</h3>
-            <p>A comprehensive PDF workbook that walks you through developing a complete brand strategy for your business.</p>
-            <ul class="resource-includes">
-              <li>Brand positioning framework</li>
-              <li>Target audience worksheets</li>
-              <li>Competitive analysis templates</li>
-              <li>Brand messaging guide</li>
-            </ul>
-            <a href="#" class="btn btn-primary">Download Free PDF</a>
-          </div>
-
-          <div class="resource-card featured">
-            <div class="resource-icon">📅</div>
-            <h3>30-Day Social Media Content Calendar</h3>
-            <p>Ready-to-use content calendar template with post ideas, hashtags, and engagement strategies.</p>
-            <ul class="resource-includes">
-              <li>Editable calendar template</li>
-              <li>Content ideas for each platform</li>
-              <li>Hashtag research guide</li>
-              <li>Engagement tracking sheet</li>
-            </ul>
-            <a href="#" class="btn btn-primary">Get Template</a>
-          </div>
-
-          <div class="resource-card featured">
-            <div class="resource-icon">💰</div>
-            <h3>Marketing ROI Calculator</h3>
-            <p>Interactive tool to calculate and track your marketing return on investment across different channels.</p>
-            <ul class="resource-includes">
-              <li>ROI calculation formulas</li>
-              <li>Campaign tracking templates</li>
-              <li>Budget allocation guide</li>
-              <li>Performance metrics dashboard</li>
-            </ul>
-            <a href="#" class="btn btn-primary">Access Tool</a>
-          </div>
-
-          <div class="resource-card featured">
-            <div class="resource-icon">✅</div>
+            <div class="resource-icon">✓</div>
             <h3>Brand Audit Checklist</h3>
-            <p>Complete checklist to evaluate your current brand and identify areas for improvement.</p>
+            <p>Interactive checklist to evaluate your current brand and identify improvement opportunities. Complete with progress tracking and professional scoring.</p>
             <ul class="resource-includes">
               <li>Visual identity assessment</li>
-              <li>Message consistency check</li>
+              <li>Message consistency evaluation</li>
               <li>Digital presence audit</li>
-              <li>Competitor comparison</li>
+              <li>Competitor comparison framework</li>
+              <li>Automated scoring system</li>
             </ul>
-            <a href="#" class="btn btn-primary">Download Checklist</a>
+            <a href="/resources/brand-audit-checklist" class="btn btn-primary">Download Checklist</a>
+          </div>
+
+          <div class="resource-card featured">
+            <h3>30-Day Social Media Content Calendar</h3>
+            <p>Professional-grade content planning template with 30 days of structured planning, hashtag research, and performance tracking.</p>
+            <ul class="resource-includes">
+              <li>Daily content planning boxes</li>
+              <li>Content category guidelines</li>
+              <li>Platform-specific strategies</li>
+              <li>Hashtag research templates</li>
+              <li>Engagement tracking sheets</li>
+            </ul>
+            <a href="/resources/social-media-calendar" class="btn btn-primary">Get Template</a>
+          </div>
+
+          <div class="resource-card featured">
+            <h3>LinkedIn Strategy Guide 2025</h3>
+            <p>Comprehensive 90-page guide with data-driven strategies for LinkedIn marketing, lead generation, and business growth.</p>
+            <ul class="resource-includes">
+              <li>Algorithm optimization tactics</li>
+              <li>Content strategy frameworks</li>
+              <li>Lead generation blueprints</li>
+              <li>ROI measurement methods</li>
+              <li>2025 trend analysis</li>
+            </ul>
+            <a href="/resources/linkedin-guide" class="btn btn-primary">Access Guide</a>
+          </div>
+
+          <div class="resource-card featured">
+            <h3>Professional vs DIY Marketing Analysis</h3>
+            <p>In-depth ROI analysis comparing professional marketing services to DIY approaches. Includes cost calculators and decision frameworks.</p>
+            <ul class="resource-includes">
+              <li>Hidden cost analysis</li>
+              <li>Performance gap assessment</li>
+              <li>Time investment calculators</li>
+              <li>ROI comparison charts</li>
+              <li>Strategic recommendations</li>
+            </ul>
+            <a href="/resources/diy-vs-professional-analysis" class="btn btn-primary">Download Analysis</a>
           </div>
         </div>
       </div>
@@ -80,85 +86,85 @@ import SEO from '../components/SEO.astro';
     <section class="resource-categories">
       <div class="container">
         <div class="category-tabs">
-          <button class="tab-btn active" data-category="design">🎨 Design Templates</button>
-          <button class="tab-btn" data-category="marketing">📈 Marketing Guides</button>
-          <button class="tab-btn" data-category="social">📱 Social Media Tools</button>
+          <button class="tab-btn active" data-category="design">Brand & Design</button>
+          <button class="tab-btn" data-category="marketing">Marketing Strategy</button>
+          <button class="tab-btn" data-category="social">Social Media</button>
         </div>
 
         <div class="category-content active" data-category="design">
-          <h3>Design Templates</h3>
+          <h3>Brand & Design Resources</h3>
           <div class="resources-grid">
             <div class="resource-item">
-              <h4>Brand Identity Template Package</h4>
-              <p>Complete brand identity system template including logo variations, color palettes, and typography guidelines.</p>
-              <a href="#" class="download-link">Download Template →</a>
+              <h4>Brand Discovery Worksheet</h4>
+              <p>Complete framework for discovering your brand's core values, positioning, and strategic direction with guided exercises.</p>
+              <a href="/contact" class="download-link">Download Worksheet →</a>
             </div>
             <div class="resource-item">
-              <h4>Logo Design Brief Template</h4>
-              <p>Professional brief template to help you communicate your logo requirements clearly to designers.</p>
-              <a href="#" class="download-link">Get Template →</a>
+              <h4>Brand Audit Checklist (Interactive)</h4>
+              <p>Professional-grade brand evaluation tool with progress tracking and automated scoring system.</p>
+              <a href="/contact" class="download-link">Access Tool →</a>
             </div>
             <div class="resource-item">
-              <h4>Brand Guidelines Template</h4>
-              <p>Comprehensive brand guidelines template to maintain consistency across all your marketing materials.</p>
-              <a href="#" class="download-link">Download Guide →</a>
+              <h4>Visual Identity Guidelines</h4>
+              <p>Template for creating comprehensive brand guidelines that ensure consistency across all touchpoints.</p>
+              <a href="/contact" class="download-link">Get Template →</a>
             </div>
             <div class="resource-item">
-              <h4>Color Palette Generator Guide</h4>
-              <p>Step-by-step guide to creating effective color palettes for your brand with recommended tools.</p>
-              <a href="#" class="download-link">Access Guide →</a>
+              <h4>Brand Strategy Framework</h4>
+              <p>Step-by-step methodology for developing a complete brand strategy from positioning to implementation.</p>
+              <a href="/contact" class="download-link">Download Framework →</a>
             </div>
           </div>
         </div>
 
         <div class="category-content" data-category="marketing">
-          <h3>Marketing Guides</h3>
+          <h3>Marketing Strategy Resources</h3>
           <div class="resources-grid">
             <div class="resource-item">
-              <h4>Content Marketing Calendar Template</h4>
-              <p>Plan and organize your content strategy with this comprehensive calendar template.</p>
-              <a href="#" class="download-link">Download Template →</a>
+              <h4>Professional vs DIY Marketing ROI Analysis</h4>
+              <p>Comprehensive cost-benefit analysis with hidden expense calculators and performance comparison data.</p>
+              <a href="/contact" class="download-link">Download Analysis →</a>
             </div>
             <div class="resource-item">
-              <h4>Email Marketing Sequence Templates</h4>
-              <p>Proven email sequences for welcome series, product launches, and customer retention.</p>
-              <a href="#" class="download-link">Get Templates →</a>
+              <h4>LinkedIn Strategy Guide 2025</h4>
+              <p>Complete 90-page guide with algorithm updates, content strategies, and lead generation tactics for 2025.</p>
+              <a href="/contact" class="download-link">Access Guide →</a>
             </div>
             <div class="resource-item">
-              <h4>SEO Checklist for Small Business</h4>
-              <p>Complete SEO optimization checklist to improve your website's search engine rankings.</p>
-              <a href="#" class="download-link">Download Checklist →</a>
+              <h4>Marketing ROI Calculator</h4>
+              <p>Interactive tool to calculate return on investment across different marketing channels with budget planning features.</p>
+              <a href="/contact" class="download-link">Get Calculator →</a>
             </div>
             <div class="resource-item">
-              <h4>Marketing Budget Planner</h4>
-              <p>Strategic budget planning template to allocate your marketing spend effectively across channels.</p>
-              <a href="#" class="download-link">Access Planner →</a>
+              <h4>Customer Journey Mapping Template</h4>
+              <p>Strategic framework for mapping customer touchpoints and optimizing the complete customer experience.</p>
+              <a href="/contact" class="download-link">Download Template →</a>
             </div>
           </div>
         </div>
 
         <div class="category-content" data-category="social">
-          <h3>Social Media Tools</h3>
+          <h3>Social Media Management Tools</h3>
           <div class="resources-grid">
             <div class="resource-item">
-              <h4>Platform-Specific Posting Guidelines</h4>
-              <p>Optimize your content for each social media platform with these detailed posting guidelines.</p>
-              <a href="#" class="download-link">Download Guide →</a>
+              <h4>30-Day Social Media Content Calendar</h4>
+              <p>Professional planning template with daily content boxes, platform strategies, and performance tracking sheets.</p>
+              <a href="/contact" class="download-link">Download Calendar →</a>
             </div>
             <div class="resource-item">
-              <h4>Content Creation Checklist</h4>
-              <p>Ensure your social media content is engaging and effective with this comprehensive checklist.</p>
-              <a href="#" class="download-link">Get Checklist →</a>
+              <h4>Platform Strategy Overview</h4>
+              <p>Comprehensive guide covering Instagram, Facebook, LinkedIn, and TikTok optimization strategies for businesses.</p>
+              <a href="/contact" class="download-link">Access Guide →</a>
             </div>
             <div class="resource-item">
               <h4>Hashtag Research Template</h4>
-              <p>Find and organize the best hashtags for your industry with this research template.</p>
-              <a href="#" class="download-link">Download Template →</a>
+              <p>Systematic approach to finding and organizing effective hashtags with industry-specific recommendations.</p>
+              <a href="/contact" class="download-link">Get Template →</a>
             </div>
             <div class="resource-item">
-              <h4>Social Media Audit Template</h4>
-              <p>Evaluate your current social media performance and identify improvement opportunities.</p>
-              <a href="#" class="download-link">Access Template →</a>
+              <h4>Social Media Strategy Comparison</h4>
+              <p>Detailed analysis comparing platform features, audience demographics, and optimal content strategies for each network.</p>
+              <a href="/contact" class="download-link">Download Comparison →</a>
             </div>
           </div>
         </div>
@@ -191,11 +197,43 @@ import SEO from '../components/SEO.astro';
 </Layout>
 
 <style>
+  :root {
+    --mw-navy: #1E3A8A;
+    --mw-teal: #4FD1C7;
+    --mw-gradient: linear-gradient(135deg, #1E3A8A 0%, #4FD1C7 100%);
+    --light-gray: #F8F9FA;
+    --neutral-bg: #FAFBFC;
+    --dark-text: #333333;
+    --medium-gray: #666666;
+    --light-border: #E2E8F0;
+  }
+
   .hero-section {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: var(--mw-gradient);
     color: white;
-    padding: 4rem 0;
+    padding: 6rem 0 4rem;
     text-align: center;
+  }
+
+  .breadcrumb {
+    margin-bottom: 2rem;
+    opacity: 0.9;
+  }
+
+  .breadcrumb a {
+    color: white;
+    text-decoration: none;
+  }
+
+  .breadcrumb a:hover {
+    text-decoration: underline;
+  }
+
+  .hero-section h1 {
+    font-size: 3rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    letter-spacing: -0.02em;
   }
 
   .lead {
@@ -205,6 +243,24 @@ import SEO from '../components/SEO.astro';
 
   .featured-resources {
     padding: 4rem 0;
+    background: var(--neutral-bg);
+  }
+
+  .featured-resources h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: var(--mw-navy);
+    margin-bottom: 1rem;
+  }
+
+  .section-intro {
+    text-align: center;
+    font-size: 1.1rem;
+    color: var(--medium-gray);
+    max-width: 700px;
+    margin: 0 auto 3rem auto;
+    line-height: 1.6;
   }
 
   .featured-grid {
@@ -225,7 +281,7 @@ import SEO from '../components/SEO.astro';
   }
 
   .resource-card.featured {
-    border-color: #667eea;
+    border-color: var(--mw-teal);
   }
 
   .resource-card:hover {
@@ -253,7 +309,7 @@ import SEO from '../components/SEO.astro';
 
   .resource-includes li:before {
     content: "✓";
-    color: #667eea;
+    color: var(--mw-teal);
     font-weight: bold;
     position: absolute;
     left: 0;
@@ -261,7 +317,7 @@ import SEO from '../components/SEO.astro';
 
   .resource-categories {
     padding: 4rem 0;
-    background: #f9f9f9;
+    background: white;
   }
 
   .category-tabs {
@@ -284,9 +340,9 @@ import SEO from '../components/SEO.astro';
 
   .tab-btn:hover,
   .tab-btn.active {
-    background: #667eea;
+    background: var(--mw-navy);
     color: white;
-    border-color: #667eea;
+    border-color: var(--mw-navy);
   }
 
   .category-content {
@@ -312,11 +368,17 @@ import SEO from '../components/SEO.astro';
   }
 
   .download-link {
-    color: #667eea;
+    color: var(--mw-teal);
     text-decoration: none;
     font-weight: 600;
     display: inline-block;
     margin-top: 1rem;
+    transition: color 0.3s ease;
+  }
+
+  .download-link:hover {
+    color: var(--mw-navy);
+    text-decoration: underline;
   }
 
   .download-link:hover {
@@ -325,7 +387,7 @@ import SEO from '../components/SEO.astro';
 
   .newsletter-signup {
     padding: 4rem 0;
-    background: #667eea;
+    background: var(--mw-gradient);
     color: white;
     text-align: center;
   }
@@ -368,22 +430,25 @@ import SEO from '../components/SEO.astro';
   }
 
   .btn-primary {
-    background: #667eea;
+    background: var(--mw-gradient);
     color: white;
+    border: none;
+    box-shadow: 0 4px 20px rgba(30, 58, 138, 0.2);
   }
 
   .btn-primary:hover {
-    background: #5a67d8;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 30px rgba(30, 58, 138, 0.3);
   }
 
   .btn-secondary {
     background: transparent;
-    color: #667eea;
-    border: 2px solid #667eea;
+    color: var(--mw-navy);
+    border: 2px solid var(--mw-navy);
   }
 
   .btn-secondary:hover {
-    background: #667eea;
+    background: var(--mw-navy);
     color: white;
   }
 
