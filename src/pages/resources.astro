@@ -97,22 +97,22 @@ import SEO from '../components/SEO.astro';
             <div class="resource-item">
               <h4>Brand Discovery Worksheet</h4>
               <p>Complete framework for discovering your brand's core values, positioning, and strategic direction with guided exercises.</p>
-              <a href="/contact" class="download-link">Download Worksheet →</a>
+              <a href="/resources/brand-audit-checklist" class="download-link">Download Worksheet →</a>
             </div>
             <div class="resource-item">
               <h4>Brand Audit Checklist (Interactive)</h4>
               <p>Professional-grade brand evaluation tool with progress tracking and automated scoring system.</p>
-              <a href="/contact" class="download-link">Access Tool →</a>
+              <a href="/resources/brand-audit-checklist" class="download-link">Access Tool →</a>
             </div>
             <div class="resource-item">
               <h4>Visual Identity Guidelines</h4>
               <p>Template for creating comprehensive brand guidelines that ensure consistency across all touchpoints.</p>
-              <a href="/contact" class="download-link">Get Template →</a>
+              <a href="/resources/brand-audit-checklist" class="download-link">Get Template →</a>
             </div>
             <div class="resource-item">
               <h4>Brand Strategy Framework</h4>
               <p>Step-by-step methodology for developing a complete brand strategy from positioning to implementation.</p>
-              <a href="/contact" class="download-link">Download Framework →</a>
+              <a href="/resources/brand-audit-checklist" class="download-link">Download Framework →</a>
             </div>
           </div>
         </div>
@@ -123,22 +123,22 @@ import SEO from '../components/SEO.astro';
             <div class="resource-item">
               <h4>Professional vs DIY Marketing ROI Analysis</h4>
               <p>Comprehensive cost-benefit analysis with hidden expense calculators and performance comparison data.</p>
-              <a href="/contact" class="download-link">Download Analysis →</a>
+              <a href="/resources/diy-vs-professional-analysis" class="download-link">Download Analysis →</a>
             </div>
             <div class="resource-item">
               <h4>LinkedIn Strategy Guide 2025</h4>
               <p>Complete 90-page guide with algorithm updates, content strategies, and lead generation tactics for 2025.</p>
-              <a href="/contact" class="download-link">Access Guide →</a>
+              <a href="/resources/linkedin-guide" class="download-link">Access Guide →</a>
             </div>
             <div class="resource-item">
               <h4>Marketing ROI Calculator</h4>
               <p>Interactive tool to calculate return on investment across different marketing channels with budget planning features.</p>
-              <a href="/contact" class="download-link">Get Calculator →</a>
+              <a href="/resources/diy-vs-professional-analysis" class="download-link">Get Calculator →</a>
             </div>
             <div class="resource-item">
               <h4>Customer Journey Mapping Template</h4>
               <p>Strategic framework for mapping customer touchpoints and optimizing the complete customer experience.</p>
-              <a href="/contact" class="download-link">Download Template →</a>
+              <a href="/resources/brand-audit-checklist" class="download-link">Download Template →</a>
             </div>
           </div>
         </div>
@@ -149,22 +149,22 @@ import SEO from '../components/SEO.astro';
             <div class="resource-item">
               <h4>30-Day Social Media Content Calendar</h4>
               <p>Professional planning template with daily content boxes, platform strategies, and performance tracking sheets.</p>
-              <a href="/contact" class="download-link">Download Calendar →</a>
+              <a href="/resources/social-media-calendar" class="download-link">Download Calendar →</a>
             </div>
             <div class="resource-item">
               <h4>Platform Strategy Overview</h4>
               <p>Comprehensive guide covering Instagram, Facebook, LinkedIn, and TikTok optimization strategies for businesses.</p>
-              <a href="/contact" class="download-link">Access Guide →</a>
+              <a href="/resources/linkedin-guide" class="download-link">Access Guide →</a>
             </div>
             <div class="resource-item">
               <h4>Hashtag Research Template</h4>
               <p>Systematic approach to finding and organizing effective hashtags with industry-specific recommendations.</p>
-              <a href="/contact" class="download-link">Get Template →</a>
+              <a href="/resources/social-media-calendar" class="download-link">Get Template →</a>
             </div>
             <div class="resource-item">
               <h4>Social Media Strategy Comparison</h4>
               <p>Detailed analysis comparing platform features, audience demographics, and optimal content strategies for each network.</p>
-              <a href="/contact" class="download-link">Download Comparison →</a>
+              <a href="/resources/social-media-calendar" class="download-link">Download Comparison →</a>
             </div>
           </div>
         </div>
@@ -174,13 +174,13 @@ import SEO from '../components/SEO.astro';
     <section class="newsletter-signup">
       <div class="container">
         <div class="newsletter-content">
-          <h2>Get New Resources First</h2>
-          <p>Join our newsletter to get notified when we release new templates, guides, and tools.</p>
-          <form class="newsletter-form">
-            <input type="email" placeholder="Enter your email address" required>
-            <button type="submit" class="btn btn-primary">Subscribe</button>
-          </form>
-          <p class="newsletter-note">We respect your privacy. No spam, unsubscribe anytime.</p>
+          <h2>Want More Resources Like These?</h2>
+          <p>Follow us on social media to get notified when we release new templates, guides, and business growth tips.</p>
+          <div class="social-follow">
+            <a href="#" class="social-btn">Follow on LinkedIn</a>
+            <a href="#" class="social-btn">Follow on Instagram</a>
+          </div>
+          <p class="newsletter-note">Get weekly business tips and be the first to know about new resources.</p>
         </div>
       </div>
     </section>
@@ -392,18 +392,29 @@ import SEO from '../components/SEO.astro';
     text-align: center;
   }
 
-  .newsletter-form {
+  .social-follow {
     display: flex;
-    max-width: 400px;
-    margin: 2rem auto;
+    justify-content: center;
     gap: 1rem;
+    margin: 2rem auto;
+    flex-wrap: wrap;
   }
 
-  .newsletter-form input {
-    flex: 1;
-    padding: 0.75rem;
-    border: none;
-    border-radius: 4px;
+  .social-btn {
+    padding: 0.75rem 2rem;
+    background: white;
+    color: var(--mw-navy);
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 600;
+    border: 2px solid white;
+    transition: all 0.3s ease;
+  }
+
+  .social-btn:hover {
+    background: transparent;
+    color: white;
+    border-color: white;
   }
 
   .newsletter-note {
