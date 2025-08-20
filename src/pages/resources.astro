@@ -21,6 +21,71 @@ import SEO from '../components/SEO.astro';
       </div>
     </section>
 
+    <!-- Interactive Business Name Generator -->
+    <section class="interactive-tool">
+      <div class="container">
+        <div class="tool-header">
+          <h2>Business Name Generator</h2>
+          <p>Get instant business name suggestions tailored to your industry and style preferences</p>
+        </div>
+        
+        <div class="name-generator">
+          <div class="generator-inputs">
+            <div class="input-group">
+              <label for="keywords">Enter Keywords (e.g., design, tech, solutions)</label>
+              <input type="text" id="keywords" placeholder="Enter 1-3 keywords about your business">
+            </div>
+            
+            <div class="input-group">
+              <label for="industry">Select Industry</label>
+              <select id="industry">
+                <option value="">Choose Industry</option>
+                <option value="technology">Technology</option>
+                <option value="design">Design & Creative</option>
+                <option value="consulting">Consulting</option>
+                <option value="health">Health & Wellness</option>
+                <option value="finance">Finance</option>
+                <option value="retail">Retail & E-commerce</option>
+                <option value="food">Food & Beverage</option>
+                <option value="real-estate">Real Estate</option>
+                <option value="education">Education</option>
+                <option value="fitness">Fitness</option>
+                <option value="beauty">Beauty & Fashion</option>
+                <option value="home">Home & Garden</option>
+              </select>
+            </div>
+            
+            <div class="input-group">
+              <label for="style">Name Style</label>
+              <select id="style">
+                <option value="modern">Modern & Tech</option>
+                <option value="classic">Classic & Professional</option>
+                <option value="creative">Creative & Unique</option>
+                <option value="descriptive">Descriptive & Clear</option>
+                <option value="abstract">Abstract & Brandable</option>
+              </select>
+            </div>
+            
+            <button id="generate-btn" class="generate-button">Generate Names</button>
+          </div>
+          
+          <div class="generator-results">
+            <div id="results-container" class="results-hidden">
+              <h3>Generated Business Names</h3>
+              <div id="name-suggestions" class="name-grid"></div>
+              <div class="results-footer">
+                <p class="disclaimer">These are AI-generated suggestions. Always check trademark availability before using.</p>
+                <div class="cta-buttons">
+                  <button id="regenerate-btn" class="btn-secondary">Generate More</button>
+                  <a href="/contact" class="btn-primary">Get Professional Naming</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section class="featured-resources">
       <div class="container">
         <h2>Featured Free Resources</h2>
@@ -251,6 +316,226 @@ import SEO from '../components/SEO.astro';
     margin-top: 1rem;
   }
 
+  /* Interactive Business Name Generator */
+  .interactive-tool {
+    padding: 4rem 0;
+    background: white;
+  }
+
+  .tool-header {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+
+  .tool-header h2 {
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: var(--mw-navy);
+    margin-bottom: 1rem;
+  }
+
+  .tool-header p {
+    font-size: 1.1rem;
+    color: var(--medium-gray);
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .name-generator {
+    background: var(--neutral-bg);
+    border-radius: 20px;
+    padding: 3rem;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .generator-inputs {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+  }
+
+  .input-group {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .input-group label {
+    font-weight: 600;
+    color: var(--mw-navy);
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+  }
+
+  .input-group input,
+  .input-group select {
+    padding: 0.75rem;
+    border: 2px solid var(--light-border);
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+    background: white;
+  }
+
+  .input-group input:focus,
+  .input-group select:focus {
+    outline: none;
+    border-color: var(--mw-teal);
+  }
+
+  .generate-button {
+    grid-column: 1 / -1;
+    background: var(--mw-gradient);
+    color: white;
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 50px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    justify-self: center;
+    min-width: 200px;
+  }
+
+  .generate-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(30, 58, 138, 0.3);
+  }
+
+  .generate-button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+  }
+
+  .generator-results {
+    margin-top: 2rem;
+  }
+
+  .results-hidden {
+    display: none;
+  }
+
+  .results-visible {
+    display: block;
+    animation: fadeInUp 0.5s ease;
+  }
+
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .generator-results h3 {
+    color: var(--mw-navy);
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    text-align: center;
+  }
+
+  .name-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  .name-suggestion {
+    background: white;
+    padding: 1rem;
+    border-radius: 8px;
+    text-align: center;
+    border: 2px solid var(--light-border);
+    transition: all 0.3s ease;
+    cursor: pointer;
+  }
+
+  .name-suggestion:hover {
+    border-color: var(--mw-teal);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(79, 209, 199, 0.2);
+  }
+
+  .name-suggestion.favorited {
+    border-color: var(--mw-navy);
+    background: var(--light-gray);
+  }
+
+  .name-text {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--mw-navy);
+    margin-bottom: 0.25rem;
+  }
+
+  .name-description {
+    font-size: 0.8rem;
+    color: var(--medium-gray);
+  }
+
+  .results-footer {
+    text-align: center;
+    padding-top: 1.5rem;
+    border-top: 2px solid var(--light-border);
+  }
+
+  .disclaimer {
+    font-size: 0.85rem;
+    color: var(--medium-gray);
+    margin-bottom: 1.5rem;
+    font-style: italic;
+  }
+
+  .cta-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .btn-primary,
+  .btn-secondary {
+    padding: 0.75rem 1.5rem;
+    border-radius: 25px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+    font-size: 0.9rem;
+  }
+
+  .btn-primary {
+    background: var(--mw-gradient);
+    color: white;
+  }
+
+  .btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(30, 58, 138, 0.3);
+  }
+
+  .btn-secondary {
+    background: white;
+    color: var(--mw-navy);
+    border: 2px solid var(--mw-navy);
+  }
+
+  .btn-secondary:hover {
+    background: var(--mw-navy);
+    color: white;
+  }
+
   .featured-resources {
     padding: 4rem 0;
     background: var(--neutral-bg);
@@ -477,6 +762,44 @@ import SEO from '../components/SEO.astro';
     .newsletter-form {
       flex-direction: column;
     }
+    
+    /* Mobile responsiveness for name generator */
+    .tool-header h2 {
+      font-size: 2rem;
+    }
+    
+    .name-generator {
+      padding: 2rem 1.5rem;
+    }
+    
+    .generator-inputs {
+      grid-template-columns: 1fr;
+      gap: 1rem;
+    }
+    
+    .name-grid {
+      grid-template-columns: 1fr;
+    }
+    
+    .cta-buttons {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .name-generator {
+      padding: 1.5rem 1rem;
+    }
+    
+    .tool-header h2 {
+      font-size: 1.75rem;
+    }
+    
+    .generate-button {
+      min-width: auto;
+      width: 100%;
+    }
   }
 </style>
 
@@ -500,6 +823,176 @@ import SEO from '../components/SEO.astro';
           content.classList.add('active');
         }
       });
+    });
+  });
+
+  // Business Name Generator functionality
+  const businessNameGenerator = {
+    prefixes: {
+      technology: ['Tech', 'Digital', 'Cyber', 'Smart', 'Cloud', 'Data', 'Byte', 'Pixel'],
+      design: ['Creative', 'Studio', 'Design', 'Visual', 'Art', 'Craft', 'Form', 'Style'],
+      consulting: ['Pro', 'Expert', 'Elite', 'Prime', 'Strategic', 'Wise', 'Clear', 'Sharp'],
+      health: ['Vital', 'Pure', 'Wellness', 'Care', 'Health', 'Life', 'Strong', 'Fresh'],
+      finance: ['Capital', 'Wealth', 'Financial', 'Money', 'Asset', 'Trust', 'Secure', 'Gold'],
+      retail: ['Market', 'Shop', 'Store', 'Trade', 'Commerce', 'Sale', 'Deal', 'Buy'],
+      food: ['Fresh', 'Taste', 'Flavor', 'Kitchen', 'Gourmet', 'Bistro', 'Cafe', 'Delicious'],
+      'real-estate': ['Property', 'Realty', 'Estate', 'Home', 'Land', 'Key', 'Door', 'House'],
+      education: ['Learn', 'Teach', 'Smart', 'Bright', 'Knowledge', 'Skill', 'Mind', 'Academy'],
+      fitness: ['Fit', 'Strong', 'Active', 'Power', 'Energy', 'Peak', 'Elite', 'Core'],
+      beauty: ['Beauty', 'Glow', 'Style', 'Chic', 'Elegant', 'Grace', 'Luxe', 'Pure'],
+      home: ['Home', 'House', 'Living', 'Space', 'Comfort', 'Cozy', 'Haven', 'Nest']
+    },
+    
+    suffixes: {
+      modern: ['Labs', 'Hub', 'Works', 'Tech', 'Digital', 'Solutions', 'Systems', 'Innovations'],
+      classic: ['Company', 'Group', 'Associates', 'Partners', 'Corporation', 'Enterprises', 'Holdings', 'Ventures'],
+      creative: ['Studio', 'Collective', 'Workshop', 'Atelier', 'House', 'Lab', 'Space', 'Gallery'],
+      descriptive: ['Solutions', 'Services', 'Experts', 'Specialists', 'Consultants', 'Professionals', 'Advisors', 'Partners'],
+      abstract: ['Core', 'Edge', 'Flux', 'Nexus', 'Apex', 'Matrix', 'Sphere', 'Zen']
+    },
+    
+    connectors: ['&', 'and', '+', 'Co', 'Co.', '|', '-'],
+    
+    generateNames(keywords, industry, style) {
+      const names = [];
+      const keywordList = keywords.toLowerCase().split(/[,\s]+/).filter(k => k.length > 0);
+      const prefixes = this.prefixes[industry] || this.prefixes.design;
+      const suffixes = this.suffixes[style] || this.suffixes.modern;
+      
+      // Generate different types of names
+      keywordList.forEach(keyword => {
+        const capitalizedKeyword = keyword.charAt(0).toUpperCase() + keyword.slice(1);
+        
+        // Keyword + Suffix combinations
+        suffixes.forEach(suffix => {
+          names.push({
+            name: `${capitalizedKeyword} ${suffix}`,
+            type: 'Descriptive'
+          });
+        });
+        
+        // Prefix + Keyword combinations
+        prefixes.forEach(prefix => {
+          names.push({
+            name: `${prefix} ${capitalizedKeyword}`,
+            type: 'Branded'
+          });
+        });
+      });
+      
+      // Generate combined keyword names
+      if (keywordList.length >= 2) {
+        for (let i = 0; i < keywordList.length - 1; i++) {
+          for (let j = i + 1; j < keywordList.length; j++) {
+            const word1 = keywordList[i].charAt(0).toUpperCase() + keywordList[i].slice(1);
+            const word2 = keywordList[j].charAt(0).toUpperCase() + keywordList[j].slice(1);
+            
+            names.push({
+              name: `${word1}${word2}`,
+              type: 'Compound'
+            });
+            
+            this.connectors.forEach(connector => {
+              names.push({
+                name: `${word1} ${connector} ${word2}`,
+                type: 'Connected'
+              });
+            });
+          }
+        }
+      }
+      
+      // Generate prefix + keyword + suffix combinations
+      if (keywordList.length > 0) {
+        const randomKeyword = keywordList[Math.floor(Math.random() * keywordList.length)];
+        const capitalizedKeyword = randomKeyword.charAt(0).toUpperCase() + randomKeyword.slice(1);
+        
+        for (let i = 0; i < 3; i++) {
+          const randomPrefix = prefixes[Math.floor(Math.random() * prefixes.length)];
+          const randomSuffix = suffixes[Math.floor(Math.random() * suffixes.length)];
+          
+          names.push({
+            name: `${randomPrefix} ${capitalizedKeyword} ${randomSuffix}`,
+            type: 'Extended'
+          });
+        }
+      }
+      
+      // Shuffle and return limited set
+      return this.shuffleArray(names).slice(0, 12);
+    },
+    
+    shuffleArray(array) {
+      const shuffled = [...array];
+      for (let i = shuffled.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+      }
+      return shuffled;
+    }
+  };
+
+  // Event listeners for name generator
+  document.addEventListener('DOMContentLoaded', function() {
+    const generateBtn = document.getElementById('generate-btn');
+    const regenerateBtn = document.getElementById('regenerate-btn');
+    const keywordsInput = document.getElementById('keywords');
+    const industrySelect = document.getElementById('industry');
+    const styleSelect = document.getElementById('style');
+    const resultsContainer = document.getElementById('results-container');
+    const nameSuggestions = document.getElementById('name-suggestions');
+
+    function generateBusinessNames() {
+      const keywords = keywordsInput.value.trim();
+      const industry = industrySelect.value;
+      const style = styleSelect.value;
+
+      if (!keywords) {
+        alert('Please enter at least one keyword');
+        return;
+      }
+
+      generateBtn.disabled = true;
+      generateBtn.textContent = 'Generating...';
+
+      setTimeout(() => {
+        const names = businessNameGenerator.generateNames(keywords, industry, style);
+        displayResults(names);
+        
+        generateBtn.disabled = false;
+        generateBtn.textContent = 'Generate Names';
+      }, 1000);
+    }
+
+    function displayResults(names) {
+      nameSuggestions.innerHTML = '';
+      
+      names.forEach(nameObj => {
+        const nameElement = document.createElement('div');
+        nameElement.className = 'name-suggestion';
+        nameElement.innerHTML = `
+          <div class="name-text">${nameObj.name}</div>
+          <div class="name-description">${nameObj.type}</div>
+        `;
+        
+        nameElement.addEventListener('click', () => {
+          nameElement.classList.toggle('favorited');
+        });
+        
+        nameSuggestions.appendChild(nameElement);
+      });
+
+      resultsContainer.className = 'results-visible';
+      resultsContainer.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+
+    generateBtn.addEventListener('click', generateBusinessNames);
+    regenerateBtn.addEventListener('click', generateBusinessNames);
+    
+    keywordsInput.addEventListener('keypress', (e) => {
+      if (e.key === 'Enter') {
+        generateBusinessNames();
+      }
     });
   });
 </script>
