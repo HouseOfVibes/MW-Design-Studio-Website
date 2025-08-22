@@ -1,6 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import SEO from '../components/SEO.astro';
+import LaptopMockup from '../components/LaptopMockup.astro';
 ---
 
 <Layout title="Services - MW Design Studio">
@@ -422,6 +423,52 @@ import SEO from '../components/SEO.astro';
         </div>
         <div class="faq-cta">
           <a href="/faq" class="btn btn-outline">View All FAQs</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Work Showcase Section -->
+    <section class="showcase-section">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-badge">Our Work in Action</div>
+          <h2 class="section-title">See Our Development Process</h2>
+          <p class="section-subtitle">Watch how we bring ideas to life with clean code, responsive design, and attention to detail. This is a real website we built from concept to completion.</p>
+        </div>
+        
+        <LaptopMockup 
+          videoSrc="/videos/homepage-demo.mov"
+          title="Website Development Showcase"
+          description="Experience our development workflow and see how we create responsive, professional websites that convert visitors into customers."
+          autoplay={false}
+          controls={false}
+          loop={true}
+          muted={true}
+        />
+        
+        <div class="showcase-features">
+          <div class="feature-grid">
+            <div class="feature-item">
+              <div class="feature-icon">🎨</div>
+              <h4>Custom Design</h4>
+              <p>Every element crafted specifically for your brand and audience</p>
+            </div>
+            <div class="feature-item">
+              <div class="feature-icon">📱</div>
+              <h4>Mobile-First</h4>
+              <p>Responsive design that looks perfect on all devices</p>
+            </div>
+            <div class="feature-item">
+              <div class="feature-icon">⚡</div>
+              <h4>Fast Loading</h4>
+              <p>Optimized performance for better user experience and SEO</p>
+            </div>
+            <div class="feature-item">
+              <div class="feature-icon">🔧</div>
+              <h4>Easy Updates</h4>
+              <p>Content management systems that you can update yourself</p>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -1251,6 +1298,98 @@ import SEO from '../components/SEO.astro';
 
     .results-grid {
       grid-template-columns: 1fr;
+    }
+  }
+
+  /* Showcase Section */
+  .showcase-section {
+    padding: 6rem 0;
+    background: linear-gradient(to bottom, var(--primary-white), var(--gray-50));
+    position: relative;
+  }
+
+  .showcase-section .section-header {
+    text-align: center;
+    margin-bottom: 4rem;
+  }
+
+  .showcase-section .section-badge {
+    background: var(--gradient-vibrant);
+    color: var(--primary-white);
+    padding: 0.5rem 1.5rem;
+    border-radius: 25px;
+    font-size: 0.875rem;
+    font-weight: 600;
+    display: inline-block;
+    margin-bottom: 1rem;
+  }
+
+  .showcase-section .section-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 1rem;
+  }
+
+  .showcase-section .section-subtitle {
+    font-size: 1.125rem;
+    color: var(--text-secondary);
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.6;
+  }
+
+  .showcase-features {
+    margin-top: 4rem;
+  }
+
+  .feature-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+  }
+
+  .feature-item {
+    text-align: center;
+    padding: 2rem 1rem;
+    background: var(--primary-white);
+    border-radius: 12px;
+    border: 1px solid var(--border-light);
+    transition: all 0.3s ease;
+  }
+
+  .feature-item:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    border-color: var(--accent-teal);
+  }
+
+  .feature-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .feature-item h4 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 0.5rem;
+  }
+
+  .feature-item p {
+    color: var(--text-secondary);
+    line-height: 1.5;
+  }
+
+  @media (max-width: 768px) {
+    .showcase-section .section-title {
+      font-size: 2rem;
+    }
+    
+    .feature-grid {
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
     }
   }
 </style>

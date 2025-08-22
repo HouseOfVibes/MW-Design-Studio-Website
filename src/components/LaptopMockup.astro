@@ -1,0 +1,452 @@
+---
+// Laptop Mockup Component with Video Integration
+// Perfect for showcasing web development work on service pages
+
+const {
+  videoSrc = "/videos/homepage-demo.mov",
+  title = "Website Development Showcase",
+  description = "Watch our development process in action",
+  autoplay = false,
+  loop = true,
+  muted = true,
+  controls = false,
+  className = "",
+} = Astro.props;
+
+// Generate unique ID for this component instance
+const videoId = `laptop-video-${Math.random().toString(36).substr(2, 9)}`;
+---
+
+<div class={`laptop-mockup ${className}`}>
+  <div class="laptop-container">
+    <!-- Laptop Base/Keyboard -->
+    <div class="laptop-base">
+      <div class="laptop-trackpad"></div>
+      <div class="laptop-keyboard">
+        <!-- Keyboard pattern for realism -->
+        <div class="keyboard-row">
+          {Array.from({length: 14}).map(() => <div class="key"></div>)}
+        </div>
+        <div class="keyboard-row">
+          {Array.from({length: 13}).map(() => <div class="key"></div>)}
+        </div>
+        <div class="keyboard-row">
+          {Array.from({length: 12}).map(() => <div class="key"></div>)}
+        </div>
+        <div class="keyboard-row">
+          <div class="key spacebar"></div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Laptop Screen -->
+    <div class="laptop-screen">
+      <div class="screen-bezel">
+        <div class="screen-content">
+          <!-- Video Container -->
+          <div class="video-container">
+            <video 
+              id={videoId}
+              class="demo-video"
+              autoplay={autoplay}
+              loop={loop}
+              muted={muted}
+              controls={controls}
+              playsinline
+              preload="metadata"
+            >
+              <source src={videoSrc} type="video/mp4">
+              <source src={videoSrc} type="video/quicktime">
+              <p>Your browser doesn't support HTML video. <a href={videoSrc}>Download the video</a> instead.</p>
+            </video>
+            
+            <!-- Play Button Overlay (if not autoplay) -->
+            {!autoplay && (
+              <div class="play-overlay" id={`play-${videoId}`}>
+                <button class="play-button" aria-label="Play video">
+                  <svg width="60" height="60" viewBox="0 0 60 60" fill="none">
+                    <circle cx="30" cy="30" r="30" fill="var(--accent-teal)" fill-opacity="0.9"/>
+                    <path d="M23 20L23 40L40 30L23 20Z" fill="white"/>
+                  </svg>
+                </button>
+              </div>
+            )}
+            
+            <!-- Loading Spinner -->
+            <div class="loading-spinner" id={`loading-${videoId}`}>
+              <div class="spinner"></div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Screen Reflection Effect -->
+        <div class="screen-reflection"></div>
+      </div>
+      
+      <!-- Apple Logo (optional branding) -->
+      <div class="laptop-logo">
+        <div class="logo-circle"></div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Content Description -->
+  <div class="mockup-content">
+    <h3 class="mockup-title">{title}</h3>
+    <p class="mockup-description">{description}</p>
+    
+    <!-- Video Controls (if needed) -->
+    {!autoplay && (
+      <div class="video-controls">
+        <button class="control-btn play-btn" data-video={videoId}>
+          <span class="play-text">▶ Play Demo</span>
+          <span class="pause-text" style="display: none;">⏸ Pause</span>
+        </button>
+        <button class="control-btn restart-btn" data-video={videoId}>
+          ↻ Restart
+        </button>
+      </div>
+    )}
+  </div>
+</div>
+
+<style>
+  .laptop-mockup {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    padding: 3rem 0;
+    perspective: 1000px;
+  }
+
+  .laptop-container {
+    position: relative;
+    transform: rotateX(5deg) rotateY(-5deg);
+    transition: transform 0.3s ease;
+  }
+
+  .laptop-container:hover {
+    transform: rotateX(2deg) rotateY(-2deg);
+  }
+
+  /* Laptop Screen */
+  .laptop-screen {
+    width: 500px;
+    height: 320px;
+    background: linear-gradient(145deg, var(--gray-800), var(--gray-900));
+    border-radius: 12px 12px 4px 4px;
+    padding: 20px 20px 40px 20px;
+    position: relative;
+    box-shadow: 
+      0 0 0 2px var(--gray-700),
+      0 20px 40px rgba(0, 0, 0, 0.3),
+      inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  }
+
+  .screen-bezel {
+    width: 100%;
+    height: 100%;
+    background: var(--primary-black);
+    border-radius: 8px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.5);
+  }
+
+  .screen-content {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    border-radius: 6px;
+    overflow: hidden;
+  }
+
+  /* Video Container */
+  .video-container {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    background: var(--gray-900);
+  }
+
+  .demo-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 6px;
+  }
+
+  /* Play Overlay */
+  .play-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(2px);
+    transition: opacity 0.3s ease;
+  }
+
+  .play-button {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+  }
+
+  .play-button:hover {
+    transform: scale(1.1);
+  }
+
+  /* Loading Spinner */
+  .loading-spinner {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: none;
+  }
+
+  .spinner {
+    width: 40px;
+    height: 40px;
+    border: 3px solid var(--gray-600);
+    border-top: 3px solid var(--accent-teal);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+  }
+
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+
+  /* Screen Reflection */
+  .screen-reflection {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      45deg,
+      transparent 0%,
+      rgba(255, 255, 255, 0.1) 25%,
+      transparent 50%,
+      rgba(255, 255, 255, 0.05) 75%,
+      transparent 100%
+    );
+    pointer-events: none;
+    border-radius: 6px;
+  }
+
+  /* Laptop Base */
+  .laptop-base {
+    width: 520px;
+    height: 15px;
+    background: linear-gradient(145deg, var(--gray-700), var(--gray-900));
+    border-radius: 0 0 20px 20px;
+    position: relative;
+    margin-top: -4px;
+    box-shadow: 
+      0 0 0 1px var(--gray-600),
+      0 10px 30px rgba(0, 0, 0, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* Laptop Logo */
+  .laptop-logo {
+    position: absolute;
+    bottom: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .logo-circle {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--gray-500);
+  }
+
+  /* Keyboard (simplified) */
+  .laptop-keyboard {
+    display: none; /* Hidden by default, can be shown for more detail */
+  }
+
+  .laptop-trackpad {
+    width: 60px;
+    height: 8px;
+    background: var(--gray-800);
+    border-radius: 4px;
+    border: 1px solid var(--gray-600);
+  }
+
+  /* Content Section */
+  .mockup-content {
+    text-align: center;
+    max-width: 500px;
+  }
+
+  .mockup-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 0.5rem;
+  }
+
+  .mockup-description {
+    color: var(--text-secondary);
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+  }
+
+  /* Video Controls */
+  .video-controls {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .control-btn {
+    background: var(--primary-black);
+    color: var(--primary-white);
+    border: 2px solid var(--primary-black);
+    padding: 0.75rem 1.5rem;
+    border-radius: 25px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+
+  .control-btn:hover {
+    background: var(--accent-teal);
+    border-color: var(--accent-teal);
+    color: var(--primary-black);
+    transform: translateY(-2px);
+  }
+
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .laptop-screen {
+      width: 350px;
+      height: 224px;
+      padding: 15px 15px 30px 15px;
+    }
+
+    .laptop-base {
+      width: 370px;
+      height: 12px;
+    }
+
+    .laptop-container {
+      transform: rotateX(3deg) rotateY(-3deg);
+    }
+
+    .mockup-title {
+      font-size: 1.25rem;
+    }
+
+    .video-controls {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .laptop-screen {
+      width: 280px;
+      height: 179px;
+      padding: 12px 12px 24px 12px;
+    }
+
+    .laptop-base {
+      width: 300px;
+      height: 10px;
+    }
+  }
+</style>
+
+<script>
+  // Video control functionality
+  document.addEventListener('DOMContentLoaded', function() {
+    const laptopMockups = document.querySelectorAll('.laptop-mockup');
+    
+    laptopMockups.forEach(mockup => {
+      const video = mockup.querySelector('.demo-video');
+      const playOverlay = mockup.querySelector('.play-overlay');
+      const loadingSpinner = mockup.querySelector('.loading-spinner');
+      const playBtn = mockup.querySelector('.play-btn');
+      const restartBtn = mockup.querySelector('.restart-btn');
+      
+      if (!video) return;
+      
+      // Show loading spinner when video is loading
+      video.addEventListener('loadstart', () => {
+        if (loadingSpinner) loadingSpinner.style.display = 'block';
+      });
+      
+      video.addEventListener('canplay', () => {
+        if (loadingSpinner) loadingSpinner.style.display = 'none';
+      });
+      
+      // Play overlay click handler
+      if (playOverlay) {
+        playOverlay.addEventListener('click', () => {
+          video.play();
+          playOverlay.style.display = 'none';
+        });
+      }
+      
+      // Play/Pause button
+      if (playBtn) {
+        playBtn.addEventListener('click', () => {
+          const playText = playBtn.querySelector('.play-text');
+          const pauseText = playBtn.querySelector('.pause-text');
+          
+          if (video.paused) {
+            video.play();
+            if (playText) playText.style.display = 'none';
+            if (pauseText) pauseText.style.display = 'inline';
+            if (playOverlay) playOverlay.style.display = 'none';
+          } else {
+            video.pause();
+            if (playText) playText.style.display = 'inline';
+            if (pauseText) pauseText.style.display = 'none';
+          }
+        });
+      }
+      
+      // Restart button
+      if (restartBtn) {
+        restartBtn.addEventListener('click', () => {
+          video.currentTime = 0;
+          video.play();
+          if (playOverlay) playOverlay.style.display = 'none';
+          
+          // Update play button text
+          const playText = playBtn?.querySelector('.play-text');
+          const pauseText = playBtn?.querySelector('.pause-text');
+          if (playText) playText.style.display = 'none';
+          if (pauseText) pauseText.style.display = 'inline';
+        });
+      }
+      
+      // Video ended handler
+      video.addEventListener('ended', () => {
+        const playText = playBtn?.querySelector('.play-text');
+        const pauseText = playBtn?.querySelector('.pause-text');
+        if (playText) playText.style.display = 'inline';
+        if (pauseText) pauseText.style.display = 'none';
+      });
+    });
+  });
+</script>
