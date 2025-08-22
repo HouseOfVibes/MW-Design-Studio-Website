@@ -1,0 +1,334 @@
+---
+// Web Vitals Performance Tracking Component
+// Tracks Core Web Vitals and sends data to analytics for performance monitoring
+
+const {
+  debug = false,
+  sendToAnalytics = true,
+  endpoint = null, // Optional custom endpoint for sending vitals data
+  sampleRate = 1.0, // Rate limiting for high-traffic sites (0.0 to 1.0)
+} = Astro.props;
+
+// Only track in production unless debug is enabled
+const shouldTrack = import.meta.env.PROD || debug;
+---
+
+{shouldTrack && (
+  <script type="text/partytown" define:vars={{ debug, sendToAnalytics, endpoint, sampleRate }}>
+    // Import web-vitals dynamically to avoid loading in all environments
+    import('web-vitals').then(({ onCLS, onINP, onFCP, onLCP, onTTFB }) => {
+      
+      // Configuration
+      const config = {
+        debug,
+        sendToAnalytics,
+        endpoint,
+        sampleRate
+      };
+      
+      // Check if we should track this session based on sample rate
+      const shouldTrackSession = Math.random() < config.sampleRate;
+      if (!shouldTrackSession && !config.debug) return;
+      
+      // Utility function to send vitals data
+      function sendToAnalytics(metric) {
+        const body = JSON.stringify({
+          name: metric.name,
+          value: metric.value,
+          rating: metric.rating,
+          delta: metric.delta,
+          id: metric.id,
+          url: location.href,
+          timestamp: Date.now(),
+          // Additional context
+          connection: navigator.connection?.effectiveType || 'unknown',
+          deviceMemory: navigator.deviceMemory || 'unknown',
+          userAgent: navigator.userAgent
+        });
+
+        if (config.debug) {
+          console.log('📊 Web Vital:', metric.name, metric.value, metric.rating, body);
+        }
+
+        // Send to custom endpoint if provided
+        if (config.endpoint) {
+          fetch(config.endpoint, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: body,
+            keepalive: true
+          }).catch(error => {
+            if (config.debug) console.error('Failed to send to custom endpoint:', error);
+          });
+        }
+
+        // Send to Google Analytics if available and enabled
+        if (config.sendToAnalytics && typeof gtag !== 'undefined') {
+          gtag('event', 'web_vital', {
+            event_category: 'Web Vitals',
+            event_label: metric.name,
+            value: Math.round(metric.name === 'CLS' ? metric.value * 1000 : metric.value),
+            custom_parameter_1: metric.rating,
+            custom_parameter_2: metric.delta,
+            non_interaction: true,
+          });
+        }
+
+        // Send to Facebook Pixel if available
+        if (config.sendToAnalytics && typeof fbq !== 'undefined') {
+          fbq('trackCustom', 'WebVital', {
+            metric: metric.name,
+            value: metric.value,
+            rating: metric.rating,
+            url: location.href
+          });
+        }
+
+        // Send to other analytics platforms
+        if (typeof dataLayer !== 'undefined') {
+          dataLayer.push({
+            event: 'web_vital',
+            metric_name: metric.name,
+            metric_value: metric.value,
+            metric_rating: metric.rating,
+            metric_delta: metric.delta
+          });
+        }
+      }
+
+      // Track Cumulative Layout Shift (CLS)
+      onCLS((metric) => {
+        sendToAnalytics(metric);
+        
+        // Business-specific tracking for problematic CLS
+        if (metric.value > 0.1) { // Poor CLS threshold
+          if (typeof gtag !== 'undefined') {
+            gtag('event', 'poor_cls_detected', {
+              event_category: 'Performance Issues',
+              event_label: location.pathname,
+              value: Math.round(metric.value * 1000)
+            });
+          }
+        }
+      });
+
+      // Track Interaction to Next Paint (INP) - replaces FID
+      onINP((metric) => {
+        sendToAnalytics(metric);
+        
+        // Track poor interactions for debugging
+        if (metric.value > 200) { // Poor INP threshold
+          if (typeof gtag !== 'undefined') {
+            gtag('event', 'poor_interaction_detected', {
+              event_category: 'Performance Issues',
+              event_label: location.pathname,
+              value: Math.round(metric.value)
+            });
+          }
+        }
+      });
+
+      // Track First Contentful Paint (FCP)
+      onFCP((metric) => {
+        sendToAnalytics(metric);
+      });
+
+      // Track Largest Contentful Paint (LCP)
+      onLCP((metric) => {
+        sendToAnalytics(metric);
+        
+        // Track poor LCP for optimization opportunities
+        if (metric.value > 2500) { // Poor LCP threshold
+          if (typeof gtag !== 'undefined') {
+            gtag('event', 'poor_lcp_detected', {
+              event_category: 'Performance Issues',
+              event_label: location.pathname,
+              value: Math.round(metric.value)
+            });
+          }
+        }
+      });
+
+      // Track Time to First Byte (TTFB)
+      onTTFB((metric) => {
+        sendToAnalytics(metric);
+        
+        // Track server response issues
+        if (metric.value > 600) { // Poor TTFB threshold
+          if (typeof gtag !== 'undefined') {
+            gtag('event', 'poor_ttfb_detected', {
+              event_category: 'Server Performance',
+              event_label: location.pathname,
+              value: Math.round(metric.value)
+            });
+          }
+        }
+      });
+
+      // Business-specific performance tracking
+      function trackBusinessMetrics() {
+        // Track page load completion
+        window.addEventListener('load', () => {
+          const loadTime = performance.now();
+          
+          if (typeof gtag !== 'undefined') {
+            gtag('event', 'page_load_complete', {
+              event_category: 'Performance',
+              event_label: location.pathname,
+              value: Math.round(loadTime)
+            });
+          }
+          
+          // Track if critical business elements are visible
+          setTimeout(() => {
+            const criticalElements = [
+              '.hero-cta',
+              '.service-card',
+              '.contact-button',
+              '.laptop-mockup'
+            ];
+            
+            criticalElements.forEach(selector => {
+              const element = document.querySelector(selector);
+              if (element) {
+                const rect = element.getBoundingClientRect();
+                const isVisible = rect.top < window.innerHeight && rect.bottom > 0;
+                
+                if (isVisible && typeof gtag !== 'undefined') {
+                  gtag('event', 'critical_element_visible', {
+                    event_category: 'Business Metrics',
+                    event_label: selector,
+                    value: Math.round(loadTime)
+                  });
+                }
+              }
+            });
+          }, 100);
+        });
+
+        // Track form interactions (important for lead generation)
+        document.addEventListener('focusin', (e) => {
+          if (e.target.matches('input, textarea, select')) {
+            const formName = e.target.form?.name || e.target.closest('form')?.dataset.name || 'unknown';
+            
+            if (typeof gtag !== 'undefined') {
+              gtag('event', 'form_interaction_start', {
+                event_category: 'Lead Generation',
+                event_label: formName,
+                custom_parameter_1: e.target.type || e.target.tagName.toLowerCase()
+              });
+            }
+          }
+        });
+
+        // Track scroll depth for engagement
+        let maxScroll = 0;
+        let scrollTimer = null;
+        
+        window.addEventListener('scroll', () => {
+          clearTimeout(scrollTimer);
+          scrollTimer = setTimeout(() => {
+            const scrollPercent = Math.round((window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100);
+            
+            if (scrollPercent > maxScroll) {
+              maxScroll = scrollPercent;
+              
+              // Track milestone scrolls
+              if (scrollPercent % 25 === 0 && scrollPercent > 0) {
+                if (typeof gtag !== 'undefined') {
+                  gtag('event', 'scroll_depth', {
+                    event_category: 'Engagement',
+                    event_label: `${scrollPercent}%`,
+                    value: scrollPercent,
+                    non_interaction: true
+                  });
+                }
+              }
+            }
+          }, 100);
+        });
+      }
+
+      // Initialize business metrics tracking
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', trackBusinessMetrics);
+      } else {
+        trackBusinessMetrics();
+      }
+
+      if (config.debug) {
+        console.log('🔍 Web Vitals tracking initialized');
+      }
+    }).catch(error => {
+      if (config.debug) {
+        console.error('Failed to load web-vitals:', error);
+      }
+    });
+  </script>
+)}
+
+<!-- Fallback for non-Partytown environments -->
+{shouldTrack && (
+  <script>
+    // Fallback tracking for environments where Partytown isn't available
+    if (typeof window !== 'undefined' && !window.partytown) {
+      console.log('📊 Web Vitals: Partytown not available, using main thread');
+      
+      // Basic performance tracking without web-vitals library
+      window.addEventListener('load', function() {
+        const navigation = performance.getEntriesByType('navigation')[0];
+        const paintEntries = performance.getEntriesByType('paint');
+        
+        // Track basic load metrics
+        if (navigation && typeof gtag !== 'undefined') {
+          gtag('event', 'page_load_time', {
+            event_category: 'Performance',
+            event_label: location.pathname,
+            value: Math.round(navigation.loadEventEnd - navigation.loadEventStart)
+          });
+          
+          gtag('event', 'dom_content_loaded', {
+            event_category: 'Performance', 
+            event_label: location.pathname,
+            value: Math.round(navigation.domContentLoadedEventEnd - navigation.domContentLoadedEventStart)
+          });
+        }
+        
+        // Track paint metrics
+        paintEntries.forEach(entry => {
+          if (typeof gtag !== 'undefined') {
+            gtag('event', 'paint_timing', {
+              event_category: 'Performance',
+              event_label: entry.name,
+              value: Math.round(entry.startTime)
+            });
+          }
+        });
+      });
+    }
+  </script>
+)}
+
+<!-- Development mode performance monitoring -->
+{debug && !import.meta.env.PROD && (
+  <script>
+    console.log('🔧 Web Vitals Debug Mode Active');
+    
+    // Performance observer for debugging
+    if ('PerformanceObserver' in window) {
+      const observer = new PerformanceObserver((list) => {
+        for (const entry of list.getEntries()) {
+          console.log('📈 Performance Entry:', entry.name, entry.duration, entry);
+        }
+      });
+      
+      observer.observe({ entryTypes: ['measure', 'mark', 'navigation', 'paint'] });
+    }
+    
+    // Log Core Web Vitals thresholds for reference
+    console.log('📊 Core Web Vitals Thresholds:');
+    console.log('LCP (Largest Contentful Paint): Good < 2.5s, Poor > 4.0s');
+    console.log('INP (Interaction to Next Paint): Good < 200ms, Poor > 500ms'); 
+    console.log('CLS (Cumulative Layout Shift): Good < 0.1, Poor > 0.25');
+  </script>
+)}

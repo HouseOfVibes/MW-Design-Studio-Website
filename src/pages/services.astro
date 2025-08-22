@@ -2,6 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 import SEO from '../components/SEO.astro';
 import LaptopMockup from '../components/LaptopMockup.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
 ---
 
 <Layout title="Services - MW Design Studio">
@@ -16,9 +17,7 @@ import LaptopMockup from '../components/LaptopMockup.astro';
     <section class="hero-section">
       <div class="hero-container">
         <div class="hero-content">
-          <nav class="breadcrumb">
-            <a href="/">Home</a> > Services
-          </nav>
+          <Breadcrumbs />
           <h1 class="hero-title">Services That Drive Results</h1>
           <p class="hero-subtitle">Comprehensive design and marketing solutions to help your business stand out, connect with customers, and grow sustainably.</p>
           <a href="/contact" class="hero-cta">Complete Your Intake Form →</a>

@@ -1,0 +1,319 @@
+---
+// Service Schema Markup Component
+// Generates structured data for service pages to improve SEO and rich snippets
+
+const {
+  serviceName,
+  description,
+  serviceType = "ProfessionalService",
+  provider = "MW Design Studio",
+  areaServed = "United States", 
+  currency = "USD",
+  priceRange = "$$",
+  timeline = null,
+  serviceOutput = null,
+  category = null,
+  aggregateRating = null,
+  offers = null,
+  additionalServices = []
+} = Astro.props;
+
+// Base business information
+const businessInfo = {
+  "@type": "LocalBusiness",
+  "name": "MW Design Studio",
+  "description": "Professional brand design, marketing, and social media services that help ambitious small businesses stand out and grow.",
+  "url": Astro.site?.toString() || "https://mwdesignstudio.com",
+  "logo": new URL('/logo/MWD_Main_Logo_WhiteBG.png', Astro.site).toString(),
+  "image": new URL('/og-image.jpg', Astro.site).toString(),
+  "priceRange": "$$",
+  "address": {
+    "@type": "PostalAddress",
+    "addressCountry": "US"
+  },
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "contactType": "customer service",
+    "availableLanguage": "English",
+    "url": new URL('/contact', Astro.site).toString()
+  },
+  "sameAs": [
+    "https://www.facebook.com/mwdesignstudio",
+    "https://www.instagram.com/mwdesignstudio", 
+    "https://www.linkedin.com/company/mwdesignstudio"
+  ]
+};
+
+// Generate service schema
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": serviceType,
+  "name": serviceName,
+  "description": description,
+  "provider": businessInfo,
+  "areaServed": {
+    "@type": "Country",
+    "name": areaServed
+  },
+  "serviceType": serviceName,
+  "url": Astro.url.href,
+  ...(category && { "category": category }),
+  ...(timeline && { 
+    "estimatedDuration": timeline,
+    "description": `${description} Typical timeline: ${timeline}.`
+  }),
+  ...(serviceOutput && { "serviceOutput": serviceOutput }),
+  ...(aggregateRating && {
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": aggregateRating.ratingValue,
+      "reviewCount": aggregateRating.reviewCount,
+      "bestRating": aggregateRating.bestRating || 5,
+      "worstRating": aggregateRating.worstRating || 1
+    }
+  }),
+  ...(offers && {
+    "offers": {
+      "@type": "Offer",
+      "priceCurrency": currency,
+      "price": offers.price || priceRange,
+      "description": offers.description,
+      "availability": offers.availability || "https://schema.org/InStock",
+      "validThrough": offers.validThrough,
+      "url": new URL('/contact', Astro.site).toString()
+    }
+  })
+};
+
+// Generate FAQ schema if relevant questions exist
+const generateFAQSchema = (serviceName) => {
+  const commonFAQs = {
+    "Brand Services": [
+      {
+        question: "How long does brand design take?",
+        answer: "Brand design projects typically take 4-6 weeks, depending on the scope. Logo design takes 2-3 weeks, while complete brand identity systems take 4-5 weeks."
+      },
+      {
+        question: "What's included in brand guidelines?",
+        answer: "Brand guidelines include logo usage rules, color codes, typography specifications, and application examples for both digital and print materials."
+      },
+      {
+        question: "Do you provide source files?",
+        answer: "Yes, all clients receive complete source files including vector logos, color variations, and editable brand templates."
+      }
+    ],
+    "Marketing Services": [
+      {
+        question: "How do you measure marketing success?",
+        answer: "We track key metrics like website traffic, lead generation, conversion rates, and ROI. You'll receive detailed monthly reports showing your marketing performance."
+      },
+      {
+        question: "What's included in a marketing strategy?",
+        answer: "Marketing strategies include target audience analysis, competitive research, channel recommendations, content planning, and performance tracking systems."
+      },
+      {
+        question: "How quickly will I see results?",
+        answer: "Initial results typically appear within 30-60 days, with significant improvements visible after 3-6 months of consistent implementation."
+      }
+    ],
+    "Social Media Services": [
+      {
+        question: "How often do you post on social media?",
+        answer: "Posting frequency depends on your package, typically ranging from 3-5 posts per week per platform, optimized for your audience engagement patterns."
+      },
+      {
+        question: "Do you handle social media advertising?",
+        answer: "Yes, we create and manage targeted social media ad campaigns across Facebook, Instagram, LinkedIn, and other platforms to maximize your reach and conversions."
+      },
+      {
+        question: "What social media platforms do you recommend?",
+        answer: "Platform recommendations depend on your target audience and business type. We typically focus on 2-3 platforms where your ideal customers are most active."
+      }
+    ]
+  };
+
+  const faqs = commonFAQs[serviceName] || [];
+  
+  if (faqs.length === 0) return null;
+
+  return {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faqs.map(faq => ({
+      "@type": "Question",
+      "name": faq.question,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": faq.answer
+      }
+    }))
+  };
+};
+
+const faqSchema = generateFAQSchema(serviceName);
+
+// Generate How-To schema for service process
+const generateHowToSchema = (serviceName) => {
+  const processes = {
+    "Brand Services": {
+      name: "How to Get Professional Brand Design",
+      description: "Step-by-step process for getting professional brand design services from MW Design Studio.",
+      steps: [
+        {
+          name: "Discovery & Strategy",
+          text: "Complete our intake form and participate in a strategy session to define your brand vision, target audience, and goals."
+        },
+        {
+          name: "Concept Development", 
+          text: "Our designers create initial concepts based on your brand strategy, presenting 2-3 design directions for your review."
+        },
+        {
+          name: "Refinement & Finalization",
+          text: "We refine your chosen concept through 2-3 rounds of revisions until your brand identity perfectly represents your business."
+        },
+        {
+          name: "Delivery & Guidelines",
+          text: "Receive your complete brand package including logos, colors, fonts, and comprehensive brand guidelines for consistent application."
+        }
+      ]
+    },
+    "Marketing Services": {
+      name: "How to Develop Effective Marketing Strategy",
+      description: "Our proven process for creating marketing strategies that drive real business results.",
+      steps: [
+        {
+          name: "Business Analysis",
+          text: "We analyze your current marketing, competitors, and market opportunities to identify the best growth strategies."
+        },
+        {
+          name: "Strategy Development",
+          text: "Create a comprehensive marketing plan with clear objectives, target audiences, messaging, and channel recommendations."
+        },
+        {
+          name: "Implementation Planning",
+          text: "Develop detailed implementation timelines, content calendars, and resource allocation for maximum efficiency."
+        },
+        {
+          name: "Performance Tracking",
+          text: "Set up analytics and reporting systems to measure results and continuously optimize your marketing performance."
+        }
+      ]
+    }
+  };
+
+  const process = processes[serviceName];
+  if (!process) return null;
+
+  return {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": process.name,
+    "description": process.description,
+    "supply": [
+      {
+        "@type": "HowToSupply",
+        "name": "Business Information"
+      },
+      {
+        "@type": "HowToSupply", 
+        "name": "Brand Goals & Vision"
+      }
+    ],
+    "step": process.steps.map((step, index) => ({
+      "@type": "HowToStep",
+      "position": index + 1,
+      "name": step.name,
+      "text": step.text
+    })),
+    "totalTime": timeline || "PT4W",
+    "estimatedCost": {
+      "@type": "MonetaryAmount",
+      "currency": currency,
+      "value": priceRange
+    }
+  };
+};
+
+const howToSchema = generateHowToSchema(serviceName);
+---
+
+<!-- Main Service Schema -->
+<script type="application/ld+json" set:html={JSON.stringify(serviceSchema)} />
+
+<!-- FAQ Schema (if available) -->
+{faqSchema && (
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+)}
+
+<!-- How-To Process Schema (if available) -->
+{howToSchema && (
+  <script type="application/ld+json" set:html={JSON.stringify(howToSchema)} />
+)}
+
+<!-- Organization Schema for better brand recognition -->
+<script type="application/ld+json" set:html={JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "MW Design Studio",
+  "description": "Professional brand design and marketing studio helping ambitious small businesses stand out and grow through strategic design and marketing.",
+  "url": Astro.site?.toString() || "https://mwdesignstudio.com",
+  "logo": new URL('/logo/MWD_Main_Logo_WhiteBG.png', Astro.site).toString(),
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "contactType": "customer service",
+    "availableLanguage": "English"
+  },
+  "address": {
+    "@type": "PostalAddress",
+    "addressCountry": "US"
+  },
+  "foundingDate": "2020",
+  "founders": [
+    {
+      "@type": "Person",
+      "name": "MW Design Studio Team"
+    }
+  ],
+  "knowsAbout": [
+    "Brand Design",
+    "Logo Design", 
+    "Marketing Strategy",
+    "Social Media Marketing",
+    "Digital Marketing",
+    "Brand Identity",
+    "Graphic Design",
+    "Web Design",
+    "Content Marketing",
+    "Business Growth"
+  ],
+  "makesOffer": [
+    {
+      "@type": "Offer",
+      "itemOffered": {
+        "@type": "Service",
+        "name": "Brand Design Services",
+        "description": "Professional logo design, brand identity systems, and brand guidelines"
+      }
+    },
+    {
+      "@type": "Offer", 
+      "itemOffered": {
+        "@type": "Service",
+        "name": "Marketing Strategy",
+        "description": "Comprehensive marketing planning and strategy development"
+      }
+    },
+    {
+      "@type": "Offer",
+      "itemOffered": {
+        "@type": "Service", 
+        "name": "Social Media Management",
+        "description": "Social media strategy, content creation, and community management"
+      }
+    }
+  ],
+  "areaServed": {
+    "@type": "Country",
+    "name": "United States"
+  }
+})} />
