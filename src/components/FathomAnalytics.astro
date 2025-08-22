@@ -1,0 +1,178 @@
+---
+// Fathom Analytics Component
+// Privacy-first analytics that's GDPR compliant and cookieless
+// Alternative to Plausible with similar features
+
+const {
+  siteId = import.meta.env.FATHOM_SITE_ID || 'ABCDEFGH',
+  src = 'https://cdn.usefathom.com/script.js',
+  trackLocalhost = false,
+  spa = false, // Set to true for single-page applications
+  auto = true, // Automatically track page views
+  honorDNT = true, // Honor Do Not Track headers
+  canonical = true, // Use canonical URLs
+  excludedDomains = [], // Domains to exclude from tracking
+  includedDomains = [], // Only track these domains
+  customEvents = false
+} = Astro.props;
+
+// Only load in production unless explicitly tracking localhost
+const shouldLoad = import.meta.env.PROD || trackLocalhost;
+
+// Check if current domain should be tracked
+const currentDomain = Astro.site?.hostname || 'localhost';
+const shouldTrackDomain = includedDomains.length === 0 || 
+                         includedDomains.includes(currentDomain) ||
+                         !excludedDomains.includes(currentDomain);
+---
+
+{shouldLoad && shouldTrackDomain && (
+  <>
+    <!-- Fathom Analytics Script -->
+    <script 
+      src={src}
+      data-site={siteId}
+      data-spa={spa ? 'auto' : undefined}
+      data-auto={auto ? 'true' : 'false'}
+      data-honor-dnt={honorDNT ? 'true' : 'false'}
+      data-canonical={canonical ? 'true' : 'false'}
+      defer
+      type="text/partytown"
+    ></script>
+    
+    {customEvents && (
+      <script type="text/partytown">
+        // Initialize Fathom tracking function
+        window.fathom = window.fathom || function() {
+          (window.fathom.q = window.fathom.q || []).push(arguments);
+        };
+        
+        // Custom goal tracking for business metrics
+        
+        // Track form submissions as goals
+        document.addEventListener('submit', function(e) {
+          if (e.target.matches('form[data-track="true"]')) {
+            const formName = e.target.name || e.target.dataset.name || 'contact-form';
+            
+            // Track different forms with different goal IDs
+            switch(formName) {
+              case 'contact-form':
+                fathom.trackGoal('CONTACT_FORM', 0); // Replace with your goal ID
+                break;
+              case 'consultation-form':
+                fathom.trackGoal('CONSULTATION', 0); // Replace with your goal ID
+                break;
+              case 'newsletter':
+                fathom.trackGoal('NEWSLETTER', 0); // Replace with your goal ID
+                break;
+              default:
+                fathom.trackGoal('FORM_SUBMIT', 0); // Generic form goal
+            }
+          }
+        });
+        
+        // Track CTA button clicks
+        document.addEventListener('click', function(e) {
+          if (e.target.matches('[data-track-cta]')) {
+            const ctaName = e.target.dataset.trackCta;
+            
+            switch(ctaName) {
+              case 'get-started':
+                fathom.trackGoal('GET_STARTED_CTA', 0);
+                break;
+              case 'view-portfolio':
+                fathom.trackGoal('VIEW_PORTFOLIO', 0);
+                break;
+              case 'book-consultation':
+                fathom.trackGoal('BOOK_CONSULTATION', 0);
+                break;
+              case 'download-resource':
+                fathom.trackGoal('RESOURCE_DOWNLOAD', 0);
+                break;
+              default:
+                fathom.trackGoal('CTA_CLICK', 0);
+            }
+          }
+        });
+        
+        // Track file downloads
+        document.addEventListener('click', function(e) {
+          if (e.target.matches('a[href$=".pdf"], a[href$=".zip"], a[href$=".doc"], a[href$=".docx"]')) {
+            fathom.trackGoal('FILE_DOWNLOAD', 0);
+          }
+        });
+        
+        // Track email clicks
+        document.addEventListener('click', function(e) {
+          if (e.target.matches('a[href^="mailto:"]')) {
+            fathom.trackGoal('EMAIL_CLICK', 0);
+          }
+        });
+        
+        // Track phone clicks
+        document.addEventListener('click', function(e) {
+          if (e.target.matches('a[href^="tel:"]')) {
+            fathom.trackGoal('PHONE_CLICK', 0);
+          }
+        });
+        
+        // Track social media clicks
+        document.addEventListener('click', function(e) {
+          if (e.target.matches('a[href*="facebook.com"], a[href*="instagram.com"], a[href*="linkedin.com"], a[href*="twitter.com"]')) {
+            fathom.trackGoal('SOCIAL_CLICK', 0);
+          }
+        });
+        
+        // Track external link clicks
+        document.addEventListener('click', function(e) {
+          if (e.target.matches('a[href^="http"]') && !e.target.href.includes(window.location.hostname)) {
+            fathom.trackGoal('EXTERNAL_LINK', 0);
+          }
+        });
+        
+        // Track engagement milestones
+        let engagementTracked = false;
+        
+        // Track 30-second engagement
+        setTimeout(function() {
+          if (!engagementTracked) {
+            fathom.trackGoal('ENGAGED_30S', 0);
+            engagementTracked = true;
+          }
+        }, 30000);
+        
+        // Track scroll engagement
+        let scrollTracked = false;
+        window.addEventListener('scroll', function() {
+          if (!scrollTracked) {
+            const scrollPercent = (window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100;
+            if (scrollPercent > 50) {
+              fathom.trackGoal('SCROLL_50', 0);
+              scrollTracked = true;
+            }
+          }
+        });
+        
+        // Track page visibility changes (user switching tabs)
+        document.addEventListener('visibilitychange', function() {
+          if (document.visibilityState === 'hidden') {
+            fathom.trackGoal('TAB_HIDDEN', 0);
+          }
+        });
+      </script>
+    )}
+  </>
+)}
+
+<!-- Development mode notification -->
+{!shouldLoad && (
+  <script>
+    console.log('🔍 Fathom Analytics: Not loading in development mode. Set trackLocalhost=true to enable.');
+  </script>
+)}
+
+{shouldLoad && !shouldTrackDomain && (
+  <script>
+    console.log('🔍 Fathom Analytics: Domain not included in tracking configuration.');
+  </script>
+)}

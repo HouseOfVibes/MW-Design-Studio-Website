@@ -1,0 +1,277 @@
+---
+// ImageKit Optimized Image Component
+// Automatically optimizes images with ImageKit CDN for best performance
+// Supports responsive images, lazy loading, and modern formats
+
+export interface Props {
+  src: string;
+  alt: string;
+  width?: number;
+  height?: number;
+  className?: string;
+  loading?: 'lazy' | 'eager';
+  quality?: number;
+  format?: 'auto' | 'webp' | 'avif' | 'jpg' | 'png';
+  responsive?: boolean;
+  sizes?: string;
+  transformations?: string;
+  placeholder?: 'blur' | 'color' | 'none';
+  placeholderColor?: string;
+}
+
+const {
+  src,
+  alt,
+  width,
+  height,
+  className = '',
+  loading = 'lazy',
+  quality = 80,
+  format = 'auto',
+  responsive = true,
+  sizes = '(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw',
+  transformations = '',
+  placeholder = 'blur',
+  placeholderColor = '#f3f4f6'
+} = Astro.props;
+
+// ImageKit configuration - In production, these would be environment variables
+const IMAGEKIT_URL_ENDPOINT = 'https://ik.imagekit.io/mwdesignstudio'; // You'll replace with your ImageKit URL
+const IMAGEKIT_PUBLIC_KEY = 'public_your_key_here'; // You'll replace with your public key
+
+// Generate ImageKit URL with optimizations
+function generateImageKitUrl(imagePath: string, options: any = {}) {
+  const baseUrl = IMAGEKIT_URL_ENDPOINT;
+  
+  // Build transformation string
+  const transformations = [];
+  
+  // Quality optimization
+  if (options.quality) {
+    transformations.push(`q-${options.quality}`);
+  }
+  
+  // Format optimization
+  if (options.format === 'auto') {
+    transformations.push('f-auto');
+  } else if (options.format !== 'auto') {
+    transformations.push(`f-${options.format}`);
+  }
+  
+  // Dimensions
+  if (options.width) {
+    transformations.push(`w-${options.width}`);
+  }
+  if (options.height) {
+    transformations.push(`h-${options.height}`);
+  }
+  
+  // Progressive loading
+  transformations.push('pr-true');
+  
+  // Additional transformations
+  if (options.transformations) {
+    transformations.push(options.transformations);
+  }
+  
+  // Clean the image path
+  const cleanPath = imagePath.startsWith('/') ? imagePath.substring(1) : imagePath;
+  
+  // Build final URL
+  const transformationString = transformations.length > 0 ? `tr:${transformations.join(',')}` : '';
+  return `${baseUrl}/${transformationString}/${cleanPath}`;
+}
+
+// Generate responsive image sources
+function generateResponsiveSources(imagePath: string, options: any = {}) {
+  const breakpoints = [640, 768, 1024, 1280, 1536];
+  
+  return breakpoints.map(breakpoint => {
+    const responsiveOptions = {
+      ...options,
+      width: Math.min(breakpoint, options.width || breakpoint)
+    };
+    
+    return {
+      breakpoint,
+      url: generateImageKitUrl(imagePath, responsiveOptions),
+      width: responsiveOptions.width
+    };
+  });
+}
+
+// For development/fallback when ImageKit isn't configured
+const isImageKitConfigured = IMAGEKIT_URL_ENDPOINT !== 'https://ik.imagekit.io/mwdesignstudio';
+const optimizedSrc = isImageKitConfigured 
+  ? generateImageKitUrl(src, { width, height, quality, format, transformations })
+  : src;
+
+const responsiveSources = isImageKitConfigured && responsive 
+  ? generateResponsiveSources(src, { height, quality, format, transformations })
+  : [];
+
+// Generate placeholder for better UX
+const placeholderSrc = isImageKitConfigured
+  ? generateImageKitUrl(src, { width: 20, height: Math.round((height || 200) * (20 / (width || 300))), quality: 1, format: 'auto' })
+  : src;
+---
+
+<div class={`imagekit-container ${className}`} data-loading="true">
+  {placeholder !== 'none' && (
+    <div class="imagekit-placeholder" style={`background-color: ${placeholderColor}`}>
+      {placeholder === 'blur' && (
+        <img 
+          src={placeholderSrc} 
+          alt="" 
+          class="imagekit-blur-placeholder"
+          aria-hidden="true"
+        />
+      )}
+    </div>
+  )}
+  
+  {responsive && responsiveSources.length > 0 ? (
+    <picture>
+      {responsiveSources.reverse().map(source => (
+        <source
+          media={`(min-width: ${source.breakpoint}px)`}
+          srcset={source.url}
+          type={format === 'auto' ? 'image/webp' : `image/${format}`}
+        />
+      ))}
+      <img
+        src={optimizedSrc}
+        alt={alt}
+        width={width}
+        height={height}
+        loading={loading}
+        class="imagekit-image"
+        sizes={sizes}
+        onload="this.parentElement.parentElement.setAttribute('data-loading', 'false')"
+      />
+    </picture>
+  ) : (
+    <img
+      src={optimizedSrc}
+      alt={alt}
+      width={width}
+      height={height}
+      loading={loading}
+      class="imagekit-image"
+      onload="this.parentElement.setAttribute('data-loading', 'false')"
+    />
+  )}
+</div>
+
+<style>
+  .imagekit-container {
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+  }
+  
+  .imagekit-placeholder {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.3s ease;
+    z-index: 1;
+  }
+  
+  .imagekit-blur-placeholder {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: blur(10px);
+    transform: scale(1.1);
+  }
+  
+  .imagekit-image {
+    width: 100%;
+    height: auto;
+    transition: opacity 0.3s ease;
+    position: relative;
+    z-index: 2;
+  }
+  
+  /* Hide placeholder when image loads */
+  .imagekit-container[data-loading="false"] .imagekit-placeholder {
+    opacity: 0;
+    pointer-events: none;
+  }
+  
+  /* Ensure smooth loading transition */
+  .imagekit-container[data-loading="true"] .imagekit-image {
+    opacity: 0;
+  }
+  
+  .imagekit-container[data-loading="false"] .imagekit-image {
+    opacity: 1;
+  }
+  
+  /* Responsive image container */
+  .imagekit-container picture {
+    display: block;
+    width: 100%;
+  }
+  
+  .imagekit-container picture img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  
+  /* Loading animation */
+  .imagekit-placeholder::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.4),
+      transparent
+    );
+    animation: shimmer 1.5s infinite;
+  }
+  
+  @keyframes shimmer {
+    0% {
+      left: -100%;
+    }
+    100% {
+      left: 100%;
+    }
+  }
+  
+  /* Dark mode support */
+  @media (prefers-color-scheme: dark) {
+    .imagekit-placeholder {
+      background-color: #374151;
+    }
+    
+    .imagekit-placeholder::before {
+      background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.1),
+        transparent
+      );
+    }
+  }
+</style>
+
+<!-- Development notice -->
+{!isImageKitConfigured && (
+  <script>
+    console.warn('ImageKit not configured. Update IMAGEKIT_URL_ENDPOINT in ImageKit.astro component.');
+  </script>
+)}

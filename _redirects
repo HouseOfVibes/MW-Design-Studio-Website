@@ -1,0 +1,32 @@
+# Cloudflare Pages Redirects Configuration
+
+# Clean URL redirects (remove trailing slashes)
+/services/    /services    301
+/resources/   /resources   301
+/portfolio/   /portfolio   301
+/about/       /about       301
+/contact/     /contact     301
+/faq/         /faq         301
+/process/     /process     301
+/testimonials/ /testimonials 301
+/blog/        /blog        301
+
+# Service redirects for better SEO
+/brand-design    /services/brand-services    301
+/marketing       /services/marketing-services 301
+/social-media    /services/social-media-services 301
+
+# Legacy redirects (if any old URLs exist)
+/services/branding    /services/brand-services    301
+/services/marketing   /services/marketing-services 301
+
+# Resource shortcuts
+/brand-audit     /resources/brand-audit-checklist    301
+/diy-analysis    /resources/diy-vs-professional-analysis 301
+/instagram       /resources/instagram-guide           301
+/facebook        /resources/facebook-guide            301
+/pinterest       /resources/pinterest-guide           301
+/linkedin        /resources/linkedin-guide            301
+
+# Fallback for 404s to homepage (optional)
+# /* /404.html 404

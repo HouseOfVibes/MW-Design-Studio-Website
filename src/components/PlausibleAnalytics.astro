@@ -1,0 +1,135 @@
+---
+// Plausible Analytics Component
+// Privacy-focused, lightweight analytics that doesn't use cookies
+// GDPR compliant and much faster than Google Analytics
+
+const {
+  domain = Astro.site?.hostname || 'localhost',
+  src = 'https://plausible.io/js/script.js',
+  trackOutboundLinks = true,
+  trackFileDownloads = true,
+  trackLocalhost = false,
+  enableRevenue = false,
+  customEvents = false
+} = Astro.props;
+
+// Only load in production unless explicitly tracking localhost
+const shouldLoad = import.meta.env.PROD || trackLocalhost;
+
+// Build script URL with extensions
+let scriptSrc = src;
+const extensions = [];
+
+if (trackOutboundLinks) extensions.push('outbound-links');
+if (trackFileDownloads) extensions.push('file-downloads');
+if (enableRevenue) extensions.push('revenue');
+
+if (extensions.length > 0) {
+  scriptSrc = scriptSrc.replace('/js/script.js', `/js/script.${extensions.join('.')}.js`);
+}
+---
+
+{shouldLoad && (
+  <>
+    <!-- Plausible Analytics Script -->
+    <script 
+      defer 
+      data-domain={domain}
+      src={scriptSrc}
+      type="text/partytown"
+    ></script>
+    
+    {customEvents && (
+      <script type="text/partytown">
+        // Custom event tracking for business goals
+        window.plausible = window.plausible || function() { 
+          (window.plausible.q = window.plausible.q || []).push(arguments) 
+        };
+        
+        // Track form submissions
+        document.addEventListener('submit', function(e) {
+          if (e.target.matches('form[data-track="true"]')) {
+            const formName = e.target.name || e.target.dataset.name || 'contact-form';
+            plausible('Form Submit', { props: { form: formName } });
+          }
+        });
+        
+        // Track button clicks for CTAs
+        document.addEventListener('click', function(e) {
+          if (e.target.matches('[data-track-cta]')) {
+            const ctaName = e.target.dataset.trackCta || e.target.textContent.trim();
+            plausible('CTA Click', { props: { cta: ctaName } });
+          }
+        });
+        
+        // Track resource downloads
+        document.addEventListener('click', function(e) {
+          if (e.target.matches('a[href$=".pdf"], a[href$=".zip"], a[href$=".doc"], a[href$=".docx"]')) {
+            const fileName = e.target.href.split('/').pop();
+            plausible('File Download', { props: { file: fileName } });
+          }
+        });
+        
+        // Track email link clicks
+        document.addEventListener('click', function(e) {
+          if (e.target.matches('a[href^="mailto:"]')) {
+            plausible('Email Link Click');
+          }
+        });
+        
+        // Track phone link clicks
+        document.addEventListener('click', function(e) {
+          if (e.target.matches('a[href^="tel:"]')) {
+            plausible('Phone Link Click');
+          }
+        });
+        
+        // Track scroll depth milestones
+        let maxScroll = 0;
+        let scrollTimer = null;
+        
+        window.addEventListener('scroll', function() {
+          clearTimeout(scrollTimer);
+          scrollTimer = setTimeout(function() {
+            const scrollPercent = Math.round((window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100);
+            
+            if (scrollPercent > maxScroll) {
+              maxScroll = scrollPercent;
+              
+              // Track 25%, 50%, 75%, 100% milestones
+              if (scrollPercent >= 25 && maxScroll < 25) {
+                plausible('Scroll Depth', { props: { depth: '25%' } });
+              } else if (scrollPercent >= 50 && maxScroll < 50) {
+                plausible('Scroll Depth', { props: { depth: '50%' } });
+              } else if (scrollPercent >= 75 && maxScroll < 75) {
+                plausible('Scroll Depth', { props: { depth: '75%' } });
+              } else if (scrollPercent >= 100 && maxScroll < 100) {
+                plausible('Scroll Depth', { props: { depth: '100%' } });
+              }
+            }
+          }, 100);
+        });
+        
+        // Track time on page milestones
+        const timeMarkers = [30, 60, 120, 300]; // 30s, 1m, 2m, 5m
+        const trackedMarkers = new Set();
+        
+        timeMarkers.forEach(seconds => {
+          setTimeout(() => {
+            if (!trackedMarkers.has(seconds)) {
+              plausible('Time on Page', { props: { seconds: seconds } });
+              trackedMarkers.add(seconds);
+            }
+          }, seconds * 1000);
+        });
+      </script>
+    )}
+  </>
+)}
+
+<!-- Development mode notification -->
+{!shouldLoad && (
+  <script>
+    console.log('🔍 Plausible Analytics: Not loading in development mode. Set trackLocalhost=true to enable.');
+  </script>
+)}

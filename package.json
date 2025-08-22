@@ -13,8 +13,12 @@
     "@astrojs/check": "^0.9.4",
     "@astrojs/partytown": "^2.1.4",
     "@astrojs/sitemap": "^3.5.0",
+    "@sanity/astro": "^3.2.10",
+    "@sanity/client": "^7.9.0",
+    "@sanity/image-url": "^1.1.0",
     "astro": "^5.13.2",
     "astro-seo": "^0.8.4",
+    "imagekit": "^6.0.0",
     "typescript": "^5.9.2",
     "web-vitals": "^5.1.0"
   }
