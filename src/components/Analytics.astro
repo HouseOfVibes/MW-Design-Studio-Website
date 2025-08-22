@@ -1,0 +1,220 @@
+---
+// Analytics component using Partytown for performance
+// This moves analytics scripts to a web worker to prevent blocking the main thread
+
+const {
+  gtag = null, // Google Analytics GA4 ID (e.g., "G-XXXXXXXXXX")
+  fbPixelId = null, // Facebook Pixel ID
+  linkedInPartnerId = null, // LinkedIn Partner ID
+} = Astro.props;
+
+// Only include analytics in production
+const isProduction = import.meta.env.PROD;
+---
+
+{isProduction && (
+  <>
+    <!-- Google Analytics 4 with Partytown -->
+    {gtag && (
+      <>
+        <script type="text/partytown" src={`https://www.googletagmanager.com/gtag/js?id=${gtag}`}></script>
+        <script type="text/partytown">
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', '{gtag}', {
+            page_title: document.title,
+            page_location: location.href,
+            // Enhanced ecommerce for service business
+            custom_map: {
+              'custom_parameter_1': 'service_type',
+              'custom_parameter_2': 'lead_source'
+            }
+          });
+          
+          // Track service page views
+          if (location.pathname.includes('/services/')) {
+            gtag('event', 'page_view', {
+              page_title: document.title,
+              page_location: location.href,
+              service_type: location.pathname.split('/')[2]
+            });
+          }
+          
+          // Track contact form interactions
+          if (location.pathname.includes('/contact')) {
+            gtag('event', 'page_view', {
+              page_title: 'Contact Page',
+              page_location: location.href,
+              content_group1: 'Lead Generation'
+            });
+          }
+        </script>
+      </>
+    )}
+
+    <!-- Facebook Pixel with Partytown -->
+    {fbPixelId && (
+      <>
+        <script type="text/partytown">
+          !function(f,b,e,v,n,t,s)
+          {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+          n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+          if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+          n.queue=[];t=b.createElement(e);t.async=!0;
+          t.src=v;s=b.getElementsByTagName(e)[0];
+          s.parentNode.insertBefore(t,s)}(window, document,'script',
+          'https://connect.facebook.net/en_US/fbevents.js');
+          fbq('init', '{fbPixelId}');
+          fbq('track', 'PageView');
+          
+          // Custom events for business leads
+          if (location.pathname.includes('/contact')) {
+            fbq('track', 'Lead');
+          }
+          if (location.pathname.includes('/services/')) {
+            fbq('track', 'ViewContent', {
+              content_type: 'service',
+              content_category: location.pathname.split('/')[2]
+            });
+          }
+        </script>
+        <noscript>
+          <img height="1" width="1" style="display:none" 
+               src={`https://www.facebook.com/tr?id=${fbPixelId}&ev=PageView&noscript=1`} />
+        </noscript>
+      </>
+    )}
+
+    <!-- LinkedIn Insight Tag with Partytown -->
+    {linkedInPartnerId && (
+      <script type="text/partytown">
+        _linkedin_partner_id = "{linkedInPartnerId}";
+        window._linkedin_data_partner_ids = window._linkedin_data_partner_ids || [];
+        window._linkedin_data_partner_ids.push(_linkedin_partner_id);
+        (function(l) {
+          if (!l){window.lintrk = function(a,b){window.lintrk.q.push([a,b])};
+          window.lintrk.q=[]}
+          var s = document.getElementsByTagName("script")[0];
+          var b = document.createElement("script");
+          b.type = "text/javascript";b.async = true;
+          b.src = "https://snap.licdn.com/li.lms-analytics/insight.min.js";
+          s.parentNode.insertBefore(b, s);})(window.lintrk);
+      </script>
+    )}
+
+    <!-- Performance and User Experience Tracking -->
+    <script type="text/partytown">
+      // Track Core Web Vitals
+      function trackWebVitals() {
+        if ('web-vital' in window) {
+          import('web-vitals').then(({ getCLS, getFID, getFCP, getLCP, getTTFB }) => {
+            getCLS((metric) => {
+              gtag && gtag('event', 'web_vital', {
+                event_category: 'Web Vitals',
+                event_label: 'CLS',
+                value: Math.round(metric.value * 1000),
+                non_interaction: true,
+              });
+            });
+            
+            getFID((metric) => {
+              gtag && gtag('event', 'web_vital', {
+                event_category: 'Web Vitals',
+                event_label: 'FID',
+                value: Math.round(metric.value),
+                non_interaction: true,
+              });
+            });
+            
+            getLCP((metric) => {
+              gtag && gtag('event', 'web_vital', {
+                event_category: 'Web Vitals',
+                event_label: 'LCP',
+                value: Math.round(metric.value),
+                non_interaction: true,
+              });
+            });
+          });
+        }
+      }
+      
+      // Track business-specific events
+      function trackBusinessEvents() {
+        // Track CTA button clicks
+        document.addEventListener('click', function(e) {
+          if (e.target.matches('.cta-button, .hero-cta, .footer-cta')) {
+            gtag && gtag('event', 'click', {
+              event_category: 'CTA',
+              event_label: e.target.textContent.trim(),
+              page_location: location.href
+            });
+            
+            fbq && fbq('track', 'Lead');
+          }
+          
+          // Track service card clicks
+          if (e.target.closest('.service-card')) {
+            const serviceCard = e.target.closest('.service-card');
+            const serviceTitle = serviceCard.querySelector('.service-title')?.textContent || 'Unknown Service';
+            
+            gtag && gtag('event', 'click', {
+              event_category: 'Service Interest',
+              event_label: serviceTitle,
+              page_location: location.href
+            });
+          }
+        });
+        
+        // Track scroll depth
+        let maxScroll = 0;
+        window.addEventListener('scroll', function() {
+          const scrollPercent = Math.round((window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100);
+          if (scrollPercent > maxScroll && scrollPercent % 25 === 0) {
+            maxScroll = scrollPercent;
+            gtag && gtag('event', 'scroll', {
+              event_category: 'Engagement',
+              event_label: `${scrollPercent}%`,
+              value: scrollPercent,
+              non_interaction: true
+            });
+          }
+        });
+      }
+      
+      // Initialize tracking when DOM is ready
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', function() {
+          trackWebVitals();
+          trackBusinessEvents();
+        });
+      } else {
+        trackWebVitals();
+        trackBusinessEvents();
+      }
+    </script>
+  </>
+)}
+
+<!-- Development Analytics (Console Logging) -->
+{!isProduction && (
+  <script>
+    console.log('🎯 Analytics initialized in development mode');
+    
+    // Mock analytics for development
+    window.gtag = function() {
+      console.log('📊 GA Event:', arguments);
+    };
+    
+    window.fbq = function() {
+      console.log('📘 FB Event:', arguments);
+    };
+    
+    // Track clicks in development
+    document.addEventListener('click', function(e) {
+      if (e.target.matches('.cta-button, .hero-cta, .footer-cta')) {
+        console.log('🎯 CTA Click:', e.target.textContent.trim());
+      }
+    });
+  </script>
+)}

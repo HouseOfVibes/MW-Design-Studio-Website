@@ -27,78 +27,125 @@ import SEO from '../components/SEO.astro';
     <section class="portfolio-grid-section">
       <div class="container">
         <div class="portfolio-grid">
-          <!-- Brand Projects -->
-          <article class="portfolio-item" data-category="brand">
+          
+          <!-- Believers Gathering Place NC -->
+          <article class="portfolio-item featured-project" data-category="brand">
             <div class="portfolio-image">
-              <img src="/placeholder-brand-1.jpg" alt="Brand Identity Project" />
+              <div class="website-preview">
+                <div class="browser-bar">
+                  <div class="browser-dots">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                  </div>
+                  <div class="url-bar">bgpnc.com</div>
+                </div>
+                <div class="website-screenshot">
+                  <img src="/portfolio/bgp-website-preview.jpg" alt="Believers Gathering Place NC Website" />
+                </div>
+              </div>
             </div>
             <div class="portfolio-content">
-              <h3>Complete Brand Identity Redesign</h3>
-              <p class="category">Brand Design</p>
-              <p>Transformed a local business into a recognizable brand with cohesive visual identity.</p>
-              <a href="#" class="view-project">View Case Study →</a>
+              <h3>Believers Gathering Place NC</h3>
+              <p class="category">Website Design & Social Media</p>
+              <p>Complete church website redesign with modern, welcoming interface and ongoing social media management across Facebook and Instagram.</p>
+              <div class="project-links">
+                <a href="https://bgpnc.com" target="_blank" class="view-project">Visit Website →</a>
+                <a href="#bgp-case-study" class="view-case-study">View Case Study</a>
+              </div>
+              <div class="project-tags">
+                <span>Website Design</span>
+                <span>Social Media</span>
+                <span>Ministry</span>
+              </div>
             </div>
           </article>
 
-          <article class="portfolio-item" data-category="marketing">
+          <!-- Reimagine Pro Wash NC -->
+          <article class="portfolio-item featured-project" data-category="brand">
             <div class="portfolio-image">
-              <img src="/placeholder-marketing-1.jpg" alt="Marketing Campaign" />
+              <div class="website-preview">
+                <div class="browser-bar">
+                  <div class="browser-dots">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                  </div>
+                  <div class="url-bar">rprowashnc.com</div>
+                </div>
+                <div class="website-screenshot">
+                  <img src="/portfolio/rpw-website-preview.jpg" alt="Reimagine Pro Wash NC Website" />
+                </div>
+              </div>
             </div>
             <div class="portfolio-content">
-              <h3>Multi-Channel Marketing Campaign</h3>
-              <p class="category">Marketing</p>
-              <p>Increased lead generation by 150% through strategic multi-channel campaign.</p>
-              <a href="#" class="view-project">View Case Study →</a>
+              <h3>Reimagine Pro Wash NC</h3>
+              <p class="category">Website Design & Social Media</p>
+              <p>Professional pressure washing business website with lead generation focus and comprehensive social media strategy driving local engagement.</p>
+              <div class="project-links">
+                <a href="https://rprowashnc.com" target="_blank" class="view-project">Visit Website →</a>
+                <a href="#rpw-case-study" class="view-case-study">View Case Study</a>
+              </div>
+              <div class="project-tags">
+                <span>Website Design</span>
+                <span>Local SEO</span>
+                <span>Social Media</span>
+              </div>
             </div>
           </article>
 
+          <!-- Social Media Management Showcase -->
           <article class="portfolio-item" data-category="social">
-            <div class="portfolio-image">
-              <img src="/placeholder-social-1.jpg" alt="Social Media Success" />
+            <div class="portfolio-image social-showcase">
+              <div class="social-grid">
+                <div class="social-platform facebook">
+                  <div class="platform-icon">f</div>
+                  <div class="platform-name">Facebook</div>
+                </div>
+                <div class="social-platform instagram">
+                  <div class="platform-icon">IG</div>
+                  <div class="platform-name">Instagram</div>
+                </div>
+                <div class="coming-soon">
+                  <div class="platform-name">+ More Platforms</div>
+                  <div class="coming-soon-text">Coming Soon</div>
+                </div>
+              </div>
             </div>
             <div class="portfolio-content">
-              <h3>Social Media Growth Strategy</h3>
-              <p class="category">Social Media</p>
-              <p>Grew client's social following by 300% in 6 months with engaging content strategy.</p>
-              <a href="#" class="view-project">View Case Study →</a>
+              <h3>Social Media Management</h3>
+              <p class="category">Ongoing Services</p>
+              <p>Currently managing Facebook and Instagram accounts for multiple clients with strategic content creation, community engagement, and brand consistency.</p>
+              <div class="project-links">
+                <a href="/services/social-media-services" class="view-project">Learn More →</a>
+              </div>
+              <div class="project-tags">
+                <span>Content Creation</span>
+                <span>Community Management</span>
+                <span>Brand Strategy</span>
+              </div>
             </div>
           </article>
 
-          <article class="portfolio-item" data-category="brand">
+          <!-- More Projects Coming Soon -->
+          <article class="portfolio-item coming-soon-project" data-category="brand">
             <div class="portfolio-image">
-              <img src="/placeholder-brand-2.jpg" alt="Logo Design Project" />
+              <div class="coming-soon-content">
+                <div class="coming-soon-icon">+</div>
+                <h4>More Projects Coming Soon</h4>
+                <p>We're constantly working on exciting new projects and will be showcasing them here as they launch.</p>
+              </div>
             </div>
             <div class="portfolio-content">
-              <h3>Logo & Visual System Design</h3>
-              <p class="category">Brand Design</p>
-              <p>Created distinctive logo and comprehensive visual system for tech startup.</p>
-              <a href="#" class="view-project">View Case Study →</a>
+              <h3>Your Project Could Be Next</h3>
+              <p class="category">Available Now</p>
+              <p>Ready to create something amazing together? Let's discuss how we can help transform your business with strategic design and marketing.</p>
+              <div class="project-links">
+                <a href="/contact" class="view-project">Start Your Project →</a>
+              </div>
             </div>
           </article>
 
-          <article class="portfolio-item" data-category="marketing">
-            <div class="portfolio-image">
-              <img src="/placeholder-marketing-2.jpg" alt="Email Campaign" />
-            </div>
-            <div class="portfolio-content">
-              <h3>Email Marketing Automation</h3>
-              <p class="category">Marketing</p>
-              <p>Implemented automated email sequences that increased conversions by 85%.</p>
-              <a href="#" class="view-project">View Case Study →</a>
-            </div>
-          </article>
-
-          <article class="portfolio-item" data-category="social">
-            <div class="portfolio-image">
-              <img src="/placeholder-social-2.jpg" alt="Content Strategy" />
-            </div>
-            <div class="portfolio-content">
-              <h3>Content Creation & Management</h3>
-              <p class="category">Social Media</p>
-              <p>Developed and executed content strategy across multiple platforms.</p>
-              <a href="#" class="view-project">View Case Study →</a>
-            </div>
-          </article>
         </div>
       </div>
     </section>
@@ -108,20 +155,20 @@ import SEO from '../components/SEO.astro';
         <h2>Success by the Numbers</h2>
         <div class="metrics-grid">
           <div class="metric">
-            <span class="metric-number">150+</span>
-            <span class="metric-label">Projects Completed</span>
+            <span class="metric-number">2</span>
+            <span class="metric-label">Live Websites</span>
           </div>
           <div class="metric">
-            <span class="metric-number">98%</span>
+            <span class="metric-number">4</span>
+            <span class="metric-label">Social Accounts Managed</span>
+          </div>
+          <div class="metric">
+            <span class="metric-number">100%</span>
             <span class="metric-label">Client Satisfaction</span>
           </div>
           <div class="metric">
-            <span class="metric-number">3.5x</span>
-            <span class="metric-label">Average ROI</span>
-          </div>
-          <div class="metric">
-            <span class="metric-number">50+</span>
-            <span class="metric-label">Happy Clients</span>
+            <span class="metric-number">Growing</span>
+            <span class="metric-label">Portfolio</span>
           </div>
         </div>
       </div>
@@ -139,7 +186,7 @@ import SEO from '../components/SEO.astro';
 
 <style>
   .hero-section {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, #1E3A8A 0%, #4FD1C7 100%);
     color: white;
     padding: 4rem 0;
     text-align: center;
@@ -170,7 +217,7 @@ import SEO from '../components/SEO.astro';
   .filter-btn:hover,
   .filter-btn.active {
     background: white;
-    color: #667eea;
+    color: #1E3A8A;
   }
 
   .portfolio-grid-section {
@@ -202,6 +249,8 @@ import SEO from '../components/SEO.astro';
     display: flex;
     align-items: center;
     justify-content: center;
+    position: relative;
+    overflow: hidden;
   }
 
   .portfolio-image img {
@@ -210,27 +259,211 @@ import SEO from '../components/SEO.astro';
     object-fit: cover;
   }
 
+  /* Website Preview Styling */
+  .website-preview {
+    width: 100%;
+    height: 100%;
+    background: #f8f9fa;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .browser-bar {
+    background: #e9ecef;
+    padding: 8px 12px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border-bottom: 1px solid #dee2e6;
+  }
+
+  .browser-dots {
+    display: flex;
+    gap: 4px;
+  }
+
+  .browser-dots span {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #6c757d;
+  }
+
+  .browser-dots span:nth-child(1) { background: #fd5e53; }
+  .browser-dots span:nth-child(2) { background: #ffbd2e; }
+  .browser-dots span:nth-child(3) { background: #27ca3f; }
+
+  .url-bar {
+    background: white;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    color: #495057;
+    border: 1px solid #ced4da;
+    flex: 1;
+    max-width: 150px;
+  }
+
+  .website-screenshot {
+    flex: 1;
+    overflow: hidden;
+  }
+
+  .website-screenshot img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  /* Social Media Showcase */
+  .social-showcase {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    padding: 2rem;
+  }
+
+  .social-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    height: 100%;
+  }
+
+  .social-platform {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    padding: 1rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(10px);
+  }
+
+  .social-platform.facebook {
+    background: rgba(24, 119, 242, 0.8);
+  }
+
+  .social-platform.instagram {
+    background: linear-gradient(45deg, #405de6, #5851db, #833ab4, #c13584, #e1306c, #fd1d1d);
+  }
+
+  .platform-icon {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: white;
+    margin-bottom: 0.5rem;
+  }
+
+  .platform-name {
+    color: white;
+    font-size: 0.8rem;
+    font-weight: 600;
+  }
+
+  .coming-soon {
+    grid-column: 1 / -1;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    padding: 1rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 2px dashed rgba(255, 255, 255, 0.3);
+  }
+
+  .coming-soon-text {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.7rem;
+    margin-top: 0.25rem;
+  }
+
+  /* Coming Soon Project */
+  .coming-soon-content {
+    text-align: center;
+    padding: 2rem;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .coming-soon-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+  }
+
+  .coming-soon-content h4 {
+    margin: 0 0 1rem 0;
+    font-size: 1.2rem;
+  }
+
+  .coming-soon-content p {
+    margin: 0;
+    opacity: 0.9;
+    font-size: 0.9rem;
+    line-height: 1.4;
+  }
+
   .portfolio-content {
     padding: 1.5rem;
   }
 
   .category {
-    color: #667eea;
+    color: #4FD1C7;
     font-size: 0.875rem;
     font-weight: 600;
     margin: 0.5rem 0;
   }
 
-  .view-project {
-    color: #667eea;
+  .project-links {
+    display: flex;
+    gap: 1rem;
+    margin: 1rem 0;
+    flex-wrap: wrap;
+  }
+
+  .view-project,
+  .view-case-study {
+    color: #1E3A8A;
     text-decoration: none;
     font-weight: 600;
-    display: inline-block;
+    font-size: 0.9rem;
+    transition: color 0.3s ease;
+  }
+
+  .view-project:hover,
+  .view-case-study:hover {
+    color: #4FD1C7;
+    text-decoration: underline;
+  }
+
+  .project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
     margin-top: 1rem;
   }
 
-  .view-project:hover {
-    text-decoration: underline;
+  .project-tags span {
+    background: #f8f9fa;
+    color: #495057;
+    padding: 0.25rem 0.75rem;
+    border-radius: 15px;
+    font-size: 0.75rem;
+    font-weight: 500;
+    border: 1px solid #e9ecef;
+  }
+
+  .featured-project .project-tags span {
+    background: #1E3A8A;
+    color: white;
+    border-color: #1E3A8A;
   }
 
   .success-metrics {
@@ -254,7 +487,7 @@ import SEO from '../components/SEO.astro';
   .metric-number {
     font-size: 3rem;
     font-weight: bold;
-    color: #667eea;
+    color: #1E3A8A;
   }
 
   .metric-label {
@@ -278,12 +511,14 @@ import SEO from '../components/SEO.astro';
   }
 
   .btn-primary {
-    background: #667eea;
+    background: linear-gradient(135deg, #1E3A8A 0%, #4FD1C7 100%);
     color: white;
+    box-shadow: 0 4px 15px rgba(30, 58, 138, 0.3);
   }
 
   .btn-primary:hover {
-    background: #5a67d8;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(30, 58, 138, 0.4);
   }
 </style>
 

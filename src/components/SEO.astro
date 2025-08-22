@@ -1,32 +1,170 @@
 ---
+import { SEO } from "astro-seo";
+
 const {
   title,
   description,
-  image = 'https://via.placeholder.com/1200x630', // Default social sharing image
+  image = '/og-image.jpg', // Default social sharing image - you should add this to public folder
   author,
   type = 'website',
+  keywords,
+  noindex = false,
+  nofollow = false,
+  articleMeta = {},
 } = Astro.props;
 
-const canonicalUrl = new URL(Astro.url.pathname, Astro.site);
-const imageUrl = new URL(image, Astro.site);
+// Business-specific defaults
+const siteTitle = "MW Design Studio";
+const defaultDescription = "Professional brand design, marketing, and social media services that convert. Helping ambitious small businesses stand out and grow.";
+const siteUrl = Astro.site?.toString() || "https://mwdesignstudio.com";
+const fullTitle = title ? `${title} | ${siteTitle}` : siteTitle;
+const metaDescription = description || defaultDescription;
+
+// Enhanced image handling
+const imageUrl = image.startsWith('http') ? image : new URL(image, Astro.site).toString();
+
+// Business contact info for structured data
+const businessSchema = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "MW Design Studio",
+  "description": defaultDescription,
+  "url": siteUrl,
+  "logo": new URL('/logo/MWD_Main_Logo_WhiteBG.png', Astro.site).toString(),
+  "image": imageUrl,
+  "priceRange": "$$",
+  "address": {
+    "@type": "PostalAddress",
+    "addressCountry": "US"
+  },
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "contactType": "customer service",
+    "availableLanguage": "English"
+  },
+  "serviceType": [
+    "Brand Design",
+    "Marketing Strategy", 
+    "Social Media Management",
+    "Brand Identity",
+    "Digital Marketing"
+  ]
+};
+
+// Article schema for blog posts
+const articleSchema = type === 'article' ? {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": title,
+  "description": metaDescription,
+  "image": imageUrl,
+  "author": {
+    "@type": "Person",
+    "name": author || "MW Design Studio Team"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "MW Design Studio",
+    "logo": {
+      "@type": "ImageObject",
+      "url": new URL('/logo/MWD_Main_Logo_WhiteBG.png', Astro.site).toString()
+    }
+  },
+  "datePublished": articleMeta.publishedTime,
+  "dateModified": articleMeta.modifiedTime,
+} : null;
 ---
 
-<!-- Primary Meta Tags -->
-<title>{title}</title>
-<meta name="description" content={description} />
-<link rel="canonical" href={canonicalUrl} />
+<SEO
+  title={fullTitle}
+  description={metaDescription}
+  canonical={Astro.url.href}
+  noindex={noindex}
+  nofollow={nofollow}
+  
+  openGraph={{
+    basic: {
+      title: title || siteTitle,
+      type: type,
+      image: imageUrl,
+      url: Astro.url.href,
+    },
+    optional: {
+      description: metaDescription,
+      locale: "en_US",
+      siteName: siteTitle,
+    },
+    image: {
+      url: imageUrl,
+      width: 1200,
+      height: 630,
+      alt: `${title || siteTitle} - Professional Brand Design & Marketing`,
+      type: "image/jpeg",
+    },
+    article: type === 'article' ? {
+      publishedTime: articleMeta.publishedTime,
+      modifiedTime: articleMeta.modifiedTime,
+      author: author,
+      section: articleMeta.section,
+      tags: articleMeta.tags,
+    } : undefined,
+  }}
+  
+  twitter={{
+    card: "summary_large_image",
+    site: "@mwdesignstudio", // Add your Twitter handle
+    creator: "@mwdesignstudio",
+    title: title || siteTitle,
+    description: metaDescription,
+    image: imageUrl,
+    imageAlt: `${title || siteTitle} - Brand Design & Marketing Services`,
+  }}
+  
+  extend={{
+    // Additional meta tags
+    meta: [
+      { name: "keywords", content: keywords || "brand design, marketing, social media, business growth, logo design, brand identity" },
+      { name: "author", content: author || "MW Design Studio" },
+      { name: "robots", content: noindex || nofollow ? `${noindex ? 'noindex' : 'index'},${nofollow ? 'nofollow' : 'follow'}` : "index,follow" },
+      { name: "theme-color", content: "#000000" }, // Black from your new color scheme
+      { name: "msapplication-TileColor", content: "#00D9D5" }, // Teal accent
+      
+      // Business-specific meta
+      { name: "geo.region", content: "US" },
+      { name: "geo.placename", content: "United States" },
+      { name: "rating", content: "general" },
+      { name: "distribution", content: "global" },
+      
+      // Social media optimization
+      { property: "fb:app_id", content: "YOUR_FB_APP_ID" }, // Add your Facebook App ID
+      { name: "pinterest-rich-pins", content: "true" },
+      
+      // Performance hints
+      { name: "format-detection", content: "telephone=no" },
+    ],
+    
+    // Additional links
+    link: [
+      { rel: "icon", type: "image/x-icon", href: "/favicon.ico" },
+      { rel: "apple-touch-icon", sizes: "180x180", href: "/apple-touch-icon.png" },
+      { rel: "icon", type: "image/png", sizes: "32x32", href: "/favicon-32x32.png" },
+      { rel: "icon", type: "image/png", sizes: "16x16", href: "/favicon-16x16.png" },
+      { rel: "manifest", href: "/site.webmanifest" },
+      { rel: "preconnect", href: "https://fonts.googleapis.com" },
+      { rel: "preconnect", href: "https://fonts.gstatic.com", crossorigin: true },
+      // Add DNS prefetch for common external domains
+      { rel: "dns-prefetch", href: "//www.google-analytics.com" },
+      { rel: "dns-prefetch", href: "//fonts.googleapis.com" },
+    ],
+  }}
+/>
 
-<!-- Open Graph / Facebook -->
-<meta property="og:type" content={type} />
-<meta property="og:url" content={canonicalUrl} />
-<meta property="og:title" content={title} />
-<meta property="og:description" content={description} />
-<meta property="og:image" content={imageUrl} />
-{type === 'article' && <meta property="article:author" content={author} />}
+<!-- Structured Data -->
+<script type="application/ld+json" set:html={JSON.stringify(businessSchema)} />
+{articleSchema && <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />}
 
-<!-- Twitter -->
-<meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter:url" content={canonicalUrl} />
-<meta property="twitter:title" content={title} />
-<meta property="twitter:description" content={description} />
-<meta property="twitter:image" content={imageUrl} />
+<!-- Additional SEO Meta -->
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
