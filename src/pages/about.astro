@@ -74,8 +74,8 @@ import SEO from '../components/SEO.astro';
 
 <style>
   .hero-section {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    color: white;
+    background: var(--gradient-vibrant);
+    color: var(--primary-white);
     padding: 4rem 0;
     text-align: center;
   }
@@ -86,7 +86,11 @@ import SEO from '../components/SEO.astro';
   }
 
   .story-section,
-  .values-section,
+  .values-section {
+    background: var(--primary-white);
+  }
+
+  .story-section,
   .team-section,
   .cta-section {
     padding: 4rem 0;
@@ -103,12 +107,20 @@ import SEO from '../components/SEO.astro';
   .value-card,
   .team-member {
     padding: 2rem;
-    background: #f7f7f7;
+    background: var(--gray-50);
     border-radius: 8px;
+    border: 1px solid var(--gray-200);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .value-card:hover,
+  .team-member:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
   }
 
   .cta-section {
-    background: #f7f7f7;
+    background: var(--gray-50);
     text-align: center;
   }
 
@@ -122,11 +134,14 @@ import SEO from '../components/SEO.astro';
   }
 
   .btn-primary {
-    background: #667eea;
-    color: white;
+    background: var(--accent-teal);
+    color: var(--primary-white);
+    box-shadow: 0 4px 15px rgba(0, 217, 213, 0.3);
   }
 
   .btn-primary:hover {
-    background: #5a67d8;
+    background: var(--accent-purple);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(159, 122, 234, 0.4);
   }
 </style>

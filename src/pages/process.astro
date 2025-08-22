@@ -985,9 +985,9 @@ import SEO from '../components/SEO.astro';
 
 <style>
   :root {
-    --mw-navy: #1E3A8A;
-    --mw-teal: #4FD1C7;
-    --mw-gradient: linear-gradient(135deg, #1E3A8A 0%, #4FD1C7 100%);
+    --mw-navy: var(--primary-black);
+    --mw-teal: var(--accent-teal);
+    --mw-gradient: var(--gradient-vibrant);
     --light-gray: #F8F9FA;
     --neutral-bg: #FAFBFC;
     --dark-text: #333333;
@@ -1172,7 +1172,7 @@ import SEO from '../components/SEO.astro';
   }
 
   .phase-header {
-    background: linear-gradient(135deg, var(--mw-navy) 0%, var(--mw-teal) 100%);
+    background: var(--gradient-vibrant);
     color: white;
     padding: 1.5rem 2rem;
     display: flex;

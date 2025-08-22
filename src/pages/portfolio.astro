@@ -186,7 +186,7 @@ import SEO from '../components/SEO.astro';
 
 <style>
   .hero-section {
-    background: linear-gradient(135deg, #1E3A8A 0%, #4FD1C7 100%);
+    background: var(--gradient-vibrant);
     color: white;
     padding: 4rem 0;
     text-align: center;
@@ -217,7 +217,7 @@ import SEO from '../components/SEO.astro';
   .filter-btn:hover,
   .filter-btn.active {
     background: white;
-    color: #1E3A8A;
+    color: var(--primary-black);
   }
 
   .portfolio-grid-section {
@@ -245,7 +245,7 @@ import SEO from '../components/SEO.astro';
 
   .portfolio-image {
     height: 250px;
-    background: #f0f0f0;
+    background: var(--gray-100);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -263,18 +263,18 @@ import SEO from '../components/SEO.astro';
   .website-preview {
     width: 100%;
     height: 100%;
-    background: #f8f9fa;
+    background: var(--gray-50);
     display: flex;
     flex-direction: column;
   }
 
   .browser-bar {
-    background: #e9ecef;
+    background: var(--gray-200);
     padding: 8px 12px;
     display: flex;
     align-items: center;
     gap: 8px;
-    border-bottom: 1px solid #dee2e6;
+    border-bottom: 1px solid var(--gray-300);
   }
 
   .browser-dots {
@@ -286,7 +286,7 @@ import SEO from '../components/SEO.astro';
     width: 8px;
     height: 8px;
     border-radius: 50%;
-    background: #6c757d;
+    background: var(--gray-600);
   }
 
   .browser-dots span:nth-child(1) { background: #fd5e53; }
@@ -298,8 +298,8 @@ import SEO from '../components/SEO.astro';
     padding: 4px 8px;
     border-radius: 4px;
     font-size: 0.75rem;
-    color: #495057;
-    border: 1px solid #ced4da;
+    color: var(--gray-700);
+    border: 1px solid var(--gray-400);
     flex: 1;
     max-width: 150px;
   }
@@ -317,7 +317,7 @@ import SEO from '../components/SEO.astro';
 
   /* Social Media Showcase */
   .social-showcase {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: var(--gradient-purple-pink);
     padding: 2rem;
   }
 
@@ -384,7 +384,7 @@ import SEO from '../components/SEO.astro';
   .coming-soon-content {
     text-align: center;
     padding: 2rem;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: var(--gradient-purple-pink);
     color: white;
     height: 100%;
     display: flex;
@@ -415,7 +415,7 @@ import SEO from '../components/SEO.astro';
   }
 
   .category {
-    color: #4FD1C7;
+    color: var(--accent-teal);
     font-size: 0.875rem;
     font-weight: 600;
     margin: 0.5rem 0;
@@ -430,7 +430,7 @@ import SEO from '../components/SEO.astro';
 
   .view-project,
   .view-case-study {
-    color: #1E3A8A;
+    color: var(--primary-black);
     text-decoration: none;
     font-weight: 600;
     font-size: 0.9rem;
@@ -439,7 +439,7 @@ import SEO from '../components/SEO.astro';
 
   .view-project:hover,
   .view-case-study:hover {
-    color: #4FD1C7;
+    color: var(--accent-teal);
     text-decoration: underline;
   }
 
@@ -451,24 +451,24 @@ import SEO from '../components/SEO.astro';
   }
 
   .project-tags span {
-    background: #f8f9fa;
-    color: #495057;
+    background: var(--gray-50);
+    color: var(--gray-700);
     padding: 0.25rem 0.75rem;
     border-radius: 15px;
     font-size: 0.75rem;
     font-weight: 500;
-    border: 1px solid #e9ecef;
+    border: 1px solid var(--gray-200);
   }
 
   .featured-project .project-tags span {
-    background: #1E3A8A;
+    background: var(--primary-black);
     color: white;
-    border-color: #1E3A8A;
+    border-color: var(--primary-black);
   }
 
   .success-metrics {
     padding: 4rem 0;
-    background: #f7f7f7;
+    background: var(--gray-50);
   }
 
   .metrics-grid {
@@ -487,7 +487,7 @@ import SEO from '../components/SEO.astro';
   .metric-number {
     font-size: 3rem;
     font-weight: bold;
-    color: #1E3A8A;
+    color: var(--primary-black);
   }
 
   .metric-label {
@@ -511,7 +511,7 @@ import SEO from '../components/SEO.astro';
   }
 
   .btn-primary {
-    background: linear-gradient(135deg, #1E3A8A 0%, #4FD1C7 100%);
+    background: var(--gradient-vibrant);
     color: white;
     box-shadow: 0 4px 15px rgba(30, 58, 138, 0.3);
   }
