@@ -442,16 +442,17 @@ import SEO from '../components/SEO.astro';
 
 <style>
   :root {
-    --mw-navy: #1E3A8A;
-    --mw-teal: #4FD1C7;
-    --mw-light-teal: #4FD1C7;
-    --mw-accent: #4A90E2;
-    --mw-gradient: linear-gradient(135deg, #1E3A8A 0%, #4FD1C7 100%);
-    --light-gray: #F8F9FA;
-    --neutral-bg: #FAFBFC;
-    --dark-text: #333333;
-    --medium-gray: #666666;
-    --light-border: #E2E8F0;
+    /* Map old variables to new color system for compatibility */
+    --mw-navy: var(--accent-navy);
+    --mw-teal: var(--accent-teal);
+    --mw-light-teal: var(--accent-teal);
+    --mw-accent: var(--accent-blue);
+    --mw-gradient: var(--gradient-subtle);
+    --light-gray: var(--gray-100);
+    --neutral-bg: var(--bg-secondary);
+    --dark-text: var(--text-primary);
+    --medium-gray: var(--text-secondary);
+    --light-border: var(--border-light);
   }
 
   /* Hero Section */

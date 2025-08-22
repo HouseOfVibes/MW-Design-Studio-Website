@@ -171,26 +171,27 @@ import SEO from '../components/SEO.astro';
 
 <style>
   :root {
-    --mw-navy: #1E3A8A;
-    --mw-teal: #4FD1C7;
-    --mw-light-teal: #4FD1C7;
-    --mw-accent: #4A90E2;
-    --mw-gradient: linear-gradient(135deg, #1E3A8A 0%, #4FD1C7 100%);
-    --mw-subtle-gradient: linear-gradient(135deg, #1E3A8A 0%, #4FD1C7 100%);
-    --light-gray: #F8F9FA;
-    --neutral-bg: #FAFBFC;
-    --dark-text: #333333;
-    --medium-gray: #666666;
-    --light-border: #E2E8F0;
-    --success: #10B981;
-    --warning: #F59E0B;
-    --error: #EF4444;
-    --info: #8B5CF6;
+    /* Map old variables to new color system for compatibility */
+    --mw-navy: var(--accent-navy);
+    --mw-teal: var(--accent-teal);
+    --mw-light-teal: var(--accent-teal);
+    --mw-accent: var(--accent-blue);
+    --mw-gradient: var(--gradient-subtle);
+    --mw-subtle-gradient: linear-gradient(135deg, var(--gray-100) 0%, var(--primary-white) 100%);
+    --light-gray: var(--gray-100);
+    --neutral-bg: var(--bg-secondary);
+    --dark-text: var(--text-primary);
+    --medium-gray: var(--text-secondary);
+    --light-border: var(--border-light);
+    --success: var(--accent-green);
+    --warning: var(--accent-yellow);
+    --error: var(--accent-red);
+    --info: var(--accent-purple);
   }
 
   /* Hero Section */
   .hero {
-    background: var(--mw-gradient);
+    background: linear-gradient(135deg, var(--gray-50) 0%, var(--primary-white) 100%);
     min-height: 100vh;
     display: flex;
     align-items: center;
@@ -205,8 +206,24 @@ import SEO from '../components/SEO.astro';
     left: 0;
     right: 0;
     bottom: 0;
-    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><polygon fill="rgba(255,255,255,0.1)" points="0,1000 1000,800 1000,1000"/></svg>') no-repeat bottom right;
-    background-size: cover;
+    background-image: 
+      linear-gradient(45deg, var(--accent-teal) 0%, transparent 25%),
+      linear-gradient(-45deg, var(--accent-purple) 0%, transparent 25%),
+      linear-gradient(135deg, var(--accent-pink) 0%, transparent 25%),
+      linear-gradient(-135deg, var(--accent-blue) 0%, transparent 25%);
+    background-position: 
+      bottom left, 
+      bottom right,
+      top right,
+      top left;
+    background-size: 
+      350px 350px, 
+      350px 350px,
+      350px 350px,
+      350px 350px;
+    background-repeat: no-repeat;
+    opacity: 0.2;
+    pointer-events: none;
   }
 
   .hero-container {
@@ -222,12 +239,12 @@ import SEO from '../components/SEO.astro';
   }
 
   .hero-content {
-    color: white;
+    color: var(--primary-white);
   }
 
   .hero-badge {
-    background: rgba(255, 255, 255, 0.2);
-    color: white;
+    background: var(--gradient-vibrant);
+    color: var(--primary-white);
     padding: 0.5rem 1rem;
     border-radius: 50px;
     font-size: 0.9rem;
@@ -243,6 +260,7 @@ import SEO from '../components/SEO.astro';
     line-height: 1.1;
     margin-bottom: 1.5rem;
     letter-spacing: -0.02em;
+    color: var(--text-primary);
     animation: fadeInUp 0.8s ease-out;
   }
 
@@ -250,14 +268,15 @@ import SEO from '../components/SEO.astro';
     font-size: 1.25rem;
     font-weight: 300;
     margin-bottom: 2rem;
+    color: var(--text-secondary);
     opacity: 0.95;
     line-height: 1.6;
     animation: fadeInUp 0.8s ease-out 0.2s both;
   }
 
   .hero-cta {
-    background: white;
-    color: var(--mw-navy);
+    background: var(--primary-black);
+    color: var(--primary-white);
     padding: 1rem 2rem;
     border-radius: 50px;
     text-decoration: none;
@@ -271,7 +290,9 @@ import SEO from '../components/SEO.astro';
 
   .hero-cta:hover {
     transform: translateY(-2px);
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+    background: var(--accent-teal);
+    color: var(--primary-black);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
   }
 
   .hero-visual {
@@ -285,7 +306,8 @@ import SEO from '../components/SEO.astro';
     width: 100%;
     max-width: 500px;
     height: 400px;
-    background: rgba(255, 255, 255, 0.1);
+    background: linear-gradient(135deg, var(--accent-teal), var(--accent-purple));
+    opacity: 0.2;
     border-radius: 20px;
     backdrop-filter: blur(10px);
     display: flex;
@@ -299,7 +321,7 @@ import SEO from '../components/SEO.astro';
     content: '';
     width: 200px;
     height: 200px;
-    background: rgba(255, 255, 255, 0.2);
+    background: var(--accent-teal);
     border-radius: 50%;
     animation: float 3s ease-in-out infinite;
   }
@@ -307,7 +329,7 @@ import SEO from '../components/SEO.astro';
   /* Services Section */
   .services {
     padding: 6rem 0;
-    background: var(--neutral-bg);
+    background: var(--primary-white);
   }
 
   .container {
@@ -322,8 +344,9 @@ import SEO from '../components/SEO.astro';
   }
 
   .section-badge {
-    background: var(--mw-teal);
-    color: white;
+    background: var(--accent-teal);
+    color: var(--primary-black);
+    font-weight: 500;
     padding: 0.5rem 1rem;
     border-radius: 50px;
     font-size: 0.9rem;
@@ -335,14 +358,14 @@ import SEO from '../components/SEO.astro';
   .section-title {
     font-size: 2.5rem;
     font-weight: 600;
-    color: var(--mw-navy);
+    color: var(--text-primary);
     margin-bottom: 1rem;
     letter-spacing: -0.01em;
   }
 
   .section-subtitle {
     font-size: 1.1rem;
-    color: var(--medium-gray);
+    color: var(--text-secondary);
     max-width: 600px;
     margin: 0 auto;
   }
@@ -354,7 +377,7 @@ import SEO from '../components/SEO.astro';
   }
 
   .service-card {
-    background: white;
+    background: var(--primary-white);
     padding: 2.5rem;
     border-radius: 20px;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.08);
@@ -371,7 +394,7 @@ import SEO from '../components/SEO.astro';
     left: 0;
     right: 0;
     height: 4px;
-    background: var(--mw-navy);
+    background: var(--primary-black);
   }
 
   .service-card:hover {
@@ -382,7 +405,7 @@ import SEO from '../components/SEO.astro';
   .service-icon {
     width: 80px;
     height: 80px;
-    background: var(--mw-navy);
+    background: var(--primary-black);
     border-radius: 20px;
     display: flex;
     align-items: center;
@@ -390,38 +413,38 @@ import SEO from '../components/SEO.astro';
     margin: 0 auto 1.5rem;
     font-size: 1.5rem;
     font-weight: 600;
-    color: white;
+    color: var(--primary-white);
     box-shadow: 0 4px 12px rgba(30, 58, 138, 0.15);
   }
 
   .service-title {
     font-size: 1.5rem;
     font-weight: 600;
-    color: var(--mw-navy);
+    color: var(--text-primary);
     margin-bottom: 1rem;
   }
 
   .service-description {
-    color: var(--medium-gray);
+    color: var(--text-secondary);
     margin-bottom: 1.5rem;
     line-height: 1.6;
   }
 
   .service-cta {
-    color: var(--mw-teal);
+    color: var(--accent-teal);
     text-decoration: none;
     font-weight: 600;
     transition: color 0.3s ease;
   }
 
   .service-cta:hover {
-    color: var(--mw-navy);
+    color: var(--text-primary);
   }
 
   /* Portfolio Preview */
   .portfolio-preview {
     padding: 5rem 0;
-    background: white;
+    background: var(--primary-white);
   }
 
   .portfolio-grid {
@@ -432,7 +455,7 @@ import SEO from '../components/SEO.astro';
   }
 
   .portfolio-item {
-    background: var(--light-gray);
+    background: var(--gray-100);
     border-radius: 15px;
     overflow: hidden;
     transition: transform 0.3s ease;
@@ -444,11 +467,11 @@ import SEO from '../components/SEO.astro';
 
   .portfolio-image {
     height: 250px;
-    background: var(--mw-navy);
+    background: var(--primary-black);
     display: flex;
     align-items: center;
     justify-content: center;
-    color: white;
+    color: var(--primary-white);
     font-size: 1.5rem;
     font-weight: 600;
   }
@@ -460,19 +483,19 @@ import SEO from '../components/SEO.astro';
   .portfolio-title {
     font-size: 1.2rem;
     font-weight: 600;
-    color: var(--mw-navy);
+    color: var(--text-primary);
     margin-bottom: 0.5rem;
   }
 
   .portfolio-type {
-    color: var(--mw-teal);
+    color: var(--accent-teal);
     font-size: 0.9rem;
     font-weight: 500;
     margin-bottom: 1rem;
   }
 
   .portfolio-description {
-    color: var(--medium-gray);
+    color: var(--text-secondary);
     font-size: 0.9rem;
   }
 
@@ -480,7 +503,7 @@ import SEO from '../components/SEO.astro';
   .about-preview {
     margin-bottom: 4rem;
     padding: 3rem 0;
-    background: var(--light-gray);
+    background: var(--gray-100);
     border-radius: 20px;
   }
 
@@ -497,12 +520,12 @@ import SEO from '../components/SEO.astro';
   .about-title {
     font-size: 1.8rem;
     font-weight: 600;
-    color: var(--mw-navy);
+    color: var(--text-primary);
     margin-bottom: 1rem;
   }
 
   .about-description {
-    color: var(--medium-gray);
+    color: var(--text-secondary);
     line-height: 1.7;
     font-size: 1.05rem;
   }
@@ -521,12 +544,12 @@ import SEO from '../components/SEO.astro';
   .about-placeholder {
     width: 150px;
     height: 150px;
-    background: var(--mw-navy);
+    background: var(--primary-black);
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: white;
+    color: var(--primary-white);
     font-weight: 600;
     text-align: center;
     font-size: 0.9rem;
@@ -535,7 +558,7 @@ import SEO from '../components/SEO.astro';
   }
 
   .founder-role {
-    color: var(--medium-gray);
+    color: var(--text-secondary);
     font-size: 0.9rem;
     font-weight: 500;
   }
@@ -543,7 +566,7 @@ import SEO from '../components/SEO.astro';
   /* Trust Indicators Section */
   .trust-section {
     padding: 4rem 0;
-    background: white;
+    background: var(--primary-white);
   }
 
   .trust-indicators {
@@ -560,7 +583,7 @@ import SEO from '../components/SEO.astro';
   .trust-icon {
     width: 60px;
     height: 60px;
-    background: var(--neutral-bg);
+    background: var(--primary-white);
     border: 2px solid var(--light-border);
     border-radius: 50%;
     display: flex;
@@ -569,32 +592,32 @@ import SEO from '../components/SEO.astro';
     margin: 0 auto 1.5rem;
     font-size: 1.5rem;
     font-weight: 600;
-    color: var(--mw-navy);
+    color: var(--text-primary);
   }
 
   .trust-item h4 {
     font-size: 1.25rem;
     font-weight: 600;
-    color: var(--mw-navy);
+    color: var(--text-primary);
     margin-bottom: 1rem;
   }
 
   .trust-item p {
-    color: var(--medium-gray);
+    color: var(--text-secondary);
     line-height: 1.6;
   }
 
   /* FAQ Teaser Section */
   .faq-section {
     padding: 5rem 0;
-    background: white;
+    background: var(--primary-white);
   }
 
   .faq-teaser {
     padding: 3rem;
-    background: var(--mw-navy);
+    background: var(--primary-black);
     border-radius: 20px;
-    color: white;
+    color: var(--primary-white);
   }
 
   .faq-title {
@@ -629,8 +652,8 @@ import SEO from '../components/SEO.astro';
   /* CTA Section */
   .cta-section {
     padding: 5rem 0;
-    background: var(--mw-navy);
-    color: white;
+    background: var(--primary-black);
+    color: var(--primary-white);
     text-align: center;
   }
 
@@ -650,8 +673,8 @@ import SEO from '../components/SEO.astro';
   }
 
   .cta-button {
-    background: white;
-    color: var(--mw-navy);
+    background: var(--accent-teal);
+    color: var(--primary-black);
     padding: 1rem 2.5rem;
     border-radius: 50px;
     text-decoration: none;
@@ -664,7 +687,9 @@ import SEO from '../components/SEO.astro';
 
   .cta-button:hover {
     transform: translateY(-2px);
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+    background: var(--primary-white);
+    color: var(--primary-black);
+    box-shadow: 0 10px 30px rgba(79, 209, 199, 0.4);
   }
 
   /* Animations */
