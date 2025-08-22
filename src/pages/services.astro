@@ -448,22 +448,22 @@ import Breadcrumbs from '../components/Breadcrumbs.astro';
         <div class="showcase-features">
           <div class="feature-grid">
             <div class="feature-item">
-              <div class="feature-icon">🎨</div>
+              <div class="feature-icon design"></div>
               <h4>Custom Design</h4>
               <p>Every element crafted specifically for your brand and audience</p>
             </div>
             <div class="feature-item">
-              <div class="feature-icon">📱</div>
+              <div class="feature-icon mobile"></div>
               <h4>Mobile-First</h4>
               <p>Responsive design that looks perfect on all devices</p>
             </div>
             <div class="feature-item">
-              <div class="feature-icon">⚡</div>
+              <div class="feature-icon speed"></div>
               <h4>Fast Loading</h4>
               <p>Optimized performance for better user experience and SEO</p>
             </div>
             <div class="feature-item">
-              <div class="feature-icon">🔧</div>
+              <div class="feature-icon tools"></div>
               <h4>Easy Updates</h4>
               <p>Content management systems that you can update yourself</p>
             </div>
@@ -1365,8 +1365,56 @@ import Breadcrumbs from '../components/Breadcrumbs.astro';
   }
 
   .feature-icon {
-    font-size: 2.5rem;
+    width: 60px;
+    height: 60px;
     margin-bottom: 1rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  }
+
+  .feature-icon::before {
+    content: '';
+    width: 24px;
+    height: 24px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  .feature-icon.design {
+    background: linear-gradient(135deg, var(--accent-teal), var(--accent-purple));
+  }
+
+  .feature-icon.design::before {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='white' viewBox='0 0 24 24'%3E%3Cpath d='M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z'/%3E%3C/svg%3E");
+  }
+
+  .feature-icon.mobile {
+    background: linear-gradient(135deg, var(--accent-purple), var(--accent-pink));
+  }
+
+  .feature-icon.mobile::before {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='white' viewBox='0 0 24 24'%3E%3Cpath d='M17 2H7c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h10c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H7V6h10v10z'/%3E%3C/svg%3E");
+  }
+
+  .feature-icon.speed {
+    background: linear-gradient(135deg, var(--accent-pink), var(--accent-blue));
+  }
+
+  .feature-icon.speed::before {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='white' viewBox='0 0 24 24'%3E%3Cpath d='M13 2L3 14h9l-1 8 10-12h-9l1-8z'/%3E%3C/svg%3E");
+  }
+
+  .feature-icon.tools {
+    background: linear-gradient(135deg, var(--accent-blue), var(--accent-teal));
+  }
+
+  .feature-icon.tools::before {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='white' viewBox='0 0 24 24'%3E%3Cpath d='M22.7 19l-9.1-9.1c.9-2.3.4-5-1.5-6.9-2-2-5-2.4-7.4-1.3L9 6 6 9 1.6 4.7C.4 7.1.9 10.1 2.9 12.1c1.9 1.9 4.6 2.4 6.9 1.5l9.1 9.1c.4.4 1 .4 1.4 0l2.3-2.3c.5-.4.5-1.1.1-1.4z'/%3E%3C/svg%3E");
   }
 
   .feature-item h4 {
