@@ -20,9 +20,18 @@ import SEO from '../components/SEO.astro';
 
     <section class="story-section">
       <div class="container">
-        <h2>Our Story</h2>
-        <p>MW Design Studio was founded with a simple mission: to help businesses build powerful brands and meaningful connections with their audiences. We combine creative excellence with strategic thinking to deliver results that matter.</p>
-        <p>Since our inception, we've partnered with businesses of all sizes, from startups to established enterprises, helping them navigate the complex world of branding, marketing, and social media.</p>
+        <div class="story-content">
+          <h2>Our Story</h2>
+          <p class="story-intro">MW Design Studio was born from a shared passion for helping small businesses tell their stories and connect with their communities in meaningful ways.</p>
+          
+          <div class="story-details">
+            <p>We recognized that many small business owners are experts in their craft but struggle with the complex world of branding, marketing, and social media. That's where we come in—as your strategic partners, not just service providers.</p>
+            
+            <p>Our approach combines deep strategy with creative excellence, ensuring every project not only looks amazing but drives real business results. We believe in building long-term relationships and becoming an extension of your team.</p>
+            
+            <p>Since launching, we've helped dozens of businesses across various industries establish their brand presence, build engaged communities, and achieve sustainable growth through strategic design and marketing.</p>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -52,12 +61,40 @@ import SEO from '../components/SEO.astro';
 
     <section class="team-section">
       <div class="container">
-        <h2>Meet Our Team</h2>
+        <h2>Meet the Creative Duo</h2>
         <div class="team-grid">
           <div class="team-member">
-            <h3>Founder & Creative Director</h3>
-            <p>Leading our creative vision with over a decade of experience in brand development and digital marketing.</p>
+            <div class="member-photo">
+              <div class="photo-placeholder">SM</div>
+            </div>
+            <div class="member-info">
+              <h3>Sheri McDowell</h3>
+              <div class="member-role">Co-Founder & Brand Strategist</div>
+              <p>With a background in strategic marketing and brand development, Sheri brings analytical thinking and creative problem-solving to every project. She specializes in translating business goals into compelling brand stories and marketing strategies that resonate with target audiences.</p>
+              <div class="member-expertise">
+                <strong>Expertise:</strong> Brand Strategy, Marketing Planning, Customer Journey Design
+              </div>
+            </div>
           </div>
+          
+          <div class="team-member">
+            <div class="member-photo">
+              <div class="photo-placeholder">TW</div>
+            </div>
+            <div class="member-info">
+              <h3>Tierra White</h3>
+              <div class="member-role">Co-Founder & Creative Director</div>
+              <p>Tierra leads the creative vision with her expertise in visual design and social media strategy. Her keen eye for design trends and deep understanding of digital platforms ensures every brand not only looks exceptional but performs effectively across all touchpoints.</p>
+              <div class="member-expertise">
+                <strong>Expertise:</strong> Visual Design, Social Media Strategy, Creative Direction
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="partnership-story">
+          <h3>A Partnership Built on Complementary Strengths</h3>
+          <p>Together, Sheri and Tierra combine strategic thinking with creative excellence to deliver comprehensive solutions that drive real business results. Their collaborative approach ensures every project benefits from both analytical insight and creative innovation.</p>
         </div>
       </div>
     </section>
@@ -96,20 +133,126 @@ import SEO from '../components/SEO.astro';
     padding: 4rem 0;
   }
 
-  .values-grid,
-  .team-grid {
+  .values-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 2rem;
     margin-top: 2rem;
   }
 
-  .value-card,
-  .team-member {
+  .value-card {
     padding: 2rem;
     background: var(--gray-50);
     border-radius: 8px;
     border: 1px solid var(--gray-200);
+  }
+
+  .story-content {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .story-intro {
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: var(--text-primary);
+    margin-bottom: 2rem;
+  }
+
+  .story-details {
+    text-align: left;
+    line-height: 1.7;
+  }
+
+  .story-details p {
+    margin-bottom: 1.5rem;
+    color: var(--text-secondary);
+  }
+
+  .team-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    margin-top: 3rem;
+  }
+
+  .team-member {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 2rem;
+    padding: 2rem;
+    background: var(--gray-50);
+    border-radius: 12px;
+    border: 1px solid var(--gray-200);
+    align-items: start;
+  }
+
+  .member-photo {
+    display: flex;
+    justify-content: center;
+  }
+
+  .photo-placeholder {
+    width: 120px;
+    height: 120px;
+    background: var(--accent-teal);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 2rem;
+    font-weight: 600;
+  }
+
+  .member-info h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 0.5rem;
+  }
+
+  .member-role {
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--accent-teal);
+    margin-bottom: 1rem;
+  }
+
+  .member-info p {
+    line-height: 1.6;
+    color: var(--text-secondary);
+    margin-bottom: 1rem;
+  }
+
+  .member-expertise {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    background: var(--gray-100);
+    padding: 1rem;
+    border-radius: 8px;
+  }
+
+  .partnership-story {
+    max-width: 700px;
+    margin: 3rem auto 0;
+    text-align: center;
+    padding: 2rem;
+    background: var(--gray-100);
+    border-radius: 12px;
+  }
+
+  .partnership-story h3 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 1rem;
+  }
+
+  .partnership-story p {
+    color: var(--text-secondary);
+    line-height: 1.6;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
   }
 
@@ -143,5 +286,146 @@ import SEO from '../components/SEO.astro';
     background: var(--accent-purple);
     transform: translateY(-2px);
     box-shadow: 0 6px 20px rgba(159, 122, 234, 0.4);
+  }
+
+  /* Responsive Design */
+  @media (max-width: 1024px) {
+    .hero-section h1 {
+      font-size: 2.5rem;
+    }
+    
+    .story-content h2,
+    .values-section h2,
+    .team-section h2,
+    .cta-section h2 {
+      font-size: 2.2rem;
+    }
+
+    .team-grid {
+      gap: 2rem;
+    }
+
+    .values-grid {
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+  }
+
+  @media (max-width: 768px) {
+    .hero-section {
+      padding: 3rem 0;
+    }
+
+    .hero-section h1 {
+      font-size: 2rem;
+      text-align: center;
+    }
+
+    .lead {
+      font-size: 1.1rem;
+      text-align: center;
+    }
+
+    /* Ensure all section headers are centered */
+    .story-section h2,
+    .values-section h2,
+    .team-section h2,
+    .cta-section h2,
+    h2 {
+      font-size: 1.8rem;
+      text-align: center;
+      margin-bottom: 1rem;
+    }
+
+    .story-content {
+      text-align: center;
+    }
+
+    .story-details {
+      text-align: left;
+    }
+
+    .values-section {
+      padding: 3rem 0;
+      text-align: center;
+    }
+
+    .team-section {
+      padding: 3rem 0;
+      text-align: center;
+    }
+
+    .team-member {
+      grid-template-columns: 1fr;
+      text-align: center;
+      gap: 1rem;
+    }
+
+    .member-photo {
+      justify-content: center;
+    }
+
+    .values-grid {
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+
+    .value-card {
+      text-align: center;
+    }
+
+    .cta-section {
+      padding: 3rem 0;
+      text-align: center;
+    }
+
+    .partnership-story {
+      margin-top: 2rem;
+      padding: 1.5rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .hero-section {
+      padding: 2rem 0;
+    }
+
+    .hero-section h1 {
+      font-size: 1.75rem;
+      text-align: center;
+    }
+
+    /* Force center alignment for all titles on mobile */
+    .story-section h2,
+    .values-section h2,
+    .team-section h2,
+    .cta-section h2,
+    h2 {
+      font-size: 1.5rem !important;
+      text-align: center !important;
+    }
+
+    .container {
+      padding: 0 1rem;
+    }
+
+    .story-section,
+    .values-section,
+    .team-section,
+    .cta-section {
+      padding: 2rem 0;
+    }
+
+    .team-member {
+      padding: 1.5rem;
+    }
+
+    .value-card {
+      padding: 1.5rem;
+    }
+
+    .btn {
+      padding: 0.6rem 1.5rem;
+      font-size: 0.9rem;
+    }
   }
 </style>

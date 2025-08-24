@@ -25,7 +25,7 @@ import SEO from '../components/SEO.astro';
             "MW Design Studio completely transformed our brand presence. Our revenue increased by 65% in the first year after the rebrand, and we've never looked back. Their strategic approach and creative execution exceeded all our expectations."
           </blockquote>
           <div class="client-info">
-            <img src="/placeholder-client-1.jpg" alt="Sarah Johnson" class="client-photo" />
+            <div class="client-avatar">SJ</div>
             <div>
               <strong>Sarah Johnson</strong>
               <span>CEO, TechStart Solutions</span>
@@ -115,25 +115,6 @@ import SEO from '../components/SEO.astro';
       </div>
     </section>
 
-    <section class="video-testimonials">
-      <div class="container">
-        <h2>Video Testimonials</h2>
-        <div class="video-grid">
-          <div class="video-placeholder">
-            <div class="play-button">▶</div>
-            <p>Sarah Johnson - TechStart Solutions</p>
-          </div>
-          <div class="video-placeholder">
-            <div class="play-button">▶</div>
-            <p>Michael Rodriguez - Green Valley Organics</p>
-          </div>
-          <div class="video-placeholder">
-            <div class="play-button">▶</div>
-            <p>Amanda Chen - Artisan Jewelry Co.</p>
-          </div>
-        </div>
-      </div>
-    </section>
 
     <section class="success-numbers">
       <div class="container">
@@ -213,11 +194,17 @@ import SEO from '../components/SEO.astro';
     gap: 1rem;
   }
 
-  .client-photo {
+  .client-avatar {
     width: 60px;
     height: 60px;
     border-radius: 50%;
-    object-fit: cover;
+    background: var(--accent-teal);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    font-size: 1.25rem;
   }
 
   .testimonials-grid {
@@ -276,39 +263,6 @@ import SEO from '../components/SEO.astro';
     display: inline-block;
   }
 
-  .video-testimonials {
-    padding: 4rem 0;
-    background: #f9f9f9;
-  }
-
-  .video-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-    margin-top: 2rem;
-  }
-
-  .video-placeholder {
-    background: #333;
-    color: white;
-    height: 200px;
-    border-radius: 8px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    transition: transform 0.3s;
-  }
-
-  .video-placeholder:hover {
-    transform: scale(1.05);
-  }
-
-  .play-button {
-    font-size: 3rem;
-    margin-bottom: 1rem;
-  }
 
   .success-numbers {
     padding: 4rem 0;
@@ -374,5 +328,109 @@ import SEO from '../components/SEO.astro';
   .btn-secondary:hover {
     background: white;
     color: var(--accent-purple);
+  }
+
+  /* Responsive Design */
+  @media (max-width: 1024px) {
+    .hero-section h1 {
+      font-size: 2.5rem;
+    }
+    
+    .testimonials-section h2,
+    .cta-section h2,
+    h2 {
+      font-size: 2.2rem;
+    }
+
+    .testimonial-grid {
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    }
+  }
+
+  @media (max-width: 768px) {
+    .hero-section {
+      padding: 3rem 0;
+    }
+
+    .hero-section h1 {
+      font-size: 2rem;
+      text-align: center;
+    }
+
+    .lead {
+      font-size: 1.1rem;
+      text-align: center;
+    }
+
+    /* Ensure all section headers are centered */
+    .testimonials-section h2,
+    .cta-section h2,
+    h2 {
+      font-size: 1.8rem;
+      text-align: center;
+      margin-bottom: 1rem;
+    }
+
+    .testimonials-section {
+      padding: 3rem 0;
+      text-align: center;
+    }
+
+    .cta-section {
+      padding: 3rem 0;
+      text-align: center;
+    }
+
+    .testimonial-grid {
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+
+    .testimonial-card {
+      padding: 1.5rem;
+    }
+
+    .cta-buttons {
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .hero-section {
+      padding: 2rem 0;
+    }
+
+    .hero-section h1 {
+      font-size: 1.75rem;
+      text-align: center;
+    }
+
+    /* Force center alignment for all titles on mobile */
+    .testimonials-section h2,
+    .cta-section h2,
+    h2 {
+      font-size: 1.5rem !important;
+      text-align: center !important;
+    }
+
+    .container {
+      padding: 0 1rem;
+    }
+
+    .testimonials-section,
+    .cta-section {
+      padding: 2rem 0;
+    }
+
+    .testimonial-card {
+      padding: 1.25rem;
+    }
+
+    .btn {
+      padding: 0.6rem 1.5rem;
+      font-size: 0.9rem;
+    }
   }
 </style>

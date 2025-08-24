@@ -23,9 +23,10 @@ import SEO from '../../components/SEO.astro';
 
     <section class="services-overview">
       <div class="container">
-        <div class="overview-content">
+        <div class="section-header">
           <h2>Social Media That Drives Results</h2>
           <p>Transform your social media presence from a time-consuming challenge into a powerful business growth engine. Our strategic approach combines engaging content creation with data-driven optimization to build authentic communities and drive measurable results.</p>
+        </div>
           
           <div class="social-benefits">
             <div class="benefit-item">
@@ -41,19 +42,19 @@ import SEO from '../../components/SEO.astro';
               <p>Clear metrics and insights that demonstrate ROI and guide optimization</p>
             </div>
           </div>
-        </div>
       </div>
     </section>
 
     <section class="services-list">
       <div class="container">
-        <h2>Our Social Media Services</h2>
+        <div class="section-header">
+          <h2>Our Social Media Services</h2>
+        </div>
         
         <div class="service-cards">
           <div class="service-card featured">
             <div class="service-header">
               <h3>Complete Social Media Management</h3>
-              <div class="price-tag">Most Popular</div>
             </div>
             <p>Full-service social media management for busy businesses</p>
             <ul class="service-includes">
@@ -67,8 +68,7 @@ import SEO from '../../components/SEO.astro';
               <li>2-3 platforms included</li>
             </ul>
             <div class="service-pricing">
-              <span class="price">Starting at $2,500/month</span>
-              <span class="timeline">Ongoing</span>
+              <span class="timeline">Ongoing Management</span>
             </div>
             <a href="/contact" class="btn btn-primary">Get Started</a>
           </div>
@@ -89,7 +89,6 @@ import SEO from '../../components/SEO.astro';
               <li>3-month implementation roadmap</li>
             </ul>
             <div class="service-pricing">
-              <span class="price">Starting at $1,500</span>
               <span class="timeline">3-4 weeks</span>
             </div>
             <a href="/contact" class="btn btn-secondary">Learn More</a>
@@ -110,7 +109,6 @@ import SEO from '../../components/SEO.astro';
               <li>User-generated content curation</li>
             </ul>
             <div class="service-pricing">
-              <span class="price">Starting at $1,800/month</span>
               <span class="timeline">Ongoing</span>
             </div>
             <a href="/contact" class="btn btn-secondary">Learn More</a>
@@ -131,7 +129,6 @@ import SEO from '../../components/SEO.astro';
               <li>Monthly performance reports</li>
             </ul>
             <div class="service-pricing">
-              <span class="price">Starting at $1,200/month + ad spend</span>
               <span class="timeline">Ongoing</span>
             </div>
             <a href="/contact" class="btn btn-secondary">Learn More</a>
@@ -152,7 +149,6 @@ import SEO from '../../components/SEO.astro';
               <li>Monthly engagement reports</li>
             </ul>
             <div class="service-pricing">
-              <span class="price">Starting at $800/month</span>
               <span class="timeline">Ongoing</span>
             </div>
             <a href="/contact" class="btn btn-secondary">Learn More</a>
@@ -173,7 +169,6 @@ import SEO from '../../components/SEO.astro';
               <li>Quarterly strategy updates</li>
             </ul>
             <div class="service-pricing">
-              <span class="price">Starting at $1,000/month</span>
               <span class="timeline">Ongoing</span>
             </div>
             <a href="/contact" class="btn btn-secondary">Learn More</a>
@@ -184,7 +179,9 @@ import SEO from '../../components/SEO.astro';
 
     <section class="platform-expertise">
       <div class="container">
-        <h2>Platform Expertise</h2>
+        <div class="section-header">
+          <h2>Platform Expertise</h2>
+        </div>
         <div class="platforms-grid">
           <div class="platform-card">
             <div class="platform-icon">FB</div>
@@ -258,7 +255,9 @@ import SEO from '../../components/SEO.astro';
 
     <section class="success-metrics">
       <div class="container">
-        <h2>Success Stories by the Numbers</h2>
+        <div class="section-header">
+          <h2>Success Stories by the Numbers</h2>
+        </div>
         <div class="metrics-grid">
           <div class="metric-card">
             <div class="metric-number">+300%</div>
@@ -286,7 +285,9 @@ import SEO from '../../components/SEO.astro';
 
     <section class="content-types">
       <div class="container">
-        <h2>Content Types We Create</h2>
+        <div class="section-header">
+          <h2>Content Types We Create</h2>
+        </div>
         <div class="content-grid">
           <div class="content-type">
             <h3>Educational Content</h3>
@@ -332,7 +333,9 @@ import SEO from '../../components/SEO.astro';
 
     <section class="tools-we-use">
       <div class="container">
-        <h2>Tools & Technologies</h2>
+        <div class="section-header">
+          <h2>Tools & Technologies</h2>
+        </div>
         <div class="tools-categories">
           <div class="tool-category">
             <h3>Scheduling & Management</h3>
@@ -406,10 +409,47 @@ import SEO from '../../components/SEO.astro';
 </Layout>
 
 <style>
+  :root {
+    /* Map old variables to new color system for compatibility */
+    --mw-navy: var(--primary-black);
+    --mw-teal: var(--accent-teal);
+    --mw-light-teal: var(--accent-teal);
+    --mw-accent: var(--accent-blue);
+    --mw-gradient: var(--gradient-vibrant);
+    --mw-subtle-gradient: linear-gradient(135deg, var(--gray-100) 0%, var(--primary-white) 100%);
+    --light-gray: var(--gray-100);
+    --neutral-bg: var(--bg-secondary);
+    --dark-text: var(--text-primary);
+    --medium-gray: var(--text-secondary);
+    --light-border: var(--border-light);
+    --success: var(--accent-green);
+    --warning: var(--accent-yellow);
+    --error: var(--accent-red);
+    --info: var(--accent-blue);
+  }
+
   .hero-section {
-    background: var(--gradient-purple-pink);
-    color: white;
+    background: var(--mw-gradient);
+    color: var(--primary-white);
     padding: 4rem 0;
+    text-align: center;
+    min-height: 300px;
+    display: flex;
+    align-items: center;
+  }
+
+  .hero-section .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    width: 100%;
+  }
+
+  .hero-section h1 {
+    font-size: 3rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    line-height: 1.2;
   }
 
   .breadcrumb {
@@ -431,8 +471,30 @@ import SEO from '../../components/SEO.astro';
     margin-top: 1rem;
   }
 
+  /* Section Headers */
+  .section-header {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 3rem;
+  }
+
+  .section-header h2 {
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: var(--dark-text);
+    margin-bottom: 1rem;
+    line-height: 1.2;
+  }
+
+  .section-header p {
+    font-size: 1.1rem;
+    color: var(--medium-gray);
+    line-height: 1.6;
+  }
+
   .services-overview {
     padding: 4rem 0;
+    background: var(--primary-white);
   }
 
   .social-benefits {
@@ -449,7 +511,7 @@ import SEO from '../../components/SEO.astro';
 
   .services-list {
     padding: 4rem 0;
-    background: #f9f9f9;
+    background: var(--neutral-bg);
   }
 
   .service-cards {
@@ -474,19 +536,27 @@ import SEO from '../../components/SEO.astro';
   }
 
   .service-card.featured {
-    border-color: var(--accent-purple);
+    border-color: var(--mw-teal);
   }
 
   .service-header {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
     align-items: center;
-    margin-bottom: 1rem;
+    text-align: center;
+    margin-bottom: 1.5rem;
+    gap: 0.5rem;
+  }
+
+  .service-header h3 {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: var(--dark-text);
   }
 
   .price-tag {
-    background: var(--accent-purple);
-    color: white;
+    background: var(--mw-teal);
+    color: var(--primary-black);
     padding: 0.25rem 0.75rem;
     border-radius: 15px;
     font-size: 0.75rem;
@@ -496,7 +566,10 @@ import SEO from '../../components/SEO.astro';
   .service-includes {
     list-style: none;
     padding: 0;
-    margin: 1.5rem 0;
+    margin: 1rem 0;
+    text-align: left;
+    display: inline-block;
+    max-width: 300px;
   }
 
   .service-includes li {
@@ -506,8 +579,8 @@ import SEO from '../../components/SEO.astro';
   }
 
   .service-includes li:before {
-    content: "•";
-    color: var(--accent-purple);
+    content: "✓";
+    color: var(--mw-teal);
     font-weight: bold;
     position: absolute;
     left: 0;
@@ -515,22 +588,23 @@ import SEO from '../../components/SEO.astro';
 
   .service-pricing {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     margin: 1.5rem 0;
     padding-top: 1.5rem;
-    border-top: 1px solid #e0e0e0;
+    border-top: 1px solid var(--light-border);
   }
 
   .price {
     font-size: 1.25rem;
     font-weight: bold;
-    color: var(--accent-purple);
+    color: var(--mw-teal);
   }
 
   .timeline {
-    color: #666;
+    color: var(--medium-gray);
     font-size: 0.875rem;
+    font-weight: 500;
   }
 
   .platform-expertise {
@@ -566,13 +640,13 @@ import SEO from '../../components/SEO.astro';
 
   .platform-card li {
     padding: 0.25rem 0;
-    color: #666;
+    color: var(--medium-gray);
     font-size: 0.875rem;
   }
 
   .success-metrics {
     padding: 4rem 0;
-    background: #f0f4ff;
+    background: var(--neutral-bg);
   }
 
   .metrics-grid {
@@ -593,19 +667,19 @@ import SEO from '../../components/SEO.astro';
   .metric-number {
     font-size: 2.5rem;
     font-weight: bold;
-    color: var(--accent-purple);
+    color: var(--mw-teal);
     margin-bottom: 0.5rem;
   }
 
   .metric-label {
     font-size: 1.125rem;
     font-weight: 600;
-    color: #333;
+    color: var(--dark-text);
     margin-bottom: 1rem;
   }
 
   .metric-card p {
-    color: #666;
+    color: var(--medium-gray);
     font-size: 0.875rem;
   }
 
@@ -621,15 +695,15 @@ import SEO from '../../components/SEO.astro';
   }
 
   .content-type {
-    background: #f9f9f9;
+    background: var(--neutral-bg);
     padding: 2rem;
     border-radius: 8px;
-    border-left: 4px solid var(--accent-purple);
+    border-left: 4px solid var(--mw-teal);
   }
 
   .testimonial-preview {
     padding: 4rem 0;
-    background: #f9f9f9;
+    background: var(--neutral-bg);
   }
 
   .testimonial-card {
@@ -650,7 +724,7 @@ import SEO from '../../components/SEO.astro';
 
   .testimonial-author span {
     display: block;
-    color: #666;
+    color: var(--medium-gray);
     margin-top: 0.5rem;
   }
 
@@ -666,13 +740,13 @@ import SEO from '../../components/SEO.astro';
   }
 
   .tool-category {
-    background: #f9f9f9;
+    background: var(--neutral-bg);
     padding: 2rem;
     border-radius: 8px;
   }
 
   .tool-category h3 {
-    color: var(--accent-purple);
+    color: var(--mw-teal);
     margin-bottom: 1rem;
   }
 
@@ -683,12 +757,12 @@ import SEO from '../../components/SEO.astro';
 
   .tool-category li {
     padding: 0.3rem 0;
-    color: #555;
+    color: var(--medium-gray);
   }
 
   .related-services {
     padding: 4rem 0;
-    background: #f9f9f9;
+    background: var(--neutral-bg);
   }
 
   .related-grid {
@@ -706,7 +780,7 @@ import SEO from '../../components/SEO.astro';
   }
 
   .related-card a {
-    color: var(--accent-purple);
+    color: var(--mw-teal);
     text-decoration: none;
     font-weight: 600;
     display: inline-block;
@@ -719,9 +793,13 @@ import SEO from '../../components/SEO.astro';
 
   .cta-section {
     padding: 4rem 0;
-    background: var(--accent-purple);
-    color: white;
+    background: var(--mw-gradient);
+    color: var(--primary-white);
     text-align: center;
+  }
+
+  .cta-section .section-header h2 {
+    color: var(--primary-white);
   }
 
   .cta-buttons {
@@ -743,7 +821,7 @@ import SEO from '../../components/SEO.astro';
 
   .btn-primary {
     background: white;
-    color: var(--accent-purple);
+    color: var(--mw-teal);
   }
 
   .btn-primary:hover {
@@ -758,6 +836,142 @@ import SEO from '../../components/SEO.astro';
 
   .btn-secondary:hover {
     background: white;
-    color: var(--accent-purple);
+    color: var(--mw-teal);
+  }
+
+  /* Responsive Design */
+  @media (max-width: 1024px) {
+    .hero-section h1 {
+      font-size: 2.5rem;
+    }
+    
+    .section-header h2 {
+      font-size: 2.2rem;
+    }
+
+    .service-cards {
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    }
+
+    .platform-grid {
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+
+    .results-grid {
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+  }
+
+  @media (max-width: 768px) {
+    .hero-section {
+      padding: 3rem 0;
+    }
+
+    .hero-section .container {
+      padding: 0 1rem;
+    }
+
+    .hero-section h1 {
+      font-size: 2rem;
+      text-align: center;
+    }
+
+    .lead {
+      font-size: 1.1rem;
+      text-align: center;
+    }
+
+    /* Ensure all section headers are centered */
+    .section-header {
+      text-align: center !important;
+      margin: 0 auto 2rem;
+      padding: 0 1rem;
+    }
+
+    .section-header h2 {
+      font-size: 1.8rem;
+      text-align: center;
+      margin-bottom: 1rem;
+    }
+
+    .section-header p {
+      text-align: center;
+      font-size: 1rem;
+    }
+
+    /* Ensure all sections have centered titles */
+    h2 {
+      text-align: center;
+    }
+
+    .service-cards {
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+
+    .service-card {
+      padding: 1.25rem;
+    }
+
+    .service-includes {
+      max-width: 100%;
+    }
+
+    .platform-grid {
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .results-grid {
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+
+    .social-benefits {
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+
+    .cta-buttons {
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .hero-section {
+      padding: 2rem 0;
+    }
+
+    .hero-section h1 {
+      font-size: 1.75rem;
+      text-align: center;
+    }
+
+    /* Force center alignment for all titles on mobile */
+    .section-header h2,
+    h2 {
+      font-size: 1.5rem !important;
+      text-align: center !important;
+    }
+
+    .hero-section .container,
+    .container {
+      padding: 0 1rem;
+    }
+
+    .service-card {
+      padding: 1rem;
+    }
+
+    .btn {
+      padding: 0.6rem 1.5rem;
+      font-size: 0.9rem;
+    }
+
+    .platform-grid {
+      grid-template-columns: 1fr;
+    }
   }
 </style>

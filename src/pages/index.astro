@@ -132,27 +132,33 @@ import SEO from '../components/SEO.astro';
       </div>
       <div class="portfolio-grid">
         <div class="portfolio-item">
-          <div class="portfolio-image">Local Bakery Rebrand</div>
+          <div class="portfolio-image">
+            <img src="/portfolio/Bloom Cafe/Bloom-Cafe-Logo-Example.png" alt="Bloom Cafe Brand Identity" />
+          </div>
           <div class="portfolio-content">
-            <h3 class="portfolio-title">Sweet Success Bakery</h3>
-            <div class="portfolio-type">Brand Identity & Marketing</div>
-            <p class="portfolio-description">Complete rebrand increased foot traffic by 150% and social media engagement by 300% within 3 months.</p>
+            <h3 class="portfolio-title">Bloom Cafe</h3>
+            <div class="portfolio-type">Brand Identity & Visual System</div>
+            <p class="portfolio-description">Complete brand identity with logo, color palette, and visual guidelines that brought their organic, welcoming vision to life.</p>
           </div>
         </div>
         <div class="portfolio-item">
-          <div class="portfolio-image">Tech Startup Launch</div>
+          <div class="portfolio-image">
+            <img src="/portfolio/CloudSync Solutions/Cloudsync_logo.png" alt="CloudSync Solutions Brand Identity" />
+          </div>
           <div class="portfolio-content">
-            <h3 class="portfolio-title">InnovateTech Solutions</h3>
-            <div class="portfolio-type">Full Marketing Campaign</div>
-            <p class="portfolio-description">Pre-launch campaign generated 500+ qualified leads and $50k in pre-orders before product launch.</p>
+            <h3 class="portfolio-title">CloudSync Solutions</h3>
+            <div class="portfolio-type">Tech Startup Branding</div>
+            <p class="portfolio-description">Modern, professional brand identity that positioned this cloud services company as a trusted industry leader.</p>
           </div>
         </div>
         <div class="portfolio-item">
-          <div class="portfolio-image">Wellness Coach</div>
+          <div class="portfolio-image">
+            <img src="/portfolio/Momentum Personal Training/Momentum-logo.png" alt="Momentum Personal Training Brand Identity" />
+          </div>
           <div class="portfolio-content">
-            <h3 class="portfolio-title">Mindful Living Coach</h3>
-            <div class="portfolio-type">Social Media Strategy</div>
-            <p class="portfolio-description">Built Instagram following from 200 to 10k+ engaged followers, leading to fully booked coaching calendar.</p>
+            <h3 class="portfolio-title">Momentum Personal Training</h3>
+            <div class="portfolio-type">Fitness Brand Identity</div>
+            <p class="portfolio-description">Dynamic brand identity that captures energy and movement, helping them stand out in a competitive fitness market.</p>
           </div>
         </div>
       </div>
@@ -467,13 +473,20 @@ import SEO from '../components/SEO.astro';
 
   .portfolio-image {
     height: 250px;
-    background: var(--primary-black);
+    background: var(--gray-100);
     display: flex;
     align-items: center;
     justify-content: center;
-    color: var(--primary-white);
-    font-size: 1.5rem;
-    font-weight: 600;
+    overflow: hidden;
+    border-radius: 12px 12px 0 0;
+  }
+
+  .portfolio-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+    padding: 20px;
   }
 
   .portfolio-content {

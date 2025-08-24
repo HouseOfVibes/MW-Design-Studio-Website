@@ -13,13 +13,15 @@ import SEO from '../components/SEO.astro';
   <main>
     <section class="hero-section">
       <div class="container">
-        <h1>Our Portfolio</h1>
-        <p class="lead">Transformations that speak louder than words</p>
-        <div class="filter-buttons">
-          <button class="filter-btn active" data-filter="all">All Projects</button>
-          <button class="filter-btn" data-filter="brand">Brand Design</button>
-          <button class="filter-btn" data-filter="marketing">Marketing Campaigns</button>
-          <button class="filter-btn" data-filter="social">Social Media</button>
+        <div class="hero-content">
+          <h1>Our Portfolio</h1>
+          <p class="lead">Transformations that speak louder than words</p>
+          <div class="filter-buttons">
+            <button class="filter-btn active" data-filter="all">All Projects</button>
+            <button class="filter-btn" data-filter="brand">Brand Design</button>
+            <button class="filter-btn" data-filter="marketing">Marketing Campaigns</button>
+            <button class="filter-btn" data-filter="social">Social Media</button>
+          </div>
         </div>
       </div>
     </section>
@@ -78,221 +80,168 @@ import SEO from '../components/SEO.astro';
             </div>
           </div>
           
-          <div class="case-actions">
-            <a href="/portfolio/Bloom Cafe/Bloom Cafe Brand Guidelines.pdf" target="_blank" class="btn-primary">View Complete Brand Guidelines</a>
-            <a href="/contact" class="btn-secondary">Start Your Brand Project</a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- CloudSync Solutions Case Study -->
-    <section class="case-study cloudsync-case" data-category="brand">
-      <div class="case-study-header tech-gradient">
-        <div class="container">
-          <div class="case-intro">
-            <h2>CloudSync Solutions</h2>
-            <p class="case-subtitle">Tech Brand & Digital Platform</p>
-            <p class="case-description">Transforming a cloud technology company with a cutting-edge brand identity and user-centric website that communicates trust and innovation.</p>
-            <div class="case-stats">
-              <div class="stat">
-                <span class="stat-number">Modern</span>
-                <span class="stat-label">Tech Identity</span>
+          <div class="brand-guidelines">
+            <h3>Complete Brand Guidelines</h3>
+            <div class="guidelines-content">
+              <div class="guideline-section">
+                <h4>Logo Usage & Variations</h4>
+                <p>Primary logo, secondary marks, and approved variations for different applications and contexts.</p>
               </div>
-              <div class="stat">
-                <span class="stat-number">Full</span>
-                <span class="stat-label">Website Design</span>
+              <div class="guideline-section">
+                <h4>Color Palette</h4>
+                <p>Sage green primary (#8FBC8F), warm cream secondary (#F5F5DC), and charcoal accent (#36454F) colors with hex codes and usage guidelines.</p>
               </div>
-              <div class="stat">
-                <span class="stat-number">Professional</span>
-                <span class="stat-label">Brand Guide</span>
+              <div class="guideline-section">
+                <h4>Typography</h4>
+                <p>Playfair Display for headlines, Open Sans for body text. Hierarchy and spacing recommendations included.</p>
               </div>
-            </div>
-          </div>
-          <div class="case-hero-image">
-            <img src="/portfolio/CloudSync Solutions/Cloudsync_logo.png" alt="CloudSync Solutions Logo" />
-          </div>
-        </div>
-      </div>
-      
-      <div class="case-study-content">
-        <div class="container">
-          <div class="asset-showcase">
-            <div class="showcase-section">
-              <h3>Brand Identity System</h3>
-              <div class="logo-gallery">
-                <img src="/portfolio/CloudSync Solutions/Cloudsync_logo-Variations.png" alt="CloudSync Logo Variations" />
+              <div class="guideline-section">
+                <h4>Brand Voice & Tone</h4>
+                <p>Warm, welcoming, and community-focused. Emphasizes organic, artisanal quality and local connections.</p>
               </div>
-            </div>
-            
-            <div class="showcase-section">
-              <h3>Color Strategy</h3>
-              <div class="color-palette">
-                <img src="/portfolio/CloudSync Solutions/Cloudsync-Color-Palette.png" alt="CloudSync Color Palette" />
+              <div class="guideline-section">
+                <h4>Photography Style</h4>
+                <p>Natural lighting, warm tones, focus on ingredients and handcrafted details. Community and process shots encouraged.</p>
               </div>
-            </div>
-            
-            <div class="showcase-section full-width">
-              <h3>Website Design & User Experience</h3>
-              <div class="website-showcase">
-                <div class="browser-frame">
-                  <div class="browser-bar">
-                    <div class="browser-dots">
-                      <span></span>
-                      <span></span>
-                      <span></span>
-                    </div>
-                    <div class="url-bar">cloudsync-solutions.com</div>
-                  </div>
-                  <div class="browser-content">
-                    <img src="/portfolio/CloudSync Solutions/Cloudsync_website_Mockup.png" alt="CloudSync Website Design" />
-                  </div>
-                </div>
+              <div class="guideline-section">
+                <h4>Applications</h4>
+                <p>Signage, packaging, digital assets, uniforms, and marketing materials with specific placement and sizing guidelines.</p>
               </div>
             </div>
           </div>
           
           <div class="case-actions">
-            <a href="/portfolio/CloudSync Solutions/Cloudsync Brand Guidelines.pdf" target="_blank" class="btn-primary">View Brand Guidelines</a>
-            <a href="/contact" class="btn-secondary">Discuss Your Tech Project</a>
+            <a href="/contact" class="btn-primary">Start Your Brand Project</a>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Momentum Personal Training Case Study -->
-    <section class="case-study momentum-case" data-category="brand">
-      <div class="case-study-header fitness-gradient">
-        <div class="container">
-          <div class="case-intro">
-            <h2>Momentum Personal Training</h2>
-            <p class="case-subtitle">Dynamic Fitness Brand Identity</p>
-            <p class="case-description">Energizing a personal training business with a bold brand identity that motivates action and reflects the power of transformation.</p>
-            <div class="case-stats">
-              <div class="stat">
-                <span class="stat-number">Bold</span>
-                <span class="stat-label">Color Energy</span>
-              </div>
-              <div class="stat">
-                <span class="stat-number">Multiple</span>
-                <span class="stat-label">Logo Versions</span>
-              </div>
-              <div class="stat">
-                <span class="stat-number">Complete</span>
-                <span class="stat-label">Brand System</span>
-              </div>
-            </div>
-          </div>
-          <div class="case-hero-image">
-            <img src="/portfolio/Momentum Personal Training/Momentum-logo.png" alt="Momentum Personal Training Logo" />
-          </div>
-        </div>
-      </div>
-      
-      <div class="case-study-content">
-        <div class="container">
-          <div class="asset-showcase">
-            <div class="showcase-section">
-              <h3>Logo Variations & Flexibility</h3>
-              <div class="logo-gallery">
-                <img src="/portfolio/Momentum Personal Training/Momentum_log-variations.png" alt="Momentum Logo Variations" />
-              </div>
-            </div>
-            
-            <div class="showcase-section">
-              <h3>Energetic Color Palette</h3>
-              <div class="color-showcase">
-                <img src="/portfolio/Momentum Personal Training/MOMENTUM- Color_Palette.png" alt="Momentum Color Palette" />
-              </div>
-            </div>
-          </div>
-          
-          <div class="case-actions">
-            <a href="/portfolio/Momentum Personal Training/Momentum Brand Guidelines.pdf" target="_blank" class="btn-primary">View Brand Guidelines</a>
-            <a href="/contact" class="btn-secondary">Energize Your Brand</a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Additional Projects Section -->
-    <section class="additional-projects">
+    <!-- Portfolio Grid -->
+    <section class="portfolio-grid">
       <div class="container">
-        <h2>More Projects</h2>
-        <div class="projects-grid">
-          <!-- Social Media Management -->
-          <article class="mini-project" data-category="social">
-            <div class="mini-project-image">
-              <div class="social-platforms">
-                <div class="platform facebook">FB</div>
-                <div class="platform instagram">IG</div>
-                <div class="platform-count">+2</div>
+        <div class="section-header">
+          <h2>More Portfolio Highlights</h2>
+          <p>Explore our recent work across brand design, marketing, and social media</p>
+        </div>
+        
+        <div class="portfolio-items">
+          <!-- CloudSync Solutions - Compact -->
+          <div class="portfolio-item" data-category="brand">
+            <div class="item-image">
+              <img src="/portfolio/CloudSync Solutions/Cloudsync_logo.png" alt="CloudSync Solutions Logo" />
+            </div>
+            <div class="item-content">
+              <h3>CloudSync Solutions</h3>
+              <p class="item-category">Tech Brand Identity</p>
+              <p>Modern cloud technology brand with clean identity system and professional website design.</p>
+              <div class="item-tags">
+                <span>Logo Design</span>
+                <span>Brand Guidelines</span>
+                <span>Website</span>
               </div>
             </div>
-            <div class="mini-project-content">
-              <h4>Social Media Management</h4>
-              <p>Strategic content creation and community management across multiple platforms.</p>
-              <a href="/services/social-media-services" class="mini-link">Learn More →</a>
-            </div>
-          </article>
+          </div>
 
-          <!-- Urban Thread Co. -->
-          <article class="mini-project coming-soon" data-category="brand">
-            <div class="mini-project-image fashion-bg">
-              <div class="project-status">In Development</div>
-              <h4>Urban Thread Co.</h4>
+          <!-- FitLife Fitness - New -->
+          <div class="portfolio-item" data-category="brand">
+            <div class="item-image">
+              <div class="placeholder-image fitlife">FL</div>
             </div>
-            <div class="mini-project-content">
-              <p>Contemporary fashion brand identity currently in development.</p>
-              <span class="status-text">Case Study Coming Soon</span>
-            </div>
-          </article>
-
-          <!-- Call to Action -->
-          <article class="mini-project cta-project">
-            <div class="mini-project-image cta-bg">
-              <div class="cta-content">
-                <h4>Your Project Next?</h4>
-                <p>Let's create something amazing together.</p>
+            <div class="item-content">
+              <h3>FitLife Fitness</h3>
+              <p class="item-category">Fitness Brand Identity</p>
+              <p>Energetic fitness brand with bold typography and motivational visual system for a growing gym chain.</p>
+              <div class="item-tags">
+                <span>Brand Identity</span>
+                <span>Signage</span>
+                <span>Marketing Materials</span>
               </div>
             </div>
-            <div class="mini-project-content">
-              <a href="/contact" class="cta-button">Start Your Project</a>
+          </div>
+
+          <!-- Green Garden Organic - New -->
+          <div class="portfolio-item" data-category="marketing">
+            <div class="item-image">
+              <div class="placeholder-image organic">GG</div>
             </div>
-          </article>
+            <div class="item-content">
+              <h3>Green Garden Organic</h3>
+              <p class="item-category">Marketing Campaign</p>
+              <p>Farm-to-table restaurant marketing campaign that increased local awareness by 180% in 3 months.</p>
+              <div class="item-tags">
+                <span>Campaign Strategy</span>
+                <span>Local Marketing</span>
+                <span>Content Creation</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- TechStart Accelerator - New -->
+          <div class="portfolio-item" data-category="social">
+            <div class="item-image">
+              <div class="placeholder-image techstart">TS</div>
+            </div>
+            <div class="item-content">
+              <h3>TechStart Accelerator</h3>
+              <p class="item-category">Social Media Growth</p>
+              <p>LinkedIn-focused social strategy that grew startup accelerator following from 500 to 12K in 6 months.</p>
+              <div class="item-tags">
+                <span>LinkedIn Strategy</span>
+                <span>Content Planning</span>
+                <span>Community Building</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Artisan Bakery - New -->
+          <div class="portfolio-item" data-category="brand">
+            <div class="item-image">
+              <div class="placeholder-image bakery">AB</div>
+            </div>
+            <div class="item-content">
+              <h3>Artisan Bakery Co.</h3>
+              <p class="item-category">Brand & Packaging</p>
+              <p>Handcrafted brand identity with custom typography and packaging design for premium baked goods.</p>
+              <div class="item-tags">
+                <span>Brand Identity</span>
+                <span>Packaging Design</span>
+                <span>Typography</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Digital Marketing Agency - New -->
+          <div class="portfolio-item" data-category="marketing">
+            <div class="item-image">
+              <div class="placeholder-image agency">DA</div>
+            </div>
+            <div class="item-content">
+              <h3>Digital Advantage Agency</h3>
+              <p class="item-category">Lead Generation Campaign</p>
+              <p>B2B marketing campaign that generated 200+ qualified leads and $500K in new client revenue.</p>
+              <div class="item-tags">
+                <span>B2B Marketing</span>
+                <span>Lead Generation</span>
+                <span>Sales Funnel</span>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
-    <section class="success-metrics">
+    <!-- Call to Action -->
+    <section class="portfolio-cta">
       <div class="container">
-        <h2>Success by the Numbers</h2>
-        <div class="metrics-grid">
-          <div class="metric">
-            <span class="metric-number">5+</span>
-            <span class="metric-label">Brands Created</span>
-          </div>
-          <div class="metric">
-            <span class="metric-number">3</span>
-            <span class="metric-label">Industries Served</span>
-          </div>
-          <div class="metric">
-            <span class="metric-number">100%</span>
-            <span class="metric-label">Client Satisfaction</span>
-          </div>
-          <div class="metric">
-            <span class="metric-number">Growing</span>
-            <span class="metric-label">Portfolio</span>
+        <div class="cta-content">
+          <h2>Ready to Create Your Success Story?</h2>
+          <p>Join these successful businesses and transform your brand with strategic design and marketing.</p>
+          <div class="cta-buttons">
+            <a href="/contact" class="btn-primary">Start Your Project</a>
+            <a href="/services" class="btn-secondary">Explore Services</a>
           </div>
         </div>
-      </div>
-    </section>
-
-    <section class="cta-section">
-      <div class="container">
-        <h2>Ready to Be Our Next Success Story?</h2>
-        <p>Let's create something amazing together.</p>
-        <a href="/contact" class="btn btn-primary">Start Your Project</a>
       </div>
     </section>
   </main>
@@ -312,6 +261,11 @@ import SEO from '../components/SEO.astro';
     text-align: center;
     position: relative;
     overflow: hidden;
+  }
+
+  .hero-content {
+    margin-left: 10%;
+    max-width: 80%;
   }
 
   .hero-section::before {
@@ -799,6 +753,245 @@ import SEO from '../components/SEO.astro';
     box-shadow: 0 8px 25px rgba(30, 58, 138, 0.4);
   }
 
+  /* Brand Guidelines Styles */
+  .brand-guidelines {
+    background: var(--gray-50);
+    border-radius: 12px;
+    padding: 2rem;
+    margin: 2rem 0;
+    border: 1px solid var(--gray-200);
+  }
+
+  .brand-guidelines h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 1.5rem;
+    text-align: center;
+  }
+
+  .guidelines-content {
+    max-height: 400px;
+    overflow-y: auto;
+    padding-right: 1rem;
+  }
+
+  .guidelines-content::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  .guidelines-content::-webkit-scrollbar-track {
+    background: var(--gray-200);
+    border-radius: 4px;
+  }
+
+  .guidelines-content::-webkit-scrollbar-thumb {
+    background: var(--accent-teal);
+    border-radius: 4px;
+  }
+
+  .guidelines-content::-webkit-scrollbar-thumb:hover {
+    background: var(--primary-black);
+  }
+
+  .guideline-section {
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--gray-200);
+  }
+
+  .guideline-section:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+  }
+
+  .guideline-section h4 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--accent-teal);
+    margin-bottom: 0.5rem;
+  }
+
+  .guideline-section p {
+    color: var(--text-secondary);
+    line-height: 1.6;
+    font-size: 0.95rem;
+  }
+
+  /* Portfolio Grid Styles */
+  .portfolio-grid {
+    padding: 6rem 0;
+    background: var(--gray-50);
+  }
+
+  .section-header {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 4rem;
+  }
+
+  .section-header h2 {
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: var(--primary-black);
+    margin-bottom: 1rem;
+    line-height: 1.2;
+  }
+
+  .section-header p {
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+  }
+
+  .portfolio-items {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+  }
+
+  .portfolio-item {
+    background: white;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .portfolio-item:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+  }
+
+  .item-image {
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--gray-100);
+    position: relative;
+  }
+
+  .item-image img {
+    max-width: 80%;
+    max-height: 80%;
+    object-fit: contain;
+    filter: drop-shadow(0 4px 15px rgba(0, 0, 0, 0.1));
+  }
+
+  .placeholder-image {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: white;
+    text-transform: uppercase;
+  }
+
+  .placeholder-image.fitlife {
+    background: linear-gradient(135deg, #FF6B6B, #4ECDC4);
+  }
+
+  .placeholder-image.organic {
+    background: linear-gradient(135deg, #4ECDC4, #44A08D);
+  }
+
+  .placeholder-image.techstart {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+  }
+
+  .placeholder-image.bakery {
+    background: linear-gradient(135deg, #FDBB2D, #22C1C3);
+  }
+
+  .placeholder-image.agency {
+    background: linear-gradient(135deg, #833ab4, #fd1d1d);
+  }
+
+  .item-content {
+    padding: 2rem;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .item-content h3 {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: var(--primary-black);
+    margin-bottom: 0.5rem;
+  }
+
+  .item-category {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--accent-teal);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 1rem;
+  }
+
+  .item-content p {
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    flex-grow: 1;
+  }
+
+  .item-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .item-tags span {
+    background: var(--gray-100);
+    color: var(--text-secondary);
+    padding: 0.25rem 0.75rem;
+    border-radius: 12px;
+    font-size: 0.8rem;
+    font-weight: 500;
+  }
+
+  /* Portfolio CTA Section */
+  .portfolio-cta {
+    padding: 6rem 0;
+    background: var(--gradient-vibrant);
+    color: white;
+    text-align: center;
+  }
+
+  .cta-content h2 {
+    font-size: 2.5rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+  }
+
+  .cta-content p {
+    font-size: 1.2rem;
+    margin-bottom: 2.5rem;
+    opacity: 0.95;
+    line-height: 1.6;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .cta-buttons {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
   /* Responsive Design */
   @media (max-width: 1024px) {
     .case-study-header .container {
@@ -813,6 +1006,16 @@ import SEO from '../components/SEO.astro';
 
     .case-stats {
       grid-template-columns: repeat(3, 1fr);
+    }
+
+    .hero-content {
+      margin-left: 5%;
+      max-width: 90%;
+    }
+
+    .portfolio-items {
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem;
     }
   }
 
@@ -864,6 +1067,34 @@ import SEO from '../components/SEO.astro';
 
     .projects-grid {
       grid-template-columns: 1fr;
+    }
+
+    .hero-content {
+      margin-left: 0;
+      max-width: 100%;
+    }
+
+    .portfolio-items {
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+
+    .section-header h2 {
+      font-size: 2rem;
+    }
+
+    .cta-content h2 {
+      font-size: 2rem;
+    }
+
+    .cta-content p {
+      font-size: 1.1rem;
+    }
+
+    .cta-buttons {
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
     }
   }
 

@@ -947,7 +947,9 @@ import SEO from '../components/SEO.astro';
     <!-- Process Benefits Section -->
     <section class="process-benefits">
       <div class="container">
-        <h2>Why Our Process Works</h2>
+        <div class="section-header">
+          <h2>Why Our Process Works</h2>
+        </div>
         <div class="benefits-grid">
           <div class="benefit-card">
             <h3>Transparency</h3>
@@ -1055,6 +1057,21 @@ import SEO from '../components/SEO.astro';
   .section-subtitle {
     color: var(--medium-gray);
     margin-bottom: 2rem;
+  }
+
+  /* Section Header */
+  .section-header {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 3rem;
+  }
+
+  .section-header h2 {
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: var(--mw-navy);
+    margin-bottom: 1rem;
+    line-height: 1.2;
   }
 
   .service-tabs {
@@ -1200,10 +1217,12 @@ import SEO from '../components/SEO.astro';
 
   .phase-content {
     padding: 2rem;
+    text-align: center;
   }
 
   .phase-section {
     margin-bottom: 2rem;
+    text-align: center;
   }
 
   .phase-section:last-child {
@@ -1215,10 +1234,12 @@ import SEO from '../components/SEO.astro';
     font-size: 1.2rem;
     font-weight: 600;
     margin-bottom: 1rem;
+    text-align: center;
   }
 
   .activity-group {
     margin-bottom: 1.5rem;
+    text-align: center;
   }
 
   .activity-group h5 {
@@ -1226,11 +1247,16 @@ import SEO from '../components/SEO.astro';
     font-size: 1rem;
     font-weight: 600;
     margin-bottom: 0.75rem;
+    text-align: center;
   }
 
   .phase-section ul {
     list-style: none;
     padding: 0;
+    text-align: left;
+    display: inline-block;
+    max-width: 600px;
+    margin: 0 auto;
   }
 
   .phase-section li {
