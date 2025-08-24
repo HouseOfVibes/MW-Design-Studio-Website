@@ -1,19 +1,522 @@
 ---
 import { getCollection } from 'astro:content';
 import Layout from '../layouts/Layout.astro';
+import SEO from '../components/SEO.astro';
 
 const posts = await getCollection('blog');
+// Sort posts by date, newest first
+const sortedPosts = posts.sort((a, b) => new Date(b.data.pubDate).getTime() - new Date(a.data.pubDate).getTime());
+// Get featured posts
+const featuredPosts = sortedPosts.filter(post => post.data.featured);
+const regularPosts = sortedPosts.filter(post => !post.data.featured);
 ---
 
-<Layout title="Blog" description="Read my latest blog posts.">
+<Layout title="Blog - MW Design Studio">
+  <SEO 
+    title="Blog - MW Design Studio"
+    description="Insights, tips, and strategies for brand design, marketing, and social media success. Expert advice from MW Design Studio."
+    keywords="brand design blog, marketing tips, social media strategy, business growth, design insights"
+  />
+  
   <main>
-    <h1>Blog</h1>
-    <ul>
-      {posts.map((post) => (
-        <li>
-          <a href={`/blog/${post.slug}`}>{post.data.title}</a>
-        </li>
-      ))}
-    </ul>
+    <!-- Hero Section -->
+    <section class="blog-hero">
+      <div class="hero-container">
+        <nav class="breadcrumb">
+          <a href="/">Home</a> > Blog
+        </nav>
+        <h1 class="hero-title">Insights & Strategies</h1>
+        <p class="hero-subtitle">Expert insights on brand design, marketing, and social media that drive business growth</p>
+      </div>
+    </section>
+
+    <!-- Featured Posts -->
+    {featuredPosts.length > 0 && (
+      <section class="featured-posts">
+        <div class="container">
+          <div class="section-header">
+            <h2>Featured Articles</h2>
+            <p>Our most popular insights and strategies</p>
+          </div>
+          
+          <div class="featured-grid">
+            {featuredPosts.map((post) => (
+              <article class="featured-post">
+                <div class="post-image">
+                  <img src={post.data.image?.url || '/blog/default-blog.jpg'} alt={post.data.image?.alt || post.data.title} />
+                  <div class="post-category">{post.data.category}</div>
+                </div>
+                <div class="post-content">
+                  <div class="post-meta">
+                    <span class="post-author">{post.data.author}</span>
+                    <span class="post-date">{new Date(post.data.pubDate).toLocaleDateString('en-US', { 
+                      year: 'numeric', 
+                      month: 'long', 
+                      day: 'numeric' 
+                    })}</span>
+                  </div>
+                  <h3 class="post-title">
+                    <a href={`/blog/${post.slug}`}>{post.data.title}</a>
+                  </h3>
+                  <p class="post-excerpt">{post.data.description}</p>
+                  <div class="post-tags">
+                    {post.data.tags?.map((tag) => (
+                      <span class="tag">{tag}</span>
+                    ))}
+                  </div>
+                  <a href={`/blog/${post.slug}`} class="read-more">Read Full Article →</a>
+                </div>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+    )}
+
+    <!-- All Posts -->
+    <section class="all-posts">
+      <div class="container">
+        <div class="section-header">
+          <h2>All Articles</h2>
+          <p>Browse our complete collection of insights and strategies</p>
+        </div>
+        
+        <div class="posts-grid">
+          {regularPosts.map((post) => (
+            <article class="post-card">
+              <div class="post-image">
+                <img src={post.data.image?.url || '/blog/default-blog.jpg'} alt={post.data.image?.alt || post.data.title} />
+                <div class="post-category">{post.data.category}</div>
+              </div>
+              <div class="post-content">
+                <div class="post-meta">
+                  <span class="post-date">{new Date(post.data.pubDate).toLocaleDateString('en-US', { 
+                    year: 'numeric', 
+                    month: 'long', 
+                    day: 'numeric' 
+                  })}</span>
+                </div>
+                <h3 class="post-title">
+                  <a href={`/blog/${post.slug}`}>{post.data.title}</a>
+                </h3>
+                <p class="post-excerpt">{post.data.description}</p>
+                <div class="post-footer">
+                  <div class="post-tags">
+                    {post.data.tags?.slice(0, 3).map((tag) => (
+                      <span class="tag">{tag}</span>
+                    ))}
+                  </div>
+                  <a href={`/blog/${post.slug}`} class="read-more">Read More →</a>
+                </div>
+              </div>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Newsletter CTA -->
+    <section class="blog-cta">
+      <div class="container">
+        <div class="cta-content">
+          <h2>Stay Updated with Our Latest Insights</h2>
+          <p>Get expert tips on brand design, marketing strategies, and business growth delivered to your inbox.</p>
+          <div class="cta-buttons">
+            <a href="/contact" class="btn-primary">Work With Us</a>
+            <a href="/resources" class="btn-secondary">Free Resources</a>
+          </div>
+        </div>
+      </div>
+    </section>
   </main>
 </Layout>
+
+<style>
+  :root {
+    --mw-navy: var(--primary-black);
+    --mw-teal: var(--accent-teal);
+    --mw-gradient: var(--gradient-vibrant);
+    --light-gray: var(--gray-100);
+    --neutral-bg: var(--bg-secondary);
+    --dark-text: var(--text-primary);
+    --medium-gray: var(--text-secondary);
+    --light-border: var(--border-light);
+  }
+
+  /* Hero Section */
+  .blog-hero {
+    background: var(--mw-gradient);
+    padding: 6rem 0 4rem;
+    color: white;
+    text-align: center;
+  }
+
+  .hero-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+
+  .breadcrumb {
+    margin-bottom: 2rem;
+    opacity: 0.9;
+  }
+
+  .breadcrumb a {
+    color: white;
+    text-decoration: none;
+  }
+
+  .breadcrumb a:hover {
+    text-decoration: underline;
+  }
+
+  .hero-title {
+    font-size: 3rem;
+    font-weight: 600;
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+    letter-spacing: -0.02em;
+  }
+
+  .hero-subtitle {
+    font-size: 1.25rem;
+    font-weight: 300;
+    opacity: 0.95;
+    line-height: 1.6;
+  }
+
+  /* Section Headers */
+  .section-header {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 4rem;
+  }
+
+  .section-header h2 {
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: var(--dark-text);
+    margin-bottom: 1rem;
+    line-height: 1.2;
+  }
+
+  .section-header p {
+    font-size: 1.1rem;
+    color: var(--medium-gray);
+    line-height: 1.6;
+  }
+
+  /* Featured Posts */
+  .featured-posts {
+    padding: 6rem 0;
+    background: white;
+  }
+
+  .featured-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 3rem;
+  }
+
+  .featured-post {
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+  }
+
+  .featured-post:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+  }
+
+  /* All Posts */
+  .all-posts {
+    padding: 6rem 0;
+    background: var(--neutral-bg);
+  }
+
+  .posts-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+  }
+
+  .post-card {
+    background: white;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .post-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.12);
+  }
+
+  /* Post Image */
+  .post-image {
+    position: relative;
+    height: 200px;
+    overflow: hidden;
+  }
+
+  .post-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+  }
+
+  .post-card:hover .post-image img {
+    transform: scale(1.05);
+  }
+
+  .post-category {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    background: var(--mw-teal);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  /* Post Content */
+  .post-content {
+    padding: 2rem;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .post-meta {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+    color: var(--medium-gray);
+  }
+
+  .post-author {
+    font-weight: 600;
+    color: var(--mw-teal);
+  }
+
+  .post-title {
+    margin-bottom: 1rem;
+  }
+
+  .post-title a {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: var(--dark-text);
+    text-decoration: none;
+    line-height: 1.3;
+    transition: color 0.3s ease;
+  }
+
+  .post-title a:hover {
+    color: var(--mw-teal);
+  }
+
+  .post-excerpt {
+    color: var(--medium-gray);
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    flex-grow: 1;
+  }
+
+  .post-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: auto;
+  }
+
+  .post-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .tag {
+    background: var(--light-gray);
+    color: var(--medium-gray);
+    padding: 0.25rem 0.75rem;
+    border-radius: 12px;
+    font-size: 0.75rem;
+    font-weight: 500;
+  }
+
+  .read-more {
+    color: var(--mw-teal);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: color 0.3s ease;
+  }
+
+  .read-more:hover {
+    color: var(--mw-navy);
+    text-decoration: underline;
+  }
+
+  /* Blog CTA */
+  .blog-cta {
+    padding: 6rem 0;
+    background: var(--mw-gradient);
+    color: white;
+    text-align: center;
+  }
+
+  .cta-content h2 {
+    font-size: 2.5rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+  }
+
+  .cta-content p {
+    font-size: 1.2rem;
+    margin-bottom: 2.5rem;
+    opacity: 0.95;
+    line-height: 1.6;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .cta-buttons {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .btn-primary {
+    background: white;
+    color: var(--mw-navy);
+    padding: 1rem 2.5rem;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  }
+
+  .btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+  }
+
+  .btn-secondary {
+    background: transparent;
+    color: white;
+    padding: 1rem 2.5rem;
+    border: 2px solid white;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+  }
+
+  .btn-secondary:hover {
+    background: white;
+    color: var(--mw-navy);
+    transform: translateY(-2px);
+  }
+
+  /* Responsive Design */
+  @media (max-width: 1024px) {
+    .featured-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .posts-grid {
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    }
+  }
+
+  @media (max-width: 768px) {
+    .blog-hero {
+      padding: 4rem 0 3rem;
+    }
+
+    .hero-title {
+      font-size: 2rem;
+    }
+
+    .hero-subtitle {
+      font-size: 1.1rem;
+    }
+
+    .section-header h2 {
+      font-size: 2rem;
+    }
+
+    .featured-posts,
+    .all-posts,
+    .blog-cta {
+      padding: 4rem 0;
+    }
+
+    .posts-grid {
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+
+    .post-footer {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 1rem;
+    }
+
+    .cta-content h2 {
+      font-size: 2rem;
+    }
+
+    .cta-content p {
+      font-size: 1.1rem;
+    }
+
+    .cta-buttons {
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .hero-container {
+      padding: 0 1rem;
+    }
+
+    .container {
+      padding: 0 1rem;
+    }
+
+    .post-content {
+      padding: 1.5rem;
+    }
+
+    .btn-primary,
+    .btn-secondary {
+      padding: 0.875rem 2rem;
+      font-size: 1rem;
+    }
+  }
+</style>

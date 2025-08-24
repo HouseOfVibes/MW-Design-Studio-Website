@@ -352,9 +352,10 @@ import SEO from '../components/SEO.astro';
 
   .generator-inputs {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
     gap: 1.5rem;
     margin-bottom: 2rem;
+    align-items: end;
   }
 
   .input-group {
@@ -386,7 +387,6 @@ import SEO from '../components/SEO.astro';
   }
 
   .generate-button {
-    grid-column: 1 / -1;
     background: var(--mw-gradient);
     color: white;
     padding: 1rem 2rem;
@@ -396,8 +396,9 @@ import SEO from '../components/SEO.astro';
     font-weight: 600;
     cursor: pointer;
     transition: all 0.3s ease;
-    justify-self: center;
     min-width: 200px;
+    height: fit-content;
+    align-self: end;
   }
 
   .generate-button:hover {
@@ -648,6 +649,21 @@ import SEO from '../components/SEO.astro';
     display: block;
   }
 
+  /* Center all section titles */
+  .category-content h3 {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 600;
+    color: var(--mw-navy);
+    margin-bottom: 2rem;
+  }
+
+  .newsletter-content h2,
+  .cta-section h2 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+  }
+
   .resources-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -775,6 +791,13 @@ import SEO from '../components/SEO.astro';
     .generator-inputs {
       grid-template-columns: 1fr;
       gap: 1rem;
+      align-items: stretch;
+    }
+    
+    .generate-button {
+      align-self: stretch;
+      justify-self: center;
+      max-width: 300px;
     }
     
     .name-grid {
