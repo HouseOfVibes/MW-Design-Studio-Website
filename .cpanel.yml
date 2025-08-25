@@ -1,0 +1,9 @@
+---
+deployment:
+  tasks:
+    - export DEPLOYPATH=/home/b913955/public_html/
+    - /bin/rm -rf $DEPLOYPATH/index.html $DEPLOYPATH/css $DEPLOYPATH/js $DEPLOYPATH/images $DEPLOYPATH/assets
+    - npm install
+    - npm run build
+    - /bin/cp -R dist/* $DEPLOYPATH
+    - echo "✅ MW Design Studio deployed successfully to mwdesign.agency"
