@@ -1,0 +1,114 @@
+---
+export interface Props {
+  title: string;
+  subtitle?: string;
+  description?: string;
+  centered?: boolean;
+  size?: 'default' | 'large' | 'small';
+  maxWidth?: string;
+}
+
+const {
+  title,
+  subtitle,
+  description,
+  centered = true,
+  size = 'default',
+  maxWidth = '800px'
+} = Astro.props;
+---
+
+<div class={`section-header ${centered ? 'section-header-centered' : ''} ${size}`} style={`max-width: ${maxWidth}`}>
+  {subtitle && (
+    <span class="section-subtitle">{subtitle}</span>
+  )}
+  
+  <h2 class="section-title">{title}</h2>
+  
+  {description && (
+    <p class="section-description">{description}</p>
+  )}
+  
+  <slot />
+</div>
+
+<style>
+  .section-header {
+    margin: 0 auto 4rem;
+  }
+  
+  .section-header-centered {
+    text-align: center;
+  }
+  
+  .section-header.large {
+    margin-bottom: 5rem;
+  }
+  
+  .section-header.small {
+    margin-bottom: 3rem;
+  }
+  
+  .section-subtitle {
+    display: block;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--accent-teal);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 1rem;
+  }
+  
+  .section-title {
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    line-height: 1.2;
+    margin-bottom: 1rem;
+  }
+  
+  .section-description {
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin: 0;
+  }
+  
+  .section-header.large .section-title {
+    font-size: 3rem;
+  }
+  
+  .section-header.small .section-title {
+    font-size: 2rem;
+  }
+  
+  @media (max-width: 768px) {
+    .section-header {
+      margin-bottom: 3rem;
+    }
+    
+    .section-header.large {
+      margin-bottom: 4rem;
+    }
+    
+    .section-header.small {
+      margin-bottom: 2rem;
+    }
+    
+    .section-title {
+      font-size: 2rem;
+    }
+    
+    .section-header.large .section-title {
+      font-size: 2.5rem;
+    }
+    
+    .section-header.small .section-title {
+      font-size: 1.5rem;
+    }
+    
+    .section-description {
+      font-size: 1rem;
+    }
+  }
+</style>

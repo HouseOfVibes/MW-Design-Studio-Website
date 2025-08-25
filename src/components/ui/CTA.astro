@@ -1,0 +1,173 @@
+---
+export interface Props {
+  title: string;
+  description?: string;
+  primaryText?: string;
+  primaryLink?: string;
+  secondaryText?: string;
+  secondaryLink?: string;
+  gradient?: boolean;
+  centered?: boolean;
+  size?: 'default' | 'large' | 'compact';
+}
+
+const {
+  title,
+  description,
+  primaryText = "Start a Project",
+  primaryLink = "/contact",
+  secondaryText,
+  secondaryLink,
+  gradient = true,
+  centered = true,
+  size = 'default'
+} = Astro.props;
+---
+
+<section class={`cta-section ${gradient ? 'cta-gradient' : ''} ${size} ${centered ? 'cta-centered' : ''}`}>
+  <div class="cta-container">
+    <div class="cta-content">
+      <h2 class="cta-title">{title}</h2>
+      
+      {description && (
+        <p class="cta-description">{description}</p>
+      )}
+      
+      <div class="cta-buttons">
+        <a href={primaryLink} class="btn btn-primary">{primaryText}</a>
+        
+        {secondaryText && secondaryLink && (
+          <a href={secondaryLink} class="btn btn-secondary">{secondaryText}</a>
+        )}
+        
+        <slot />
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .cta-section {
+    padding: 4rem 0;
+    color: white;
+  }
+  
+  .cta-gradient {
+    background: var(--gradient-vibrant);
+  }
+  
+  .cta-centered {
+    text-align: center;
+  }
+  
+  .cta-section.large {
+    padding: 6rem 0;
+  }
+  
+  .cta-section.compact {
+    padding: 3rem 0;
+  }
+  
+  .cta-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+  
+  .cta-content {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  .cta-title {
+    font-size: 2.5rem;
+    font-weight: 600;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+  }
+  
+  .cta-description {
+    font-size: 1.2rem;
+    opacity: 0.95;
+    line-height: 1.6;
+    margin-bottom: 2.5rem;
+  }
+  
+  .cta-buttons {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  
+  .btn {
+    display: inline-block;
+    padding: 1rem 2.5rem;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  }
+  
+  .btn-primary {
+    background: white;
+    color: var(--primary-black);
+  }
+  
+  .btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+  }
+  
+  .btn-secondary {
+    background: transparent;
+    color: white;
+    border: 2px solid white;
+  }
+  
+  .btn-secondary:hover {
+    background: white;
+    color: var(--primary-black);
+    transform: translateY(-2px);
+  }
+  
+  @media (max-width: 768px) {
+    .cta-section {
+      padding: 3rem 0;
+    }
+    
+    .cta-section.large {
+      padding: 4rem 0;
+    }
+    
+    .cta-section.compact {
+      padding: 2rem 0;
+    }
+    
+    .cta-container {
+      padding: 0 1rem;
+    }
+    
+    .cta-title {
+      font-size: 2rem;
+    }
+    
+    .cta-description {
+      font-size: 1.1rem;
+    }
+    
+    .cta-buttons {
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+    }
+    
+    .btn {
+      padding: 0.875rem 2rem;
+      font-size: 1rem;
+      min-width: 200px;
+    }
+  }
+</style>

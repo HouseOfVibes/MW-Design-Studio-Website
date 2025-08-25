@@ -27,9 +27,7 @@
   --accent-red: #EF4444;
   
   /* Gradients - More subtle with grays, vibrant for special elements */
-  --gradient-subtle: linear-gradient(135deg, var(--gray-900) 0%, var(--gray-700) 100%);
   --gradient-vibrant: linear-gradient(135deg, var(--accent-navy) 0%, var(--accent-teal) 100%);
-  --gradient-accent: linear-gradient(135deg, var(--accent-purple) 0%, var(--accent-pink) 100%);
   
   /* Semantic Colors */
   --text-primary: var(--gray-900);

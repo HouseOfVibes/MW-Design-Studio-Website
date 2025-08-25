@@ -1,0 +1,143 @@
+---
+export interface Props {
+  title: string;
+  subtitle?: string;
+  description?: string;
+  showBreadcrumb?: boolean;
+  breadcrumbText?: string;
+  gradient?: boolean;
+  centered?: boolean;
+  size?: 'default' | 'large' | 'compact';
+}
+
+const { 
+  title, 
+  subtitle, 
+  description, 
+  showBreadcrumb = false, 
+  breadcrumbText = "Home",
+  gradient = true,
+  centered = true,
+  size = 'default'
+} = Astro.props;
+---
+
+<section class={`hero-section ${gradient ? 'hero-gradient' : ''} ${size} ${centered ? 'hero-centered' : ''}`}>
+  <div class="hero-container">
+    {showBreadcrumb && (
+      <nav class="breadcrumb">
+        <a href="/">{breadcrumbText}</a> > {title}
+      </nav>
+    )}
+    
+    <h1 class="hero-title">{title}</h1>
+    
+    {subtitle && (
+      <p class="hero-subtitle">{subtitle}</p>
+    )}
+    
+    {description && (
+      <p class="hero-description">{description}</p>
+    )}
+    
+    <slot />
+  </div>
+</section>
+
+<style>
+  .hero-section {
+    padding: 4rem 0;
+    color: white;
+  }
+  
+  .hero-gradient {
+    background: var(--gradient-vibrant);
+  }
+  
+  .hero-centered {
+    text-align: center;
+  }
+  
+  .hero-section.large {
+    padding: 6rem 0;
+  }
+  
+  .hero-section.compact {
+    padding: 3rem 0;
+  }
+  
+  .hero-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+  
+  .breadcrumb {
+    margin-bottom: 2rem;
+    opacity: 0.9;
+    font-size: 0.9rem;
+  }
+  
+  .breadcrumb a {
+    color: white;
+    text-decoration: none;
+  }
+  
+  .breadcrumb a:hover {
+    text-decoration: underline;
+  }
+  
+  .hero-title {
+    font-size: 3rem;
+    font-weight: 600;
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+    letter-spacing: -0.02em;
+  }
+  
+  .hero-subtitle {
+    font-size: 1.25rem;
+    font-weight: 300;
+    opacity: 0.95;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+  }
+  
+  .hero-description {
+    font-size: 1.1rem;
+    opacity: 0.9;
+    line-height: 1.6;
+    max-width: 600px;
+    margin: 0 auto 2rem;
+  }
+  
+  @media (max-width: 768px) {
+    .hero-section {
+      padding: 3rem 0;
+    }
+    
+    .hero-section.large {
+      padding: 4rem 0;
+    }
+    
+    .hero-section.compact {
+      padding: 2rem 0;
+    }
+    
+    .hero-container {
+      padding: 0 1rem;
+    }
+    
+    .hero-title {
+      font-size: 2rem;
+    }
+    
+    .hero-subtitle {
+      font-size: 1.1rem;
+    }
+    
+    .hero-description {
+      font-size: 1rem;
+    }
+  }
+</style>

@@ -50,7 +50,7 @@ import SEO from '../components/SEO.astro';
             </div>
           </div>
           <div class="case-hero-image">
-            <img src="/portfolio/Bloom Cafe/Bloom-Cafe-Logo-Example.png" alt="Bloom Cafe Main Logo" />
+            <img src="/portfolio/Bloom%20Cafe/Bloom-Cafe-Logo-Example.png" alt="Bloom Cafe Main Logo" />
           </div>
         </div>
       </div>
@@ -61,21 +61,21 @@ import SEO from '../components/SEO.astro';
             <div class="showcase-section">
               <h3>Logo Variations & Applications</h3>
               <div class="logo-gallery">
-                <img src="/portfolio/Bloom Cafe/Bloo-Cafe-Logo-Variations.png" alt="Bloom Cafe Logo Variations" />
+                <img src="/portfolio/Bloom%20Cafe/Bloo-Cafe-Logo-Variations.png" alt="Bloom Cafe Logo Variations" />
               </div>
             </div>
             
             <div class="showcase-section">
               <h3>Brand Applications</h3>
               <div class="applications-gallery">
-                <img src="/portfolio/Bloom Cafe/Bloom-Cafe-Business card and stationery suites.png" alt="Business Cards and Stationery" />
+                <img src="/portfolio/Bloom%20Cafe/Bloom-Cafe-Business%20card%20and%20stationery%20suites.png" alt="Business Cards and Stationery" />
               </div>
             </div>
             
             <div class="showcase-section">
               <h3>Website Mockup</h3>
               <div class="website-mockup">
-                <img src="/portfolio/Bloom Cafe/Bloom-Cafe-website-Mockup.png" alt="Bloom Cafe Website Design" />
+                <img src="/portfolio/Bloom%20Cafe/Bloom-Cafe-website-Mockup.png" alt="Bloom Cafe Website Design" />
               </div>
             </div>
           </div>
@@ -129,7 +129,7 @@ import SEO from '../components/SEO.astro';
           <!-- CloudSync Solutions - Compact -->
           <div class="portfolio-item" data-category="brand">
             <div class="item-image">
-              <img src="/portfolio/CloudSync Solutions/Cloudsync_logo.png" alt="CloudSync Solutions Logo" />
+              <img src="/portfolio/CloudSync%20Solutions/Cloudsync_logo.png" alt="CloudSync Solutions Logo" />
             </div>
             <div class="item-content">
               <h3>CloudSync Solutions</h3>
@@ -1119,27 +1119,3 @@ import SEO from '../components/SEO.astro';
   }
 </style>
 
-<script>
-  // Portfolio filtering
-  const filterButtons = document.querySelectorAll('.filter-btn');
-  const portfolioItems = document.querySelectorAll('.portfolio-item, .case-study');
-
-  filterButtons.forEach(button => {
-    button.addEventListener('click', () => {
-      const filter = button.dataset.filter;
-      
-      // Update active button
-      filterButtons.forEach(btn => btn.classList.remove('active'));
-      button.classList.add('active');
-      
-      // Filter items
-      portfolioItems.forEach(item => {
-        if (filter === 'all' || item.dataset.category === filter) {
-          item.style.display = 'block';
-        } else {
-          item.style.display = 'none';
-        }
-      });
-    });
-  });
-</script>

@@ -4,6 +4,7 @@ import Footer from '../components/Footer.astro';
 import SEO from '../components/SEO.astro';
 import Chatbot from '../components/Chatbot.astro';
 import '../styles/style.css';
+import '../styles/components.css';
 const { title, description, image, author, type } = Astro.props;
 ---
 
@@ -27,5 +28,8 @@ const { title, description, image, author, type } = Astro.props;
     </main>
     <Footer />
     <Chatbot />
+    
+    <!-- Main JavaScript -->
+    <script type="module" src="/src/scripts/main.js"></script>
   </body>
 </html>

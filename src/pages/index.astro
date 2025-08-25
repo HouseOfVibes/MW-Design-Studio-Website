@@ -1,6 +1,12 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import SEO from '../components/SEO.astro';
+import { Image } from 'astro:assets';
+
+// Import optimized images
+import bloomCafeLogo from '../assets/portfolio/Bloom-Cafe-Logo-Example.png';
+import cloudSyncLogo from '../assets/portfolio/Cloudsync_logo.png';
+import momentumLogo from '../assets/portfolio/Momentum-logo.png';
 ---
 
 <Layout title="MW Design Studio - Brand, Marketing & Social Media That Actually Converts">
@@ -133,7 +139,7 @@ import SEO from '../components/SEO.astro';
       <div class="portfolio-grid">
         <div class="portfolio-item">
           <div class="portfolio-image">
-            <img src="/portfolio/Bloom Cafe/Bloom-Cafe-Logo-Example.png" alt="Bloom Cafe Brand Identity" />
+            <Image src={bloomCafeLogo} alt="Bloom Cafe Brand Identity" width={300} height={200} format="webp" quality={80} />
           </div>
           <div class="portfolio-content">
             <h3 class="portfolio-title">Bloom Cafe</h3>
@@ -143,7 +149,7 @@ import SEO from '../components/SEO.astro';
         </div>
         <div class="portfolio-item">
           <div class="portfolio-image">
-            <img src="/portfolio/CloudSync Solutions/Cloudsync_logo.png" alt="CloudSync Solutions Brand Identity" />
+            <Image src={cloudSyncLogo} alt="CloudSync Solutions Brand Identity" width={300} height={200} format="webp" quality={80} />
           </div>
           <div class="portfolio-content">
             <h3 class="portfolio-title">CloudSync Solutions</h3>
@@ -153,7 +159,7 @@ import SEO from '../components/SEO.astro';
         </div>
         <div class="portfolio-item">
           <div class="portfolio-image">
-            <img src="/portfolio/Momentum Personal Training/Momentum-logo.png" alt="Momentum Personal Training Brand Identity" />
+            <Image src={momentumLogo} alt="Momentum Personal Training Brand Identity" width={300} height={200} format="webp" quality={80} />
           </div>
           <div class="portfolio-content">
             <h3 class="portfolio-title">Momentum Personal Training</h3>
